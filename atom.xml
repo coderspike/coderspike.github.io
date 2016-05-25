@@ -59,10 +59,10 @@
   
   <entry>
     <title>windows下用hexo3.x&amp;GitHub创建个人博客</title>
-    <link href="http://yoursite.com/2016/05/19/hexo-github/"/>
-    <id>http://yoursite.com/2016/05/19/hexo-github/</id>
+    <link href="http://yoursite.com/2016/05/19/windows%E4%B8%8Bhexo-github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2016/05/19/windows下hexo-github搭建博客/</id>
     <published>2016-05-19T10:10:50.000Z</published>
-    <updated>2016-05-25T01:22:01.000Z</updated>
+    <updated>2016-05-25T02:11:08.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;昨天用hexo&amp;amp;GitHub创建了个人博客，网上很多教程是针对的hexo2.x的，有些小坑，在这记录一下，供需要的人参考。&lt;/p&gt;
@@ -92,6 +92,8 @@
 &lt;h2 id=&quot;前期准备&quot;&gt;&lt;a href=&quot;#前期准备&quot; class
     
     </summary>
+    
+      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
   </entry>
