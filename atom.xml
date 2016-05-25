@@ -5,19 +5,19 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-24T15:04:52.000Z</updated>
+  <updated>2016-05-25T01:16:17.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://yoursite.com/2016/05/24/Mac/"/>
-    <id>http://yoursite.com/2016/05/24/Mac/</id>
-    <published>2016-05-24T13:26:05.000Z</published>
-    <updated>2016-05-24T15:04:52.000Z</updated>
+    <title>Mac系统下hexo&amp;github搭建博客</title>
+    <link href="http://yoursite.com/2016/05/24/Mac%E4%B8%8B%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2016/05/24/Mac下搭建hexo博客/</id>
+    <published>2016-05-24T15:10:50.000Z</published>
+    <updated>2016-05-25T01:16:17.000Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;Mac系统下hexo-amp-github搭建博客&quot;&gt;&lt;a href=&quot;#Mac系统下hexo-amp-github搭建博客&quot; class=&quot;headerlink&quot; title=&quot;Mac系统下hexo&amp;amp;github搭建博客&quot;&gt;&lt;/a&gt;Mac系统下hexo&amp;amp;github搭建博客&lt;/h1&gt;&lt;blockquote&gt;
+    <content type="html">&lt;blockquote&gt;
 &lt;p&gt;上篇文章记录了在windows系统下的搭建过程，这次补充一下在Mac系统下的搭建过程，整体大同小异，重点纪录几个异常，供大家参考。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
@@ -28,12 +28,27 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;brew install node&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;使用以下命令验证是否安装成功&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;node -v&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm -v&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;3.Hexo安装&lt;br&gt;npm install hexo -g &lt;/p&gt;
+&lt;p&gt; 3.Hexo安装&lt;br&gt; npm install hexo -g &lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;部署&quot;&gt;&lt;a href=&quot;#部署&quot; class=&quot;headerlink&quot; title=&quot;部署&quot;&gt;&lt;/a&gt;部署&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;确定在git上创建完项目之后，执行如下命令&lt;br&gt;npm install hexo-deployer-git –save&lt;/li&gt;
+&lt;li&gt;修改config.yml文件&lt;/li&gt;
+&lt;/ul&gt;
+ &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deploy: &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  type: git &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  repo: https://github.com/username/username.github.io.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  branch: master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;依次执行如下命令&lt;br&gt;1.hexo clean&lt;br&gt;2.hexo g&lt;br&gt;3.hexo d&lt;br&gt;如不报错，则部署成功，访问username.github.io即可。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;异常&quot;&gt;&lt;a href=&quot;#异常&quot; class=&quot;headerlink&quot; title=&quot;异常&quot;&gt;&lt;/a&gt;异常&lt;/h1&gt;&lt;p&gt;Segmentation fault: 11&lt;br&gt;如有如上异常，cd到项目目录下重新执行npm rebuild。再次执行命令，可能还会报错，但不影响使用。如果还不能使用则再次执行npm install hexo-deployer-git –save，重新cd到项目目录下执行上边的部署命令即可。&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Mac系统下hexo-amp-github搭建博客&quot;&gt;&lt;a href=&quot;#Mac系统下hexo-amp-github搭建博客&quot; class=&quot;headerlink&quot; title=&quot;Mac系统下hexo&amp;amp;github搭建博客&quot;&gt;&lt;/a&gt;Mac系统下hexo&amp;
+      &lt;blockquote&gt;
+&lt;p&gt;上篇文章记录了在windows系统下的搭建过程，这次补充一下在Mac系统下的搭建过程，整体大同小异，重点纪录几个异常，供大家参考。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;he
     
     </summary>
     
