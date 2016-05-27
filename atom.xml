@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-25T06:18:47.000Z</updated>
+  <updated>2016-05-27T01:07:08.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
@@ -15,13 +15,24 @@
     <link href="http://yoursite.com/2016/05/25/iOS%E7%BC%96%E7%A8%8B%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     <id>http://yoursite.com/2016/05/25/iOS编程常用技巧/</id>
     <published>2016-05-25T06:18:47.000Z</published>
-    <updated>2016-05-25T06:18:47.000Z</updated>
+    <updated>2016-05-27T01:07:08.000Z</updated>
     
-    <content type="html"></content>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;在编写iOS程序时，有一些通用的代码，在这里做一个收录，都是转自各路大神的博客，不停维护中～&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;项目中的controller太多，不知道具体运行的是哪一个。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;建立UIViewController的Category&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-(void)viewDidAppear:(BOOL)animated &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    NSLog(@&amp;quot;===%@===&amp;quot;,NSStringFromClass([self class]));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;这样在运行时就可以知道运行的是哪一个了。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;如何将状态栏中的字体颜色变白&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 、将info.plist中的 View-based status bar appearance  设为 NO&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2、在对应的viewcontrolle.m里添加&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; //设置状态栏颜色    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;就设置成功了。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
     
     <summary type="html">
     
+      &lt;blockquote&gt;
+&lt;p&gt;在编写iOS程序时，有一些通用的代码，在这里做一个收录，都是转自各路大神的博客，不停维护中～&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutte
+    
     </summary>
+    
+      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
   </entry>
