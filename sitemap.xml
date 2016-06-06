@@ -2,9 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/05/25/iOS%E7%BC%96%E7%A8%8B%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/</loc>
+    
+    <lastmod>2016-06-06T10:34:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/06/06/iOS%E5%B7%A5%E5%85%B7%E7%B1%BB%E6%94%B6%E5%BD%95/</loc>
+    
+    <lastmod>2016-06-06T09:57:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/06/06/iOS%E9%A1%B5%E9%9D%A2%E6%B5%81/</loc>
+    
+    <lastmod>2016-06-06T06:09:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/06/06/iOS%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    
+    <lastmod>2016-06-06T03:48:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/06/06/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/</loc>
+    
+    <lastmod>2016-06-06T03:24:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/06/02/UIView%E4%BB%8B%E7%BB%8D/</loc>
+    
+    <lastmod>2016-06-02T08:36:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/05/31/UITableView%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     
-    <lastmod>2016-06-02T08:31:44.000Z</lastmod>
+    <lastmod>2016-06-02T08:33:42.000Z</lastmod>
     
   </url>
   
@@ -12,13 +54,6 @@
     <loc>http://yoursite.com/2016/05/27/Foundation%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2016-05-31T02:10:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/05/25/iOS%E7%BC%96%E7%A8%8B%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/</loc>
-    
-    <lastmod>2016-05-27T09:16:32.000Z</lastmod>
     
   </url>
   
