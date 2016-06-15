@@ -5,10 +5,76 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-15T01:44:48.000Z</updated>
+  <updated>2016-06-15T03:48:02.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS中的MVC概念</title>
+    <link href="http://yoursite.com/2016/06/15/iOS%E4%B8%AD%E7%9A%84MVC%E6%A6%82%E5%BF%B5/"/>
+    <id>http://yoursite.com/2016/06/15/iOS中的MVC概念/</id>
+    <published>2016-06-15T03:41:21.000Z</published>
+    <updated>2016-06-15T03:48:02.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;在转一篇对MVC的总结文章&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.samirchen.com/mvc-in-ios/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;原版&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Model&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Model 是 What your application is(but not how it is desplayed)，各种数据以及它们之间的逻辑等都是Model，Model是独立于UI的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Controller&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Controller 是 How your Model is presented to the user (UI logic)，即UI逻辑，Controller来把Mode的数据和逻辑表达出来，绘制、展示到屏幕上。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;View&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;View 是 Your Controller’s minions，是Controller要用到的各种基础性的UI元素（Genetic UI Element），是Controller表达Model数据和逻辑用到的工具。&lt;/p&gt;
+&lt;p&gt;总的来说，就是 Controller 用 View 来把 Model 表达到屏幕上。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;M、V、C之间如何对话&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Controller —&amp;gt; Model (OK)&lt;/p&gt;
+&lt;p&gt;Controller 对相应的 Model 说话是很正常的。&lt;/p&gt;
+&lt;p&gt;Controller —&amp;gt; Vew (OK)&lt;/p&gt;
+&lt;p&gt;Controller 对相应的 View 说话也是很正常的。&lt;/p&gt;
+&lt;p&gt;Model &amp;lt;—&amp;gt; View (Never)&lt;/p&gt;
+&lt;p&gt;Model 和 View 之间则永远不要对话！&lt;/p&gt;
+&lt;p&gt;View —&amp;gt; Controller (Limited)&lt;/p&gt;
+&lt;p&gt;View 一般不要对 Controller 直接说话。但有时候，确实有这个需要，所以有以下几种方式让View对Controller说话：&lt;/p&gt;
+&lt;p&gt;action - target&lt;/p&gt;
+&lt;p&gt;Controller 在自己上面放了 target 明确告诉 View 的 action 去和这个 target 对话。比如一个 button 的 touch 动作触发时去告诉 Controller 的 target 这个 action，让 Controller 在这个 action 中做点什么。其实 View 这时候是不知道关于这个 target 背后的这个 Controller 的任何信息的。所以&lt;/p&gt;
+&lt;p&gt;It is a blind, simple, structured way for the view to communicate with the controller.&lt;/p&gt;
+&lt;p&gt;delegate&lt;/p&gt;
+&lt;p&gt;View 和 Controller 对话还有更复杂的方式，比如当一个 ScrollView 被滑动了，滑动停止时，View 需要告诉 Controller 滑动停止了，像我们常见的 will，should，did 类的方法，它们就是在 Controller 里设置了代理 Delegate 去响应这些消息，对 View 来说，它也不知道 Controller 的具体信息，它只是知道 Controller 能响应它的那些 will，should，did 类的消息。要使用 Delegate 模式，就涉及到 protocal。&lt;/p&gt;
+&lt;p&gt;A protocal is a blind way to talk to another object.&lt;/p&gt;
+&lt;p&gt;datasource&lt;/p&gt;
+&lt;p&gt;View 不持有它所显示的数据，这些数据应该是属于 Model 的。View 常常通过 datasource 来询问数据，它通常会向 datasource 询问 count，data at * index 之类的消息，其实 datasource 就是另一种 delegate，很明显 Controller 应该作为 View 的 datasource delegate，而不是 Model。当 View 询问数据相关的消息时，Controller 则先去询问 Model 然后再作为 datasource delegate 来响应 View。&lt;/p&gt;
+&lt;p&gt;Data source is just a kind of delegate, it’s a specific kind of delegate for getting data.&lt;/p&gt;
+&lt;p&gt;Model —&amp;gt; Controller (Limited)&lt;/p&gt;
+&lt;p&gt;Model 一般也不要对 Controller 直接对话。但有时候也有需求，所以提供了一些机制来满足这些需求：&lt;/p&gt;
+&lt;p&gt;Notification &amp;amp; KVO(Key Value Observing)&lt;/p&gt;
+&lt;p&gt;有时候 Model 中的某些东西改变了，比如数据改变了、网络连通了等，它需要告诉 Controller。这时候我们用 “radio station”，类似广播机制去通知任何对这信息感兴趣的对象，这就是常用的 Notification(通知中心) &amp;amp; KVO(Key Value Observing，键值观察)。这就相当于 Model 在广播里吼 “我Model这某时某刻某些东东发生变动了，大家快来看啊！”，这时 Controller 就调到那个广播频道听到了，知道 Model 那某些东东发生变化了，然后它对此感兴趣就通过 Control—&amp;gt;Model 这个途径去 Model 那取那些发生变化的数据。&lt;/p&gt;
+&lt;p&gt;MVC对话示意图&lt;br&gt;&lt;img src=&quot;http://www.samirchen.com/images/mvc-in-ios/mvc-communication.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;在转一篇对MVC的总结文章&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.samirchen.com/mvc-in-ios/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;原版&lt;/a&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>轻量级的UITableViewController</title>
@@ -263,7 +329,7 @@ aView.layer.mask = maskLayer;
     <link href="http://yoursite.com/2016/06/06/iOS%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     <id>http://yoursite.com/2016/06/06/iOS开发中的几种设计模式/</id>
     <published>2016-06-06T03:48:22.000Z</published>
-    <updated>2016-06-15T03:22:34.000Z</updated>
+    <updated>2016-06-15T03:24:03.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;收录几种常见设计模式的使用方法&lt;/p&gt;
