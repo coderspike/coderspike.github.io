@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2016/06/16/UIButton/</loc>
+    <loc>http://yoursite.com/2016/06/06/iOS%E5%B7%A5%E5%85%B7%E7%B1%BB%E6%94%B6%E5%BD%95/</loc>
     
-    <lastmod>2016-06-16T01:59:56.000Z</lastmod>
+    <lastmod>2016-06-16T06:32:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/06/16/ViewController%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    
+    <lastmod>2016-06-16T06:07:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/06/16/UIAlertView/</loc>
+    
+    <lastmod>2016-06-16T05:56:35.000Z</lastmod>
     
   </url>
   
@@ -26,13 +40,6 @@
     <loc>http://yoursite.com/2016/06/15/Block/</loc>
     
     <lastmod>2016-06-15T06:36:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/06/06/iOS%E5%B7%A5%E5%85%B7%E7%B1%BB%E6%94%B6%E5%BD%95/</loc>
-    
-    <lastmod>2016-06-15T04:17:14.000Z</lastmod>
     
   </url>
   
@@ -82,13 +89,6 @@
     <loc>http://yoursite.com/2016/05/25/iOS%E7%BC%96%E7%A8%8B%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/</loc>
     
     <lastmod>2016-06-07T06:46:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/06/07/CocoaLumberjack/</loc>
-    
-    <lastmod>2016-06-07T01:58:30.000Z</lastmod>
     
   </url>
   
