@@ -5,29 +5,23 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-16T06:07:31.000Z</updated>
+  <updated>2016-06-16T08:27:20.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ViewController的生命周期</title>
-    <link href="http://yoursite.com/2016/06/16/ViewController%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
-    <id>http://yoursite.com/2016/06/16/ViewController的生命周期/</id>
-    <published>2016-06-16T03:22:55.000Z</published>
-    <updated>2016-06-16T06:07:31.000Z</updated>
+    <title>关于CocoaPods的使用总结</title>
+    <link href="http://yoursite.com/2016/06/16/%E5%85%B3%E4%BA%8ECocoaPods%E7%9A%84%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2016/06/16/关于CocoaPods的使用总结/</id>
+    <published>2016-06-16T08:27:20.000Z</published>
+    <updated>2016-06-16T08:27:20.000Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;iOS-UIAlertController的使用&quot;&gt;&lt;a href=&quot;#iOS-UIAlertController的使用&quot; class=&quot;headerlink&quot; title=&quot;iOS UIAlertController的使用&quot;&gt;&lt;/a&gt;iOS UIAlertController的使用&lt;/h3&gt;&lt;p&gt;继承关系如下:NSObject    UIResponder    UIView    UIAlertView&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;在Xcode的iOS9.0 SDK中，UIAlertView和UIActionSheet都被UIAlertController取代。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;在iOS 9中，UIAlertController在功能上是和UIAlertView以及UIActionSheet相同的，UIAlertController以一种模块化替换的方式来代替这两货的功能和作用。是使用对话框(alert)还是使用上拉菜单(action sheet)，就取决于在创建控制器时，您是如何设置首选样式的。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1、对话框&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@&amp;quot;标题&amp;quot;message:@&amp;quot;这个是UIAlertController的默认样式&amp;quot;preferredStyle:UIAlertControllerStyleAlert];        [self presentViewController:alertController animated:YES completion:nil];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;同创建UIAlertView相比，我们无需指定代理，也无需在初始化过程中指定按钮。不过要特别注意第三个参数，要确定您选择的是对话框样式还是上拉菜单样式。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2、将动作按钮添加到控制器&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;通过创建UIAlertAction的实例，您可以将动作按钮添加到控制器上。UIAlertAction由标题字符串、样式以及当用户选中该动作时运行的代码块组成。通过UIAlertActionStyle，您可以选择如下三种动作样式：常规(default)、取消(cancel)以及警示(destruective)。为了实现原来我们在创建UIAlertView时创建的按钮效果，我们只需创建这两个动作按钮并将它们添加到控制器上即可。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@&amp;quot;标题&amp;quot;message:@&amp;quot;这个是UIAlertController的默认样式&amp;quot;preferredStyle:UIAlertControllerStyleAlert];    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@&amp;quot;取消&amp;quot; style:UIAlertActionStyleCancel handler:nil];    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@&amp;quot;好的&amp;quot; style:UIAlertActionStyleDefault handler:nil];    [alertController addAction:cancelAction];    [alertController addAction:okAction];    [self presentViewController:alertController animated:YES completion:nil];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3、“警示”样式&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@&amp;quot;标题&amp;quot;message:@&amp;quot;这个是UIAlertController的默认样式&amp;quot;preferredStyle:UIAlertControllerStyleAlert];    UIAlertAction *resetAction = [UIAlertAction actionWithTitle:@&amp;quot;重置&amp;quot; style:UIAlertActionStyleDestructive handler:nil];    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@&amp;quot;取消&amp;quot; style:UIAlertActionStyleCancel handler:nil];        //添加顺序和显示顺序相同    [alertController addAction:cancelAction];    [alertController addAction:resetAction];    [self presentViewController:alertController animated:YES completion:nil];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4、文本对话框&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;设置输入框，并且设置通知，检测输入字符长度少于3时，不能点击“好的”。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;值得注意的是，不像使用UIAlertView的时候可以用UIAlertViewDelegate检测文本框输入，UIAlertController没有对应的代理，只能自己实现监听。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@&amp;quot;文本对话框&amp;quot; message:@&amp;quot;登录和密码对话框示例&amp;quot; preferredStyle:UIAlertControllerStyleAlert];    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)&amp;#123;        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(alertTextFieldDidChange:) name:UITextFieldTextDidChangeNotification object:textField];        textField.placeholder = @&amp;quot;登录&amp;quot;;    &amp;#125;];        [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) &amp;#123;        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(alertTextFieldDidChange:) name:UITextFieldTextDidChangeNotification object:textField];        textField.placeholder = @&amp;quot;密码&amp;quot;;        textField.secureTextEntry = YES;    &amp;#125;];            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@&amp;quot;好的&amp;quot; style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) &amp;#123;        UITextField *login = alertController.textFields.firstObject;        UITextField *password = alertController.textFields.lastObject;        NSLog(@&amp;quot;%@&amp;quot;,login.text);        NSLog(@&amp;quot;%@&amp;quot;,password.text);    &amp;#125;];        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@&amp;quot;取消&amp;quot; style:UIAlertActionStyleCancel handler:nil];    [alertController addAction:cancelAction];    [alertController addAction:okAction];            [self presentViewController:alertController animated:YES completion:nil];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)alertTextFieldDidChange:(NSNotification *)notification&amp;#123;    UIAlertController *alertController = (UIAlertController  *)self.presentedViewController;    if (alertController) &amp;#123;                UITextField *login = alertController.textFields.firstObject;        UIAlertAction *okAction = alertController.actions.lastObject;        okAction.enabled = login.text.length &amp;gt; 2;    &amp;#125;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5、上拉菜单&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@&amp;quot;保存或删除数据&amp;quot; message:@&amp;quot;删除数据将不可恢复&amp;quot; preferredStyle: UIAlertControllerStyleActionSheet];        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@&amp;quot;取消&amp;quot; style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) &amp;#123;        NSLog(@&amp;quot;点击了取消&amp;quot;);    &amp;#125;];        UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@&amp;quot;删除&amp;quot; style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) &amp;#123;        NSLog(@&amp;quot;点击了删除&amp;quot;);    &amp;#125;];    UIAlertAction *archiveAction = [UIAlertAction actionWithTitle:@&amp;quot;保存&amp;quot; style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) &amp;#123;        NSLog(@&amp;quot;点击了保存&amp;quot;);    &amp;#125;];            [alertController addAction:cancelAction];    [alertController addAction:deleteAction];    [alertController addAction:archiveAction];        [self presentViewController:alertController animated:YES completion:nil];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
+    <content type="html"></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;iOS-UIAlertController的使用&quot;&gt;&lt;a href=&quot;#iOS-UIAlertController的使用&quot; class=&quot;headerlink&quot; title=&quot;iOS UIAlertController的使用&quot;&gt;&lt;/a&gt;iOS UIAlertCon
-    
     </summary>
-    
-      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
   </entry>
@@ -37,7 +31,7 @@
     <link href="http://yoursite.com/2016/06/15/%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5%E5%92%8C%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
     <id>http://yoursite.com/2016/06/15/一些概念和知识点/</id>
     <published>2016-06-15T08:07:24.000Z</published>
-    <updated>2016-06-15T09:07:33.000Z</updated>
+    <updated>2016-06-17T04:10:55.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;杂乱的记录一些概念及知识点&lt;/p&gt;
@@ -76,6 +70,7 @@
 &lt;/ol&gt;
 &lt;h3 id=&quot;下面四个修饰指针有什么区别&quot;&gt;&lt;a href=&quot;#下面四个修饰指针有什么区别&quot; class=&quot;headerlink&quot; title=&quot;下面四个修饰指针有什么区别?&quot;&gt;&lt;/a&gt;下面四个修饰指针有什么区别?&lt;/h3&gt;&lt;p&gt;const char &lt;em&gt;p;&lt;br&gt;char const &lt;/em&gt;p;&lt;br&gt;char &lt;em&gt; const p;&lt;br&gt;const char &lt;/em&gt; const p;&lt;/p&gt;
 &lt;p&gt;参考答案：&lt;br&gt;• const char &lt;em&gt;p定义了一个指向不可变的字符串的字符指针，可以这么看：const char &lt;/em&gt;为类型，p是变量。&lt;br&gt;• char const &lt;em&gt;p与上一个是一样的。&lt;br&gt;• char &lt;/em&gt; const p定义了一个指向字符串的指针，该指针值不可改变，即不可改变指向。这么看：char &lt;em&gt;是类型，const是修饰变量p，也就是说p是一个常量&lt;br&gt;const char &lt;/em&gt; const p定义了一个指向不可变的字符串的字符指针，且该指针也不可改变指向。这一个就很容易看出来了。两个const分别修饰，因此都是不可变的。   &lt;/p&gt;
+&lt;h3 id=&quot;关于页面流&quot;&gt;&lt;a href=&quot;#关于页面流&quot; class=&quot;headerlink&quot; title=&quot;关于页面流&quot;&gt;&lt;/a&gt;关于页面流&lt;/h3&gt;&lt;p&gt;ViewDIdLoad是视图加载完成调用的,你pop回来他早已经加载过了不会在进入这个函数了&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -456,11 +451,11 @@ aView.layer.mask = maskLayer;
   </entry>
   
   <entry>
-    <title>iOS工具类收录</title>
-    <link href="http://yoursite.com/2016/06/06/iOS%E5%B7%A5%E5%85%B7%E7%B1%BB%E6%94%B6%E5%BD%95/"/>
-    <id>http://yoursite.com/2016/06/06/iOS工具类收录/</id>
+    <title>iOS常用分类</title>
+    <link href="http://yoursite.com/2016/06/06/iOS%E5%B8%B8%E7%94%A8%E5%88%86%E7%B1%BB/"/>
+    <id>http://yoursite.com/2016/06/06/iOS常用分类/</id>
     <published>2016-06-06T09:57:07.000Z</published>
-    <updated>2016-06-16T06:32:17.000Z</updated>
+    <updated>2016-06-20T01:57:59.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;有一些分类在开发中经常应用，做一个收录。&lt;/p&gt;
