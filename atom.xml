@@ -744,13 +744,17 @@ aView.layer.mask = maskLayer;
   </entry>
   
   <entry>
-    <title>iOS编程常用方法</title>
+    <title></title>
     <link href="http://yoursite.com/2016/05/25/iOS%E7%BC%96%E7%A8%8B%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     <id>http://yoursite.com/2016/05/25/iOS编程常用技巧/</id>
     <published>2016-05-25T06:18:47.000Z</published>
-    <updated>2016-06-23T09:41:34.000Z</updated>
+    <updated>2016-06-23T09:45:41.000Z</updated>
     
-    <content type="html">&lt;blockquote&gt;
+    <content type="html">&lt;p&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;script src=&quot;http://yandex.st/highlightjs/8.0/highlight.min.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;&lt;script&gt;hljs.initHighlightingOnLoad();&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/script&gt;&lt;/p&gt;&lt;p&gt;title: iOS编程常用方法&lt;br&gt;date: 2016-05-25 14:18:47&lt;br&gt;tags:&lt;/p&gt;
+&lt;h2 id=&quot;categories-编程&quot;&gt;&lt;a href=&quot;#categories-编程&quot; class=&quot;headerlink&quot; title=&quot;categories: 编程 &quot;&gt;&lt;/a&gt;categories: 编程 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;在编写iOS程序时，有一些通用的代码，在这里做一个收录，都是转自各路大神的博客，不停维护中～&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -781,13 +785,15 @@ aView.layer.mask = maskLayer;
     
     <summary type="html">
     
-      &lt;blockquote&gt;
+      &lt;p&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;script src=&quot;http://yandex.st/highlightjs/8.0/highlight.min.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;&lt;script&gt;hljs.initHighlightingOnLoad();&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/script&gt;&lt;/h2&gt;&lt;p&gt;title: iOS编程常用方法&lt;br&gt;date: 2016-05-25 14:18:47&lt;br&gt;tags:&lt;/p&gt;
+&lt;h2 id=&quot;categories-编程&quot;&gt;&lt;a href=&quot;#categories-编程&quot; class=&quot;headerlink&quot; title=&quot;categories: 编程 &quot;&gt;&lt;/a&gt;categories: 编程 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;在编写iOS程序时，有一些通用的代码，在这里做一个收录，都是转自各路大神的博客，不停维护中～&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
-    
-      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
   </entry>
