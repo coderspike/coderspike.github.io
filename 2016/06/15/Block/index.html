@@ -1,0 +1,683 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="coder-gwb" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="block在iOS编程中有着非常重要的作用，目前对block的理解只存在于表面的应用上，希望以后不断补充这篇介绍。
+
+block是什么
+简单定义：能持有作用域变量的匿名函数
+匿名函数就是没有名称的函数，C 语言的标准不允许存在这样的函数，而通过 Block，源代码中就可以使用匿名函数了。
+能持有作用域变量就是指 Block 能够获得其所在作用域的变量。其中其所在作用域的变量就包括：局部变量（自动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Block">
+<meta property="og:url" content="http://yoursite.com/2016/06/15/Block/index.html">
+<meta property="og:site_name" content="coder-gwb">
+<meta property="og:description" content="block在iOS编程中有着非常重要的作用，目前对block的理解只存在于表面的应用上，希望以后不断补充这篇介绍。
+
+block是什么
+简单定义：能持有作用域变量的匿名函数
+匿名函数就是没有名称的函数，C 语言的标准不允许存在这样的函数，而通过 Block，源代码中就可以使用匿名函数了。
+能持有作用域变量就是指 Block 能够获得其所在作用域的变量。其中其所在作用域的变量就包括：局部变量（自动">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/bc254b75jw1f4vvaa9wcij20fg06cjsr.jpg">
+<meta property="og:updated_time" content="2016-06-15T06:36:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Block">
+<meta name="twitter:description" content="block在iOS编程中有着非常重要的作用，目前对block的理解只存在于表面的应用上，希望以后不断补充这篇介绍。
+
+block是什么
+简单定义：能持有作用域变量的匿名函数
+匿名函数就是没有名称的函数，C 语言的标准不允许存在这样的函数，而通过 Block，源代码中就可以使用匿名函数了。
+能持有作用域变量就是指 Block 能够获得其所在作用域的变量。其中其所在作用域的变量就包括：局部变量（自动">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw1024/bc254b75jw1f4vvaa9wcij20fg06cjsr.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/15/Block/"/>
+
+  <title> Block | coder-gwb </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">coder-gwb</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Block
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-06-15T11:59:08+08:00" content="2016-06-15">
+              2016-06-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>block在iOS编程中有着非常重要的作用，目前对block的理解只存在于表面的应用上，希望以后不断补充这篇介绍。</p>
+</blockquote>
+<h3 id="block是什么"><a href="#block是什么" class="headerlink" title="block是什么"></a>block是什么</h3><ul>
+<li>简单定义：能持有作用域变量的匿名函数</li>
+<li>匿名函数就是没有名称的函数，C 语言的标准不允许存在这样的函数，而通过 Block，源代码中就可以使用匿名函数了。</li>
+<li>能持有作用域变量就是指 Block 能够获得其所在作用域的变量。其中其所在作用域的变量就包括：局部变量（自动变量）、函数的参数、静态局部变量、静态全局变量、全局变量。</li>
+<li>block的作用：用来保存某一段代码。可以在恰当的时间取出来调用。功能点类似于函数和方法，是iOS中一种比较特殊的数据类型</li>
+<li>Block 能够让我们创建明显的代码片段，并且可以像参数那样传递给方法或函数。在 Objective-C 中</li>
+<li>Block 就像对象一样，能够被添加到集合中（比如：NSArray、NSDictionary）。Block 能够获得其所在作用域的变量</li>
+</ul>
+<h3 id="Block-语法形式"><a href="#Block-语法形式" class="headerlink" title="Block 语法形式"></a>Block 语法形式</h3><p>Block 的语法遵循如下形式：<br>^ 返回值类型 参数列表 表达式</p>
+<p>一些示例：<br><img src="http://ww1.sinaimg.cn/mw1024/bc254b75jw1f4vvaa9wcij20fg06cjsr.jpg" alt=""></p>
+<p>^(传入参数列){行为主体};</p>
+<p>^(int a){return a*a;}; </p>
+<p>int result = ^(int a){return a*a;};<br>NSLog(@”%d”, result);</p>
+<p>// 一个最简单的 block：<br>^{<br>    NSLog(@”This is a block”);<br>}<br>// 不省略的 block：<br>^void (void) {<br>    NSLog(@”This is a block”);<br>}<br>// 普通的 block：<br>^int (int a, int b) {<br>    NSLog(@”a is %d, b is %d”, a, b);<br>    return a + b;<br>}</p>
+<h3 id="一些简单的使用"><a href="#一些简单的使用" class="headerlink" title="一些简单的使用"></a>一些简单的使用</h3><ul>
+<li>最简单的 Block</li>
+</ul>
+<p>声明和定义一个不返回任何值，不接受任何参数的 Block：</p>
+<p>// 完整的写法：<br>//// 声明<br>void (^simpleBlock)(void);<br>//// 定义<br>simpleBlock = ^{<br>    NSLog(@”This is a block”);<br>};<br>//// 声明、定义一起<br>void (^simpleBlock)(void) = ^{<br>    NSLog(@”This is a block”);<br>};<br>// 调用 block<br>simpleBlock();</p>
+<ul>
+<li>带参数和返回值的 Block</li>
+</ul>
+<p>下面的 Block，接受两个 double 参数，返回一个 double 值：</p>
+<p>// 声明<br>double (^multiplyTwoValues)(double, double);<br>// 定义<br>double (^multiplyTwoValues)(double, double) =<br>                          ^(double firstValue, double secondValue) {<br>                              return firstValue * secondValue;<br>                          };<br>// 调用<br>double result = multiplyTwoValues(2,4);<br>NSLog(@”The result is %f”, result);</p>
+<ul>
+<li>Block 作为参数时的缩写</li>
+</ul>
+<p>Block 作为参数时的缩写如 Block 语法规则所约定那样。</p>
+<p>// Block 没有参数，则 <code>()</code> 可以省略：<br>[UIView animateViewDuration:5.0 animation:^() { // 这个 block 没有参数，这里的 () 就可以省略。<br>    view.opacity = 0.5;<br>}];<br>// 如果 Block 中返回值的类型根据 return 后的内容能明显推出，那么可以省略：<br>NSSet<em> mySet = …;<br>NSSet</em> matches = [mySet objectsPassingTest:^BOOL(id obj, …) { // 根据return语句，这个block的返回值明显是BOOL，所以这里可以省略BOOL。<br>    return [obj isKindOfClass:[UIView class]]; // 返回值是 BOOL，很明显。<br>}];</p>
+<ul>
+<li>把 Block 传递给方法或函数</li>
+</ul>
+<p>// 调用带 block 参数的方法：</p>
+<ul>
+<li><p>(IBAction)fetchRemoteInformation:(id)sender {<br>  [self showProgressIndicator];</p>
+<p>  XYZWebTask *task = …</p>
+<p>  [task beginTaskWithCallbackBlock:^{</p>
+<pre><code>[self hideProgressIndicator];
+</code></pre><p>  }];<br>}<br>// 声明带 block 参数的方法：</p>
+</li>
+<li>(void)beginTaskWithCallbackBlock:(void (^)(void))callbackBlock;<br>// 方法的具体实现：</li>
+<li>(void)beginTaskWithCallbackBlock:(void (^)(void))callbackBlock {<br>  …<br>  callbackBlock();<br>}<br>苹果的建议是在一个方法中最好只使用一个 block 变量，并且如果这个方法如果还带有其他非 block 变量，那么 block 变量应该放在最后一个。</li>
+</ul>
+<ul>
+<li>使用 typedef 来简化 Block 定义</li>
+</ul>
+<p>上面的 Block 类型的变量在使用时，记述方式会一眼看上去有点不够简洁，这时候我们也可以用 typedef 来解决这个问题。</p>
+<p>// typedef 一个 block<br>typedef void (^XYZSimpleBlock)(void);<br>// 使用 1<br>XYZSimpleBlock anotherBlock = ^{<br>    …<br>};<br>// 使用 2</p>
+<ul>
+<li>(void)beginFetchWithCallbackBlock:(XYZSimpleBlock)callbackBlock {<br>  …<br>  callbackBlock();<br>}<br>来看一个用 typedef 简化复杂 Block 定义的例子，下面的定义的名为 complexBlock 的变量是一个 block，这个 block 接受一个 block 作为参数，并且返回一个 block：</li>
+</ul>
+<p>// 简化前：<br>void (^(^complexBlock)(void (^)(void)))(void) = ^ (void (^aBlock)(void)) {<br>    …<br>    return ^{<br>        …<br>    };<br>};<br>// 使用上面 typedef 的 XYZSimpleBlock 简化后：<br>XYZSimpleBlock (^betterBlock)(XYZSimpleBlock) = ^ (XYZSimpleBlock aBlock) {<br>    …<br>    return ^{<br>        …<br>    };<br>};</p>
+<ul>
+<li>定义属性来持有 Block</li>
+</ul>
+<p>使用 copy，因为 Block 要持有它原本所在作用域的其他外面的变量：</p>
+<p>@interface XYZObject : NSObject<br>@property (copy) void (^blockProperty)(void);<br>@end<br>// setter 方法和调用<br>self.blockProperty = ^{<br>    …<br>};<br>self.blockProperty();<br>// 使用 typedef 简化<br>typedef void (^XYZSimpleBlock)(void);</p>
+<p>@interface XYZObject : NSObject<br>@property (copy) XYZSimpleBlock blockProperty;<br>@end</p>
+<h3 id="block的使用场景"><a href="#block的使用场景" class="headerlink" title="block的使用场景"></a>block的使用场景</h3><ul>
+<li>Block 简化枚举</li>
+</ul>
+<p>// NSArray 的一个方法，接受一个 block 作为参数，这个 block 会在该方法里每枚举一个对象时被调用一次：</p>
+<ul>
+<li>(void)enumerateObjectsUsingBlock:(void (^)(id obj, NSUInteger idx, BOOL <em>stop))block;<br>// 这个 block 接受三个参数，前两个是当前的对象和其 index，后面的 BOOL 值可以用来控制什么时候停止该枚举。<br>NSArray </em>array = …<br>[array enumerateObjectsUsingBlock:^ (id obj, NSUInteger idx, BOOL <em>stop) {<br>  NSLog(@”Object at index %lu is %@”, idx, obj);<br>}];<br>[array enumerateObjectsUsingBlock:^ (id obj, NSUInteger idx, BOOL </em>stop) {<br>  if (…) {<pre><code>*stop = YES;
+</code></pre>  }<br>}];</li>
+</ul>
+<ul>
+<li>Block 简化并发调用</li>
+</ul>
+<p>Block 和 Operation Queue 一起用</p>
+<p>NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{<br>    …<br>}];</p>
+<ul>
+<li>Block 和 GCD 一起用</li>
+</ul>
+<p>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);<br>dispatch_async(queue, ^{<br>    NSLog(@”Block for asynchronous execution”);<br>});</p>
+<p>GCD主要使用block来代替委托模式,使程序变得简洁,同时运行效率也得到提高.<br>   static int clickNum = 0;<br>   self.Mylabel = [[UILabel alloc]init];<br>   while (clickNum &lt;20) {<br>   dispatch_async(dispatch_get_main_queue(), ^{<br>   self.Mylabel.text = [NSString stringWithFormat:@”%d”,clickNum++];//UI的绘制必须在主线程中<br>   });<br>   [NSThread sleepForTimeInterval:1];<br>     }</p>
+<p>cocoaTouch框架下动画效果的Block的调用<br>[UIView transitionWithView:self.view<br>                          duration:0.2<br>                           options:UIViewAnimationOptionTransitionFlipFromLeft<br>                        animations:^{ [self.view addSubview:yellowView.view]; }<br>                        completion:NULL];</p>
+<ul>
+<li>Block 的使用场景小结</li>
+</ul>
+<p>Enumeration (像我们上面看到的 NSArray 的枚举接口)<br>View Animations (animations)<br>Sorting (在排序时在 Block 中实现比较逻辑)<br>Notification (当某些事件被触发时，执行对应的 Block)<br>Error handlers (作为错误事件的 Handler)<br>Completion handlers (作为某个任务完成时的 Handler)<br>Multithreading (在 Grand Central Dispatch (GCD) API 中使用)</p>
+<h3 id="一些补充"><a href="#一些补充" class="headerlink" title="一些补充"></a>一些补充</h3><ul>
+<li>函数内部使用<br>在函数内部定义并实现的block有点类似于java的匿名内部类，这种block也只能作用于当前函数。<br>示例：<br>-(void)testBlock{<br>  void (^blockTest)(int) = ^(int num){<pre><code>NSLog(@&quot;num:%d&quot;,num);
+</code></pre>  };<br>  blockTest(2);<br>}</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/15/iOS中的MVC概念/" rel="next" title="iOS中的MVC概念">
+                <i class="fa fa-chevron-left"></i> iOS中的MVC概念
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/15/多线程基础/" rel="prev" title="多线程基础">
+                多线程基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+          <p class="site-description motion-element" itemprop="description">coder-gwb</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#block是什么"><span class="nav-number">1.</span> <span class="nav-text">block是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Block-语法形式"><span class="nav-number">2.</span> <span class="nav-text">Block 语法形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些简单的使用"><span class="nav-number">3.</span> <span class="nav-text">一些简单的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#block的使用场景"><span class="nav-number">4.</span> <span class="nav-text">block的使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些补充"><span class="nav-number">5.</span> <span class="nav-text">一些补充</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,635 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="coder-gwb" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="本文介绍iOS应用程序的生命周期
+
+
+
+启动过程上面两张图都描了一个应用的生命周期。首先是打开程序执行main函数。
+
+main函数做了什么呢？int main(int argc, char * argv[]) {  @autoreleasepool {
+return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS应用程序的生命周期">
+<meta property="og:url" content="http://yoursite.com/2016/06/15/iOS应用程序的生命周期/index.html">
+<meta property="og:site_name" content="coder-gwb">
+<meta property="og:description" content="本文介绍iOS应用程序的生命周期
+
+
+
+启动过程上面两张图都描了一个应用的生命周期。首先是打开程序执行main函数。
+
+main函数做了什么呢？int main(int argc, char * argv[]) {  @autoreleasepool {
+return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegat">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw1024/bc254b75jw1f4vo55m8hkj20yx14ktez.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw1024/bc254b75jw1f4vo77jo3yj20ft07xacb.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/bc254b75jw1f4vo551h0sj20ed09l75c.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw1024/bc254b75jw1f4vo55b1w3j20h60bvwfp.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw1024/bc254b75jw1f4vop8bk54j20c30agaaj.jpg">
+<meta property="og:updated_time" content="2016-06-15T02:48:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS应用程序的生命周期">
+<meta name="twitter:description" content="本文介绍iOS应用程序的生命周期
+
+
+
+启动过程上面两张图都描了一个应用的生命周期。首先是打开程序执行main函数。
+
+main函数做了什么呢？int main(int argc, char * argv[]) {  @autoreleasepool {
+return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegat">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/mw1024/bc254b75jw1f4vo55m8hkj20yx14ktez.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/15/iOS应用程序的生命周期/"/>
+
+  <title> iOS应用程序的生命周期 | coder-gwb </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">coder-gwb</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iOS应用程序的生命周期
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-06-15T09:34:12+08:00" content="2016-06-15">
+              2016-06-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>本文介绍iOS应用程序的生命周期</p>
+</blockquote>
+<p><img src="http://ww4.sinaimg.cn/mw1024/bc254b75jw1f4vo55m8hkj20yx14ktez.jpg" alt=""></p>
+<p><img src="http://ww2.sinaimg.cn/mw1024/bc254b75jw1f4vo77jo3yj20ft07xacb.jpg" alt=""></p>
+<h3 id="启动过程"><a href="#启动过程" class="headerlink" title="启动过程"></a>启动过程</h3><p>上面两张图都描了一个应用的生命周期。<br>首先是打开程序执行main函数。</p>
+<ul>
+<li><p>main函数做了什么呢？<br>int main(int argc, char * argv[]) {<br>  @autoreleasepool {</p>
+<pre><code>return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+</code></pre><p>  }<br>}</p>
+</li>
+<li><p>原型函数如下：<br>UIKIT_EXTERN int UIApplicationMain(int argc, char <em>argv[], NSString </em>principalClassName, NSString *delegateClassName);</p>
+</li>
+</ul>
+<p>前两个参数：argc和argv：是ISO C标准的main函数的参数，直接传递给UIApplicationMain进行相关处理。参数包含应用程序何时从系统启动等信息。这些参数是由UIKit的基础设施解析，否则可以忽略不计。 </p>
+<p>后两个参数：分别表示程序的主要类(principal class)和代理类(delegate class)。如果主要类(principal class)为nil，将从Info.plist中获取，如果Info.plist中不存在对应的key，则默认为UIApplication；如果代理类(delegate class)将在新建工程时创建。代理类关乎着应用程序的生命周期。</p>
+<p>Main<br>↓<br>创建Uiapplicaiton 对象（如果为nil,则用UIApplication类作为默认值），并创建一个delegate（NSStringFromClass([AppDelegate class])，一般新建项目时候会自动生成，当然也可以更改别的类为代理对象）<br>对象，并将该对象赋值给UIApplication对象中的delegate属性<br>↓<br>开启事件循环   Main Runloop   (可以暂时理解为一个死循环，按照顺序进行事件处理)<br>↓<br>监听（用户交互时产生的事件，由UIApplication对象来分发给control objects对应的target objects来处理并且管理整个事件循环，而一些关于app运行时重要事件委托给app delegate来处理。）</p>
+<p>以上就是启动过程。</p>
+<h3 id="启动过后的处理过程"><a href="#启动过后的处理过程" class="headerlink" title="启动过后的处理过程"></a>启动过后的处理过程</h3><p><img src="http://ww1.sinaimg.cn/mw1024/bc254b75jw1f4vo551h0sj20ed09l75c.jpg" alt=""><br>UIApplication对象<br>交互时产生的事件交由UIApplication对象来分发给control objects(UIControl)对应的target objects来处理并且管理整个事件循环，而一些关于app运行时重要事件委托给app delegate来处理。</p>
+<p>App delegate对象<br>App delegate对象遵循UIApplicationDelegate协议，响应app运行时重要事件(app启动、app内存不足、app终止、切换到另一个app、切回app)，主要用于app在启动时初始化一些重要数据结构；例如，初始化UIWindow，设置一些属性，为window添加rootViewController。</p>
+<p>View controller对象<br>View Controller有一个view属性是view层次结构中的根view，你可以添加子view来构建复杂的view；controller有一些viewDidLoad、viewWillAppear等方法来管理view的生命周期；由于它继承UIResponder，所有还会响应和处理用户事件。</p>
+<p>Documents和data model对象<br>data model对象主要用来存储数据。例如，饿了么app在搜索切换地址后，有历史记录搜索地址历史，当app下次启动时，读取和显示搜索地址历史。</p>
+<p>document对象(继承UIDocument)用来管理一些或所有的data model对象。document对象并不是必须的，但提供一种方便的方式来分组属于单个文件或多个文件的数据。</p>
+<p>UIWindow对象<br>UIWindow对象位于view层次结构中的最顶层，它充当一个基本容器而不显示内容，如果想显示内容，添加一个content view到window。<br>它也是继承UIResponder，所以它也是会响应和处理用户事件。</p>
+<p>View、control、layer对象<br>View对象可以通过addSubview和removeFromSuperview 等方法管理view的层次结构，使用layoutSubviews、layoutIfNeeded和setNeedsLayout等方法布局view的层次结构，当你发现系统提供view已经满足不了你想要的外观需求时，可以重写drawRect方法或通过layer属性来构造复杂的图形外观和动画。还有一点，UIView也是继承UIResponder，所以也能够处理用户事件。</p>
+<p>Control对象通常就是处理特定类型用户交互的View，常用的有button、switch、text field等。<br>除了使用View和Control来构建view层次结构来影响app外观之外，还可以使用Core Animation框架的Layer对象来渲染view外观和构建复杂的动画。</p>
+<p>apppdelegate中的APP运行重要事件：<br>application:willFinishLaunchingWithOptions: - 这个方法是你在启动时的第一次机会来执行代码<br>application:didFinishLaunchingWithOptions: - 这个方法允许你在显示app给用户之前执行最后的初始化操作<br>applicationDidBecomeActive: - app已经切换到active状态后需要执行的操作<br>applicationWillResignActive: - app将要从前台切换到后台时需要执行的操作<br>applicationDidEnterBackground: - app已经进入后台后需要执行的操作<br>applicationWillEnterForeground: - app将要从后台切换到前台需要执行的操作，但app还不是active状态<br>applicationWillTerminate: - app将要结束时需要执行的操作</p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/bc254b75jw1f4vo55b1w3j20h60bvwfp.jpg" alt=""><br>相关的操作事件被系统生成并通过UIKit的指定端口分发。事件在内部排成队列，一个个的分发到Main run loop 去做处理。UIApplication对象是第一个接收到时间的对象，它决定事件如何被处理。触摸事件分发到主窗口，窗口再分发到对应出发触摸事件的View。其他的事件通过其他途径分发给其他对象变量做处理。</p>
+<p>下面是appdeleate和viewcontroller的关系</p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/bc254b75jw1f4vop8bk54j20c30agaaj.jpg" alt=""></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/12/UIView简介和常用方法/" rel="next" title="UIView简介和常用方法">
+                <i class="fa fa-chevron-left"></i> UIView简介和常用方法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/15/iOS中的MVC概念/" rel="prev" title="iOS中的MVC概念">
+                iOS中的MVC概念 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+          <p class="site-description motion-element" itemprop="description">coder-gwb</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动过程"><span class="nav-number">1.</span> <span class="nav-text">启动过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动过后的处理过程"><span class="nav-number">2.</span> <span class="nav-text">启动过后的处理过程</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
