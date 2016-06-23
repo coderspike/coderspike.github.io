@@ -86,22 +86,22 @@
 
 
 
-<meta name="description" content="在编写iOS程序时，有一些通用的代码，在这里做一个收录，都是转自各路大神的博客，不停维护中～
-
-项目中的controller太多，不知道具体运行的是哪一个。12345建立UIViewController的Category-(void)viewDidAppear:(BOOL)animated &amp;#123;    NSLog(@&amp;quot;===%@===&amp;quot;,NSStringFromCla">
+<meta name="description" content="hljs.initHighlightingOnLoad();title: iOS编程常用方法date: 2016-05-25 14:18:47tags:
+categories: 编程 
+在编写iOS程序时，有一些通用的代码，在这里做一个收录，都是转自各路大神的博客，不停维护中～">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS编程常用技巧&一些知识点">
+<meta property="og:title" content="精于心 简于形">
 <meta property="og:url" content="http://yoursite.com/2016/05/25/iOS编程常用技巧/index.html">
 <meta property="og:site_name" content="精于心 简于形">
-<meta property="og:description" content="在编写iOS程序时，有一些通用的代码，在这里做一个收录，都是转自各路大神的博客，不停维护中～
-
-项目中的controller太多，不知道具体运行的是哪一个。12345建立UIViewController的Category-(void)viewDidAppear:(BOOL)animated &amp;#123;    NSLog(@&amp;quot;===%@===&amp;quot;,NSStringFromCla">
-<meta property="og:updated_time" content="2016-06-23T09:13:09.000Z">
+<meta property="og:description" content="hljs.initHighlightingOnLoad();title: iOS编程常用方法date: 2016-05-25 14:18:47tags:
+categories: 编程 
+在编写iOS程序时，有一些通用的代码，在这里做一个收录，都是转自各路大神的博客，不停维护中～">
+<meta property="og:updated_time" content="2016-06-23T09:38:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS编程常用技巧&一些知识点">
-<meta name="twitter:description" content="在编写iOS程序时，有一些通用的代码，在这里做一个收录，都是转自各路大神的博客，不停维护中～
-
-项目中的controller太多，不知道具体运行的是哪一个。12345建立UIViewController的Category-(void)viewDidAppear:(BOOL)animated &amp;#123;    NSLog(@&amp;quot;===%@===&amp;quot;,NSStringFromCla">
+<meta name="twitter:title" content="精于心 简于形">
+<meta name="twitter:description" content="hljs.initHighlightingOnLoad();title: iOS编程常用方法date: 2016-05-25 14:18:47tags:
+categories: 编程 
+在编写iOS程序时，有一些通用的代码，在这里做一个收录，都是转自各路大神的博客，不停维护中～">
 
 
 
@@ -124,7 +124,7 @@
 
   <link rel="canonical" href="http://yoursite.com/2016/05/25/iOS编程常用技巧/"/>
 
-  <title> iOS编程常用技巧&一些知识点 | 精于心 简于形 </title>
+  <title>  | 精于心 简于形 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -264,7 +264,7 @@
             
             
               
-                iOS编程常用技巧&一些知识点
+                
               
             
           </h1>
@@ -281,25 +281,6 @@
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
@@ -330,9 +311,13 @@
       
 
       
-        <blockquote>
+        <p><link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css"></p>
+<p><script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script></p>
+<h2 id="hljs-initHighlightingOnLoad"><a href="#hljs-initHighlightingOnLoad" class="headerlink" title="hljs.initHighlightingOnLoad();"></a><script>hljs.initHighlightingOnLoad();</script></h2><p>title: iOS编程常用方法<br>date: 2016-05-25 14:18:47<br>tags:</p>
+<h2 id="categories-编程"><a href="#categories-编程" class="headerlink" title="categories: 编程 "></a>categories: 编程 </h2><blockquote>
 <p>在编写iOS程序时，有一些通用的代码，在这里做一个收录，都是转自各路大神的博客，不停维护中～</p>
 </blockquote>
+<a id="more"></a>
 <h5 id="项目中的controller太多，不知道具体运行的是哪一个。"><a href="#项目中的controller太多，不知道具体运行的是哪一个。" class="headerlink" title="项目中的controller太多，不知道具体运行的是哪一个。"></a>项目中的controller太多，不知道具体运行的是哪一个。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">建立UIViewController的Category</span><br><span class="line">-(void)viewDidAppear:(BOOL)animated &#123;</span><br><span class="line">    NSLog(@&quot;===%@===&quot;,NSStringFromClass([self class]));</span><br><span class="line">&#125;</span><br><span class="line">这样在运行时就可以知道运行的是哪一个了。</span><br></pre></td></tr></table></figure>
 <h6 id="如何将状态栏中的字体颜色变白"><a href="#如何将状态栏中的字体颜色变白" class="headerlink" title="如何将状态栏中的字体颜色变白"></a>如何将状态栏中的字体颜色变白</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 、将info.plist中的 View-based status bar appearance  设为 NO</span><br><span class="line">2、在对应的viewcontrolle.m里添加</span><br><span class="line"> //设置状态栏颜色    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];</span><br><span class="line">就设置成功了。</span><br></pre></td></tr></table></figure>
 <h5 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">也称为延迟加载，即在需要的时候才加载（效率低，占用内存小）。所谓懒加载，写的是其get方法.</span><br><span class="line">- (NSMutableArray *)fakeData</span><br><span class="line">&#123;</span><br><span class="line">      if (!_fakeData)//判断是否已经有了，若没有，则进行实例化</span><br><span class="line">    &#123;</span><br><span class="line">        self.fakeData   = [NSMutableArray array];</span><br><span class="line">    &#125;</span><br><span class="line">    return _fakeData;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">优点：</span><br><span class="line">防止对象被提前创建（内存优化，如加载plist文件等耗内存的操作）</span><br><span class="line">防止对象重复创建 （永远只加载一次）</span><br><span class="line">防止对象使用时,还没被创建</span><br><span class="line">可以在懒加载方法里面,进行初始化操作</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">懒加载代码示例</span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">[super viewDidLoad];&#125;</span><br><span class="line">- (NSArray *)shopData&#123;    if (!_shopData) &#123;        _shopData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@&quot;shop&quot; ofType:@&quot;plist&quot;]];    &#125;    return _shopData;&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
@@ -417,7 +402,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/05/25/iOS编程常用技巧/"
-           data-title="iOS编程常用技巧&一些知识点" data-url="http://yoursite.com/2016/05/25/iOS编程常用技巧/">
+           data-title="" data-url="http://yoursite.com/2016/05/25/iOS编程常用技巧/">
       </div>
     
   </div>
@@ -519,7 +504,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#项目中的controller太多，不知道具体运行的是哪一个。"><span class="nav-number">1.</span> <span class="nav-text">项目中的controller太多，不知道具体运行的是哪一个。</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#如何将状态栏中的字体颜色变白"><span class="nav-number">1.1.</span> <span class="nav-text">如何将状态栏中的字体颜色变白</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#懒加载"><span class="nav-number">2.</span> <span class="nav-text">懒加载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#获取状态栏和导航栏高度、宽度信息"><span class="nav-number">3.</span> <span class="nav-text">获取状态栏和导航栏高度、宽度信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#检测是否为手机号"><span class="nav-number">4.</span> <span class="nav-text">检测是否为手机号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#获取当前年月日及星期几"><span class="nav-number">5.</span> <span class="nav-text">获取当前年月日及星期几</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#抽取controller"><span class="nav-number">6.</span> <span class="nav-text">抽取controller</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#返回按钮只留下白色箭头"><span class="nav-number">7.</span> <span class="nav-text">返回按钮只留下白色箭头</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#获取当前时间"><span class="nav-number">8.</span> <span class="nav-text">获取当前时间</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断一个类是否存在"><span class="nav-number">9.</span> <span class="nav-text">判断一个类是否存在</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#退出应用"><span class="nav-number">10.</span> <span class="nav-text">退出应用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#截屏"><span class="nav-number">11.</span> <span class="nav-text">截屏</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用中的数据存储"><span class="nav-number">12.</span> <span class="nav-text">应用中的数据存储</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断邮箱格式"><span class="nav-number">13.</span> <span class="nav-text">判断邮箱格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构造方法"><span class="nav-number">14.</span> <span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断程序是否为第一次启动"><span class="nav-number">15.</span> <span class="nav-text">判断程序是否为第一次启动</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#处理标签字符串中的空格-换行-t-制表符-等"><span class="nav-number">16.</span> <span class="nav-text">处理标签字符串中的空格,换行,/t(制表符)等</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#UIImage与字符串互转"><span class="nav-number">17.</span> <span class="nav-text">UIImage与字符串互转</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#知识点"><span class="nav-number">18.</span> <span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#时间处理"><span class="nav-number">19.</span> <span class="nav-text">时间处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#获取设备版本"><span class="nav-number">20.</span> <span class="nav-text">获取设备版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码风格"><span class="nav-number">21.</span> <span class="nav-text">代码风格</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面试题"><span class="nav-number">22.</span> <span class="nav-text">面试题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hljs-initHighlightingOnLoad"><span class="nav-number">1.</span> <span class="nav-text">hljs.initHighlightingOnLoad();</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#categories-编程"><span class="nav-number">2.</span> <span class="nav-text">categories: 编程 </span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#项目中的controller太多，不知道具体运行的是哪一个。"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">项目中的controller太多，不知道具体运行的是哪一个。</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#如何将状态栏中的字体颜色变白"><span class="nav-number">2.0.0.1.1.</span> <span class="nav-text">如何将状态栏中的字体颜色变白</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#懒加载"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">懒加载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#获取状态栏和导航栏高度、宽度信息"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">获取状态栏和导航栏高度、宽度信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#检测是否为手机号"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">检测是否为手机号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#获取当前年月日及星期几"><span class="nav-number">2.0.0.5.</span> <span class="nav-text">获取当前年月日及星期几</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#抽取controller"><span class="nav-number">2.0.0.6.</span> <span class="nav-text">抽取controller</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#返回按钮只留下白色箭头"><span class="nav-number">2.0.0.7.</span> <span class="nav-text">返回按钮只留下白色箭头</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#获取当前时间"><span class="nav-number">2.0.0.8.</span> <span class="nav-text">获取当前时间</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断一个类是否存在"><span class="nav-number">2.0.0.9.</span> <span class="nav-text">判断一个类是否存在</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#退出应用"><span class="nav-number">2.0.0.10.</span> <span class="nav-text">退出应用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#截屏"><span class="nav-number">2.0.0.11.</span> <span class="nav-text">截屏</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用中的数据存储"><span class="nav-number">2.0.0.12.</span> <span class="nav-text">应用中的数据存储</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断邮箱格式"><span class="nav-number">2.0.0.13.</span> <span class="nav-text">判断邮箱格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构造方法"><span class="nav-number">2.0.0.14.</span> <span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断程序是否为第一次启动"><span class="nav-number">2.0.0.15.</span> <span class="nav-text">判断程序是否为第一次启动</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#处理标签字符串中的空格-换行-t-制表符-等"><span class="nav-number">2.0.0.16.</span> <span class="nav-text">处理标签字符串中的空格,换行,/t(制表符)等</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#UIImage与字符串互转"><span class="nav-number">2.0.0.17.</span> <span class="nav-text">UIImage与字符串互转</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#知识点"><span class="nav-number">2.0.0.18.</span> <span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#时间处理"><span class="nav-number">2.0.0.19.</span> <span class="nav-text">时间处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#获取设备版本"><span class="nav-number">2.0.0.20.</span> <span class="nav-text">获取设备版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码风格"><span class="nav-number">2.0.0.21.</span> <span class="nav-text">代码风格</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面试题"><span class="nav-number">2.0.0.22.</span> <span class="nav-text">面试题</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-23T08:58:25.000Z</updated>
+  <updated>2016-06-23T09:01:05.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,32 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>骑行</title>
-    <link href="http://yoursite.com/2016/06/23/%E9%AA%91%E8%A1%8C/"/>
-    <id>http://yoursite.com/2016/06/23/骑行/</id>
-    <published>2016-06-23T02:00:45.000Z</published>
-    <updated>2016-06-23T08:58:25.000Z</updated>
-    
-    <content type="html">&lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw1024/bc254b75jw1f559ehq6z3j21kw23uqut.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/mw1024/bc254b75jw1f559em7dhmj21kw23u7wh.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559end4p3j20qo0zkaph.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559ev3xehj21kw23u4qp.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/mw1024/bc254b75jw1f559evsa81j20qo0zkai1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;
-    
-    </summary>
-    
-      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>一些有道理的话</title>
@@ -63,6 +37,32 @@
     </summary>
     
       <category term="读书" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>骑行</title>
+    <link href="http://yoursite.com/2016/06/23/%E9%AA%91%E8%A1%8C/"/>
+    <id>http://yoursite.com/2016/06/23/骑行/</id>
+    <published>2016-06-23T02:00:45.000Z</published>
+    <updated>2016-06-23T08:58:25.000Z</updated>
+    
+    <content type="html">&lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw1024/bc254b75jw1f559ehq6z3j21kw23uqut.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/mw1024/bc254b75jw1f559em7dhmj21kw23u7wh.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559end4p3j20qo0zkaph.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559ev3xehj21kw23u4qp.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/mw1024/bc254b75jw1f559evsa81j20qo0zkai1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
   </entry>
@@ -744,15 +744,19 @@ aView.layer.mask = maskLayer;
   </entry>
   
   <entry>
-    <title>iOS编程常用技巧&amp;一些知识点</title>
+    <title></title>
     <link href="http://yoursite.com/2016/05/25/iOS%E7%BC%96%E7%A8%8B%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     <id>http://yoursite.com/2016/05/25/iOS编程常用技巧/</id>
     <published>2016-05-25T06:18:47.000Z</published>
-    <updated>2016-06-23T09:13:09.000Z</updated>
+    <updated>2016-06-23T09:38:35.000Z</updated>
     
-    <content type="html">&lt;blockquote&gt;
+    <content type="html">&lt;p&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;script src=&quot;http://yandex.st/highlightjs/8.0/highlight.min.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;h2 id=&quot;hljs-initHighlightingOnLoad&quot;&gt;&lt;a href=&quot;#hljs-initHighlightingOnLoad&quot; class=&quot;headerlink&quot; title=&quot;hljs.initHighlightingOnLoad();&quot;&gt;&lt;/a&gt;&lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;&lt;/h2&gt;&lt;p&gt;title: iOS编程常用方法&lt;br&gt;date: 2016-05-25 14:18:47&lt;br&gt;tags:&lt;/p&gt;
+&lt;h2 id=&quot;categories-编程&quot;&gt;&lt;a href=&quot;#categories-编程&quot; class=&quot;headerlink&quot; title=&quot;categories: 编程 &quot;&gt;&lt;/a&gt;categories: 编程 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;在编写iOS程序时，有一些通用的代码，在这里做一个收录，都是转自各路大神的博客，不停维护中～&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h5 id=&quot;项目中的controller太多，不知道具体运行的是哪一个。&quot;&gt;&lt;a href=&quot;#项目中的controller太多，不知道具体运行的是哪一个。&quot; class=&quot;headerlink&quot; title=&quot;项目中的controller太多，不知道具体运行的是哪一个。&quot;&gt;&lt;/a&gt;项目中的controller太多，不知道具体运行的是哪一个。&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;建立UIViewController的Category&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-(void)viewDidAppear:(BOOL)animated &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    NSLog(@&amp;quot;===%@===&amp;quot;,NSStringFromClass([self class]));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;这样在运行时就可以知道运行的是哪一个了。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h6 id=&quot;如何将状态栏中的字体颜色变白&quot;&gt;&lt;a href=&quot;#如何将状态栏中的字体颜色变白&quot; class=&quot;headerlink&quot; title=&quot;如何将状态栏中的字体颜色变白&quot;&gt;&lt;/a&gt;如何将状态栏中的字体颜色变白&lt;/h6&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1 、将info.plist中的 View-based status bar appearance  设为 NO&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2、在对应的viewcontrolle.m里添加&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; //设置状态栏颜色    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;就设置成功了。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h5 id=&quot;懒加载&quot;&gt;&lt;a href=&quot;#懒加载&quot; class=&quot;headerlink&quot; title=&quot;懒加载&quot;&gt;&lt;/a&gt;懒加载&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;也称为延迟加载，即在需要的时候才加载（效率低，占用内存小）。所谓懒加载，写的是其get方法.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (NSMutableArray *)fakeData&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      if (!_fakeData)//判断是否已经有了，若没有，则进行实例化&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        self.fakeData   = [NSMutableArray array];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    return _fakeData;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;优点：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;防止对象被提前创建（内存优化，如加载plist文件等耗内存的操作）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;防止对象重复创建 （永远只加载一次）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;防止对象使用时,还没被创建&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;可以在懒加载方法里面,进行初始化操作&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;懒加载代码示例&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)viewDidLoad &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[super viewDidLoad];&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (NSArray *)shopData&amp;#123;    if (!_shopData) &amp;#123;        _shopData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@&amp;quot;shop&amp;quot; ofType:@&amp;quot;plist&amp;quot;]];    &amp;#125;    return _shopData;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@end&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -780,14 +784,14 @@ aView.layer.mask = maskLayer;
     
     <summary type="html">
     
-      &lt;blockquote&gt;
+      &lt;p&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;script src=&quot;http://yandex.st/highlightjs/8.0/highlight.min.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;h2 id=&quot;hljs-initHighlightingOnLoad&quot;&gt;&lt;a href=&quot;#hljs-initHighlightingOnLoad&quot; class=&quot;headerlink&quot; title=&quot;hljs.initHighlightingOnLoad();&quot;&gt;&lt;/a&gt;&lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;&lt;/h2&gt;&lt;p&gt;title: iOS编程常用方法&lt;br&gt;date: 2016-05-25 14:18:47&lt;br&gt;tags:&lt;/p&gt;
+&lt;h2 id=&quot;categories-编程&quot;&gt;&lt;a href=&quot;#categories-编程&quot; class=&quot;headerlink&quot; title=&quot;categories: 编程 &quot;&gt;&lt;/a&gt;categories: 编程 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;在编写iOS程序时，有一些通用的代码，在这里做一个收录，都是转自各路大神的博客，不停维护中～&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h5 id=&quot;项目中的controller太多，不知道具体运行的是哪一个。&quot;&gt;&lt;a href=&quot;#项目中的contr
     
     </summary>
-    
-      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
   </entry>
