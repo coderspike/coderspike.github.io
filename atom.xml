@@ -748,7 +748,7 @@ aView.layer.mask = maskLayer;
     <link href="http://yoursite.com/2016/05/25/iOS%E7%BC%96%E7%A8%8B%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     <id>http://yoursite.com/2016/05/25/iOS编程常用技巧/</id>
     <published>2016-05-25T06:18:47.000Z</published>
-    <updated>2016-06-07T06:46:07.000Z</updated>
+    <updated>2016-06-23T09:13:09.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;在编写iOS程序时，有一些通用的代码，在这里做一个收录，都是转自各路大神的博客，不停维护中～&lt;/p&gt;
