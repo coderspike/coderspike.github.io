@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>coder-gwb</title>
-  
+  <title>精于心简于形</title>
+  <subtitle>iOS Road</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
   <updated>2016-06-23T02:01:09.000Z</updated>
   <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>spike</name>
+    
+  </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
