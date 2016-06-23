@@ -95,7 +95,7 @@ Homebrew安装（Homebrew简称brew，是Mac OSX上的软件包管理工具，�
 安装node.js 
 
 
-1234brew install node使用以下命令验证是否安装成功node -vnpm -">
+brew install node使用以下命令验证是否安装成功node -vnpm -v">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac系统下hexo3.x&github搭建博客">
 <meta property="og:url" content="http://yoursite.com/2016/05/24/Mac下搭建hexo博客/index.html">
@@ -109,7 +109,7 @@ Homebrew安装（Homebrew简称brew，是Mac OSX上的软件包管理工具，�
 安装node.js 
 
 
-1234brew install node使用以下命令验证是否安装成功node -vnpm -">
+brew install node使用以下命令验证是否安装成功node -vnpm -v">
 <meta property="og:updated_time" content="2016-05-25T01:39:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac系统下hexo3.x&github搭建博客">
@@ -122,7 +122,7 @@ Homebrew安装（Homebrew简称brew，是Mac OSX上的软件包管理工具，�
 安装node.js 
 
 
-1234brew install node使用以下命令验证是否安装成功node -vnpm -">
+brew install node使用以下命令验证是否安装成功node -vnpm -v">
 
 
 
@@ -361,14 +361,14 @@ Homebrew安装（Homebrew简称brew，是Mac OSX上的软件包管理工具，�
 <li><p>安装node.js </p>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br><span class="line">使用以下命令验证是否安装成功</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install node</span><br><span class="line">使用以下命令验证是否安装成功</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
 <p>   3.Hexo安装<br>   npm install hexo -g </p>
 <hr>
 <h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><ul>
 <li>确定在git上创建完项目之后，执行如下命令<br>npm install hexo-deployer-git –save</li>
 <li>修改config.yml文件</li>
 </ul>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  type: git </span><br><span class="line">  repo: https://github.com/username/username.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  type: git </span><br><span class="line">  repo: https://github.com/username/username.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 <ul>
 <li>依次执行如下命令<br>1.hexo clean<br>2.hexo g<br>3.hexo d<br>如不报错，则部署成功，访问username.github.io即可。</li>
 </ul>
