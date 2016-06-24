@@ -86,22 +86,16 @@
 
 
 
-<meta name="description" content="收录几种常见设计模式的使用方法
-
-单例单例就是全局都只有一个对象存在，而且是在整个App运行过程中都存在。每个App都会有单例，比如UIApplication。而我们在做用户数据存储时，通常都会用单例存储，因为应用在所有操作中，经常要求先登录。单例模式的要点：一是某个类只能有一个实例；二是它必须自行创建这个实例；三是它必须自行向整个系统提供这个实例。下面这种写法是最常用的写法，这个是线程安全的。">
+<meta name="description" content="收录几种常见设计模式的使用方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS开发中的几种设计模式">
 <meta property="og:url" content="http://yoursite.com/2016/06/06/iOS开发中的几种设计模式/index.html">
 <meta property="og:site_name" content="精于心 简于形">
-<meta property="og:description" content="收录几种常见设计模式的使用方法
-
-单例单例就是全局都只有一个对象存在，而且是在整个App运行过程中都存在。每个App都会有单例，比如UIApplication。而我们在做用户数据存储时，通常都会用单例存储，因为应用在所有操作中，经常要求先登录。单例模式的要点：一是某个类只能有一个实例；二是它必须自行创建这个实例；三是它必须自行向整个系统提供这个实例。下面这种写法是最常用的写法，这个是线程安全的。">
-<meta property="og:updated_time" content="2016-06-15T03:24:03.000Z">
+<meta property="og:description" content="收录几种常见设计模式的使用方法">
+<meta property="og:updated_time" content="2016-06-24T02:07:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发中的几种设计模式">
-<meta name="twitter:description" content="收录几种常见设计模式的使用方法
-
-单例单例就是全局都只有一个对象存在，而且是在整个App运行过程中都存在。每个App都会有单例，比如UIApplication。而我们在做用户数据存储时，通常都会用单例存储，因为应用在所有操作中，经常要求先登录。单例模式的要点：一是某个类只能有一个实例；二是它必须自行创建这个实例；三是它必须自行向整个系统提供这个实例。下面这种写法是最常用的写法，这个是线程安全的。">
+<meta name="twitter:description" content="收录几种常见设计模式的使用方法">
 
 
 
@@ -333,6 +327,7 @@
         <blockquote>
 <p>收录几种常见设计模式的使用方法</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="单例"><a href="#单例" class="headerlink" title="单例"></a>单例</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">单例就是全局都只有一个对象存在，而且是在整个App运行过程中都存在。每个App都会有单例，比如UIApplication。而我们在做用户数据存储时，通常都会用单例存储，因为应用在所有操作中，经常要求先登录。</span><br><span class="line"></span><br><span class="line">单例模式的要点：</span><br><span class="line">一是某个类只能有一个实例；二是它必须自行创建这个实例；三是它必须自行向整个系统提供这个实例。</span><br><span class="line"></span><br><span class="line">下面这种写法是最常用的写法，这个是线程安全的。 </span><br><span class="line">dispach_once函数中的代码块只会被执行一次。+(SchoolManager *)sharedInstance  </span><br><span class="line">&#123;  </span><br><span class="line">    static SchoolManager *sharedManager;  </span><br><span class="line">      </span><br><span class="line">    static dispatch_once_t onceToken;  </span><br><span class="line">    dispatch_once(&amp;onceToken, ^&#123;  </span><br><span class="line">        sharedManager = [[SchoolManager alloc] init];  </span><br><span class="line">    &#125;);  </span><br><span class="line">      </span><br><span class="line">    return sharedManager;  </span><br><span class="line">&#125;  </span><br><span class="line">获取实例：SchoolManager *schoolManager = [SchoolManager sharedInstance];  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">===单例模式的实现：</span><br><span class="line">代码示例：</span><br><span class="line">MySingletonClass.h</span><br><span class="line"></span><br><span class="line">#import &lt;Foundation/Foundation.h&gt;</span><br><span class="line">@interface MySingletonClass : NSObject//单例方法</span><br><span class="line">+(MySingletonClass *)sharedInstance;</span><br><span class="line">@end</span><br><span class="line">MySingletonClass.m</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">#import &quot;MySingletonClass.h&quot;</span><br><span class="line">@implementation MySingletonClass</span><br><span class="line">//1、为单例对象实现一个静态实例，并初始化，然后设置成nil，static MySingletonClass *manager = nil;</span><br><span class="line">//2、实现一个实例构造方法检查上面声明的静态实例是否为nil，如果是则新建并返回一个本类的实例，+(MySingletonClass *)sharedInstance&#123;        @synchronized(self) &#123;        if(manager == nil) &#123;            manager = [[MySingletonClass  alloc] init]; //   assignment   not   done   here        &#125;    &#125;    return manager;&#125;</span><br><span class="line">//3、重写allocWithZone方法，用来保证其他人直接使用alloc和init试图获得一个新实力的时候不产生一个新实例，+(id)allocWithZone:(NSZone *)zone&#123;    @synchronized(self)&#123;                if (!manager) &#123;                        manager = [super allocWithZone:zone]; //确保使用同一块内存地址                        return manager;                    &#125;                return nil;    &#125;&#125;</span><br><span class="line">//4、适当实现copyWithZone，release和autorelease。- (id)init;&#123;    @synchronized(self) &#123;                if (self = [super init])&#123;                        return self;        &#125;                return nil;    &#125;&#125;</span><br><span class="line">//确保copy对象也是唯一- (id)copyWithZone:(NSZone *)zone;&#123;        return self;    &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="委托模式"><a href="#委托模式" class="headerlink" title="委托模式"></a>委托模式</h3><p>转载自 :<a href="http://www.samirchen.com/ios-delegate/" target="_blank" rel="external">这里</a></p>
 <ul>
@@ -445,7 +440,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -86,32 +86,17 @@
 
 
 
-<meta name="description" content="block在iOS编程中有着非常重要的作用，目前对block的理解只存在于表面的应用上，希望以后不断补充这篇介绍。
-
-block是什么
-简单定义：能持有作用域变量的匿名函数
-匿名函数就是没有名称的函数，C 语言的标准不允许存在这样的函数，而通过 Block，源代码中就可以使用匿名函数了。
-能持有作用域变量就是指 Block 能够获得其所在作用域的变量。其中其所在作用域的变量就包括：局部变量（自动">
+<meta name="description" content="block在iOS编程中有着非常重要的作用，目前对block的理解只存在于表面的应用上，希望以后不断补充这篇介绍。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Block">
 <meta property="og:url" content="http://yoursite.com/2016/06/15/Block/index.html">
 <meta property="og:site_name" content="精于心 简于形">
-<meta property="og:description" content="block在iOS编程中有着非常重要的作用，目前对block的理解只存在于表面的应用上，希望以后不断补充这篇介绍。
-
-block是什么
-简单定义：能持有作用域变量的匿名函数
-匿名函数就是没有名称的函数，C 语言的标准不允许存在这样的函数，而通过 Block，源代码中就可以使用匿名函数了。
-能持有作用域变量就是指 Block 能够获得其所在作用域的变量。其中其所在作用域的变量就包括：局部变量（自动">
+<meta property="og:description" content="block在iOS编程中有着非常重要的作用，目前对block的理解只存在于表面的应用上，希望以后不断补充这篇介绍。">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/bc254b75jw1f4vvaa9wcij20fg06cjsr.jpg">
-<meta property="og:updated_time" content="2016-06-15T06:36:05.000Z">
+<meta property="og:updated_time" content="2016-06-24T03:08:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Block">
-<meta name="twitter:description" content="block在iOS编程中有着非常重要的作用，目前对block的理解只存在于表面的应用上，希望以后不断补充这篇介绍。
-
-block是什么
-简单定义：能持有作用域变量的匿名函数
-匿名函数就是没有名称的函数，C 语言的标准不允许存在这样的函数，而通过 Block，源代码中就可以使用匿名函数了。
-能持有作用域变量就是指 Block 能够获得其所在作用域的变量。其中其所在作用域的变量就包括：局部变量（自动">
+<meta name="twitter:description" content="block在iOS编程中有着非常重要的作用，目前对block的理解只存在于表面的应用上，希望以后不断补充这篇介绍。">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/mw1024/bc254b75jw1f4vvaa9wcij20fg06cjsr.jpg">
 
 
@@ -344,6 +329,7 @@ block是什么
         <blockquote>
 <p>block在iOS编程中有着非常重要的作用，目前对block的理解只存在于表面的应用上，希望以后不断补充这篇介绍。</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="block是什么"><a href="#block是什么" class="headerlink" title="block是什么"></a>block是什么</h3><ul>
 <li>简单定义：能持有作用域变量的匿名函数</li>
 <li>匿名函数就是没有名称的函数，C 语言的标准不允许存在这样的函数，而通过 Block，源代码中就可以使用匿名函数了。</li>
@@ -358,77 +344,9 @@ block是什么
 <p>^(int a){return a*a;}; </p>
 <p>int result = ^(int a){return a*a;};<br>NSLog(@”%d”, result);</p>
 <p>// 一个最简单的 block：<br>^{<br>    NSLog(@”This is a block”);<br>}<br>// 不省略的 block：<br>^void (void) {<br>    NSLog(@”This is a block”);<br>}<br>// 普通的 block：<br>^int (int a, int b) {<br>    NSLog(@”a is %d, b is %d”, a, b);<br>    return a + b;<br>}</p>
-<h3 id="一些简单的使用"><a href="#一些简单的使用" class="headerlink" title="一些简单的使用"></a>一些简单的使用</h3><ul>
-<li>最简单的 Block</li>
-</ul>
-<p>声明和定义一个不返回任何值，不接受任何参数的 Block：</p>
-<p>// 完整的写法：<br>//// 声明<br>void (^simpleBlock)(void);<br>//// 定义<br>simpleBlock = ^{<br>    NSLog(@”This is a block”);<br>};<br>//// 声明、定义一起<br>void (^simpleBlock)(void) = ^{<br>    NSLog(@”This is a block”);<br>};<br>// 调用 block<br>simpleBlock();</p>
-<ul>
-<li>带参数和返回值的 Block</li>
-</ul>
-<p>下面的 Block，接受两个 double 参数，返回一个 double 值：</p>
-<p>// 声明<br>double (^multiplyTwoValues)(double, double);<br>// 定义<br>double (^multiplyTwoValues)(double, double) =<br>                          ^(double firstValue, double secondValue) {<br>                              return firstValue * secondValue;<br>                          };<br>// 调用<br>double result = multiplyTwoValues(2,4);<br>NSLog(@”The result is %f”, result);</p>
-<ul>
-<li>Block 作为参数时的缩写</li>
-</ul>
-<p>Block 作为参数时的缩写如 Block 语法规则所约定那样。</p>
-<p>// Block 没有参数，则 <code>()</code> 可以省略：<br>[UIView animateViewDuration:5.0 animation:^() { // 这个 block 没有参数，这里的 () 就可以省略。<br>    view.opacity = 0.5;<br>}];<br>// 如果 Block 中返回值的类型根据 return 后的内容能明显推出，那么可以省略：<br>NSSet<em> mySet = …;<br>NSSet</em> matches = [mySet objectsPassingTest:^BOOL(id obj, …) { // 根据return语句，这个block的返回值明显是BOOL，所以这里可以省略BOOL。<br>    return [obj isKindOfClass:[UIView class]]; // 返回值是 BOOL，很明显。<br>}];</p>
-<ul>
-<li>把 Block 传递给方法或函数</li>
-</ul>
-<p>// 调用带 block 参数的方法：</p>
-<ul>
-<li><p>(IBAction)fetchRemoteInformation:(id)sender {<br>  [self showProgressIndicator];</p>
-<p>  XYZWebTask *task = …</p>
-<p>  [task beginTaskWithCallbackBlock:^{</p>
-<pre><code>[self hideProgressIndicator];
-</code></pre><p>  }];<br>}<br>// 声明带 block 参数的方法：</p>
-</li>
-<li>(void)beginTaskWithCallbackBlock:(void (^)(void))callbackBlock;<br>// 方法的具体实现：</li>
-<li>(void)beginTaskWithCallbackBlock:(void (^)(void))callbackBlock {<br>  …<br>  callbackBlock();<br>}<br>苹果的建议是在一个方法中最好只使用一个 block 变量，并且如果这个方法如果还带有其他非 block 变量，那么 block 变量应该放在最后一个。</li>
-</ul>
-<ul>
-<li>使用 typedef 来简化 Block 定义</li>
-</ul>
-<p>上面的 Block 类型的变量在使用时，记述方式会一眼看上去有点不够简洁，这时候我们也可以用 typedef 来解决这个问题。</p>
-<p>// typedef 一个 block<br>typedef void (^XYZSimpleBlock)(void);<br>// 使用 1<br>XYZSimpleBlock anotherBlock = ^{<br>    …<br>};<br>// 使用 2</p>
-<ul>
-<li>(void)beginFetchWithCallbackBlock:(XYZSimpleBlock)callbackBlock {<br>  …<br>  callbackBlock();<br>}<br>来看一个用 typedef 简化复杂 Block 定义的例子，下面的定义的名为 complexBlock 的变量是一个 block，这个 block 接受一个 block 作为参数，并且返回一个 block：</li>
-</ul>
-<p>// 简化前：<br>void (^(^complexBlock)(void (^)(void)))(void) = ^ (void (^aBlock)(void)) {<br>    …<br>    return ^{<br>        …<br>    };<br>};<br>// 使用上面 typedef 的 XYZSimpleBlock 简化后：<br>XYZSimpleBlock (^betterBlock)(XYZSimpleBlock) = ^ (XYZSimpleBlock aBlock) {<br>    …<br>    return ^{<br>        …<br>    };<br>};</p>
-<ul>
-<li>定义属性来持有 Block</li>
-</ul>
-<p>使用 copy，因为 Block 要持有它原本所在作用域的其他外面的变量：</p>
-<p>@interface XYZObject : NSObject<br>@property (copy) void (^blockProperty)(void);<br>@end<br>// setter 方法和调用<br>self.blockProperty = ^{<br>    …<br>};<br>self.blockProperty();<br>// 使用 typedef 简化<br>typedef void (^XYZSimpleBlock)(void);</p>
-<p>@interface XYZObject : NSObject<br>@property (copy) XYZSimpleBlock blockProperty;<br>@end</p>
-<h3 id="block的使用场景"><a href="#block的使用场景" class="headerlink" title="block的使用场景"></a>block的使用场景</h3><ul>
-<li>Block 简化枚举</li>
-</ul>
-<p>// NSArray 的一个方法，接受一个 block 作为参数，这个 block 会在该方法里每枚举一个对象时被调用一次：</p>
-<ul>
-<li>(void)enumerateObjectsUsingBlock:(void (^)(id obj, NSUInteger idx, BOOL <em>stop))block;<br>// 这个 block 接受三个参数，前两个是当前的对象和其 index，后面的 BOOL 值可以用来控制什么时候停止该枚举。<br>NSArray </em>array = …<br>[array enumerateObjectsUsingBlock:^ (id obj, NSUInteger idx, BOOL <em>stop) {<br>  NSLog(@”Object at index %lu is %@”, idx, obj);<br>}];<br>[array enumerateObjectsUsingBlock:^ (id obj, NSUInteger idx, BOOL </em>stop) {<br>  if (…) {<pre><code>*stop = YES;
-</code></pre>  }<br>}];</li>
-</ul>
-<ul>
-<li>Block 简化并发调用</li>
-</ul>
-<p>Block 和 Operation Queue 一起用</p>
-<p>NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{<br>    …<br>}];</p>
-<ul>
-<li>Block 和 GCD 一起用</li>
-</ul>
-<p>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);<br>dispatch_async(queue, ^{<br>    NSLog(@”Block for asynchronous execution”);<br>});</p>
-<p>GCD主要使用block来代替委托模式,使程序变得简洁,同时运行效率也得到提高.<br>   static int clickNum = 0;<br>   self.Mylabel = [[UILabel alloc]init];<br>   while (clickNum &lt;20) {<br>   dispatch_async(dispatch_get_main_queue(), ^{<br>   self.Mylabel.text = [NSString stringWithFormat:@”%d”,clickNum++];//UI的绘制必须在主线程中<br>   });<br>   [NSThread sleepForTimeInterval:1];<br>     }</p>
-<p>cocoaTouch框架下动画效果的Block的调用<br>[UIView transitionWithView:self.view<br>                          duration:0.2<br>                           options:UIViewAnimationOptionTransitionFlipFromLeft<br>                        animations:^{ [self.view addSubview:yellowView.view]; }<br>                        completion:NULL];</p>
-<ul>
-<li>Block 的使用场景小结</li>
-</ul>
-<p>Enumeration (像我们上面看到的 NSArray 的枚举接口)<br>View Animations (animations)<br>Sorting (在排序时在 Block 中实现比较逻辑)<br>Notification (当某些事件被触发时，执行对应的 Block)<br>Error handlers (作为错误事件的 Handler)<br>Completion handlers (作为某个任务完成时的 Handler)<br>Multithreading (在 Grand Central Dispatch (GCD) API 中使用)</p>
-<h3 id="一些补充"><a href="#一些补充" class="headerlink" title="一些补充"></a>一些补充</h3><ul>
-<li>函数内部使用<br>在函数内部定义并实现的block有点类似于java的匿名内部类，这种block也只能作用于当前函数。<br>示例：<br>-(void)testBlock{<br>  void (^blockTest)(int) = ^(int num){<pre><code>NSLog(@&quot;num:%d&quot;,num);
-</code></pre>  };<br>  blockTest(2);<br>}</li>
-</ul>
+<h3 id="一些简单的使用"><a href="#一些简单的使用" class="headerlink" title="一些简单的使用"></a>一些简单的使用</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 最简单的 Block</span><br><span class="line"></span><br><span class="line">声明和定义一个不返回任何值，不接受任何参数的 Block：</span><br><span class="line"></span><br><span class="line">// 完整的写法：</span><br><span class="line">//// 声明</span><br><span class="line">void (^simpleBlock)(void); </span><br><span class="line">//// 定义</span><br><span class="line">simpleBlock = ^&#123;</span><br><span class="line">    NSLog(@&quot;This is a block&quot;);</span><br><span class="line">&#125;;</span><br><span class="line">//// 声明、定义一起</span><br><span class="line">void (^simpleBlock)(void) = ^&#123;</span><br><span class="line">    NSLog(@&quot;This is a block&quot;);</span><br><span class="line">&#125;;</span><br><span class="line">// 调用 block</span><br><span class="line">simpleBlock();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">* 带参数和返回值的 Block</span><br><span class="line"></span><br><span class="line">下面的 Block，接受两个 double 参数，返回一个 double 值：</span><br><span class="line"></span><br><span class="line">// 声明</span><br><span class="line">double (^multiplyTwoValues)(double, double);</span><br><span class="line">// 定义</span><br><span class="line">double (^multiplyTwoValues)(double, double) =</span><br><span class="line">                          ^(double firstValue, double secondValue) &#123;</span><br><span class="line">                              return firstValue * secondValue;</span><br><span class="line">                          &#125;;</span><br><span class="line">// 调用</span><br><span class="line">double result = multiplyTwoValues(2,4);</span><br><span class="line">NSLog(@&quot;The result is %f&quot;, result);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">* Block 作为参数时的缩写</span><br><span class="line"></span><br><span class="line">Block 作为参数时的缩写如 Block 语法规则所约定那样。</span><br><span class="line"></span><br><span class="line">// Block 没有参数，则 `()` 可以省略：</span><br><span class="line">[UIView animateViewDuration:5.0 animation:^() &#123; // 这个 block 没有参数，这里的 () 就可以省略。</span><br><span class="line">	view.opacity = 0.5;</span><br><span class="line">&#125;];</span><br><span class="line">// 如果 Block 中返回值的类型根据 return 后的内容能明显推出，那么可以省略：</span><br><span class="line">NSSet* mySet = ...;</span><br><span class="line">NSSet* matches = [mySet objectsPassingTest:^BOOL(id obj, ...) &#123; // 根据return语句，这个block的返回值明显是BOOL，所以这里可以省略BOOL。</span><br><span class="line">	return [obj isKindOfClass:[UIView class]]; // 返回值是 BOOL，很明显。</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">* 把 Block 传递给方法或函数</span><br><span class="line"></span><br><span class="line">// 调用带 block 参数的方法：</span><br><span class="line">- (IBAction)fetchRemoteInformation:(id)sender &#123;</span><br><span class="line">    [self showProgressIndicator];</span><br><span class="line"> </span><br><span class="line">    XYZWebTask *task = ...</span><br><span class="line"> </span><br><span class="line">    [task beginTaskWithCallbackBlock:^&#123;</span><br><span class="line">        [self hideProgressIndicator];</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line">// 声明带 block 参数的方法：</span><br><span class="line">- (void)beginTaskWithCallbackBlock:(void (^)(void))callbackBlock;</span><br><span class="line">// 方法的具体实现：</span><br><span class="line">- (void)beginTaskWithCallbackBlock:(void (^)(void))callbackBlock &#123;</span><br><span class="line">	...</span><br><span class="line">	callbackBlock();</span><br><span class="line">&#125;</span><br><span class="line">苹果的建议是在一个方法中最好只使用一个 block 变量，并且如果这个方法如果还带有其他非 block 变量，那么 block 变量应该放在最后一个。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">* 使用 typedef 来简化 Block 定义</span><br><span class="line"></span><br><span class="line">上面的 Block 类型的变量在使用时，记述方式会一眼看上去有点不够简洁，这时候我们也可以用 typedef 来解决这个问题。</span><br><span class="line"></span><br><span class="line">// typedef 一个 block</span><br><span class="line">typedef void (^XYZSimpleBlock)(void);</span><br><span class="line">// 使用 1</span><br><span class="line">XYZSimpleBlock anotherBlock = ^&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br><span class="line">// 使用 2</span><br><span class="line">- (void)beginFetchWithCallbackBlock:(XYZSimpleBlock)callbackBlock &#123;</span><br><span class="line">	...</span><br><span class="line">	callbackBlock();</span><br><span class="line">&#125;</span><br><span class="line">来看一个用 typedef 简化复杂 Block 定义的例子，下面的定义的名为 complexBlock 的变量是一个 block，这个 block 接受一个 block 作为参数，并且返回一个 block：</span><br><span class="line"></span><br><span class="line">// 简化前：</span><br><span class="line">void (^(^complexBlock)(void (^)(void)))(void) = ^ (void (^aBlock)(void)) &#123;</span><br><span class="line">	...</span><br><span class="line">	return ^&#123;</span><br><span class="line">    	...</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line">// 使用上面 typedef 的 XYZSimpleBlock 简化后：</span><br><span class="line">XYZSimpleBlock (^betterBlock)(XYZSimpleBlock) = ^ (XYZSimpleBlock aBlock) &#123;</span><br><span class="line">    ...</span><br><span class="line">    return ^&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">* 定义属性来持有 Block</span><br><span class="line"></span><br><span class="line">使用 copy，因为 Block 要持有它原本所在作用域的其他外面的变量：</span><br><span class="line"></span><br><span class="line">@interface XYZObject : NSObject</span><br><span class="line">@property (copy) void (^blockProperty)(void);</span><br><span class="line">@end</span><br><span class="line">// setter 方法和调用</span><br><span class="line">self.blockProperty = ^&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br><span class="line">self.blockProperty();</span><br><span class="line">// 使用 typedef 简化</span><br><span class="line">typedef void (^XYZSimpleBlock)(void);</span><br><span class="line"> </span><br><span class="line">@interface XYZObject : NSObject</span><br><span class="line">@property (copy) XYZSimpleBlock blockProperty;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h3 id="block的使用场景"><a href="#block的使用场景" class="headerlink" title="block的使用场景"></a>block的使用场景</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* Block 简化枚举</span><br><span class="line"></span><br><span class="line">// NSArray 的一个方法，接受一个 block 作为参数，这个 block 会在该方法里每枚举一个对象时被调用一次：</span><br><span class="line">- (void)enumerateObjectsUsingBlock:(void (^)(id obj, NSUInteger idx, BOOL *stop))block;</span><br><span class="line">// 这个 block 接受三个参数，前两个是当前的对象和其 index，后面的 BOOL 值可以用来控制什么时候停止该枚举。</span><br><span class="line">NSArray *array = ...</span><br><span class="line">[array enumerateObjectsUsingBlock:^ (id obj, NSUInteger idx, BOOL *stop) &#123;</span><br><span class="line">    NSLog(@&quot;Object at index %lu is %@&quot;, idx, obj);</span><br><span class="line">&#125;];</span><br><span class="line">[array enumerateObjectsUsingBlock:^ (id obj, NSUInteger idx, BOOL *stop) &#123;</span><br><span class="line">    if (...) &#123;</span><br><span class="line">        *stop = YES;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">* Block 简化并发调用</span><br><span class="line"></span><br><span class="line">Block 和 Operation Queue 一起用</span><br><span class="line"></span><br><span class="line">NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;];</span><br><span class="line">* Block 和 GCD 一起用</span><br><span class="line"></span><br><span class="line">dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</span><br><span class="line">dispatch_async(queue, ^&#123;</span><br><span class="line">    NSLog(@&quot;Block for asynchronous execution&quot;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">GCD主要使用block来代替委托模式,使程序变得简洁,同时运行效率也得到提高.</span><br><span class="line">   static int clickNum = 0;   self.Mylabel = [[UILabel alloc]init];   while (clickNum &lt;20) &#123;   dispatch_async(dispatch_get_main_queue(), ^&#123;   self.Mylabel.text = [NSString stringWithFormat:@&quot;%d&quot;,clickNum++];//UI的绘制必须在主线程中   &#125;);   [NSThread sleepForTimeInterval:1];     &#125;</span><br><span class="line">     </span><br><span class="line">cocoaTouch框架下动画效果的Block的调用</span><br><span class="line">[UIView transitionWithView:self.view                          duration:0.2                           options:UIViewAnimationOptionTransitionFlipFromLeft                        animations:^&#123; [self.view addSubview:yellowView.view]; &#125;                        completion:NULL];</span><br><span class="line"></span><br><span class="line">* Block 的使用场景小结</span><br><span class="line"></span><br><span class="line">Enumeration (像我们上面看到的 NSArray 的枚举接口)</span><br><span class="line">View Animations (animations)</span><br><span class="line">Sorting (在排序时在 Block 中实现比较逻辑)</span><br><span class="line">Notification (当某些事件被触发时，执行对应的 Block)</span><br><span class="line">Error handlers (作为错误事件的 Handler)</span><br><span class="line">Completion handlers (作为某个任务完成时的 Handler)</span><br><span class="line">Multithreading (在 Grand Central Dispatch (GCD) API 中使用)</span><br></pre></td></tr></table></figure>
+<h3 id="一些补充"><a href="#一些补充" class="headerlink" title="一些补充"></a>一些补充</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 函数内部使用</span><br><span class="line">在函数内部定义并实现的block有点类似于java的匿名内部类，这种block也只能作用于当前函数。</span><br><span class="line">示例：</span><br><span class="line">-(void)testBlock&#123;    void (^blockTest)(int) = ^(int num)&#123;        NSLog(@&quot;num:%d&quot;,num);    &#125;;    blockTest(2);&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -535,7 +453,7 @@ block是什么
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
