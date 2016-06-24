@@ -86,26 +86,17 @@
 
 
 
-<meta name="description" content="Objc概念知识点学习笔记
-
-&amp;lt;! –more –&amp;gt;
-UIApplication&amp;amp;AppDelegate（1）UIApplication对象是应用程序的象征，一个UIApplication对象就代表一个应用程序。（2）每一个应用都有自己的UIApplication对象，而且是单例的，如果试图在程序中新建一个UIApplication对象，那么将报错提示。（3）通过[UIApp">
+<meta name="description" content="Objc概念知识点学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Objc概念知识点学习笔记">
 <meta property="og:url" content="http://yoursite.com/2016/06/15/Objc概念知识点学习笔记/index.html">
 <meta property="og:site_name" content="精于心 简于形">
-<meta property="og:description" content="Objc概念知识点学习笔记
-
-&amp;lt;! –more –&amp;gt;
-UIApplication&amp;amp;AppDelegate（1）UIApplication对象是应用程序的象征，一个UIApplication对象就代表一个应用程序。（2）每一个应用都有自己的UIApplication对象，而且是单例的，如果试图在程序中新建一个UIApplication对象，那么将报错提示。（3）通过[UIApp">
+<meta property="og:description" content="Objc概念知识点学习笔记">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/652024-2e717ff7875279f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2016-06-24T01:51:57.000Z">
+<meta property="og:updated_time" content="2016-06-24T03:15:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Objc概念知识点学习笔记">
-<meta name="twitter:description" content="Objc概念知识点学习笔记
-
-&amp;lt;! –more –&amp;gt;
-UIApplication&amp;amp;AppDelegate（1）UIApplication对象是应用程序的象征，一个UIApplication对象就代表一个应用程序。（2）每一个应用都有自己的UIApplication对象，而且是单例的，如果试图在程序中新建一个UIApplication对象，那么将报错提示。（3）通过[UIApp">
+<meta name="twitter:description" content="Objc概念知识点学习笔记">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/652024-2e717ff7875279f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -338,7 +329,7 @@ UIApplication&amp;amp;AppDelegate（1）UIApplication对象是应用程序的象
         <blockquote>
 <p>Objc概念知识点学习笔记</p>
 </blockquote>
-<p>&lt;! –more –&gt;</p>
+<a id="more"></a>
 <h4 id="UIApplication-amp-AppDelegate"><a href="#UIApplication-amp-AppDelegate" class="headerlink" title="UIApplication&amp;AppDelegate"></a>UIApplication&amp;AppDelegate</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">（1）UIApplication对象是应用程序的象征，一个UIApplication对象就代表一个应用程序。</span><br><span class="line">（2）每一个应用都有自己的UIApplication对象，而且是单例的，如果试图在程序中新建一个UIApplication对象，那么将报错提示。</span><br><span class="line">（3）通过[UIApplication sharedApplication]可以获得这个单例对象</span><br><span class="line">（4） 一个iOS程序启动后创建的第一个对象就是UIApplication对象，且只有一个（通过代码获取两个UIApplication对象，打印地址可以看出地址是相同的）。</span><br><span class="line">（5）利用UIApplication对象，能进行一些应用级别的操作，如：设置应用程序图标右上角的红色提醒数字、设置联网指示器的可见性、管理状态栏、openURL</span><br><span class="line">下面介绍appdelagate</span><br><span class="line">在main.m的UIApplicationMain函数中，根据@&quot;AppDelegate&quot;这个类，创建一个delegate对象，并将该delegate对象赋值给UIApplication对象中的delegate属性</span><br><span class="line">所有的移动操作系统都有个致命的缺点：app很容易受到打扰。比如一个来电或者锁屏会导致app进入后台甚至被终止。</span><br><span class="line">还有很多其它类似的情况会导致app受到干扰，在app受到干扰时，会产生一些系统事件，这时UIApplication会通知它的delegate对象，让delegate代理来处理这些系统事件。</span><br><span class="line">作用：当被打断的时候，通知代理进入到后台。</span><br></pre></td></tr></table></figure>
 <h4 id="响应者链"><a href="#响应者链" class="headerlink" title="响应者链"></a>响应者链</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">事件分类</span><br><span class="line">对于IOS设备用户来说，他们操作设备的方式主要有三种：触摸屏幕、晃动设备、通过遥控设施控制设备。对应的事件类型有以下三种：</span><br><span class="line">1、触屏事件（Touch Event）</span><br><span class="line">2、运动事件（Motion Event）</span><br><span class="line">3、远端控制事件（Remote-Control Event）</span><br><span class="line"></span><br><span class="line">响应者链（Responder Chain）</span><br><span class="line">指的是有响应和处理事件能力的对象。响应者链就是由一系列的响应者对象构成的一个层次结构。</span><br><span class="line">什么是事件的响应者</span><br><span class="line">只要继承了UIResponder的对象就可以作为事件的响应者</span><br><span class="line">其中AppDelegate类是创建一个iOS项目时自动创建的继承UIResponder的应用程序委托类</span><br><span class="line">// 接口文件#import &lt;UIKit/UIKit.h&gt;@interface AppDelegate : UIResponder &lt;UIApplicationDelegate&gt;</span><br><span class="line"></span><br><span class="line">* 什么是第一响应者</span><br><span class="line">与用户交互的控件就是第一响应者，它将作为响应者链的开始，事件首先发送给第一响应者，然后再依次传递下去，直到该事件被某个响应者处理。</span><br><span class="line">* 起始及事件分发</span><br><span class="line">当一个触摸事件发生，首先接收到事件的对象是UIApplication</span><br><span class="line">将事件放入UIApplication的活动队列中</span><br><span class="line">UIApplication的单例对象，再从活动队列取出该事件，并传递给UIWindow</span><br><span class="line">UIWindow的对象将调用-(nullable UIView *)hitTest:(CGPoint)point withEvent:(nullable UIEvent *)event;方法</span><br><span class="line">• 在这个方法中对其下一层的每一个视图调用- (BOOL)pointInside:(CGPoint)point withEvent:(nullable UIEvent *)event;方法，用于判断当前点击的点是否位于当前视图中（1）若返回NO，则表示不在当前视图中，-(nullable UIView *)hitTest:(CGPoint)point withEvent:(nullable UIEvent *)event;方法返回nil;（2）若返回YES，则说明该触摸事件发生在当前视图，然后当前视图再调用 -(nullable UIView *)hitTest:(CGPoint)point withEvent:(nullable UIEvent *)event;方法;（3）重复上述过程，直到- (BOOL)pointInside:(CGPoint)point withEvent:(nullable UIEvent *)event;方法返回YES，并使用它调用-(nullable UIView *)hitTest:(CGPoint)point withEvent:(nullable UIEvent *)event;方法返回nil的时候，表示此视图就是这个触摸事的第一响应者。</span><br><span class="line">* 响应者链</span><br><span class="line">如果当前响应者无法响应用户事件，它将继续向上传递，直到找到请响应者，这个传递过程形成了一条有规律的链条，组成了响应者链（一个层次结构）如果一直找到AppDelegate类还是无法响应用户事件，那么这个事件将无法被响应，但如果在响应者链上传递的过程中，有某个响应者对该传递的事件有响应，该传递过程将立即停止。</span><br><span class="line">	initial view若不能处理事件，则传到其父视图view</span><br><span class="line">	view若不能处理，则传到其父视图，因为它还不是最上层视图</span><br><span class="line">	这里view的父视图是view controller的view，因为这个view也不能处理事件，因此传给view controller</span><br><span class="line">	若view controller也不能处理此事件，则传到window</span><br><span class="line">	若window也不能处理此事件，则传到app单例对象Application</span><br><span class="line">    若UIApplication单例对象也不能处理，则表示无效事件</span><br></pre></td></tr></table></figure>
 <p><img src="http://upload-images.jianshu.io/upload_images/652024-2e717ff7875279f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
