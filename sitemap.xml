@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/05/27/Foundation%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2016-06-27T08:49:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/06/27/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</loc>
     
     <lastmod>2016-06-27T07:53:01.000Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://yoursite.com/2016/06/24/Objc%E9%9D%A2%E8%AF%95%E9%A2%98%E6%94%B6%E5%BD%95/</loc>
     
     <lastmod>2016-06-24T03:11:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/05/27/Foundation%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2016-06-24T03:08:23.000Z</lastmod>
     
   </url>
   
