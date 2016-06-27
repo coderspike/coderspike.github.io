@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-24T03:11:58.000Z</updated>
+  <updated>2016-06-27T07:53:01.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第三方框架使用记录</title>
+    <link href="http://yoursite.com/2016/06/27/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"/>
+    <id>http://yoursite.com/2016/06/27/第三方框架使用记录/</id>
+    <published>2016-06-27T02:19:21.000Z</published>
+    <updated>2016-06-27T07:53:01.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;项目开发中会用到很多第三方框架，在此做个记录。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;网络类&quot;&gt;&lt;a href=&quot;#网络类&quot; class=&quot;headerlink&quot; title=&quot;网络类&quot;&gt;&lt;/a&gt;网络类&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;AFNetworking&lt;br&gt;轻量级的通讯类库，使用非常简单。&lt;br&gt;&lt;a href=&quot;https://github.com/AFNetworking/AFNetworking&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;SDWebImage&lt;br&gt;调用网站上的图片，跟本地调用内置在应用包里的图片一样简单。操作也很简单。&lt;br&gt;&lt;a href=&quot;https://github.com/rs/SDWebImage&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;数据类&quot;&gt;&lt;a href=&quot;#数据类&quot; class=&quot;headerlink&quot; title=&quot;数据类&quot;&gt;&lt;/a&gt;数据类&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;FMDB&lt;br&gt;fmdb是一个数据库管理库，封装了sqlite相关的sql语句，简化数据库操作。&lt;br&gt;&lt;a href=&quot;https://github.com/ccgus/fmdb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;效果类&quot;&gt;&lt;a href=&quot;#效果类&quot; class=&quot;headerlink&quot; title=&quot;效果类&quot;&gt;&lt;/a&gt;效果类&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;MBProgressHUD&lt;br&gt;MBProgressHUD就不多说了，加载等待特效框架，伟大的菊花。&lt;br&gt;&lt;a href=&quot;https://github.com/jdg/MBProgressHUD&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;MJRefresh&lt;br&gt;下拉刷新，上拉加载的库。&lt;br&gt;&lt;a href=&quot;https://github.com/CoderMJLee/MJRefresh&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;MMPopupView&lt;br&gt;一个封装的弹框组件，效果不错。&lt;br&gt;&lt;a href=&quot;https://github.com/adad184/MMPopupView&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;PNChart&lt;br&gt;一个封装的图片组件，表现丰富。&lt;br&gt;&lt;a href=&quot;https://github.com/kevinzhow/PNChart&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;HMSegmentedControl&lt;br&gt;HMSegmentedControl 是 UISegmentedControl 的替代品。表现效果不错。&lt;br&gt;&lt;a href=&quot;https://github.com/HeshamMegid/HMSegmentedControl&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;MMPlaceHolder&lt;br&gt;显示各个UIview的size，用于方便的布局，很好用。&lt;br&gt;&lt;a href=&quot;https://github.com/adad184/MMPlaceHolder&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;布局类&quot;&gt;&lt;a href=&quot;#布局类&quot; class=&quot;headerlink&quot; title=&quot;布局类&quot;&gt;&lt;/a&gt;布局类&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;CYLTabBarController&lt;br&gt;低耦合集成TabBarController，传入几个参数就可以完成主流APP框架的搭建&lt;br&gt;&lt;a href=&quot;https://github.com/ChenYilong/CYLTabBarController&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Masonry&lt;br&gt;Masonry是一个轻量级的布局框架 拥有自己的描述语法 采用更优雅的链式语法封装自动布局 简洁明了 并具有高可读性 而且同时支持 iOS 和 Max OS X。&lt;br&gt;&lt;a href=&quot;https://github.com/SnapKit/Masonry&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;调试类&quot;&gt;&lt;a href=&quot;#调试类&quot; class=&quot;headerlink&quot; title=&quot;调试类&quot;&gt;&lt;/a&gt;调试类&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;CocoaLumberjack&lt;br&gt;CocoaLumberjack是Mac和iOS上一个集快捷、简单、强大和灵活于一身的日志框架。&lt;br&gt;&lt;a href=&quot;https://github.com/CocoaLumberjack/CocoaLumberjack&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;项目开发中会用到很多第三方框架，在此做个记录。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Objc面试题收录</title>
@@ -46,32 +96,6 @@
   </entry>
   
   <entry>
-    <title>骑行</title>
-    <link href="http://yoursite.com/2016/06/23/%E9%AA%91%E8%A1%8C/"/>
-    <id>http://yoursite.com/2016/06/23/骑行/</id>
-    <published>2016-06-23T02:00:45.000Z</published>
-    <updated>2016-06-23T08:58:25.000Z</updated>
-    
-    <content type="html">&lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw1024/bc254b75jw1f559ehq6z3j21kw23uqut.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/mw1024/bc254b75jw1f559em7dhmj21kw23u7wh.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559end4p3j20qo0zkaph.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559ev3xehj21kw23u4qp.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/mw1024/bc254b75jw1f559evsa81j20qo0zkai1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;
-    
-    </summary>
-    
-      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>一些有道理的话</title>
     <link href="http://yoursite.com/2016/06/23/%E6%84%9F%E6%82%9F/"/>
     <id>http://yoursite.com/2016/06/23/感悟/</id>
@@ -93,6 +117,32 @@
     </summary>
     
       <category term="读书" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>骑行</title>
+    <link href="http://yoursite.com/2016/06/23/%E9%AA%91%E8%A1%8C/"/>
+    <id>http://yoursite.com/2016/06/23/骑行/</id>
+    <published>2016-06-23T02:00:45.000Z</published>
+    <updated>2016-06-23T08:58:25.000Z</updated>
+    
+    <content type="html">&lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw1024/bc254b75jw1f559ehq6z3j21kw23uqut.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/mw1024/bc254b75jw1f559em7dhmj21kw23u7wh.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559end4p3j20qo0zkaph.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559ev3xehj21kw23u4qp.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/mw1024/bc254b75jw1f559evsa81j20qo0zkai1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
   </entry>
