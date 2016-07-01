@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/05/25/iOS编程常用方法/index.html">
 <meta property="og:site_name" content="精于心 简于形">
 <meta property="og:description" content="收录在iOS开发中一些常用的方法。">
-<meta property="og:updated_time" content="2016-06-24T03:12:54.000Z">
+<meta property="og:updated_time" content="2016-07-01T08:14:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS编程常用方法">
 <meta name="twitter:description" content="收录在iOS开发中一些常用的方法。">
@@ -364,6 +364,178 @@ NSLog(@&quot;===%@===&quot;,NSStringFromClass([self class]));
                     result = NO;
             return result;
     }
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">### 返回按钮只留下白色箭头</span><br></pre></td></tr></table></figure>
+
+ [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+                                                         forBarMetrics:UIBarMetricsDefault];
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">### @selector  设置string为方法</span><br></pre></td></tr></table></figure>
+
+NSString *selName = [NSString stringWithFormat@&quot;button%i&quot;, i];
+SEL selector = NSSelectorFromString(selName);
+[button1 addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">### 状态栏和导航栏高度</span><br></pre></td></tr></table></figure>
+
+ // 状态栏(statusbar)  
+    CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];  
+    NSLog(@&quot;status width - %f&quot;, rectStatus.size.width); // 宽度  
+    NSLog(@&quot;status height - %f&quot;, rectStatus.size.height);   // 高度  
+    // 导航栏（navigationbar）  
+    CGRect rectNav = self.navigationController.navigationBar.frame;  
+    NSLog(@&quot;nav width - %f&quot;, rectNav.size.width); // 宽度  
+    NSLog(@&quot;nav height - %f&quot;, rectNav.size.height);   // 高度  
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">### iOS PresentViewControlle后,直接返回根视图</span><br></pre></td></tr></table></figure>
+
+iOS PresentViewControlle后,直接返回根视图
+在开发中：用[self presentViewController:VC animated:YES completion:nil];实现跳转，多次跳转后，直接返回第一个。
+例如：
+A presentViewController B
+B presentViewController C
+C 直接回到A：
+
+返回第一个视图核心代码如下：
+[self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">### 获取手机屏幕大小</span><br></pre></td></tr></table></figure>
+
+UIScreen *currentScreen = [UIScreen  mainScreen];
+
+NSLog(@&quot;applicationFrame.size.height = %f&quot;,currentScreen.applicationFrame.size.height);
+
+NSLog(@&quot;applicationFrame.size.width = %f&quot;,currentScreen.applicationFrame.size.width);
+
+NSLog(@&quot;applicationFrame.origin.x = %f&quot;,currentScreen.applicationFrame.origin.x);
+
+NSLog(@&quot;applicationFrame.origin.y = %f&quot;,currentScreen.applicationFrame.origin.y);
+
+NSLog(@&quot;bounds.x = %f&quot;,currentScreen.bounds.origin.x);
+
+NSLog(@&quot;bounds.y = %f&quot;,currentScreen.bounds.origin.y);
+
+NSLog(@&quot;bounds.height = %f&quot;,currentScreen.bounds.size.height);
+
+NSLog(@&quot;bounds.width = %f&quot;,currentScreen.bounds.size.width);
+
+NSLog(@&quot;brightness = %f&quot;,currentScreen.brightness);
+更新：
+iOS 9 之后：使用 [UIScreen  mainScreen].bounds代替 [UIScreen  mainScreen].applicationFrame
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">### 监测网络状态</span><br></pre></td></tr></table></figure>
+
+只要网络状态发生了变化，在任何一个视图控制器都会给出相应的提示
+说明： 这里需要导入第三方库，1. MBProgressHUD 2. AFNetworking
+导入头文件 MBProgressHUD.h, AFNetworking.h
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // 应用程序加载完成
+UIWindow *window = ((AppDelegate *) [UIApplication sharedApplication].delegate).window;
+AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        // 使用MBProgressHUD三方库创建弹框，给出相应的提示
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:window animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        switch (status) {
+            case AFNetworkReachabilityStatusNotReachable:
+                // 弹框提示的内容
+                hud.labelText = @&quot;世界上最遥远的距离就是没网&quot;;
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                hud.labelText = @&quot;2G/3G/4G&quot;;
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                hud.labelText = @&quot;WiFi在线&quot;;
+            default:
+                break;
+        }
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            // 显示时间2s
+            sleep(2);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // 让弹框消失
+                [MBProgressHUD hideHUDForView:window animated:YES];
+            });
+        });
+    }];
+    [manager startMonitoring];
+return YES;
+}
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">### 处理标签字符串中的空格,换行,/t(制表符)等</span><br></pre></td></tr></table></figure>
+
+- (NSString *)replaceStringWithString :(NSMutableString *)string
+{
+    NSString *string1 = [string stringByReplacingOccurrencesOfString:@&quot;\n&quot; withString:@&quot;&quot;] ;
+    NSString *string2 = [string1 stringByReplacingOccurrencesOfString:@&quot; &quot; withString:@&quot;&quot;] ;
+    NSString *string3 = [string2 stringByReplacingOccurrencesOfString:@&quot;\r&quot; withString:@&quot;&quot;] ;
+    NSString *string4 = [string3 stringByReplacingOccurrencesOfString:@&quot;\t&quot; withString:@&quot;&quot;] ;
+    return string4 ;
+}
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">### UIImage与字符串互转</span><br></pre></td></tr></table></figure>
+
+//图片转字符串  
+-(NSString *)UIImageToBase64Str:(UIImage *) image  
+{  
+    NSData *data = UIImageJPEGRepresentation(image, 1.0f);  
+    NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];  
+    return encodedImageStr;  
+}
+//字符串转图片  
+-(UIImage *)Base64StrToUIImage:(NSString *)_encodedImageStr  
+{  
+    NSData *_decodedImageData   = [[NSData alloc] initWithBase64Encoding:_encodedImageStr];  
+    UIImage *_decodedImage      = [UIImage imageWithData:_decodedImageData];  
+    return _decodedImage;  
+}
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">### 取消图片的渲染</span><br></pre></td></tr></table></figure>
+
+[button setImage:[[UIImage imageNamed:@&quot;1.jpg&quot; ] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]  forState:UIControlStateNormal] ;
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">### 把图片做成圆形图标</span><br></pre></td></tr></table></figure>
+
+self.headIconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 40, 40)] ;
+self.headIconImageView.layer.cornerRadius = 20 ; // 设置半径 
+self.headIconImageView.layer.masksToBounds = YES ; // 边界是否允许截取
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">### 根据UILabel里的内容自适应高度</span><br></pre></td></tr></table></figure>
+
+NSString *contentString = [dic objectForKey:@&quot;content&quot;] ; //从字典中提取字符串
+CGRect rect = [contentString boundingRectWithSize:CGSizeMake(tableView.bounds.size.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:15]} context:nil] ;
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">### 根据汉字字符串获取该字符串的拼音然后取得首字母</span><br></pre></td></tr></table></figure>
+
+汉字转换为 拼音 获取首字母
+//获取拼音首字母(传入汉字字符串, 返回大写拼音首字母)
+/*
+- (NSString *)firstCharactor:(NSString *)aString
+{
+    //转成了可变字符串
+    NSMutableString *str = [NSMutableString stringWithString:aString];
+    //先转换为带声调的拼音
+    CFStringTransform((CFMutableStringRef)str,NULL, kCFStringTransformMandarinLatin,NO);
+    //再转换为不带声调的拼音
+    CFStringTransform((CFMutableStringRef)str,NULL, kCFStringTransformStripDiacritics,NO);
+    //转化为大写拼音
+    NSString *pinYin = [str capitalizedString];
+    //获取并返回首字母
+    return [pinYin substringToIndex:1];
+}
+*/
+        NSString *string = @&quot;简书&quot; ;
+        if ([string length])
+        {
+            NSMutableString *mutableString = [NSMutableString stringWithString:string] ;
+            /**
+             *  由于此方法是在coreFoundation框架下,咱们平时所使用的类型都是Foundation框架下的,所以需要转换类型.
+             *
+             *  @param string#&gt;    string 所需要转换的原字符#&gt;
+             *  @param range#&gt;     range 所需要转换字符的范围.如果为0或者是NULL意思是所有字符都转换#&gt;
+             *  @param transform#&gt; transform 转换方式#&gt;
+             *  @param reverse#&gt;   reverse 如果为YES,返回原字符串;如果为NO,返回转换之后的字符串#&gt;
+             *
+             *  @return return value description
+             */
+            // 将所有非英文的字符转换为拉丁字母,并且带声调和重音标识
+            // __bridge :只改变当前对象的类型,但是不改变对象内存的管理权限
+            CFStringTransform((__bridge CFMutableStringRef)mutableString , 0,kCFStringTransformToLatin , NO) ;
+// 去掉声调
+            CFStringTransform((__bridge CFMutableStringRef)mutableString , 0,kCFStringTransformStripDiacritics , NO) ;
+// 每个单词的首字母大写 后再截取字符串
+            NSString *str = [[mutableString capitalizedString] substringToIndex:1];
+        }
 </code></pre>
       
     </div>
@@ -470,7 +642,7 @@ NSLog(@&quot;===%@===&quot;,NSStringFromClass([self class]));
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
