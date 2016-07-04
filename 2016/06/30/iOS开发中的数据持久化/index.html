@@ -86,25 +86,16 @@
 
 
 
-<meta name="description" content="详细记录iOS开发中几种常用的持久化方式
-
-NSUserDefaults
-NSUserDefaults只支持： NSString, NSNumber, NSDate, NSArray, NSDictionary.NSUserDefaults适合存储轻量级的本地数据，比如要保存一个登陆界面的数据，用户名、密码之类的，个人觉得使用NSUserDefaults是首选。下次再登陆的时候就可以直接从NSU">
+<meta name="description" content="详细记录iOS开发中几种常用的持久化方式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS开发中的数据持久化">
 <meta property="og:url" content="http://yoursite.com/2016/06/30/iOS开发中的数据持久化/index.html">
 <meta property="og:site_name" content="精于心 简于形">
-<meta property="og:description" content="详细记录iOS开发中几种常用的持久化方式
-
-NSUserDefaults
-NSUserDefaults只支持： NSString, NSNumber, NSDate, NSArray, NSDictionary.NSUserDefaults适合存储轻量级的本地数据，比如要保存一个登陆界面的数据，用户名、密码之类的，个人觉得使用NSUserDefaults是首选。下次再登陆的时候就可以直接从NSU">
-<meta property="og:updated_time" content="2016-06-30T04:03:09.000Z">
+<meta property="og:description" content="详细记录iOS开发中几种常用的持久化方式">
+<meta property="og:updated_time" content="2016-07-04T07:39:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发中的数据持久化">
-<meta name="twitter:description" content="详细记录iOS开发中几种常用的持久化方式
-
-NSUserDefaults
-NSUserDefaults只支持： NSString, NSNumber, NSDate, NSArray, NSDictionary.NSUserDefaults适合存储轻量级的本地数据，比如要保存一个登陆界面的数据，用户名、密码之类的，个人觉得使用NSUserDefaults是首选。下次再登陆的时候就可以直接从NSU">
+<meta name="twitter:description" content="详细记录iOS开发中几种常用的持久化方式">
 
 
 
@@ -336,6 +327,7 @@ NSUserDefaults只支持： NSString, NSNumber, NSDate, NSArray, NSDictionary.NSU
         <blockquote>
 <p>详细记录iOS开发中几种常用的持久化方式</p>
 </blockquote>
+<a id="more"></a>
 <p>NSUserDefaults</p>
 <p>NSUserDefaults只支持： NSString, NSNumber, NSDate, NSArray, NSDictionary.<br>NSUserDefaults适合存储轻量级的本地数据，比如要保存一个登陆界面的数据，用户名、密码之类的，个人觉得使用NSUserDefaults是首选。下次再登陆的时候就可以直接从NSUserDefaults里面读取上次登陆的信息咯。<br>用NSUserDefaults存储的数据下次程序运行的时候依然存在，它把数据存储在什么地方了？如何能够清除？<br>其实它存储在应用程序内置的一个plist文件里。</p>
 <p>iOS中缓存一定量的数据以便下次可以快速执行，那么数据会存储在什么地方，有多少种存储方式？<br>偏好设置(NSUserDefaults)<br>plist文件存储<br>归档<br>SQLite3<br>Core Data</p>
@@ -445,7 +437,7 @@ NSUserDefaults只支持： NSString, NSNumber, NSDate, NSArray, NSDictionary.NSU
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

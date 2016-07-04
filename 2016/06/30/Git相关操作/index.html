@@ -86,22 +86,16 @@
 
 
 
-<meta name="description" content="git使用记录
-
-创建新项目1现在git上新建一个项目2记住地址： 初始化一个readme（另外在xcode中创建项目的时候，不要勾选在本地创建git库）3在系统中新建一个文件夹4打开xcode中点击导出项目。导出项目到这个空文件夹，导出路径为上边新建项目时的路径5将项目中的文件拷贝到此文件夹中，打开项目提交即可。">
+<meta name="description" content="git使用记录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git相关操作">
 <meta property="og:url" content="http://yoursite.com/2016/06/30/Git相关操作/index.html">
 <meta property="og:site_name" content="精于心 简于形">
-<meta property="og:description" content="git使用记录
-
-创建新项目1现在git上新建一个项目2记住地址： 初始化一个readme（另外在xcode中创建项目的时候，不要勾选在本地创建git库）3在系统中新建一个文件夹4打开xcode中点击导出项目。导出项目到这个空文件夹，导出路径为上边新建项目时的路径5将项目中的文件拷贝到此文件夹中，打开项目提交即可。">
-<meta property="og:updated_time" content="2016-06-30T04:22:01.000Z">
+<meta property="og:description" content="git使用记录">
+<meta property="og:updated_time" content="2016-07-04T08:21:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git相关操作">
-<meta name="twitter:description" content="git使用记录
-
-创建新项目1现在git上新建一个项目2记住地址： 初始化一个readme（另外在xcode中创建项目的时候，不要勾选在本地创建git库）3在系统中新建一个文件夹4打开xcode中点击导出项目。导出项目到这个空文件夹，导出路径为上边新建项目时的路径5将项目中的文件拷贝到此文件夹中，打开项目提交即可。">
+<meta name="twitter:description" content="git使用记录">
 
 
 
@@ -333,8 +327,9 @@
         <blockquote>
 <p>git使用记录</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="创建新项目"><a href="#创建新项目" class="headerlink" title="创建新项目"></a>创建新项目</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1现在git上新建一个项目</span><br><span class="line"></span><br><span class="line">2记住地址：</span><br><span class="line"> 初始化一个readme</span><br><span class="line">（另外在xcode中创建项目的时候，不要勾选在本地创建git库）</span><br><span class="line"></span><br><span class="line">3在系统中新建一个文件夹</span><br><span class="line"></span><br><span class="line">4打开xcode中点击导出项目。导出项目到这个空文件夹，导出路径为上边新建项目时的路径</span><br><span class="line"></span><br><span class="line">5将项目中的文件拷贝到此文件夹中，打开项目提交即可。</span><br></pre></td></tr></table></figure>
-
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xcode push时时间很久，然后提示错误</span><br><span class="line">SecureTransport error: I/O error (bummers) (-1)</span><br><span class="line"></span><br><span class="line">1 确定用户名账户正确 git config --list</span><br><span class="line">更改命令：</span><br><span class="line">git config --global user.name username</span><br><span class="line">git config --global user.email email</span><br><span class="line"></span><br><span class="line">2 确定xcode中的remote地址正确</span><br><span class="line"></span><br><span class="line">3 增加提交量</span><br><span class="line">git config --global http.postBuffer 524288000</span><br><span class="line">或者</span><br><span class="line">git config --global http.postBuffer 1048576000</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -365,6 +360,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/03/读如何高效学习/" rel="prev" title="读如何高效学习">
+                读如何高效学习 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -436,7 +435,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -493,7 +492,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建新项目"><span class="nav-number">1.</span> <span class="nav-text">创建新项目</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建新项目"><span class="nav-number">1.</span> <span class="nav-text">创建新项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常"><span class="nav-number">2.</span> <span class="nav-text">异常</span></a></li></ol></div>
             
           </div>
         </section>
