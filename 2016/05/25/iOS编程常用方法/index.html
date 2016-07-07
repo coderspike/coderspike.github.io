@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/05/25/iOS编程常用方法/index.html">
 <meta property="og:site_name" content="精于心 简于形">
 <meta property="og:description" content="收录在iOS开发中一些常用的方法。">
-<meta property="og:updated_time" content="2016-07-05T10:10:49.000Z">
+<meta property="og:updated_time" content="2016-07-07T03:43:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS编程常用方法">
 <meta name="twitter:description" content="收录在iOS开发中一些常用的方法。">
@@ -536,6 +536,28 @@ CGRect rect = [contentString boundingRectWithSize:CGSizeMake(tableView.bounds.si
 // 每个单词的首字母大写 后再截取字符串
             NSString *str = [[mutableString capitalizedString] substringToIndex:1];
         }
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">### 设置leftButtonItem为圆形按钮</span><br></pre></td></tr></table></figure>
+
+UIButton *btnOne = [[UIButton alloc] initWithFrame:CGRectMake(150, 250, 40, 40)];
+    [btnOne setTitle:@&quot;&quot; forState:UIControlStateNormal];
+    [btnOne setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btnOne setBackgroundColor:[UIColor colorWithRed:228.0/255.0 green:117.0/255.0 blue:97.0/255.0 alpha:1.0]];
+    btnOne.layer.masksToBounds = YES;
+    btnOne.layer.cornerRadius = btnOne.frame.size.height / 2;
+    [btnOne setBackgroundImage:[UIImage imageNamed:@&quot;scenery.jpg&quot;] forState:UIControlStateNormal];
+    [self.view addSubview:btnOne];
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] init];
+    leftButton.customView=btnOne;
+    self.navigationItem.leftBarButtonItem=leftButton;
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">### 设置导航栏透明并隐藏下面的黑线</span><br></pre></td></tr></table></figure>
+
+   [[UINavigationBar appearance]  setBackgroundImage:[[UIImage alloc] init] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">### 设置黑色半透明tabbar</span><br></pre></td></tr></table></figure>
+
+默认是白色半透明
+tabBarController.tabBar.barStyle = UIBarStyleBlack;
+tabBarController.tabBar.translucent = NO;//是否透明
 </code></pre>
       
     </div>
@@ -642,7 +664,7 @@ CGRect rect = [contentString boundingRectWithSize:CGSizeMake(tableView.bounds.si
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-count">27</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

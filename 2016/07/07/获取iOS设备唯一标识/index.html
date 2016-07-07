@@ -1,0 +1,672 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="精于心 简于形" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="之前碰到过获取设备唯一标识的情况，很多方法都已经作废了，转载一篇文章，很好的总结了能用的方法。(自己还未测试)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="获取iOS设备唯一标识">
+<meta property="og:url" content="http://yoursite.com/2016/07/07/获取iOS设备唯一标识/index.html">
+<meta property="og:site_name" content="精于心 简于形">
+<meta property="og:description" content="之前碰到过获取设备唯一标识的情况，很多方法都已经作废了，转载一篇文章，很好的总结了能用的方法。(自己还未测试)">
+<meta property="og:updated_time" content="2016-07-07T08:14:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="获取iOS设备唯一标识">
+<meta name="twitter:description" content="之前碰到过获取设备唯一标识的情况，很多方法都已经作废了，转载一篇文章，很好的总结了能用的方法。(自己还未测试)">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/07/07/获取iOS设备唯一标识/"/>
+
+  <title> 获取iOS设备唯一标识 | 精于心 简于形 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?e46a6e51942322a686b07c098b48d4e4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">精于心 简于形</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">iOS Road</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-code">
+          <a href="/categories/编程" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            编程
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/categories/生活" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-book">
+          <a href="/categories/读书" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                获取iOS设备唯一标识
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-07T15:04:26+08:00" content="2016-07-07">
+              2016-07-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/07/获取iOS设备唯一标识/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/07/获取iOS设备唯一标识/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>之前碰到过获取设备唯一标识的情况，很多方法都已经作废了，转载一篇文章，很好的总结了能用的方法。(自己还未测试)</p>
+</blockquote>
+<a id="more"></a>
+<p><a href="http://blog.ximu.site/uuid/" target="_blank" rel="external">原始文章</a></p>
+<h2 id="IDFA"><a href="#IDFA" class="headerlink" title="IDFA"></a>IDFA</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">全名：advertisingIdentifier</span><br><span class="line">获取代码：</span><br><span class="line">  #import &lt;AdSupport/AdSupport.h&gt;</span><br><span class="line">  NSString *adId = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];</span><br><span class="line">来源：iOS6.0及以后</span><br><span class="line">说明：直译就是广告id， 在同一个设备上的所有App都会取到相同的值，是苹果专门给各广告提供商用来追踪用户而设的，用户可以在 设置|隐私|广告追踪 里重置此id的值，或限制此id的使用，故此id有可能会取不到值，但好在Apple默认是允许追踪的，而且一般用户都不知道有这么个设置，所以基本上用来监测推广效果，是戳戳有余了。</span><br><span class="line">注意：由于idfa会出现取不到的情况，故绝不可以作为业务分析的主id，来识别用户。</span><br></pre></td></tr></table></figure>
+<h2 id="IDFV"><a href="#IDFV" class="headerlink" title="IDFV"></a>IDFV</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">全名：identifierForVendor</span><br><span class="line">获取代码： </span><br><span class="line">NSString *idfv = [[[UIDevice currentDevice] identifierForVendor] UUIDString]; </span><br><span class="line"></span><br><span class="line">来源：iOS6.0及以后</span><br><span class="line">说明：顾名思义，是给Vendor标识用户用的，每个设备在所属同一个Vender的应用里，都有相同的值。其中的Vender是指应用提供商，但准确点说，是通过BundleID的反转的前两部分进行匹配，如果相同就是同一个Vender，例如对于com.taobao.app1, com.taobao.app2 这两个BundleID来说，就属于同一个Vender，共享同一个idfv的值。和idfa不同的是，idfv的值是一定能取到的，所以非常适合于作为内部用户行为分析的主id，来标识用户，替代OpenUDID。</span><br><span class="line">注意：如果用户将属于此Vender的所有App卸载，则idfv的值会被重置，即再重装此Vender的App，idfv的值和之前不同。</span><br></pre></td></tr></table></figure>
+<h2 id="UUID"><a href="#UUID" class="headerlink" title="UUID"></a>UUID</h2><p>我们可以获取到UUID，然后把UUID保存到KeyChain里面。</p>
+<p>这样以后即使APP删了再装回来，也可以从KeyChain中读取回来。使用group还可以可以保证同一个开发商的所有程序针对同一台设备能够获取到相同的不变的UDID。</p>
+<p>但是刷机或重装系统后uuid还是会改变。</p>
+<h3 id="把下面两个类文件放到你的项目中"><a href="#把下面两个类文件放到你的项目中" class="headerlink" title="把下面两个类文件放到你的项目中"></a>把下面两个类文件放到你的项目中</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">KeychainItemWrapper.h文件  </span><br><span class="line">********************************</span><br><span class="line"></span><br><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line"></span><br><span class="line">@interface KeychainItemWrapper : NSObject</span><br><span class="line">&#123;</span><br><span class="line">    NSMutableDictionary *keychainItemData;        // The actual keychain item data backing store.</span><br><span class="line">    NSMutableDictionary *genericPasswordQuery;    // A placeholder for the generic keychain item query used to locate the item.</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@property (nonatomic, retain) NSMutableDictionary *keychainItemData;</span><br><span class="line">@property (nonatomic, retain) NSMutableDictionary *genericPasswordQuery;</span><br><span class="line"></span><br><span class="line">// Designated initializer.</span><br><span class="line">- (id)initWithAccount:(NSString *)account service:(NSString *)service accessGroup:(NSString *) accessGroup;</span><br><span class="line"></span><br><span class="line">- (id)initWithIdentifier: (NSString *)identifier accessGroup:(NSString *) accessGroup;</span><br><span class="line">- (void)setObject:(id)inObject forKey:(id)key;</span><br><span class="line">- (id)objectForKey:(id)key;</span><br><span class="line"></span><br><span class="line">// Initializes and resets the default generic keychain item data.</span><br><span class="line">- (void)resetKeychainItem;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">KeychainItemWrapper.h文件  </span><br><span class="line">********************************</span><br><span class="line"></span><br><span class="line">#import &quot;KeychainItemWrapper.h&quot;</span><br><span class="line">#import &lt;Security/Security.h&gt;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"></span><br><span class="line">These are the default constants and their respective types,  </span><br><span class="line">available for the kSecClassGenericPassword Keychain Item class:</span><br><span class="line"></span><br><span class="line">kSecAttrAccessGroup            -       CFStringRef  </span><br><span class="line">kSecAttrCreationDate        -       CFDateRef  </span><br><span class="line">kSecAttrModificationDate    -        CFDateRef  </span><br><span class="line">kSecAttrDescription            -       CFStringRef  </span><br><span class="line">kSecAttrComment                -       CFStringRef  </span><br><span class="line">kSecAttrCreator                -       CFNumberRef  </span><br><span class="line">kSecAttrType                -        CFNumberRef  </span><br><span class="line">kSecAttrLabel                -       CFStringRef  </span><br><span class="line">kSecAttrIsInvisible            -       CFBooleanRef  </span><br><span class="line">kSecAttrIsNegative            -       CFBooleanRef  </span><br><span class="line">kSecAttrAccount                -       CFStringRef  </span><br><span class="line">kSecAttrService                -       CFStringRef  </span><br><span class="line">kSecAttrGeneric                -       CFDataRef</span><br><span class="line"></span><br><span class="line">See the header file Security/SecItem.h for more details.</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">@interface KeychainItemWrapper (PrivateMethods)</span><br><span class="line">/*</span><br><span class="line">The decision behind the following two methods (secItemFormatToDictionary and dictionaryToSecItemFormat) was  </span><br><span class="line">to encapsulate the transition between what the detail view controller was expecting (NSString *) and what the  </span><br><span class="line">Keychain API expects as a validly constructed container class.  </span><br><span class="line">*/</span><br><span class="line">- (NSMutableDictionary *)secItemFormatToDictionary:(NSDictionary *)dictionaryToConvert;</span><br><span class="line">- (NSMutableDictionary *)dictionaryToSecItemFormat:(NSDictionary *)dictionaryToConvert;</span><br><span class="line"></span><br><span class="line">// Updates the item in the keychain, or adds it if it doesn&apos;t exist.</span><br><span class="line">- (void)writeToKeychain;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation KeychainItemWrapper</span><br><span class="line"></span><br><span class="line">@synthesize keychainItemData, genericPasswordQuery;</span><br><span class="line"></span><br><span class="line">- (id)initWithAccount:(NSString *)account service:(NSString *)service accessGroup:(NSString *) accessGroup;</span><br><span class="line">&#123;</span><br><span class="line">    if (self = [super init])</span><br><span class="line">    &#123;</span><br><span class="line">        NSAssert(account != nil || service != nil, @&quot;Both account and service are nil.  Must specifiy at least one.&quot;);</span><br><span class="line">        // Begin Keychain search setup. The genericPasswordQuery the attributes kSecAttrAccount and</span><br><span class="line">        // kSecAttrService are used as unique identifiers differentiating keychain items from one another</span><br><span class="line">        genericPasswordQuery = [[NSMutableDictionary alloc] init];</span><br><span class="line"></span><br><span class="line">        [genericPasswordQuery setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];</span><br><span class="line"></span><br><span class="line">        [genericPasswordQuery setObject:account forKey:(id)kSecAttrAccount];</span><br><span class="line">        [genericPasswordQuery setObject:service forKey:(id)kSecAttrService];</span><br><span class="line"></span><br><span class="line">        // The keychain access group attribute determines if this item can be shared</span><br><span class="line">        // amongst multiple apps whose code signing entitlements contain the same keychain access group.</span><br><span class="line">        if (accessGroup != nil)</span><br><span class="line">        &#123;</span><br><span class="line">#if TARGET_IPHONE_SIMULATOR</span><br><span class="line">            // Ignore the access group if running on the iPhone simulator.</span><br><span class="line">            //</span><br><span class="line">            // Apps that are built for the simulator aren&apos;t signed, so there&apos;s no keychain access group</span><br><span class="line">            // for the simulator to check. This means that all apps can see all keychain items when run</span><br><span class="line">            // on the simulator.</span><br><span class="line">            //</span><br><span class="line">            // If a SecItem contains an access group attribute, SecItemAdd and SecItemUpdate on the</span><br><span class="line">            // simulator will return -25243 (errSecNoAccessForItem).</span><br><span class="line">#else</span><br><span class="line">            [genericPasswordQuery setObject:accessGroup forKey:(id)kSecAttrAccessGroup];</span><br><span class="line">#endif</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // Use the proper search constants, return only the attributes of the first match.</span><br><span class="line">        [genericPasswordQuery setObject:(id)kSecMatchLimitOne forKey:(id)kSecMatchLimit];</span><br><span class="line">        [genericPasswordQuery setObject:(id)kCFBooleanTrue forKey:(id)kSecReturnAttributes];</span><br><span class="line"></span><br><span class="line">        NSDictionary *tempQuery = [NSDictionary dictionaryWithDictionary:genericPasswordQuery];</span><br><span class="line"></span><br><span class="line">        NSMutableDictionary *outDictionary = nil;</span><br><span class="line"></span><br><span class="line">        if (! SecItemCopyMatching((CFDictionaryRef)tempQuery, (CFTypeRef *)&amp;outDictionary) == noErr)</span><br><span class="line">        &#123;</span><br><span class="line">            // Stick these default values into keychain item if nothing found.</span><br><span class="line">            [self resetKeychainItem];</span><br><span class="line"></span><br><span class="line">            //Adding the account and service identifiers to the keychain</span><br><span class="line">            [keychainItemData setObject:account forKey:(id)kSecAttrAccount];</span><br><span class="line">            [keychainItemData setObject:service forKey:(id)kSecAttrService];</span><br><span class="line"></span><br><span class="line">            if (accessGroup != nil)</span><br><span class="line">            &#123;</span><br><span class="line">#if TARGET_IPHONE_SIMULATOR</span><br><span class="line">                // Ignore the access group if running on the iPhone simulator.</span><br><span class="line">                //</span><br><span class="line">                // Apps that are built for the simulator aren&apos;t signed, so there&apos;s no keychain access group</span><br><span class="line">                // for the simulator to check. This means that all apps can see all keychain items when run</span><br><span class="line">                // on the simulator.</span><br><span class="line">                //</span><br><span class="line">                // If a SecItem contains an access group attribute, SecItemAdd and SecItemUpdate on the</span><br><span class="line">                // simulator will return -25243 (errSecNoAccessForItem).</span><br><span class="line">#else</span><br><span class="line">                [keychainItemData setObject:accessGroup forKey:(id)kSecAttrAccessGroup];</span><br><span class="line">#endif</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            // load the saved data from Keychain.</span><br><span class="line">            self.keychainItemData = [self secItemFormatToDictionary:outDictionary];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [outDictionary release];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return self;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (id)initWithIdentifier: (NSString *)identifier accessGroup:(NSString *) accessGroup;</span><br><span class="line">&#123;</span><br><span class="line">    if (self = [super init])</span><br><span class="line">    &#123;</span><br><span class="line">        // Begin Keychain search setup. The genericPasswordQuery leverages the special user</span><br><span class="line">        // defined attribute kSecAttrGeneric to distinguish itself between other generic Keychain</span><br><span class="line">        // items which may be included by the same application.</span><br><span class="line">        genericPasswordQuery = [[NSMutableDictionary alloc] init];</span><br><span class="line"></span><br><span class="line">        [genericPasswordQuery setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];</span><br><span class="line">        [genericPasswordQuery setObject:identifier forKey:(id)kSecAttrGeneric];</span><br><span class="line"></span><br><span class="line">        // The keychain access group attribute determines if this item can be shared</span><br><span class="line">        // amongst multiple apps whose code signing entitlements contain the same keychain access group.</span><br><span class="line">        if (accessGroup != nil)</span><br><span class="line">        &#123;</span><br><span class="line">#if TARGET_IPHONE_SIMULATOR</span><br><span class="line">            // Ignore the access group if running on the iPhone simulator.</span><br><span class="line">            // </span><br><span class="line">            // Apps that are built for the simulator aren&apos;t signed, so there&apos;s no keychain access group</span><br><span class="line">            // for the simulator to check. This means that all apps can see all keychain items when run</span><br><span class="line">            // on the simulator.</span><br><span class="line">            //</span><br><span class="line">            // If a SecItem contains an access group attribute, SecItemAdd and SecItemUpdate on the</span><br><span class="line">            // simulator will return -25243 (errSecNoAccessForItem).</span><br><span class="line">#else            </span><br><span class="line">            [genericPasswordQuery setObject:accessGroup forKey:(id)kSecAttrAccessGroup];</span><br><span class="line">#endif</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // Use the proper search constants, return only the attributes of the first match.</span><br><span class="line">        [genericPasswordQuery setObject:(id)kSecMatchLimitOne forKey:(id)kSecMatchLimit];</span><br><span class="line">        [genericPasswordQuery setObject:(id)kCFBooleanTrue forKey:(id)kSecReturnAttributes];</span><br><span class="line"></span><br><span class="line">        NSDictionary *tempQuery = [NSDictionary dictionaryWithDictionary:genericPasswordQuery];</span><br><span class="line"></span><br><span class="line">        NSMutableDictionary *outDictionary = nil;</span><br><span class="line"></span><br><span class="line">        if (! SecItemCopyMatching((CFDictionaryRef)tempQuery, (CFTypeRef *)&amp;outDictionary) == noErr)</span><br><span class="line">        &#123;</span><br><span class="line">            // Stick these default values into keychain item if nothing found.</span><br><span class="line">            [self resetKeychainItem];</span><br><span class="line"></span><br><span class="line">            // Add the generic attribute and the keychain access group.</span><br><span class="line">            [keychainItemData setObject:identifier forKey:(id)kSecAttrGeneric];</span><br><span class="line">            if (accessGroup != nil)</span><br><span class="line">            &#123;</span><br><span class="line">#if TARGET_IPHONE_SIMULATOR</span><br><span class="line">                // Ignore the access group if running on the iPhone simulator.</span><br><span class="line">                // </span><br><span class="line">                // Apps that are built for the simulator aren&apos;t signed, so there&apos;s no keychain access group</span><br><span class="line">                // for the simulator to check. This means that all apps can see all keychain items when run</span><br><span class="line">                // on the simulator.</span><br><span class="line">                //</span><br><span class="line">                // If a SecItem contains an access group attribute, SecItemAdd and SecItemUpdate on the</span><br><span class="line">                // simulator will return -25243 (errSecNoAccessForItem).</span><br><span class="line">#else            </span><br><span class="line">                [keychainItemData setObject:accessGroup forKey:(id)kSecAttrAccessGroup];</span><br><span class="line">#endif</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            // load the saved data from Keychain.</span><br><span class="line">            self.keychainItemData = [self secItemFormatToDictionary:outDictionary];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [outDictionary release];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return self;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)dealloc</span><br><span class="line">&#123;</span><br><span class="line">    [keychainItemData release];</span><br><span class="line">    [genericPasswordQuery release];</span><br><span class="line"></span><br><span class="line">    [super dealloc];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)setObject:(id)inObject forKey:(id)key </span><br><span class="line">&#123;</span><br><span class="line">    if (inObject == nil) return;</span><br><span class="line">    id currentObject = [keychainItemData objectForKey:key];</span><br><span class="line">    if (![currentObject isEqual:inObject])</span><br><span class="line">    &#123;</span><br><span class="line">        [keychainItemData setObject:inObject forKey:key];</span><br><span class="line">        [self writeToKeychain];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (id)objectForKey:(id)key</span><br><span class="line">&#123;</span><br><span class="line">    return [keychainItemData objectForKey:key];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)resetKeychainItem</span><br><span class="line">&#123;</span><br><span class="line">    OSStatus junk = noErr;</span><br><span class="line">    if (!keychainItemData) </span><br><span class="line">    &#123;</span><br><span class="line">        self.keychainItemData = [[NSMutableDictionary alloc] init];</span><br><span class="line">    &#125;</span><br><span class="line">    else if (keychainItemData)</span><br><span class="line">    &#123;</span><br><span class="line">        NSMutableDictionary *tempDictionary = [self dictionaryToSecItemFormat:keychainItemData];</span><br><span class="line">        junk = SecItemDelete((CFDictionaryRef)tempDictionary);</span><br><span class="line">        NSAssert( junk == noErr || junk == errSecItemNotFound, @&quot;Problem deleting current dictionary.&quot; );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Default attributes for keychain item.</span><br><span class="line">    [keychainItemData setObject:@&quot;&quot; forKey:(id)kSecAttrAccount];</span><br><span class="line">    [keychainItemData setObject:@&quot;&quot; forKey:(id)kSecAttrLabel];</span><br><span class="line">    [keychainItemData setObject:@&quot;&quot; forKey:(id)kSecAttrDescription];</span><br><span class="line"></span><br><span class="line">    // Default data for keychain item.</span><br><span class="line">    [keychainItemData setObject:@&quot;&quot; forKey:(id)kSecValueData];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (NSMutableDictionary *)dictionaryToSecItemFormat:(NSDictionary *)dictionaryToConvert</span><br><span class="line">&#123;</span><br><span class="line">    // The assumption is that this method will be called with a properly populated dictionary</span><br><span class="line">    // containing all the right key/value pairs for a SecItem.</span><br><span class="line"></span><br><span class="line">    // Create a dictionary to return populated with the attributes and data.</span><br><span class="line">    NSMutableDictionary *returnDictionary = [NSMutableDictionary dictionaryWithDictionary:dictionaryToConvert];</span><br><span class="line"></span><br><span class="line">    // Add the Generic Password keychain item class attribute.</span><br><span class="line">    [returnDictionary setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];</span><br><span class="line"></span><br><span class="line">    // Convert the NSString to NSData to meet the requirements for the value type kSecValueData.</span><br><span class="line">    // This is where to store sensitive data that should be encrypted.</span><br><span class="line">    NSString *passwordString = [dictionaryToConvert objectForKey:(id)kSecValueData];</span><br><span class="line">    [returnDictionary setObject:[passwordString dataUsingEncoding:NSUTF8StringEncoding] forKey:(id)kSecValueData];</span><br><span class="line"></span><br><span class="line">    return returnDictionary;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (NSMutableDictionary *)secItemFormatToDictionary:(NSDictionary *)dictionaryToConvert</span><br><span class="line">&#123;</span><br><span class="line">    // The assumption is that this method will be called with a properly populated dictionary</span><br><span class="line">    // containing all the right key/value pairs for the UI element.</span><br><span class="line"></span><br><span class="line">    // Create a dictionary to return populated with the attributes and data.</span><br><span class="line">    NSMutableDictionary *returnDictionary = [NSMutableDictionary dictionaryWithDictionary:dictionaryToConvert];</span><br><span class="line"></span><br><span class="line">    // Add the proper search key and class attribute.</span><br><span class="line">    [returnDictionary setObject:(id)kCFBooleanTrue forKey:(id)kSecReturnData];</span><br><span class="line">    [returnDictionary setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];</span><br><span class="line"></span><br><span class="line">    // Acquire the password data from the attributes.</span><br><span class="line">    NSData *passwordData = NULL;</span><br><span class="line">    if (SecItemCopyMatching((CFDictionaryRef)returnDictionary, (CFTypeRef *)&amp;passwordData) == noErr)</span><br><span class="line">    &#123;</span><br><span class="line">        // Remove the search, class, and identifier key/value, we don&apos;t need them anymore.</span><br><span class="line">        [returnDictionary removeObjectForKey:(id)kSecReturnData];</span><br><span class="line"></span><br><span class="line">        // Add the password to the dictionary, converting from NSData to NSString.</span><br><span class="line">        NSString *password = [[[NSString alloc] initWithBytes:[passwordData bytes] length:[passwordData length] </span><br><span class="line">                                                     encoding:NSUTF8StringEncoding] autorelease];</span><br><span class="line">        [returnDictionary setObject:password forKey:(id)kSecValueData];</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        // Don&apos;t do anything if nothing is found.</span><br><span class="line">        NSAssert(NO, @&quot;Serious error, no matching item found in the keychain.\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    [passwordData release];</span><br><span class="line"></span><br><span class="line">    return returnDictionary;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)writeToKeychain</span><br><span class="line">&#123;</span><br><span class="line">    NSDictionary *attributes = NULL;</span><br><span class="line">    NSMutableDictionary *updateItem = NULL;</span><br><span class="line">    OSStatus result;</span><br><span class="line"></span><br><span class="line">    if (SecItemCopyMatching((CFDictionaryRef)genericPasswordQuery, (CFTypeRef *)&amp;attributes) == noErr)</span><br><span class="line">    &#123;</span><br><span class="line">        // First we need the attributes from the Keychain.</span><br><span class="line">        updateItem = [NSMutableDictionary dictionaryWithDictionary:attributes];</span><br><span class="line">        // Second we need to add the appropriate search key/values.</span><br><span class="line">        [updateItem setObject:[genericPasswordQuery objectForKey:(id)kSecClass] forKey:(id)kSecClass];</span><br><span class="line"></span><br><span class="line">        // Lastly, we need to set up the updated attribute list being careful to remove the class.</span><br><span class="line">        NSMutableDictionary *tempCheck = [self dictionaryToSecItemFormat:keychainItemData];</span><br><span class="line">        [tempCheck removeObjectForKey:(id)kSecClass];</span><br><span class="line"></span><br><span class="line">#if TARGET_IPHONE_SIMULATOR</span><br><span class="line">        // Remove the access group if running on the iPhone simulator.</span><br><span class="line">        // </span><br><span class="line">        // Apps that are built for the simulator aren&apos;t signed, so there&apos;s no keychain access group</span><br><span class="line">        // for the simulator to check. This means that all apps can see all keychain items when run</span><br><span class="line">        // on the simulator.</span><br><span class="line">        //</span><br><span class="line">        // If a SecItem contains an access group attribute, SecItemAdd and SecItemUpdate on the</span><br><span class="line">        // simulator will return -25243 (errSecNoAccessForItem).</span><br><span class="line">        //</span><br><span class="line">        // The access group attribute will be included in items returned by SecItemCopyMatching,</span><br><span class="line">        // which is why we need to remove it before updating the item.</span><br><span class="line">        [tempCheck removeObjectForKey:(id)kSecAttrAccessGroup];</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">        // An implicit assumption is that you can only update a single item at a time.</span><br><span class="line"></span><br><span class="line">        result = SecItemUpdate((CFDictionaryRef)updateItem, (CFDictionaryRef)tempCheck);</span><br><span class="line">        NSAssert( result == noErr, @&quot;Couldn&apos;t update the Keychain Item.&quot; );</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        // No previous item found; add the new one.</span><br><span class="line">        result = SecItemAdd((CFDictionaryRef)[self dictionaryToSecItemFormat:keychainItemData], NULL);</span><br><span class="line">        NSAssert( result == noErr, @&quot;Couldn&apos;t add the Keychain Item.&quot; );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<ul>
+<li>我们在写一个工具类用来保存UUID到keychain和从keychain中读取UUID.</li>
+</ul>
+<p>实现代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">AppUntils.m文件  </span><br><span class="line">*********************</span><br><span class="line"></span><br><span class="line">#import  &lt;Security/Security.h&gt;</span><br><span class="line">#import &quot;KeychainItemWrapper.h&quot;</span><br><span class="line"></span><br><span class="line">#pragma mark - 保存和读取UUID</span><br><span class="line">+(void)saveUUIDToKeyChain&#123;</span><br><span class="line">    KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithAccount:@&quot;Identfier&quot; service:@&quot;AppName&quot; accessGroup:nil];</span><br><span class="line">    NSString *string = [keychainItem objectForKey: (__bridge id)kSecAttrGeneric];</span><br><span class="line">    if([string isEqualToString:@&quot;&quot;] || !string)&#123;</span><br><span class="line">        [keychainItem setObject:[self getUUIDString] forKey:(__bridge id)kSecAttrGeneric];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+(NSString *)readUUIDFromKeyChain&#123;</span><br><span class="line">    KeychainItemWrapper *keychainItemm = [[KeychainItemWrapper alloc] initWithAccount:@&quot;Identfier&quot; service:@&quot;AppName&quot; accessGroup:nil];</span><br><span class="line">    NSString *UUID = [keychainItemm objectForKey: (__bridge id)kSecAttrGeneric];</span><br><span class="line">    return UUID;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (NSString *)getUUIDString</span><br><span class="line">&#123;</span><br><span class="line">    CFUUIDRef uuidRef = CFUUIDCreate(kCFAllocatorDefault);</span><br><span class="line">    CFStringRef strRef = CFUUIDCreateString(kCFAllocatorDefault , uuidRef);</span><br><span class="line">    NSString *uuidString = [(__bridge NSString*)strRef stringByReplacingOccurrencesOfString:@&quot;-&quot; withString:@&quot;&quot;];</span><br><span class="line">    CFRelease(strRef);</span><br><span class="line">    CFRelease(uuidRef);</span><br><span class="line">    return uuidString;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>读取UUID<br>在需要读取的地方直接调用AppUtils的类方法readUUIDFromKeyChain即可。</p>
+</li>
+<li><p>注意</p>
+<h3 id="1-设置非ARC编译环境"><a href="#1-设置非ARC编译环境" class="headerlink" title="1.设置非ARC编译环境"></a>1.设置非ARC编译环境</h3><p>因为KeychainItemWrapper.m文件是在非ARC环境下运行的，所以需要设置非arc编译环境， 在Build Phases下选在文件，设置compiler flags:-fno-objc-arc</p>
+</li>
+</ul>
+<h3 id="2-让同一开发商的所有APP在同一台设备上获取到UUID相同"><a href="#2-让同一开发商的所有APP在同一台设备上获取到UUID相同" class="headerlink" title="2. 让同一开发商的所有APP在同一台设备上获取到UUID相同"></a>2. 让同一开发商的所有APP在同一台设备上获取到UUID相同</h3><p>在每个APP的项目里面做如下设置</p>
+<h4 id="2-1、设置accessgroup"><a href="#2-1、设置accessgroup" class="headerlink" title="2.1、设置accessgroup"></a>2.1、设置accessgroup</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">keychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithAccount:@&quot;Identfier&quot; service:@&quot;AppName&quot; accessGroup:@&quot;YOUR_BUNDLE_SEED.com.yourcompany.userinfo&quot;];  </span><br><span class="line">此处设置accessGroup为YOURBUNDLESEED.com.yourcompany.userinfo</span><br></pre></td></tr></table></figure>
+<h4 id="2-2、创建plist文件"><a href="#2-2、创建plist文件" class="headerlink" title="2.2、创建plist文件"></a>2.2、创建plist文件</h4><p>然后在项目相同的目录下创建KeychainAccessGroups.plist文件。</p>
+<p>该文件的结构是一个字典，其中中最顶层的节点必须是一个键为“keychain-access-groups”的Array，并且该Array中每一项都是一个描述分组的NSString。YOURBUNDLESEED.com.yourcompany.userinfo就是要设置的组名。</p>
+<h4 id="2-3-设置code-signing"><a href="#2-3-设置code-signing" class="headerlink" title="2.3 设置code signing"></a>2.3 设置code signing</h4><p>接着在Target—&gt;Build Settings—-&gt;Code Signing栏下的Code Signing Entitlements右侧添加KeychainAccessGroups.plist</p>
+<p>这样就可以保证每个app都是从keychain中读取出来同一个UUID</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/06/CALayer/" rel="next" title="CALayer">
+                <i class="fa fa-chevron-left"></i> CALayer
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/07/获取iOS设备唯一标识/"
+           data-title="获取iOS设备唯一标识" data-url="http://yoursite.com/2016/07/07/获取iOS设备唯一标识/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="spike" />
+          <p class="site-author-name" itemprop="name">spike</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/coderspike" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IDFA"><span class="nav-number">1.</span> <span class="nav-text">IDFA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDFV"><span class="nav-number">2.</span> <span class="nav-text">IDFV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UUID"><span class="nav-number">3.</span> <span class="nav-text">UUID</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#把下面两个类文件放到你的项目中"><span class="nav-number">3.1.</span> <span class="nav-text">把下面两个类文件放到你的项目中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-设置非ARC编译环境"><span class="nav-number">3.2.</span> <span class="nav-text">1.设置非ARC编译环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-让同一开发商的所有APP在同一台设备上获取到UUID相同"><span class="nav-number">3.3.</span> <span class="nav-text">2. 让同一开发商的所有APP在同一台设备上获取到UUID相同</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1、设置accessgroup"><span class="nav-number">3.3.1.</span> <span class="nav-text">2.1、设置accessgroup</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2、创建plist文件"><span class="nav-number">3.3.2.</span> <span class="nav-text">2.2、创建plist文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-设置code-signing"><span class="nav-number">3.3.3.</span> <span class="nav-text">2.3 设置code signing</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">spike</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"coderspike"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
