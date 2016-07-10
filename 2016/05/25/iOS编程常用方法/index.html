@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/05/25/iOS编程常用方法/index.html">
 <meta property="og:site_name" content="精于心 简于形">
 <meta property="og:description" content="收录在iOS开发中一些常用的方法。">
-<meta property="og:updated_time" content="2016-07-07T03:43:12.000Z">
+<meta property="og:updated_time" content="2016-07-08T03:28:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS编程常用方法">
 <meta name="twitter:description" content="收录在iOS开发中一些常用的方法。">
@@ -558,6 +558,32 @@ UIButton *btnOne = [[UIButton alloc] initWithFrame:CGRectMake(150, 250, 40, 40)]
 默认是白色半透明
 tabBarController.tabBar.barStyle = UIBarStyleBlack;
 tabBarController.tabBar.translucent = NO;//是否透明
+tabBarController.tabBar.alpha=0.3;//设置透明度
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">### 设置leftBarButtonItem&amp;设置偏移</span><br></pre></td></tr></table></figure>
+
+UIButton *btnOne = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [btnOne setTitle:@&quot;&quot; forState:UIControlStateNormal];
+    [btnOne setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+
+
+    UIImage *resultImage = [UIImage imageNamed:@&quot;h3.jpg&quot;];
+    [btnOne setImage:[resultImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]forState:UIControlStateNormal];
+
+
+    btnOne.layer.borderWidth=2;
+    btnOne.layer.borderColor=[UIColor colorWithRed:69.0/255.0 green:96.0/255.0 blue:125.0/255.0 alpha:1.0].CGColor;
+    btnOne.layer.cornerRadius=btnOne.frame.size.height / 2;
+    btnOne.layer.masksToBounds = YES;
+
+
+
+    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] init];
+    leftButtonItem.customView=btnOne;
+
+
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSpacer.width = -10;
+    self.navigationItem.leftBarButtonItems = @[negativeSpacer, leftButtonItem];
 </code></pre>
       
     </div>
@@ -664,7 +690,7 @@ tabBarController.tabBar.translucent = NO;//是否透明
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
