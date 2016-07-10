@@ -121,7 +121,7 @@
     <link href="http://yoursite.com/2016/07/04/%E5%9B%9A%E5%BE%92%E5%81%A5%E8%BA%AB/"/>
     <id>http://yoursite.com/2016/07/04/囚徒健身/</id>
     <published>2016-07-04T14:35:43.000Z</published>
-    <updated>2016-07-07T04:09:54.000Z</updated>
+    <updated>2016-07-10T10:14:34.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;体重飙升到150，锻炼总是断断续续的没能很好的坚持，今天无意翻看了一会囚徒健身，又有了恢复锻炼的念头，这次把每天的记录放在这里，希望这份记录能对自己有所激励。&lt;/p&gt;
@@ -154,6 +154,21 @@
 &lt;tr&gt;
 &lt;td&gt;2016-7-7&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;拉伸运动 俯卧撑2x20  跪姿俯卧撑 3x10 平板支撑2x40秒 仰卧起坐 2x15 卷腹3x20  深蹲2x10   左右腿翘曲仰卧转体 2x10&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2016-7-8&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;拉伸运动 俯卧撑2x20  跪姿俯卧撑 3x10 平板支撑2x30秒  卷腹2x30  深蹲1x10&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2016-7-9&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;拉伸运动 俯卧撑2x20  跪姿俯卧撑 3x10 平板支撑2x30秒  卷腹2x30  深蹲1x10&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2016-7-10&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;拉伸运动 俯卧撑2x20  跪姿俯卧撑 3x10 平板支撑2x30秒  卷腹3x30  深蹲2x10&lt;/td&gt;
 &lt;td style=&quot;text-align:right&quot;&gt;是&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -383,32 +398,6 @@
   </entry>
   
   <entry>
-    <title>骑行</title>
-    <link href="http://yoursite.com/2016/06/23/%E9%AA%91%E8%A1%8C/"/>
-    <id>http://yoursite.com/2016/06/23/骑行/</id>
-    <published>2016-06-23T02:00:45.000Z</published>
-    <updated>2016-06-23T08:58:25.000Z</updated>
-    
-    <content type="html">&lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw1024/bc254b75jw1f559ehq6z3j21kw23uqut.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/mw1024/bc254b75jw1f559em7dhmj21kw23u7wh.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559end4p3j20qo0zkaph.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559ev3xehj21kw23u4qp.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/mw1024/bc254b75jw1f559evsa81j20qo0zkai1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;
-    
-    </summary>
-    
-      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>一些有道理的话</title>
     <link href="http://yoursite.com/2016/06/23/%E6%84%9F%E6%82%9F/"/>
     <id>http://yoursite.com/2016/06/23/感悟/</id>
@@ -430,6 +419,32 @@
     </summary>
     
       <category term="读书" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>骑行</title>
+    <link href="http://yoursite.com/2016/06/23/%E9%AA%91%E8%A1%8C/"/>
+    <id>http://yoursite.com/2016/06/23/骑行/</id>
+    <published>2016-06-23T02:00:45.000Z</published>
+    <updated>2016-06-23T08:58:25.000Z</updated>
+    
+    <content type="html">&lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw1024/bc254b75jw1f559ehq6z3j21kw23uqut.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/mw1024/bc254b75jw1f559em7dhmj21kw23u7wh.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559end4p3j20qo0zkaph.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559ev3xehj21kw23u4qp.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/mw1024/bc254b75jw1f559evsa81j20qo0zkai1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
   </entry>
