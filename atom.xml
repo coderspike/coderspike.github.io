@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>精于心 简于形</title>
-  <subtitle>iOS Road</subtitle>
+  <title>Hexo</title>
+  
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
@@ -9,7 +9,7 @@
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>spike</name>
+    <name>John Doe</name>
     
   </author>
   

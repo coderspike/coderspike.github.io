@@ -1,330 +1,64 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
+  
+  <title>Objc面试题收录 | Hexo</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="持续收录一些较经典的面试题">
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-
-
+  <meta property="og:title" content="Objc面试题收录"/>
+  <meta property="og:site_name" content="Hexo"/>
 
   
-  
-  
+    <meta property="og:image" content="undefined"/>
   
 
   
-    
-    
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
   
 
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="精于心 简于形" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
-
-
-
-
-
-
-<meta name="description" content="持续收录一些较经典的面试题">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Objc面试题收录">
-<meta property="og:url" content="http://yoursite.com/2016/06/24/Objc面试题收录/index.html">
-<meta property="og:site_name" content="精于心 简于形">
-<meta property="og:description" content="持续收录一些较经典的面试题">
-<meta property="og:updated_time" content="2016-07-04T07:22:36.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Objc面试题收录">
-<meta name="twitter:description" content="持续收录一些较经典的面试题">
-
-
-
-<script type="text/javascript" id="hexo.configuration">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: 0,
-      author: '博主'
-    }
-  };
-</script>
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2016/06/24/Objc面试题收录/"/>
-
-  <title> Objc面试题收录 | 精于心 简于形 </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">Hexo</a><span class="split"></span><span class="title">Objc面试题收录</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-06-24</span></h1>
+</div>		
 
-  
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?e46a6e51942322a686b07c098b48d4e4";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
-
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">精于心 简于形</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-  <p class="site-subtitle">iOS Road</p>
-</div>
-
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-code">
-          <a href="/categories/编程" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            编程
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-life">
-          <a href="/categories/生活" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            生活
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-book">
-          <a href="/categories/读书" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            读书
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
+<div class="row page">
+  <!-- cols -->	
   
   
 
   
-  
-  
+	<div class="col-md-12">
+	  
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                Objc面试题收录
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-24T09:33:55+08:00" content="2016-06-24">
-              2016-06-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/24/Objc面试题收录/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/24/Objc面试题收录/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <blockquote>
+	  <!-- content -->
+	  <blockquote>
 <p>持续收录一些较经典的面试题</p>
 </blockquote>
 <a id="more"></a>
@@ -351,323 +85,171 @@
 <h3 id="怎么用copy关键字？"><a href="#怎么用copy关键字？" class="headerlink" title="怎么用copy关键字？"></a>怎么用copy关键字？</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">分析：</span><br><span class="line">copy关键字只能应用于对象，不能用于基本类型。copy属性会复制一份，并且强引用之，但是对于集合类型，通常并不能达到深拷贝的目的。NSString、NSArray、NSDictionary等经常使用copy关键字，是因为他们有对应的可变类型：NSMutableString、NSMutableArray、NSMutableDictionary，当然很多时候都使用了strong来声明。block也使用copy关键字来声明。</span><br><span class="line">参考答案：</span><br><span class="line">• copy关键字只能应用于对象，不能用于基本类型</span><br><span class="line">• 对于字符串，理应始终使用copy，虽然使用strong一般情况下也没有关系</span><br><span class="line">• 对于不可变集合类型，有可变和不可变类型，若要防止外部的修改影响所传过来的值，应该使用copy来声明，虽然大多情况下使用strong一定问题都没有。不过，实际开发中，我见到的几乎都是使用strong来声明的，包括笔者在内。</span><br><span class="line">• 对于可变集合类型，都应该使用strong来声明，不能使用copy，因为copy会生成一个不可变的类型，而不是可变的。</span><br><span class="line">对于block，都应该使用copy来声明，原因是block来捕获上下文的信息。</span><br></pre></td></tr></table></figure>
 <h3 id="对数组中的元素去重复"><a href="#对数组中的元素去重复" class="headerlink" title="对数组中的元素去重复"></a>对数组中的元素去重复</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">NSArray *array = @[@&quot;12-11&quot;, @&quot;12-11&quot;, @&quot;12-11&quot;, @&quot;12-12&quot;, @&quot;12-13&quot;, @&quot;12-14&quot;];//推荐的写法</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">有如下几种方案：</span><br><span class="line">• 第一种方法：开辟新的内存空间，然后判断是否存在，若不存在则添加到数组中，得到最终结果的顺序不发生变化。效率分析：时间复杂度为O ( n2 )：</span><br><span class="line"> </span><br><span class="line">NSMutableArray *resultArray = [[NSMutableArray alloc] initWithCapacity:array.count];</span><br><span class="line">// 外层一个循环</span><br><span class="line">for (NSString *item in array) &#123;</span><br><span class="line">   // 调用-containsObject:本质也是要循环去判断，因此本质上是双层遍历</span><br><span class="line">   // 时间复杂度为O ( n^2 )而不是O (n)</span><br><span class="line">    if (![resultArray containsObject:item]) &#123;</span><br><span class="line">      [resultArray addObject:item];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">NSLog(@&quot;resultArray: %@&quot;, resultArray);</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">原来集合操作可以通过valueForKeyPath来实现的，去重可以一行代码实现： </span><br><span class="line">array = [array valueForKeyPath:@&quot;@distinctUnionOfObjects.self&quot;];</span><br><span class="line">NSLog(@&quot;%@&quot;, array);</span><br><span class="line"> </span><br><span class="line">但是返回的结果是无序的，与原来的顺序不同。</span><br><span class="line"></span><br><span class="line">• 第二种方法：利用NSDictionary去重，字典在设置key-value时，若已存在则更新值，若不存在则插入值，然后获取allValues。若不要求有序，则可以采用此种方法。若要求有序，还得进行排序。效率分析：只需要一个循环就可以完成放入字典，若不要求有序，时间复杂度为O(n)。若要求排序，则效率与排序算法有关：</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">NSMutableDictionary *resultDict = [[NSMutableDictionary alloc] initWithCapacity:array.count];</span><br><span class="line">for (NSString *item in array) &#123;</span><br><span class="line">    [resultDict setObject:item forKey:item];</span><br><span class="line">&#125;</span><br><span class="line">NSArray *resultArray = resultDict.allValues;</span><br><span class="line">NSLog(@&quot;%@&quot;, resultArray);</span><br><span class="line"> </span><br><span class="line">如果需要按照原来的升序排序，可以这样：</span><br><span class="line">resultArray = [resultArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) &#123;</span><br><span class="line">  NSString *item1 = obj1;</span><br><span class="line">  NSString *item2 = obj2;</span><br><span class="line">  return [item1 compare:item2 options:NSLiteralSearch];</span><br><span class="line">&#125;];</span><br><span class="line">NSLog(@&quot;%@&quot;, resultArray);</span><br><span class="line"></span><br><span class="line">• 第三种方法：利用集合NSSet的特性(确定性、无序性、互异性)，放入集合就自动去重了。但是它与字典拥有同样的无序性，所得结果顺序不再与原来一样。如果不要求有序，使用此方法与字典的效率应该是差不多的。效率分析：时间复杂度为O (n)：</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">NSSet *set = [NSSet setWithArray:array];</span><br><span class="line">NSArray *resultArray = [set allObjects];</span><br><span class="line">NSLog(@&quot;%@&quot;, resultArray);</span><br><span class="line"> </span><br><span class="line">如果要求有序，那就得排序，比如这里要升序排序：</span><br><span class="line"> </span><br><span class="line">resultArray = [resultArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) &#123;</span><br><span class="line">  NSString *item1 = obj1;</span><br><span class="line">  NSString *item2 = obj2;</span><br><span class="line">  return [item1 compare:item2 options:NSLiteralSearch];</span><br><span class="line">&#125;];</span><br><span class="line">NSLog(@&quot;%@&quot;, resultArray);</span><br><span class="line"> </span><br><span class="line">补充：</span><br><span class="line">一直没有使用过有序集合，网友们反馈到可以直接使用有序集合，感谢大家：</span><br><span class="line">NSOrderedSet *set = [NSOrderedSet orderedSetWithArray:array];</span><br><span class="line">NSLog(@&quot;%@&quot;, set.array);</span><br></pre></td></tr></table></figure>
 <h3 id="请写出有多少有方法给UIImageView添加圆角"><a href="#请写出有多少有方法给UIImageView添加圆角" class="headerlink" title="请写出有多少有方法给UIImageView添加圆角?"></a>请写出有多少有方法给UIImageView添加圆角?</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、最直接的方法就是使用如下属性设置：</span><br><span class="line">imgView.layer.cornerRadius = 10;// 这一行代码是很消耗性能的imgView.clipsToBounds = YES;</span><br><span class="line">好处是使用简单，操作方便。坏处是离屏渲染（off-screen-rendering）需要消耗性能。对于图片比较多的视图上，不建议使用这种方法来设置圆角。通常来说，计算机系统中CPU、GPU、显示器是协同工作的。CPU计算好显示内容提交到GPU，GPU渲染完成后将渲染结果放入帧缓冲区。</span><br><span class="line">简单来说，离屏渲染，导致本该GPU干的活，结果交给了CPU来干，而CPU又不擅长GPU干的活，于是拖慢了UI层的FPS（数据帧率），并且离屏需要创建新的缓冲区和上下文切换，因此消耗较大的性能。</span><br><span class="line"></span><br><span class="line">2. 给UIImage添加生成圆角图片的扩展API：</span><br><span class="line">- (UIImage *)hyb_imageWithCornerRadius:(CGFloat)radius &#123;  CGRect rect = (CGRect)&#123;0.f, 0.f, self.size&#125;;</span><br><span class="line">UIGraphicsBeginImageContextWithOptions(self.size, NO, UIScreen.mainScreen.scale);  CGContextAddPath(UIGraphicsGetCurrentContext(),                   [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius].CGPath);  CGContextClip(UIGraphicsGetCurrentContext());</span><br><span class="line">[self drawInRect:rect];  UIImage *image = UIGraphicsGetImageFromCurrentImageContext();</span><br><span class="line">UIGraphicsEndImageContext();</span><br><span class="line">return image;&#125;</span><br><span class="line">然后调用时就直接传一个圆角来处理：</span><br><span class="line">imgView.image = [[UIImage imageNamed:@&quot;test&quot;] hyb_imageWithCornerRadius:4];</span><br></pre></td></tr></table></figure>
+	  
 
-      
-    </div>
-
-    <div>
-      
-        
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/06/23/感悟/" rel="next" title="一些有道理的话">
-                <i class="fa fa-chevron-left"></i> 一些有道理的话
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/27/第三方框架使用记录/" rel="prev" title="第三方框架使用记录">
-                第三方框架使用记录 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2016/06/24/Objc面试题收录/"
-           data-title="Objc面试题收录" data-url="http://yoursite.com/2016/06/24/Objc面试题收录/">
-      </div>
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.jpg"
-               alt="spike" />
-          <p class="site-author-name" itemprop="name">spike</p>
-          <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/">
-              <span class="site-state-item-count">28</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
-
-          
-            <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">分类</span>
-              
-            </div>
-          
-
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/coderspike" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-      </section>
-
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单描述一下XIB与Storyboards，说一下他们的优缺点"><span class="nav-number">1.</span> <span class="nav-text">简单描述一下XIB与Storyboards，说一下他们的优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下面四个修饰指针有什么区别"><span class="nav-number">2.</span> <span class="nav-text">下面四个修饰指针有什么区别?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请把字符串2015-04-10格式化日期转为NSDate类型"><span class="nav-number">3.</span> <span class="nav-text">请把字符串2015-04-10格式化日期转为NSDate类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#描述一下iOS的内存管理，在开发中对于内存的使用和优化包含哪些方面。我们在开发中应该注意哪些问题。"><span class="nav-number">4.</span> <span class="nav-text">描述一下iOS的内存管理，在开发中对于内存的使用和优化包含哪些方面。我们在开发中应该注意哪些问题。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深复制和浅复制的区别："><span class="nav-number">5.</span> <span class="nav-text">深复制和浅复制的区别：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怎么用-copy-关键字？"><span class="nav-number">6.</span> <span class="nav-text">怎么用 copy 关键字？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#property-的本质是什么？"><span class="nav-number">7.</span> <span class="nav-text">@property 的本质是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARC下，不显式指定任何属性关键字时，默认的关键字都有哪些？"><span class="nav-number">8.</span> <span class="nav-text">ARC下，不显式指定任何属性关键字时，默认的关键字都有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个objc对象的isa的指针指向什么？有什么作用？"><span class="nav-number">9.</span> <span class="nav-text">一个objc对象的isa的指针指向什么？有什么作用？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#objc中的类方法和实例方法有什么本质区别和联系？"><span class="nav-number">10.</span> <span class="nav-text">objc中的类方法和实例方法有什么本质区别和联系？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS-的沙盒目录结构是怎样的？-App-Bundle-里面都有什么？"><span class="nav-number">11.</span> <span class="nav-text">iOS 的沙盒目录结构是怎样的？ App Bundle 里面都有什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Objective-C-如何对已有的方法，添加自己的功能代码以实现类似记录日志这样的功能？"><span class="nav-number">12.</span> <span class="nav-text">Objective-C 如何对已有的方法，添加自己的功能代码以实现类似记录日志这样的功能？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strong-weak-unsafe-unretained-的区别？"><span class="nav-number">13.</span> <span class="nav-text">strong / weak / unsafe_unretained 的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何为-Class-定义一个对外只读对内可读写的属性"><span class="nav-number">14.</span> <span class="nav-text">如何为 Class 定义一个对外只读对内可读写的属性?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#frame-和-bounds-的区别是什么？"><span class="nav-number">15.</span> <span class="nav-text">frame 和 bounds 的区别是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instancetype"><span class="nav-number">16.</span> <span class="nav-text">Instancetype:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请简单描述一下队列和多线程的使用原理"><span class="nav-number">17.</span> <span class="nav-text">请简单描述一下队列和多线程的使用原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static的作用"><span class="nav-number">18.</span> <span class="nav-text">static的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#self-super"><span class="nav-number">19.</span> <span class="nav-text">self super</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是单例，如何设计单例？"><span class="nav-number">20.</span> <span class="nav-text">什么是单例，如何设计单例？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怎么用copy关键字？"><span class="nav-number">21.</span> <span class="nav-text">怎么用copy关键字？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对数组中的元素去重复"><span class="nav-number">22.</span> <span class="nav-text">对数组中的元素去重复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请写出有多少有方法给UIImageView添加圆角"><span class="nav-number">23.</span> <span class="nav-text">请写出有多少有方法给UIImageView添加圆角?</span></a></li></ol></div>
-            
-          </div>
-        </section>
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2016</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">spike</span>
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+	
+	
+		<li class="prev"><a href="/2016/06/27/第三方框架使用记录/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/2016/06/16/关于CocoaPods的使用总结/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
 </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
-
-        
-
-        
-      </div>
-    </footer>
-
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+	</div>
   </div>
-
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2016 John Doe
   
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
 
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
 </script>
 
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"coderspike"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-  
-
-
-
-
-
-
-  
-  
-  
-
-  
-
-  
 
 </body>
 </html>

@@ -1,651 +1,233 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
+  
+  <title>CALayer | Hexo</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="在iOS中，你能看得见摸得着的东西基本上都是UIView，比如一个按钮、一个文本标签、一个文本输入框、一个图标等等，这些都是UIView。其实UIView之所以能显示在屏幕上，完全是因为它内部的一个图层，在创建UIView对象时，UIView内部会自动创建一个图层(即CALayer对象)，通过UIView的layer属性可以访问这个层@property(nonatomic,readonly,retain) CALayer *layer;当UIView需要显示到屏幕上时，会调用drawRect:方法进行绘图，并且会将所有内容绘制在自己的图层（CALayer）上，绘图完毕后，系统会将图层拷贝到屏幕上，于是就完成了UIView的显示换句话说，UIView本身不具备显示的功能，拥有显示功能的是它内部的图层。NSObject–&amp;gt;CALayer">
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-
-
+  <meta property="og:title" content="CALayer"/>
+  <meta property="og:site_name" content="Hexo"/>
 
   
-  
-  
+    <meta property="og:image" content="undefined"/>
   
 
   
-    
-    
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
   
 
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="精于心 简于形" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
-
-
-
-
-
-
-<meta name="description" content="在iOS中，你能看得见摸得着的东西基本上都是UIView，比如一个按钮、一个文本标签、一个文本输入框、一个图标等等，这些都是UIView。其实UIView之所以能显示在屏幕上，完全是因为它内部的一个图层，在创建UIView对象时，UIView内部会自动创建一个图层(即CALayer对象)，通过UIView的layer属性可以访问这个层@property(nonatomic,readonly,re">
-<meta property="og:type" content="article">
-<meta property="og:title" content="CALayer">
-<meta property="og:url" content="http://yoursite.com/2016/07/06/CALayer/index.html">
-<meta property="og:site_name" content="精于心 简于形">
-<meta property="og:description" content="在iOS中，你能看得见摸得着的东西基本上都是UIView，比如一个按钮、一个文本标签、一个文本输入框、一个图标等等，这些都是UIView。其实UIView之所以能显示在屏幕上，完全是因为它内部的一个图层，在创建UIView对象时，UIView内部会自动创建一个图层(即CALayer对象)，通过UIView的layer属性可以访问这个层@property(nonatomic,readonly,re">
-<meta property="og:updated_time" content="2016-07-12T03:09:33.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CALayer">
-<meta name="twitter:description" content="在iOS中，你能看得见摸得着的东西基本上都是UIView，比如一个按钮、一个文本标签、一个文本输入框、一个图标等等，这些都是UIView。其实UIView之所以能显示在屏幕上，完全是因为它内部的一个图层，在创建UIView对象时，UIView内部会自动创建一个图层(即CALayer对象)，通过UIView的layer属性可以访问这个层@property(nonatomic,readonly,re">
-
-
-
-<script type="text/javascript" id="hexo.configuration">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: 0,
-      author: '博主'
-    }
-  };
-</script>
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2016/07/06/CALayer/"/>
-
-  <title> CALayer | 精于心 简于形 </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">Hexo</a><span class="split"></span><span class="title">CALayer</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-07-06</span></h1>
+</div>		
 
-  
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?e46a6e51942322a686b07c098b48d4e4";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
-
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">精于心 简于形</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-  <p class="site-subtitle">iOS Road</p>
-</div>
-
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-code">
-          <a href="/categories/编程" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            编程
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-life">
-          <a href="/categories/生活" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            生活
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-book">
-          <a href="/categories/读书" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            读书
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
+<div class="row page">
+  <!-- cols -->	
   
   
 
   
-  
-  
+	<div class="col-md-12">
+	  
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                CALayer
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-06T13:49:55+08:00" content="2016-07-06">
-              2016-07-06
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/06/CALayer/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/06/CALayer/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <blockquote>
+	  <!-- content -->
+	  <blockquote>
 <p>在iOS中，你能看得见摸得着的东西基本上都是UIView，比如一个按钮、一个文本标签、一个文本输入框、一个图标等等，这些都是UIView。<br>其实UIView之所以能显示在屏幕上，完全是因为它内部的一个图层，在创建UIView对象时，UIView内部会自动创建一个图层(即CALayer对象)，通过UIView的layer属性可以访问这个层<br>@property(nonatomic,readonly,retain) CALayer *layer;<br>当UIView需要显示到屏幕上时，会调用drawRect:方法进行绘图，并且会将所有内容绘制在自己的图层（CALayer）上，绘图完毕后，系统会将图层拷贝到屏幕上，于是就完成了UIView的显示<br>换句话说，UIView本身不具备显示的功能，拥有显示功能的是它内部的图层。<br>NSObject–&gt;CALayer</p>
 </blockquote>
 <a id="more"></a>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>UIView之所以能够显示，完全是因为内部的CALayer对象。因此，通过操作这个CALayer对象，可以很方便地调整UIView的一些界面属性，比如：阴影、圆角大小、边框宽度和颜色等。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">示例1：</span><br><span class="line">新建一个项目，在storyboard中添加一个view.</span><br><span class="line">1.通过layer设置边框的宽度和颜色</span><br><span class="line"> </span><br><span class="line">#import &quot;YYViewController.h&quot;</span><br><span class="line"></span><br><span class="line">@interface YYViewController ()</span><br><span class="line">@property (weak, nonatomic) IBOutlet UIView *customView;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation YYViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    //设置边框的宽度为20</span><br><span class="line">    self.customView.layer.borderWidth=20;</span><br><span class="line">    //设置边框的颜色</span><br><span class="line">    self.customView.layer.borderColor=[UIColor greenColor].CGColor;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2.通过layer设置边框为圆角self.customView.layer.cornerRadius=20;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">3.在layer上添加一张图片 </span><br><span class="line">#import &quot;YYViewController.h&quot;</span><br><span class="line"></span><br><span class="line">@interface YYViewController ()</span><br><span class="line">@property (weak, nonatomic) IBOutlet UIView *customView;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation YYViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    //设置边框的宽度为20</span><br><span class="line">    self.customView.layer.borderWidth=5;</span><br><span class="line">    //设置边框的颜色</span><br><span class="line">    self.customView.layer.borderColor=[UIColor blackColor].CGColor;</span><br><span class="line">    //设置layer的圆角</span><br><span class="line">    self.customView.layer.cornerRadius=20;</span><br><span class="line">    //在view的图层上添加一个image，contents表示接受内容</span><br><span class="line">    self.customView.layer.contents=(id)[UIImage imageNamed:@&quot;me&quot;].CGImage;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">@end</span><br><span class="line">说明：contents是id类型，可以接受内容，上面的实例让layer显示一张图片，仔细观察可以发现四个圆角的部分露了一个角出来。</span><br><span class="line">产生的原因说明：</span><br><span class="line">那是因为设置的image不是展示在主图层上的，而是显示在子图层上的。可以通过设置一个范围，设置超出主图层的部分把它给剪切掉。</span><br><span class="line">有以下两种方法，建议使用layer中的方法（第二种）self.customView.layer.masksToBounds=YES;</span><br><span class="line">- (void)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    //设置边框的宽度为20</span><br><span class="line">    self.customView.layer.borderWidth=5;</span><br><span class="line">    //设置边框的颜色</span><br><span class="line">    self.customView.layer.borderColor=[UIColor blackColor].CGColor;</span><br><span class="line">    //设置layer的圆角</span><br><span class="line">    self.customView.layer.cornerRadius=20;</span><br><span class="line">    //设置超过子图层的部分裁减掉</span><br><span class="line">    //UI框架中使用的方法</span><br><span class="line">//    self.customView.clipsToBounds=YES;</span><br><span class="line">    self.customView.layer.masksToBounds=YES;</span><br><span class="line">    //在view的图层上添加一个image，contents表示接受内容</span><br><span class="line">    self.customView.layer.contents=(id)[UIImage imageNamed:@&quot;me&quot;].CGImage;</span><br><span class="line">&#125;</span><br><span class="line">注意：layer中不能直接接受UI框架中的东西</span><br><span class="line"></span><br><span class="line">4.设置阴影</span><br><span class="line">设置阴影，不光需要设置阴影颜色，还应该设置阴影的偏移位和透明度。</span><br><span class="line">因为如果不设置偏移位的话，那么阴影和layer完全重叠，且默认透明度为0（即完全透明）。</span><br><span class="line">- (void)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    //设置阴影的颜色</span><br><span class="line">    self.customView.layer.shadowColor=[UIColor blackColor].CGColor;</span><br><span class="line">    //设置阴影的偏移量，如果为正数，则代表为往右边偏移</span><br><span class="line">    self.customView.layer.shadowOffset=CGSizeMake(15, 5);</span><br><span class="line">    //设置阴影的透明度(0~1之间，0表示完全透明)</span><br><span class="line">    self.customView.layer.shadowOpacity=0.6;</span><br><span class="line">&#125;</span><br><span class="line">补充说明：如果设置了超过主图层的部分减掉，则设置阴影不会有显示效果。</span><br><span class="line">- (void)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    //设置边框的宽度为20</span><br><span class="line">    self.customView.layer.borderWidth=5;</span><br><span class="line">    //设置边框的颜色</span><br><span class="line">    self.customView.layer.borderColor=[UIColor blackColor].CGColor;</span><br><span class="line">    //设置layer的圆角</span><br><span class="line">    self.customView.layer.cornerRadius=20;</span><br><span class="line">    //设置超过子图层的部分裁减掉</span><br><span class="line">    //UI框架中使用的方法</span><br><span class="line">    //self.customView.clipsToBounds=YES;</span><br><span class="line">    self.customView.layer.masksToBounds=YES;</span><br><span class="line">    //在view的图层上添加一个image，contents表示接受内容</span><br><span class="line">    self.customView.layer.contents=(id)[UIImage imageNamed:@&quot;me&quot;].CGImage;</span><br><span class="line">    //设置阴影的颜色</span><br><span class="line">    self.customView.layer.shadowColor=[UIColor blackColor].CGColor;</span><br><span class="line">    //设置阴影的偏移量，如果为正数，则代表为往右边偏移</span><br><span class="line">    self.customView.layer.shadowOffset=CGSizeMake(15, 5);</span><br><span class="line">    //设置阴影的透明度(0~1之间，0表示完全透明)</span><br><span class="line">    self.customView.layer.shadowOpacity=0.6;</span><br><span class="line">&#125;</span><br><span class="line">把剪切超出主图层部分的代码注释掉之后的显示效果</span><br></pre></td></tr></table></figure>
-      
-    </div>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">示例1：</span><br><span class="line">新建一个项目，在storyboard中添加一个view.</span><br><span class="line">1.通过layer设置边框的宽度和颜色</span><br><span class="line"> </span><br><span class="line">#import &quot;YYViewController.h&quot;</span><br><span class="line"></span><br><span class="line">@interface YYViewController ()</span><br><span class="line">@property (weak, nonatomic) IBOutlet UIView *customView;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation YYViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    //设置边框的宽度为20</span><br><span class="line">    self.customView.layer.borderWidth=20;</span><br><span class="line">    //设置边框的颜色</span><br><span class="line">    self.customView.layer.borderColor=[UIColor greenColor].CGColor;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2.通过layer设置边框为圆角self.customView.layer.cornerRadius=20;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">3.在layer上添加一张图片 </span><br><span class="line">#import &quot;YYViewController.h&quot;</span><br><span class="line"></span><br><span class="line">@interface YYViewController ()</span><br><span class="line">@property (weak, nonatomic) IBOutlet UIView *customView;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation YYViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    //设置边框的宽度为20</span><br><span class="line">    self.customView.layer.borderWidth=5;</span><br><span class="line">    //设置边框的颜色</span><br><span class="line">    self.customView.layer.borderColor=[UIColor blackColor].CGColor;</span><br><span class="line">    //设置layer的圆角</span><br><span class="line">    self.customView.layer.cornerRadius=20;</span><br><span class="line">    //在view的图层上添加一个image，contents表示接受内容</span><br><span class="line">    self.customView.layer.contents=(id)[UIImage imageNamed:@&quot;me&quot;].CGImage;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">@end</span><br><span class="line">说明：contents是id类型，可以接受内容，上面的实例让layer显示一张图片，仔细观察可以发现四个圆角的部分露了一个角出来。</span><br><span class="line">产生的原因说明：</span><br><span class="line">那是因为设置的image不是展示在主图层上的，而是显示在子图层上的。可以通过设置一个范围，设置超出主图层的部分把它给剪切掉。</span><br><span class="line">有以下两种方法，建议使用layer中的方法（第二种）self.customView.layer.masksToBounds=YES;</span><br><span class="line">- (void)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    //设置边框的宽度为20</span><br><span class="line">    self.customView.layer.borderWidth=5;</span><br><span class="line">    //设置边框的颜色</span><br><span class="line">    self.customView.layer.borderColor=[UIColor blackColor].CGColor;</span><br><span class="line">    //设置layer的圆角</span><br><span class="line">    self.customView.layer.cornerRadius=20;</span><br><span class="line">    //设置超过子图层的部分裁减掉</span><br><span class="line">    //UI框架中使用的方法</span><br><span class="line">//    self.customView.clipsToBounds=YES;</span><br><span class="line">    self.customView.layer.masksToBounds=YES;</span><br><span class="line">    //在view的图层上添加一个image，contents表示接受内容</span><br><span class="line">    self.customView.layer.contents=(id)[UIImage imageNamed:@&quot;me&quot;].CGImage;</span><br><span class="line">&#125;</span><br><span class="line">注意：layer中不能直接接受UI框架中的东西</span><br><span class="line"></span><br><span class="line">4.设置阴影</span><br><span class="line">设置阴影，不光需要设置阴影颜色，还应该设置阴影的偏移位和透明度。</span><br><span class="line">因为如果不设置偏移位的话，那么阴影和layer完全重叠，且默认透明度为0（即完全透明）。</span><br><span class="line">- (void)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    //设置阴影的颜色</span><br><span class="line">    self.customView.layer.shadowColor=[UIColor blackColor].CGColor;</span><br><span class="line">    //设置阴影的偏移量，如果为正数，则代表为往右边偏移</span><br><span class="line">    self.customView.layer.shadowOffset=CGSizeMake(15, 5);</span><br><span class="line">    //设置阴影的透明度(0~1之间，0表示完全透明)</span><br><span class="line">    self.customView.layer.shadowOpacity=0.6;</span><br><span class="line">&#125;</span><br><span class="line">补充说明：如果设置了超过主图层的部分减掉，则设置阴影不会有显示效果。</span><br><span class="line">- (void)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    //设置边框的宽度为20</span><br><span class="line">    self.customView.layer.borderWidth=5;</span><br><span class="line">    //设置边框的颜色</span><br><span class="line">    self.customView.layer.borderColor=[UIColor blackColor].CGColor;</span><br><span class="line">    //设置layer的圆角</span><br><span class="line">    self.customView.layer.cornerRadius=20;</span><br><span class="line">    //设置超过子图层的部分裁减掉</span><br><span class="line">    //UI框架中使用的方法</span><br><span class="line">    //self.customView.clipsToBounds=YES;</span><br><span class="line">    self.customView.layer.masksToBounds=YES;</span><br><span class="line">    //在view的图层上添加一个image，contents表示接受内容</span><br><span class="line">    self.customView.layer.contents=(id)[UIImage imageNamed:@&quot;me&quot;].CGImage;</span><br><span class="line">    //设置阴影的颜色</span><br><span class="line">    self.customView.layer.shadowColor=[UIColor blackColor].CGColor;</span><br><span class="line">    //设置阴影的偏移量，如果为正数，则代表为往右边偏移</span><br><span class="line">    self.customView.layer.shadowOffset=CGSizeMake(15, 5);</span><br><span class="line">    //设置阴影的透明度(0~1之间，0表示完全透明)</span><br><span class="line">    self.customView.layer.shadowOpacity=0.6;</span><br><span class="line">&#125;</span><br><span class="line">把剪切超出主图层部分的代码注释掉之后的显示效果</span><br></pre></td></tr></table></figure>	  
 
-    <div>
-      
-        
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/07/04/囚徒健身/" rel="next" title="囚徒健身">
-                <i class="fa fa-chevron-left"></i> 囚徒健身
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/07/获取iOS设备唯一标识/" rel="prev" title="获取iOS设备唯一标识">
-                获取iOS设备唯一标识 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2016/07/06/CALayer/"
-           data-title="CALayer" data-url="http://yoursite.com/2016/07/06/CALayer/">
-      </div>
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.jpg"
-               alt="spike" />
-          <p class="site-author-name" itemprop="name">spike</p>
-          <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/">
-              <span class="site-state-item-count">28</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
-
-          
-            <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">分类</span>
-              
-            </div>
-          
-
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/coderspike" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-      </section>
-
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">1.</span> <span class="nav-text">使用</span></a></li></ol></div>
-            
-          </div>
-        </section>
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2016</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">spike</span>
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+			
+			
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+	
+	
+		<li class="prev"><a href="/2016/07/07/获取iOS设备唯一标识/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/2016/07/04/布局相关/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
 </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
-
-        
-
-        
-      </div>
-    </footer>
-
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+	</div>
   </div>
-
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2016 John Doe
   
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
 
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
 </script>
 
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"coderspike"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-  
-
-
-
-
-
-
-  
-  
-  
-
-  
-
-  
 
 </body>
 </html>
