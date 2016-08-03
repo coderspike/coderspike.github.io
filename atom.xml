@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>hhhh</title>
+  <title>spike</title>
   
   <link href="/atom.xml" rel="self"/>
   
@@ -229,7 +229,7 @@
     <link href="http://yoursite.com/2016/07/03/%E8%AF%BB%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A0/"/>
     <id>http://yoursite.com/2016/07/03/读如何高效学习/</id>
     <published>2016-07-03T01:19:56.000Z</published>
-    <updated>2016-07-04T14:31:39.000Z</updated>
+    <updated>2016-08-03T12:49:35.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;这两天粗读了一遍如何高效学习这本书，做个简单的小结。书中提到了很多观点和方法，有很多关于“整体性学习”的阐述，个人在理解上还不算深刻，通过整理书后的小结及日常的应用，希望能对自己的学习生活起到正向作用。&lt;/p&gt;
@@ -246,7 +246,7 @@
     
     </summary>
     
-      <category term="读书" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+      <category term="读书/生活" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6-%E7%94%9F%E6%B4%BB/"/>
     
     
   </entry>
@@ -407,32 +407,6 @@
   </entry>
   
   <entry>
-    <title>骑行</title>
-    <link href="http://yoursite.com/2016/06/23/%E9%AA%91%E8%A1%8C/"/>
-    <id>http://yoursite.com/2016/06/23/骑行/</id>
-    <published>2016-06-23T02:00:45.000Z</published>
-    <updated>2016-06-23T08:58:25.000Z</updated>
-    
-    <content type="html">&lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw1024/bc254b75jw1f559ehq6z3j21kw23uqut.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/mw1024/bc254b75jw1f559em7dhmj21kw23u7wh.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559end4p3j20qo0zkaph.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559ev3xehj21kw23u4qp.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/mw1024/bc254b75jw1f559evsa81j20qo0zkai1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;
-    
-    </summary>
-    
-      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>一些有道理的话</title>
     <link href="http://yoursite.com/2016/06/23/%E6%84%9F%E6%82%9F/"/>
     <id>http://yoursite.com/2016/06/23/感悟/</id>
@@ -454,6 +428,32 @@
     </summary>
     
       <category term="读书" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>骑行</title>
+    <link href="http://yoursite.com/2016/06/23/%E9%AA%91%E8%A1%8C/"/>
+    <id>http://yoursite.com/2016/06/23/骑行/</id>
+    <published>2016-06-23T02:00:45.000Z</published>
+    <updated>2016-06-23T08:58:25.000Z</updated>
+    
+    <content type="html">&lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw1024/bc254b75jw1f559ehq6z3j21kw23uqut.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/mw1024/bc254b75jw1f559em7dhmj21kw23u7wh.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559end4p3j20qo0zkaph.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559ev3xehj21kw23u4qp.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/mw1024/bc254b75jw1f559evsa81j20qo0zkai1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
   </entry>
