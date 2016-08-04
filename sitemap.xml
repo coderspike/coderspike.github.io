@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/07/04/%E5%B8%83%E5%B1%80%E7%9B%B8%E5%85%B3/</loc>
+    
+    <lastmod>2016-08-04T01:07:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/iOS-UI/index.html</loc>
+    
+    <lastmod>2016-08-04T01:06:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/backup/%E5%9B%9A%E5%BE%92%E5%81%A5%E8%BA%AB.mdx.html</loc>
     
     <lastmod>2016-08-03T14:14:22.000Z</lastmod>
@@ -61,13 +75,6 @@
     <loc>http://yoursite.com/2016/06/27/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</loc>
     
     <lastmod>2016-07-12T04:14:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/07/04/%E5%B8%83%E5%B1%80%E7%9B%B8%E5%85%B3/</loc>
-    
-    <lastmod>2016-07-12T04:13:26.000Z</lastmod>
     
   </url>
   
