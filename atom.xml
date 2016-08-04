@@ -283,7 +283,7 @@
     <link href="http://yoursite.com/2016/06/24/Objc%E9%9D%A2%E8%AF%95%E9%A2%98%E6%94%B6%E5%BD%95/"/>
     <id>http://yoursite.com/2016/06/24/Objc面试题收录/</id>
     <published>2016-06-24T01:33:55.000Z</published>
-    <updated>2016-07-04T07:22:36.000Z</updated>
+    <updated>2016-08-04T07:47:43.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;持续收录一些较经典的面试题&lt;/p&gt;
@@ -322,7 +322,7 @@
     
     </summary>
     
-      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="iOS-ObjectiveC" scheme="http://yoursite.com/categories/iOS-ObjectiveC/"/>
     
     
   </entry>
@@ -416,7 +416,7 @@
     <link href="http://yoursite.com/2016/06/15/Objc%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86%E7%82%B9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2016/06/15/Objc概念知识点学习笔记/</id>
     <published>2016-06-15T08:07:24.000Z</published>
-    <updated>2016-07-12T03:53:49.000Z</updated>
+    <updated>2016-08-04T07:47:54.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;Objc概念知识点学习笔记&lt;/p&gt;
@@ -458,7 +458,7 @@
     
     </summary>
     
-      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="iOS-ObjectiveC" scheme="http://yoursite.com/categories/iOS-ObjectiveC/"/>
     
     
   </entry>
@@ -749,7 +749,7 @@
     <link href="http://yoursite.com/2016/06/06/iOS%E5%B8%B8%E7%94%A8%E5%88%86%E7%B1%BB/"/>
     <id>http://yoursite.com/2016/06/06/iOS常用分类/</id>
     <published>2016-06-06T09:57:07.000Z</published>
-    <updated>2016-07-12T03:59:40.000Z</updated>
+    <updated>2016-08-04T07:47:13.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;有一些分类在开发中经常应用，做一个收录。&lt;/p&gt;
@@ -768,7 +768,7 @@
     
     </summary>
     
-      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="iOS开发通用技巧" scheme="http://yoursite.com/categories/iOS%E5%BC%80%E5%8F%91%E9%80%9A%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     
     
   </entry>
