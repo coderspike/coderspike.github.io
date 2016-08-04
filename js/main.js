@@ -33,7 +33,7 @@ $(document).ready(function() {
 			$(".navbar").fadeTo(100, 0.2);
 		}
 	});	
-	$(".panel-title collapsed").removeClass("data-toggle");
+	$(".panel-title collapsed").toggleClass(false);
 	setTitleDate();
 });
 
