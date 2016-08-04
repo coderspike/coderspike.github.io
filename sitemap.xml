@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/06/15/iOS%E4%B8%AD%E7%9A%84MVC%E6%A6%82%E5%BF%B5/</loc>
+    
+    <lastmod>2016-08-04T07:57:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/05/19/windows%E4%B8%8Bhexo-github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
     
     <lastmod>2016-08-04T07:55:33.000Z</lastmod>
@@ -236,13 +243,6 @@
     <loc>http://yoursite.com/%E8%AF%BB%E4%B9%A6-%E7%94%9F%E6%B4%BB/index.html</loc>
     
     <lastmod>2016-08-03T12:49:04.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/06/15/iOS%E4%B8%AD%E7%9A%84MVC%E6%A6%82%E5%BF%B5/</loc>
-    
-    <lastmod>2016-06-24T02:05:22.000Z</lastmod>
     
   </url>
   
