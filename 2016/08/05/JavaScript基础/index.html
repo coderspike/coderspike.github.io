@@ -80,11 +80,65 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alert(&quot;str&quot;.__proto__.constructor);//function String() &#123; [native code] &#125;</span><br><span class="line">alert(new Number(1).__proto__.constructor);//function Number() &#123; [native code] &#125;</span><br><span class="line">alert(new Date.__proto__.constructor);//function anonymous() &#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>(10)利用原型对象对原生对象进行扩展</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String.prototype.suolve =  function (length)&#123;</span><br><span class="line"> 		if(this.length &gt; length)&#123;</span><br><span class="line">			return this.substring(0,length)+&quot;……&quot;;</span><br><span class="line">   		 &#125;else &#123;</span><br><span class="line">     		return this;</span><br><span class="line">   		 &#125;</span><br><span class="line">&#125;</span><br><span class="line">alert(&quot;猜猜结果？&quot;.suolve(2)); //猜猜……</span><br></pre></td></tr></table></figure>
-<p>3.通用写法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var name,age = 10,dept;</span><br><span class="line"></span><br><span class="line">alert(10 == &quot;10&quot;); //true</span><br><span class="line">alert(10 === &quot;10&quot;); //false</span><br><span class="line"></span><br><span class="line">var name = &quot;&quot;;</span><br><span class="line">alert(name || &quot;xxx&quot;); //xxx</span><br><span class="line">alert(name &amp;&amp; &quot;xxx&quot;); //&quot;&quot;</span><br></pre></td></tr></table></figure></p>
+<p>3.通用写法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var name,age = 10,dept;</span><br><span class="line"></span><br><span class="line">alert(10 == &quot;10&quot;); //true</span><br><span class="line">alert(10 === &quot;10&quot;); //false</span><br><span class="line"></span><br><span class="line">var name = &quot;&quot;;</span><br><span class="line">alert(name || &quot;xxx&quot;); //xxx</span><br><span class="line">alert(name &amp;&amp; &quot;xxx&quot;); //&quot;&quot;</span><br></pre></td></tr></table></figure>
 <p>4.javascript里的反射</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var obj = &#123;name:&apos;xxx&apos;,age:10&#125;;</span><br><span class="line">for(var p in obj)&#123;</span><br><span class="line">	 alert(p);</span><br><span class="line">     alert(obj[p]);</span><br><span class="line">&#125;</span><br><span class="line">// name xxx age 10</span><br></pre></td></tr></table></figure>
-<p>5.使用闭包对代码进行隔离</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(function()&#123;</span><br><span class="line">   ……</span><br><span class="line"></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>5.使用立即执行函数对代码进行隔离</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">主要是用于隔离作用域</span><br><span class="line">(function () &#123;</span><br><span class="line">    // ... all vars and functions are in this scope only</span><br><span class="line">    // still maintains access to all globals</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line">函数中的变量并不会影响到外面的作用域中</span><br><span class="line">var currTime = (function()&#123;</span><br><span class="line">    var time = new Date()</span><br><span class="line">    var year  = time.getFullYear()</span><br><span class="line">    var month = time.getMonth()</span><br><span class="line">    var date  = time.getDate()</span><br><span class="line">    var hour  = time.getHours()</span><br><span class="line">    var min   = time.getMinutes()</span><br><span class="line">    var sec   = time.getSeconds()</span><br><span class="line"></span><br><span class="line">    return year + &apos;/&apos; + month + &apos;/&apos; + date + &apos; &apos; + hour + &apos;:&apos; + min + &apos;:&apos; + sec</span><br><span class="line">&#125;)()；</span><br><span class="line">alert(currTime);  //2016/7/6 17:0:27</span><br></pre></td></tr></table></figure>
+<p>6.关于闭包和立即执行函数</p>
+<p>匿名函数和闭包没有直接关系。能用匿名函数实现闭包的地方，一定也能用命名函数实现。<br>闭包的本质在于“闭”和“包”，即把一些变量封闭起来，使其它程序访问不到，同时把这个封闭的东西打成包甩出来，让大家可以直接用这个包（函数）。最典型的实现之一是对象（或类）的私有成员，如</p>
+<pre><code>function MyClass() {
+// 这是一个封闭在 MyClass 中的局部变量
+var _name;
+
+// 这是一个甩出来的“包”
+this.getName = function() {
+    return _name;
+};
+
+// 这是另一个甩出来的“包”
+this.setName = function(name) {
+    // 这保证了 _name 的第一个字母和空格后的第一个字母是大写
+    // 而且因为闭包的原因，_name 不可能被 MyCLass() 外的程序访问到
+    // 也就保证了上述命名规则的无例外执行
+    _name = name.replace(/^.|\s./g, function(s) {
+        return s.toUpperCase();
+    });
+};
+}
+
+var p = new MyClass();
+p.setName(&quot;james fancy&quot;);
+console.log(p.getName());   // James Fancy
+</code></pre><p>匿名函数通常只是用于给成员赋值，比如上例中的 getName 和 setName；也有可能用于立即执行函数，比如你的那段代码，这会将全局变量局部化，避免全局污染。<br>闭包常常会和匿名函数一起使用，但他们之间并没有密不可分的关系。<br>IIFE主要目的是做的一些封装，防止污染，以及保证内部变量的安全<br>闭包严格来说，是一个函数执行之后，返回另外一个函数，返回的函数有前一个函数的内部变量的引用可能会用在IIFE里面，通过返回的函数来提供内部变量的一些操作。</p>
+<pre><code>(function(){
+....
+}());
+可以拆解为
+
+function a(){
+...
+}
+a();
+</code></pre><p>闭包是对函数中变量作用域的构成方式的一种表述，具体表现为一个函数中可以访问不在其作用域范围内但在其外层函数作用域中存在的变量，这个外层函数作用域的顶层为全局作用域</p>
+<p>匿名函数从字面理解就是没有命名的函数，如：</p>
+<pre><code>function() {
+  //...
+}
+</code></pre><p>立即执行函数是指声明完之后便直接执行的函数，因此通常这类函数也不需要命名，如：</p>
+<pre><code>(function() {
+  //...
+})();
+</code></pre><p>闭包通常指在函数内部再定义一个函数，由于作用域的关系，外部函数无法访问内部函数的变量，而内部函数可以访问外部函数的变量，此时如果外部函数将内部函数返回，便形成了闭包，如：</p>
+<pre><code>function outer() {
+  var prop = &apos;outer&apos;;
+  function inner() {
+console.log(prop); // outer
+  }
+  return inner;
+}
+</code></pre><p>所以，也可以把任何函数理解为一个闭包，因为每个函数都可以访问外部函数或者全局的变量，但是外部函数或全局无法访问函数内部的变量，也就可以理解为是一个闭包。</p>
 	  
 
 	  <div>
