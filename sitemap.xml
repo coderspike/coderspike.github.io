@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/06/06/iOS%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    
+    <lastmod>2016-08-08T10:49:57.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/08/08/%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95%E3%80%81%E7%B1%BB%E6%96%B9%E6%B3%95%E3%80%81Category%E3%80%81Protocol/</loc>
     
-    <lastmod>2016-08-08T09:12:10.000Z</lastmod>
+    <lastmod>2016-08-08T10:08:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/06/15/Block/</loc>
+    
+    <lastmod>2016-08-08T09:18:31.000Z</lastmod>
     
   </url>
   
@@ -96,13 +110,6 @@
     <loc>http://yoursite.com/2016/06/30/iOS%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/</loc>
     
     <lastmod>2016-08-04T07:54:31.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/06/06/iOS%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
-    
-    <lastmod>2016-08-04T07:54:20.000Z</lastmod>
     
   </url>
   
@@ -236,13 +243,6 @@
     <loc>http://yoursite.com/2016/05/25/%E8%87%AA%E5%AE%9A%E4%B9%89UINavigationController/</loc>
     
     <lastmod>2016-08-04T02:19:17.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/06/15/Block/</loc>
-    
-    <lastmod>2016-08-04T02:16:27.000Z</lastmod>
     
   </url>
   

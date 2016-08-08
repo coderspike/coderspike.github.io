@@ -6,7 +6,11 @@
   <title>Block | spike 代码之美</title>
   <meta name="author" content="John Doe">
   
-  <meta name="description" content="block在iOS编程中有着非常重要的作用，目前对block的理解只存在于表面的应用上，希望以后不断补充这篇介绍。">
+  <meta name="description" content="block是什么
+block实际上就是Objective-C语言对闭包的实现。
+简单定义：能持有作用域变量的匿名函数
+匿名函数就是没有名称的函数，C 语言的标准不允许存在这样的函数，而通过 Block，源代码中就可以使用匿名函数了。
+能持有作用域变量就是指 Block 能够获得其所在作用域的变量。其">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -58,11 +62,8 @@
 	  
 
 	  <!-- content -->
-	  <blockquote>
-<p>block在iOS编程中有着非常重要的作用，目前对block的理解只存在于表面的应用上，希望以后不断补充这篇介绍。</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="block是什么"><a href="#block是什么" class="headerlink" title="block是什么"></a>block是什么</h3><ul>
+	  <h3 id="block是什么"><a href="#block是什么" class="headerlink" title="block是什么"></a>block是什么</h3><ul>
+<li>block实际上就是Objective-C语言对闭包的实现。</li>
 <li>简单定义：能持有作用域变量的匿名函数</li>
 <li>匿名函数就是没有名称的函数，C 语言的标准不允许存在这样的函数，而通过 Block，源代码中就可以使用匿名函数了。</li>
 <li>能持有作用域变量就是指 Block 能够获得其所在作用域的变量。其中其所在作用域的变量就包括：局部变量（自动变量）、函数的参数、静态局部变量、静态全局变量、全局变量。</li>
