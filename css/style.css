@@ -72,8 +72,6 @@ body {
 }
 
 .page .panel-collapse .panel-body {
-  background:url("1.png");
-  background-repeat:no-repeat;
   padding: 1px 0px;
   background-color: #F5F5D5;
   font-size: 13px;
