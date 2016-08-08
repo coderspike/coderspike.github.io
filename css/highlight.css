@@ -2,7 +2,9 @@
 
 /* highlight */
 
-pre, .highlight, .gist {  
+pre, .highlight, .gist { 
+  white-space: pre-wrap!important;
+  word-wrap: break-word!important;   
   background: #333 !important;
   margin: 0.5em 0;
   padding: 1em 2%;
