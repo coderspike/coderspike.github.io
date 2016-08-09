@@ -3,18 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>UIView简介和常用方法 | spike 代码之美</title>
+  <title>UIView | spike 代码之美</title>
   <meta name="author" content="John Doe">
   
-  <meta name="description" content="UIView表示屏幕上的一块矩形区域，负责渲染区域的内容，并且响应该区域内发生的触摸事件。
-继承关系：NSObject—UIResponder—UIView
-屏幕上能够看见的都是UIView每一个UIView都是容器
-bounds的x,y永远为0(以自身左上角为原点)，frame的x,y以父视图的左上角为原点">
+  <meta name="description" content="UIView 表示屏幕上的一块矩形区域，负责渲染区域的内容，并且响应该区域内发生的触摸事件。它在iOS App中占有绝对重要的地位，因为iOS中几乎所有可视化控件都是 UIView 的子类。继承关系：NSObject—UIResponder—UIView屏幕上能够看见的都是UIViewUIView ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="UIView简介和常用方法"/>
+  <meta property="og:title" content="UIView"/>
   <meta property="og:site_name" content="spike 代码之美"/>
 
   
@@ -48,7 +45,7 @@ bounds的x,y永远为0(以自身左上角为原点)，frame的x,y以父视图的
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">spike 代码之美</a><span class="split"></span><span class="title">UIView简介和常用方法</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-06-12</span></h1>
+  <h1><a class="brand" href="/">spike 代码之美</a><span class="split"></span><span class="title">UIView</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-06-12</span></h1>
 </div>		
 
 <div class="row page">
@@ -62,12 +59,12 @@ bounds的x,y永远为0(以自身左上角为原点)，frame的x,y以父视图的
 
 	  <!-- content -->
 	  <blockquote>
-<p>UIView表示屏幕上的一块矩形区域，负责渲染区域的内容，并且响应该区域内发生的触摸事件。</p>
-<p>继承关系：NSObject—UIResponder—UIView</p>
-<p>屏幕上能够看见的都是UIView<br>每一个UIView都是容器</p>
-<p>bounds的x,y永远为0(以自身左上角为原点)，frame的x,y以父视图的左上角为原点</p>
+<p>UIView 表示屏幕上的一块矩形区域，负责渲染区域的内容，并且响应该区域内发生的触摸事件。它在iOS App中占有绝对重要的地位，因为iOS中几乎所有可视化控件都是 UIView 的子类。<br>继承关系：NSObject—UIResponder—UIView<br>屏幕上能够看见的都是UIView<br>UIView 可以负责以下几种任务：<br>绘制和动画<br>布局和子视图管理<br>事件处理<br>bounds的x,y永远为0(以自身左上角为原点)，frame的x,y以父视图的左上角为原点</p>
 </blockquote>
-<a id="more"></a>
+<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><p>可以以动画的形式改变视图的下面这些属性，只需要告诉系统动画开始和结束时的数值，系统会自动处理中间的过渡过程。<br>frame<br>bounds<br>center<br>transform<br>alpha<br>backgroundColor<br>contentStretch</p>
+<h3 id="视图的几何属性"><a href="#视图的几何属性" class="headerlink" title="视图的几何属性"></a>视图的几何属性</h3><p>视图有 frame，center，bounds 等几个基本几何属性，其中:<br>frame 使用的最多，其坐标位置都是相对于父视图的，可以用于确定本视图在父视图中的位置和其自身的大小<br>center 的坐标位置也是相对于父视图的，通常用于移动，旋转等动画操作<br>bounds 是相对于自身的，通常情况下就是（0,0,width,height)， bounds 的含义可以认为是当前 view 被允许绘制的范围</p>
+<h3 id="布局和子视图管理"><a href="#布局和子视图管理" class="headerlink" title="布局和子视图管理"></a>布局和子视图管理</h3><p>除了提供视图本身的内容之外，一个视图也可以表现得像一个容器。当一个视图包含其他视图时，两个视图之间就创建了一个父子关系。在这个关系中子视图被称为 subView ，父视图被称为 superView 。一个视图可以保护多个子视图，它们被存放在这个视图的 subviews 数组里。添加，删除，以及操作这些子视图的相对位置的函数如下：</p>
+<p>addSubview:<br>insertSubview:…<br>bringSubviewToFront:<br>sendSubviewToBack:<br>exchangeSubviewAtIndex:withSubviewAtIndex:<br>removeFromSuperview（子视图调用）</p>
 <h3 id="常见属性"><a href="#常见属性" class="headerlink" title="常见属性"></a>常见属性</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@property frame</span><br><span class="line">@property bounds</span><br><span class="line">@property center</span><br><span class="line">@property transform</span><br><span class="line">@property alpha</span><br><span class="line">@property backgroundColor</span><br><span class="line">@property contentStretch</span><br></pre></td></tr></table></figure>
 <h3 id="UIView层的操作常用方法"><a href="#UIView层的操作常用方法" class="headerlink" title="UIView层的操作常用方法"></a>UIView层的操作常用方法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(void)removeFromSuperview; // 从父视图中移除</span><br><span class="line">(void)addSubview:(UIView *)view; // 添加一个子视图</span><br><span class="line">(void)insertSubview:(UIView *)view belowSubview:(UIView *)slibingSubview; // 插入一个view到某个view的下层</span><br><span class="line">(void)insertSubview:(UIView *)view aboveSubview:(UIView *)slibingSubview; // 插入一个view到某个view的上层</span><br><span class="line">(void)insertSubview:(UIView *)view atIndex:(NSInteger)index; // 插入一个view到特定层</span><br><span class="line">(void)bringSubviewToFront:(UIView *)view; // 将某个view放在最上层</span><br><span class="line">(void)sendSubviewToBack:(UIView *)view; // 将某个view放在最下层</span><br><span class="line">(BOOL)isDescendantOfView(UIView *)view; // 是否是某个视图的子孙视图</span><br><span class="line">(void)exchangeSubviewAtIndex:(NSInteger)index1 withSubviewAtIndex:(NSInteger)index2; // 交换两个层的view</span><br><span class="line">(UIView *)viewWithTag:(NSInteger)view; // 取到指定tag值的view</span><br></pre></td></tr></table></figure>
 <h3 id="UIView的加载过程"><a href="#UIView的加载过程" class="headerlink" title="UIView的加载过程"></a>UIView的加载过程</h3><p><img src="http://ww2.sinaimg.cn/mw1024/bc254b75jw1f4usac93ohj20mi0vsac7.jpg" alt="view"><br>我们可以知道如果是从 Storyboard 或 Nib 文件中加载 View Controller，我们都不要去重载 loadView，它会自动加载 view 属性以及它的各个 Subviews。只有当我们自己代码创建 View Controller 的时候，我们可能需要去重载 loadView。当然，如果我们不重载，那么默认情况下 loadView 会创建一个光秃秃的 UIView 对象赋给 view 属性。<br>loadView:先寻找有关可用的nib文件的信息，根据这个信息来加载nib文件，如果没有有关nib文件的信息，默认实现会创建一个空白的UIView对象，然后让这个对象成为controller的主view<br>首先访问view属性<br>如果存在view，加载。若不存在，则UIViewController调用loadView方法<br>loadView方法执行如下操作<br>如果覆盖了该方法，必须创建view给UIViewController的view属性<br>如果没有复写该方法，UIViewController会默认调用initWithNibName:bundle:方法初始化并加载view<br>通过viewDidLoad方法来执行一些其他任务</p>
@@ -87,6 +84,12 @@ bounds的x,y永远为0(以自身左上角为原点)，frame的x,y以父视图的
 	
 	
 	
+	
+		
+	
+		
+			
+		
 	
 		
 	
