@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-09T09:07:30.000Z</updated>
+  <updated>2016-08-09T09:12:13.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/08/09/iOS/iOS%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/"/>
     <id>http://yoursite.com/2016/08/09/iOS/iOS开发流程/</id>
     <published>2016-08-09T07:28:26.000Z</published>
-    <updated>2016-08-09T09:07:30.000Z</updated>
+    <updated>2016-08-09T09:12:13.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;什么是证书&quot;&gt;&lt;a href=&quot;#什么是证书&quot; class=&quot;headerlink&quot; title=&quot;什么是证书&quot;&gt;&lt;/a&gt;什么是证书&lt;/h3&gt;&lt;p&gt;由 apple 官方颁发, 用以证明开发者身份的特殊文件, 在 iOS 开发中主要用于代码签名, 保障 iOS 生态的健康安全, 分为开发者证书和发布者证书&lt;/p&gt;
 &lt;h3 id=&quot;什么时候需要证书&quot;&gt;&lt;a href=&quot;#什么时候需要证书&quot; class=&quot;headerlink&quot; title=&quot;什么时候需要证书&quot;&gt;&lt;/a&gt;什么时候需要证书&lt;/h3&gt;&lt;p&gt;只有在本机模拟器调试时无需代码签名, 当 App 需要在真机运行和发布时需要使用相应证书进行签名&lt;/p&gt;
@@ -53,7 +53,7 @@
 &lt;p&gt;iOS 8.1.3 开始不能企业证书 Iresign 方式重新签名的应用无法安装 &lt;a href=&quot;https://support.apple.com/en-us/HT204245&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://support.apple.com/en-us/HT204245&lt;/a&gt;&lt;br&gt;TestFlight&lt;br&gt;仅支持 iOS8.0 以上, 不需要对设备 udid 进行授权, 适合个人 / 公司开发者, 在应用发布前可以开启 TestFlight Beta 测试并添加测试者的 iTunes Connect 帐号, 需要待测用户拥有 iTunes Connect 帐号并在设备安装 TestFlight 客户端&lt;/p&gt;
 &lt;p&gt;这种方式非常便于推送应用更新和收集测试信息&lt;/p&gt;
 &lt;p&gt;导出 ipa 包, 越狱安装&lt;br&gt;如果测试设备都越狱了, 这种方式非常灵活简单, 只有能导出 ipa 包就能通过 itools 等第三方工具安装&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/Users/mac/Desktop/Self/myblog/source/_posts/img/bluecycle.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/Users/mac/Desktop/Self/myblog/themes/wixo/source/img/bluecycle.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
