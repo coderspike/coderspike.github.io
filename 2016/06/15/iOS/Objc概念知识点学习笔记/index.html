@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Objc概念知识点学习笔记 | spike 代码之美</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="UIApplication&amp;amp;AppDelegate（1）UIApplication对象是应用程序的象征，一个UIApplication对象就代表一个应用程序。（2）每一个应用都有自己的UIApplication对象，而且是单例的，如果试图在程序中新建一个UIApplication对象，那么将">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Objc概念知识点学习笔记"/>
+  <meta property="og:site_name" content="spike 代码之美"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="spike 代码之美" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">spike 代码之美</a><span class="split"></span><span class="title">Objc概念知识点学习笔记</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-06-15</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <h4 id="UIApplication-amp-AppDelegate"><a href="#UIApplication-amp-AppDelegate" class="headerlink" title="UIApplication&amp;AppDelegate"></a>UIApplication&amp;AppDelegate</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">（1）UIApplication对象是应用程序的象征，一个UIApplication对象就代表一个应用程序。</span><br><span class="line">（2）每一个应用都有自己的UIApplication对象，而且是单例的，如果试图在程序中新建一个UIApplication对象，那么将报错提示。</span><br><span class="line">（3）通过[UIApplication sharedApplication]可以获得这个单例对象</span><br><span class="line">（4） 一个iOS程序启动后创建的第一个对象就是UIApplication对象，且只有一个（通过代码获取两个UIApplication对象，打印地址可以看出地址是相同的）。</span><br><span class="line">（5）利用UIApplication对象，能进行一些应用级别的操作，如：设置应用程序图标右上角的红色提醒数字、设置联网指示器的可见性、管理状态栏、openURL</span><br><span class="line">下面介绍appdelagate</span><br><span class="line">在main.m的UIApplicationMain函数中，根据@&quot;AppDelegate&quot;这个类，创建一个delegate对象，并将该delegate对象赋值给UIApplication对象中的delegate属性</span><br><span class="line">所有的移动操作系统都有个致命的缺点：app很容易受到打扰。比如一个来电或者锁屏会导致app进入后台甚至被终止。</span><br><span class="line">还有很多其它类似的情况会导致app受到干扰，在app受到干扰时，会产生一些系统事件，这时UIApplication会通知它的delegate对象，让delegate代理来处理这些系统事件。</span><br><span class="line">作用：当被打断的时候，通知代理进入到后台。</span><br></pre></td></tr></table></figure>
+<h4 id="响应者链"><a href="#响应者链" class="headerlink" title="响应者链"></a>响应者链</h4><p>事件分类<br>对于IOS设备用户来说，他们操作设备的方式主要有三种：触摸屏幕、晃动设备、通过遥控设施控制设备。对应的事件类型有以下三种：<br>1、触屏事件（Touch Event）<br>2、运动事件（Motion Event）<br>3、远端控制事件（Remote-Control Event）</p>
+<hr>
+<p>响应者链（Responder Chain）<br>指的是有响应和处理事件能力的对象。响应者链就是由一系列的响应者对象构成的一个层次结构。<br>什么是事件的响应者<br>只要继承了UIResponder的对象就可以作为事件的响应者<br>其中AppDelegate类是创建一个iOS项目时自动创建的继承UIResponder的应用程序委托类<br>// 接口文件</p>
+<p> #import <uikit uikit.h=""><br> @interface AppDelegate : UIResponder <uiapplicationdelegate></uiapplicationdelegate></uikit></p>
+<p> 响应者链<br>如果当前响应者无法响应用户事件，它将继续向上传递，直到找到请响应者，这个传递过程形成了一条有规律的链条，组成了响应者链（一个层次结构）如果一直找到AppDelegate类还是无法响应用户事件，那么这个事件将无法被响应，但如果在响应者链上传递的过程中，有某个响应者对该传递的事件有响应，该传递过程将立即停止。<br>    initial view若不能处理事件，则传到其父视图view<br>    view若不能处理，则传到其父视图，因为它还不是最上层视图<br>    这里view的父视图是view controller的view，因为这个view也不能处理事件，因此传给view controller<br>    若view controller也不能处理此事件，则传到window<br>    若window也不能处理此事件，则传到app单例对象Application<br>    若UIApplication单例对象也不能处理，则表示无效事件</p>
+<hr>
+<p>什么是第一响应者<br>与用户交互的控件就是第一响应者，它将作为响应者链的开始，事件首先发送给第一响应者，然后再依次传递下去，直到该事件被某个响应者处理。</p>
+<ul>
+<li>起始及事件分发<br>当一个触摸事件发生，首先接收到事件的对象是UIApplication<br>将事件放入UIApplication的活动队列中<br>UIApplication的单例对象，再从活动队列取出该事件，并传递给UIWindow<br>UIWindow的对象将调用-(nullable UIView <em>)hitTest:(CGPoint)point withEvent:(nullable UIEvent </em>)event;方法<br>• 在这个方法中对其下一层的每一个视图调用- (BOOL)pointInside:(CGPoint)point withEvent:(nullable UIEvent <em>)event;方法，用于判断当前点击的点是否位于当前视图中<br>（1）若返回NO，则表示不在当前视图中，-(nullable UIView </em>)hitTest:(CGPoint)point withEvent:(nullable UIEvent <em>)event;方法返回nil;<br>（2）若返回YES，则说明该触摸事件发生在当前视图，然后当前视图再调用 -(nullable UIView </em>)hitTest:(CGPoint)point withEvent:(nullable UIEvent <em>)event;方法;<br>（3）重复上述过程，直到- (BOOL)pointInside:(CGPoint)point withEvent:(nullable UIEvent </em>)event;方法返回YES，并使用它调用-(nullable UIView <em>)hitTest:(CGPoint)point withEvent:(nullable UIEvent </em>)event;方法返回nil的时候，表示此视图就是这个触摸事的第一响应者。</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/652024-2e717ff7875279f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">也称为延迟加载，即在需要的时候才加载（效率低，占用内存小）。所谓懒加载，写的是其get方法.</span><br><span class="line">- (NSMutableArray *)fakeData</span><br><span class="line">&#123;</span><br><span class="line">      if (!_fakeData)//判断是否已经有了，若没有，则进行实例化</span><br><span class="line">    &#123;</span><br><span class="line">        self.fakeData   = [NSMutableArray array];</span><br><span class="line">    &#125;</span><br><span class="line">    return _fakeData;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">优点：</span><br><span class="line">防止对象被提前创建（内存优化，如加载plist文件等耗内存的操作）</span><br><span class="line">防止对象重复创建 （永远只加载一次）</span><br><span class="line">防止对象使用时,还没被创建</span><br><span class="line">可以在懒加载方法里面,进行初始化操作</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">懒加载代码示例</span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">[super viewDidLoad];&#125;</span><br><span class="line">- (NSArray *)shopData&#123;    if (!_shopData) &#123;        _shopData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@&quot;shop&quot; ofType:@&quot;plist&quot;]];    &#125;    return _shopData;&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h3 id="iOS开发中需要的图片"><a href="#iOS开发中需要的图片" class="headerlink" title="iOS开发中需要的图片"></a>iOS开发中需要的图片</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、产品设计图</span><br><span class="line">   可以以6的长宽比 750*1134来设计。这些图片用于描述app是什么样子的，这是app开发人员的开发参考。</span><br><span class="line">2、产品切图</span><br><span class="line">将设计师将设计稿切成可以用来开发的图</span><br><span class="line">    颜色值</span><br><span class="line">    iOS颜色值取 RGB各颜色的值比如某个色值，给予iOS开发的色值为 R:12 G:34 B:56 给出的值就是 12,34,56(有时也要根据开发的习惯，有时也用十六进制)</span><br><span class="line">    内部设计细节：1、所有能点击的图片不得小于44px（Retina需要88px）2、单独存在的部件必须是双数尺寸 3、两倍图以@2x作为命名后缀</span><br><span class="line">3、图标icon</span><br><span class="line">      需要四种尺寸：58*58、80*80、120*120、180*180</span><br><span class="line">4、启动图LaunchImage</span><br><span class="line">      需要四种尺寸：3.5英寸（640*960），4英寸（640*1136），4.7英寸（750*1134），5.5英寸（1242*2208）</span><br><span class="line">5、引导图</span><br><span class="line">      这是用于用户第一次使用app或者app更新之后展示新特性的图</span><br><span class="line">6、App Store上架图</span><br><span class="line">      这个是用于在App Store上面 介绍app的，需要四种尺寸：3.5英寸（640*960），4英寸（640*1136），4.7英寸（750*1134），5.5英寸（1242*2208）</span><br></pre></td></tr></table></figure>
+<h3 id="在-m中的声明-interface"><a href="#在-m中的声明-interface" class="headerlink" title="在.m中的声明@interface"></a>在.m中的声明@interface</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//in Header.h</span><br><span class="line">@interface Header&#123;&#125;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">//in Header.m</span><br><span class="line">@interface Header()</span><br><span class="line">@end</span><br><span class="line">这是个非常常见的设计,为什么在.m文件里面,也要出现一个接口声明呢?</span><br><span class="line">这很类似于一个分类,但其实它不是一个分类(或者你也可以叫它anonymous Catogary),其实这是一个叫做class extension的东西</span><br><span class="line"> </span><br><span class="line">说说区别:</span><br><span class="line">1.  首先 extension 可以重声明一个数据成员,比如一个数据成员是只读的,你可以把它变成可读写</span><br><span class="line">2.  分类根本不同意你扩展数据成员,它只扩展一些方法, 但是在Clang/LLVM 2.0 compiler 以后, extension可以这么做.</span><br><span class="line">3.  有时候,你如果希望实现一些不公开的方法供自己使用,那你可以把它放入.m的extension里面.那么这些接口都是不公开的了</span><br></pre></td></tr></table></figure>
+<h3 id="h-m属性"><a href="#h-m属性" class="headerlink" title=".h  .m属性"></a>.h  .m属性</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">属性在.h文件中和在.m中声明是有区别的。区别就是，在.h文件中声明的属性，外部类可以通过“类实例.属性”来调用但在.m中声明的则不可以，获取和设置的方法，只能是通过setValue:forKey和valueForKey来实现。</span><br></pre></td></tr></table></figure>
+<h3 id="awakeFromNib"><a href="#awakeFromNib" class="headerlink" title="awakeFromNib"></a>awakeFromNib</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">当.nib文件被加载的时候，会发送一个awakeFromNib的消息到.nib文件中的每个对象，每个对象都可以定义自己的awakeFromNib函数来响应这个消息，执行一些必要的操作。</span><br><span class="line">也就是说只有通过.nib文件创建view对象时才会执行awakeFromNib 。</span><br><span class="line">一般的，当IB加载的时候，我们会通过调用自定义对象的awakeFromNib函数，来对界面进行补充。</span><br><span class="line">选择的时机：当你需要写一个UIView的子类并且想在load nib的时候做一些初始化工作的时候很有用。bundle在load nib后会给每个view对象发送一个awakeFromNib消息。</span><br></pre></td></tr></table></figure>
+<h3 id="Weak-outlet"><a href="#Weak-outlet" class="headerlink" title="Weak outlet"></a>Weak outlet</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">当我们使用Outlet属性的时候，我们是在viewController里面使用，而这个Outlet属性是有view来进行强引用的，我们在viewController里面仅仅是对其使用，并没有必要拥有它，所以是weak的。</span><br></pre></td></tr></table></figure>
+<h3 id="interface"><a href="#interface" class="headerlink" title="@interface"></a>@interface</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 继承</span><br><span class="line">2. 声明协议</span><br><span class="line">3. 定义实例变量（@interface后面加大括号那种）</span><br><span class="line">4. 定义@property</span><br><span class="line">5. 声明方法</span><br><span class="line">.h里面的@interface，不消说，是典型的头文件，它是供其它Class调用的。它的@property和functions，都能够被其它Class“看到”。</span><br><span class="line">而.m里面的@interface，在OC里叫作Class Extension，是.h文件中@interface的补充。但是.m文件里的@interface，对外是不开放的，只在.m文件里可见。</span><br><span class="line">因此，我们将对外开放的方法、变量放到.h文件中，而将不想要对外开放的变量放到.m文件中（.m文件的方法可以不声明，直接用）。</span><br></pre></td></tr></table></figure>
+<h3 id="implementation"><a href="#implementation" class="headerlink" title="@implementation"></a>@implementation</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 继承</span><br><span class="line">2. 定义实例变量</span><br><span class="line">3. 合成属性（@synthesize和@dynamic）</span><br><span class="line">4. 实现方法（包括协议方法）</span><br></pre></td></tr></table></figure>
+<h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">所有类都继承自NSObject，而NSObject里面有init。</span><br><span class="line">所以所有类都可以拥有init这个方法。</span><br><span class="line">所以说init是最纯洁的初始化方法。</span><br></pre></td></tr></table></figure>
+<h3 id="IBAction-amp-IBOutlet"><a href="#IBAction-amp-IBOutlet" class="headerlink" title="IBAction &amp; IBOutlet"></a>IBAction &amp; IBOutlet</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">从界面上的一个控件 Control+drag 拖一个方法到代码的实现区，会得到类似：</span><br><span class="line">-(IBAction) touchCardButton:(UIButton*)sender;</span><br><span class="line">这里的 IBAction 其实返回的是 void，类似 typedef IBAction void。IBAction 是为了让 Xcode 去区别方法是不是 target action，这样我们可以做到鼠标在上面的时候界面会高亮对应的控件之类的。但是编译器会忽略它，对编译器来说它就是 void。当你要改这个方法名的时候，有点麻烦的是你需要对着对应的控件点右键，然后叉掉方法绑定，然后重新连接。</span><br><span class="line">从界面上的一个控件 Control+drag 拖一个方法到代码的属性区，会得到类似：</span><br><span class="line">@property (weak, nonatomic) IBOutlet UILabel* flipsLabel;</span><br><span class="line">的UI属性。这里一定是一个 weak 的属性，因为这个属性是被 View 所 strong 持有的，对 Controller 来说只应该 weak 地指向它。这里的 IBOutlet 跟 IBAction 的意思差不多，主要是方便 Xcode用它，编译器会忽略它。</span><br></pre></td></tr></table></figure>
+<h3 id="方法多个参数的写法"><a href="#方法多个参数的写法" class="headerlink" title="方法多个参数的写法:"></a>方法多个参数的写法:</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(方法的数据类型)函数名:(参数1数据类型)参数1的数值的名字 参数2的名字: (参数2数据类型) 参数2值的名字 …</span><br><span class="line"></span><br><span class="line">举个例子，一个方法的定义：</span><br><span class="line">-(void) setKids: (NSString *)myOldestKidName secondKid: (NSString *) mySecondOldestKidName thirdKid: (NSString *) myThirdOldestKidName;</span><br><span class="line">实现这个函数的时候：</span><br><span class="line">-(void) setKids: (NSString *)myOldestKidName secondKid: (NSString *) mySecondOldestKidName thirdKid: (NSString *) myThirdOldestKidName</span><br><span class="line">&#123;  </span><br><span class="line">大儿子 = myOldestKidName; 二儿子 = mySecondOldestKidName; 三儿子 = myThirdOldestKidName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">调用的时候：</span><br><span class="line">Kids *myKids = [[Kids alloc] init];</span><br><span class="line">[myKids setKids: @”张大力” secondKid: @”张二力” thirdKid: @”张小力”];</span><br></pre></td></tr></table></figure>
+<h3 id="Nil-nil-Null-NSNull"><a href="#Nil-nil-Null-NSNull" class="headerlink" title="Nil nil Null NSNull"></a>Nil nil Null NSNull</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nil</span><br><span class="line">nil 是 ObjC 对象的字面空值，对应 id 类型的对象，或者使用 @interface 声明的 ObjC 对象。</span><br><span class="line">例如：</span><br><span class="line">NSString *someString = nil;</span><br><span class="line">NSURL *someURL = nil;</span><br><span class="line">id someObject = nil;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Nil</span><br><span class="line">Nil 是 ObjC 类类型的书面空值，对应 Class 类型对象。</span><br><span class="line">例如：</span><br><span class="line">Class someClass = Nil;</span><br><span class="line">Class anotherClass = [NSString class];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">NULL</span><br><span class="line">NULL 是任意的 C 指针空值。</span><br><span class="line">例如：</span><br><span class="line">int *pointerToInt = NULL;</span><br><span class="line">char *pointerToChar = NULL;</span><br><span class="line">struct TreeNode *rootNode = NULL;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">NSNull</span><br><span class="line">NSNull 是一个代表空值的类，是一个 ObjC 对象。实际上它只有一个单例方法：+[NSNull null]，一般用于表示集合中值为空的对象。</span><br><span class="line">例子说明：</span><br><span class="line">// 因为 nil 被用来用为集合结束的标志，所以 nil 不能存储在 Foundation 集合里。</span><br><span class="line">NSArray *array = [NSArray arrayWithObjects:@&quot;one&quot;, @&quot;two&quot;, nil];</span><br><span class="line">// 错误的使用</span><br><span class="line">NSMutableDictionary *dict = [NSMutableDictionary dictionary];</span><br><span class="line">[dict setObject:nil forKey:@&quot;someKey&quot;];</span><br><span class="line">// 正确的使用</span><br><span class="line">NSMutableDictionary *dict = [NSMutableDictionary dictionary];</span><br><span class="line">[dict setObject:[NSNull null] forKey:@&quot;someKey&quot;];</span><br><span class="line">[判断为空的方式]：</span><br><span class="line">![listi isKindOfClass:[NSNull class]]</span><br></pre></td></tr></table></figure>
+<h3 id="self-and"><a href="#self-and" class="headerlink" title="self and _"></a>self and _</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">所有使用self.xxx是更好的选择，</span><br><span class="line"></span><br><span class="line">因为这样可以兼容懒加载，同时也避免了使用下滑线的时候忽略了self这个指针，后者容易在BLock中造成循环引用。同时，使用 _是获取不到父类的属性，因为它只是对局部变量的访问。</span><br><span class="line">最后总结：self方法实际上是用了get和set方法间接调用，下划线方法是直接对变量操作。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">_xxx访问的是xxx的地址。</span><br><span class="line">self.xxx访问的是xxx的getter。</span><br><span class="line">这两者并不是完全等价的，self.xxx是用objc_msgSend发消息，_xxx或者self-&gt;xxx则是直接访问内存地址，</span><br><span class="line">一般建议在init里面用_xxx，其他地方用self.xxx</span><br></pre></td></tr></table></figure>
+<h3 id="UIGestureRecognizerDelegate"><a href="#UIGestureRecognizerDelegate" class="headerlink" title="UIGestureRecognizerDelegate"></a>UIGestureRecognizerDelegate</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">可以定义各种手势的实现，如滑动返回等</span><br></pre></td></tr></table></figure>
+<h3 id="UIResponder"><a href="#UIResponder" class="headerlink" title="UIResponder"></a>UIResponder</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这个类定义了很多用来处理响应和时间处理的类。他的子类有UIApplication，UIView以及UIWindow等。IOS中分为两类事件：触摸事件，和移动事件</span><br><span class="line">处理触摸事件的主要方法</span><br><span class="line">1.touchesBegan:withEvent:</span><br><span class="line">2.touchesMoved:withEvent:</span><br><span class="line">3.touchesEnded:withEvent:</span><br><span class="line">4.touchesCancelled:withEvent:</span><br><span class="line">这些方法的参数与触摸它们的事件相关联，开始触摸以及触摸位置的改变都会发生触摸事件。因此iOS允许在多点触摸中响应者分别追踪和处理触摸。只要手指触摸屏幕，滑动，从屏幕离开，都会产生一个UIEvent对象，事件包括UITouch对象</span><br><span class="line">处理移动事件的主要方法</span><br><span class="line">1.motionBegan:withEvent:</span><br><span class="line">2.motionEnded:withEvent:</span><br><span class="line">3.motionCancelled:withEvent:</span><br><span class="line">另外，canPerformAction:withSender: 方法允许响应程序来验证用户界面中的命令，而 undoManager 属性返回最近的在响应链中NSUndoManager 对象。</span><br></pre></td></tr></table></figure>
+<h3 id="消息"><a href="#消息" class="headerlink" title="消息"></a>消息</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">在C++或Java里，类与类的行为方法之间的关系非常紧密，一个方法必定属于一个类，且于编译时就已经绑定在一起，所以你不可能调用一个类里没有的方法。而在Objective-C中就比较简单了，类和消息之间是松耦合的，方法调用只是向某个类发送一个消息，该类可以在运行时再确定怎么处理接受到的消息。也就是说，一个类不保证一定会响应接收到的消息，如果收到了一个无法处理的消息，那么程序就是简单报一个错而已。</span><br><span class="line"></span><br><span class="line">Objective-C 是 C 语言的超集，所有的方法在底层都是简单朴素的 C 方法，运行时决定了当传入一个消息时具体哪个方法被调用。</span><br><span class="line"></span><br><span class="line">像对象发送一个消息的代码类似于这个：</span><br><span class="line"></span><br><span class="line">id returnValue = [someObject messageName:parameter];</span><br><span class="line">最终这个代码会变成类似下面这个C方法：</span><br><span class="line"></span><br><span class="line">id returnValue = objc_msgSend(someObject, @selector(messageName:), parameter);</span><br></pre></td></tr></table></figure>
+<h3 id="copy"><a href="#copy" class="headerlink" title="copy"></a>copy</h3>	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/2016/06/24/iOS/Objc面试题收录/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/2016/06/15/iOS/多线程基础/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2016 John Doe
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

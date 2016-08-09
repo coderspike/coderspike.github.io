@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iOS常用分类 | spike 代码之美</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="有一些分类在开发中经常应用，做一个收录。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="iOS常用分类"/>
+  <meta property="og:site_name" content="spike 代码之美"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="spike 代码之美" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">spike 代码之美</a><span class="split"></span><span class="title">iOS常用分类</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-06-06</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <blockquote>
+<p>有一些分类在开发中经常应用，做一个收录。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="UIView"><a href="#UIView" class="headerlink" title="UIView"></a>UIView</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">建立类别</span><br><span class="line">建立一个名为Layout的UIView类别，类别的代码如下：</span><br><span class="line">1. UIView+Layout.h</span><br><span class="line">.h 文件定义了 x, y, width, height 等方便读写的属性，代码如下：</span><br><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line">@interface UIView (Layout)</span><br><span class="line">@property (assign, nonatomic) CGFloat    top;@property (assign, nonatomic) CGFloat    bottom;@property (assign, nonatomic) CGFloat    left;@property (assign, nonatomic) CGFloat    right;</span><br><span class="line">@property (assign, nonatomic) CGFloat    x;@property (assign, nonatomic) CGFloat    y;@property (assign, nonatomic) CGPoint    origin;</span><br><span class="line">@property (assign, nonatomic) CGFloat    centerX;@property (assign, nonatomic) CGFloat    centerY;</span><br><span class="line">@property (assign, nonatomic) CGFloat    width;@property (assign, nonatomic) CGFloat    height;@property (assign, nonatomic) CGSize    size;</span><br><span class="line">@end</span><br><span class="line">2. UIView+Layout.m</span><br><span class="line">.m 文件实现各个属性的setter和getter方法，代码如下：</span><br><span class="line">#import &quot;UIView+Layout.h&quot;</span><br><span class="line">@implementation UIView (Layout)</span><br><span class="line">@dynamic top;@dynamic bottom;@dynamic left;@dynamic right;</span><br><span class="line">@dynamic width;@dynamic height;</span><br><span class="line">@dynamic size;</span><br><span class="line">@dynamic x;@dynamic y;</span><br><span class="line">- (CGFloat)top&#123;    return self.frame.origin.y;&#125;</span><br><span class="line">- (void)setTop:(CGFloat)top&#123;    CGRect frame = self.frame;    frame.origin.y = top;    self.frame = frame;&#125;</span><br><span class="line">- (CGFloat)left&#123;    return self.frame.origin.x;&#125;</span><br><span class="line">- (void)setLeft:(CGFloat)left&#123;    CGRect frame = self.frame;    frame.origin.x = left;    self.frame = frame;&#125;</span><br><span class="line">- (CGFloat)bottom&#123;    return self.frame.size.height + self.frame.origin.y;&#125;</span><br><span class="line">- (void)setBottom:(CGFloat)bottom&#123;    CGRect frame = self.frame;    frame.origin.y = bottom - frame.size.height;    self.frame = frame;&#125;</span><br><span class="line">- (CGFloat)right&#123;    return self.frame.size.width + self.frame.origin.x;&#125;</span><br><span class="line">- (void)setRight:(CGFloat)right&#123;    CGRect frame = self.frame;    frame.origin.x = right - frame.size.width;    self.frame = frame;&#125;</span><br><span class="line">- (CGFloat)x&#123;    return self.frame.origin.x;&#125;</span><br><span class="line">- (void)setX:(CGFloat)value&#123;    CGRect frame = self.frame;    frame.origin.x = value;    self.frame = frame;&#125;</span><br><span class="line">- (CGFloat)y&#123;    return self.frame.origin.y;&#125;</span><br><span class="line">- (void)setY:(CGFloat)value&#123;    CGRect frame = self.frame;    frame.origin.y = value;    self.frame = frame;&#125;</span><br><span class="line">- (CGPoint)origin&#123;    return self.frame.origin;&#125;</span><br><span class="line">- (void)setOrigin:(CGPoint)origin&#123;    CGRect frame = self.frame;    frame.origin = origin;    self.frame = frame;&#125;</span><br><span class="line">- (CGFloat)centerX&#123;    return self.center.x;&#125;</span><br><span class="line">- (void)setCenterX:(CGFloat)centerX&#123;    CGPoint center = self.center;    center.x = centerX;    self.center = center;&#125;</span><br><span class="line">- (CGFloat)centerY&#123;    return self.center.y;&#125;</span><br><span class="line">- (void)setCenterY:(CGFloat)centerY&#123;    CGPoint center = self.center;    center.y = centerY;    self.center = center;&#125;</span><br><span class="line">- (CGFloat)width&#123;    return self.frame.size.width;&#125;</span><br><span class="line">- (void)setWidth:(CGFloat)width&#123;    CGRect frame = self.frame;    frame.size.width = width;    self.frame = frame;&#125;</span><br><span class="line">- (CGFloat)height&#123;    return self.frame.size.height;&#125;</span><br><span class="line">- (void)setHeight:(CGFloat)height&#123;    CGRect frame = self.frame;    frame.size.height = height;    self.frame = frame;&#125;</span><br><span class="line">- (CGSize)size&#123;    return self.frame.size;&#125;</span><br><span class="line">- (void)setSize:(CGSize)size&#123;    CGRect frame = self.frame;    frame.size = size;    self.frame = frame;&#125;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">二、使用</span><br><span class="line">类别创建完成以后，view的布局就显得轻松很多了</span><br><span class="line">例如原来你要修改y坐标时要这样写：</span><br><span class="line">view.frame = CGRectMake(view.frame.origin.x, 100, view.frame.size.width, view.frame.size.height);</span><br><span class="line">而现在只需要这样写：</span><br><span class="line">view.y = 100;</span><br></pre></td></tr></table></figure>
+<h3 id="十六进制的颜色值转换为UIColor"><a href="#十六进制的颜色值转换为UIColor" class="headerlink" title="十六进制的颜色值转换为UIColor"></a>十六进制的颜色值转换为UIColor</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">UIColor+Hex.h里面中</span><br><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line">@interface UIColor (Hex)+ (UIColor *) colorWithHexString: (NSString *)color;@end</span><br><span class="line"> </span><br><span class="line">UIColor+Hex.m里面中</span><br><span class="line"></span><br><span class="line">#import &quot;UIColor+Hex.h&quot;</span><br><span class="line">@implementation UIColor (Hex)</span><br><span class="line">#pragma mark - 颜色转换 iOS中十六进制的颜色转换为UIColor</span><br><span class="line">+ (UIColor *) colorWithHexString: (NSString *)hexString&#123;    NSString *cString = [[hexString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];        //hexString应该6到8个字符    if ([cString length] &lt; 6) &#123;        return [UIColor clearColor];    &#125;        //如果hexString 有@&quot;0X&quot;前缀    if ([cString hasPrefix:@&quot;0X&quot;])        cString = [cString substringFromIndex:2];        //如果hexString 有@&quot;#&quot;&quot;前缀    if ([cString hasPrefix:@&quot;#&quot;])        cString = [cString substringFromIndex:1];    if ([cString length] != 6)        return [UIColor clearColor];        //RGB转换    NSRange range;    range.location = 0;    range.length = 2;        //R    NSString *rString = [cString substringWithRange:range];        //G    range.location = 2;    NSString *gString = [cString substringWithRange:range];        //B    range.location = 4;    NSString *bString = [cString substringWithRange:range];        //    unsigned int r, g, b;    [[NSScanner scannerWithString:rString] scanHexInt:&amp;r];    [[NSScanner scannerWithString:gString] scanHexInt:&amp;g];    [[NSScanner scannerWithString:bString] scanHexInt:&amp;b];        return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:1.0f];&#125;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">使用方法：</span><br><span class="line">//1、添加头文件#import &quot;UIColor+Hex.h&quot;</span><br><span class="line">//2、在需要的地方 [UIColor colorWithHexString:@&quot;十六进制&quot;]//eg:[self.view setBackgroundColor:[UIColor colorWithHexString:@&quot;#11489B&quot;]];</span><br></pre></td></tr></table></figure>
+<h3 id="更改图片颜色"><a href="#更改图片颜色" class="headerlink" title="更改图片颜色"></a>更改图片颜色</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//</span><br><span class="line">//  UIImage+Tint.h</span><br><span class="line">//  Ratings</span><br><span class="line">//</span><br><span class="line">//  Created by gwb on 15/10/10.</span><br><span class="line">//  Copyright (c) 2015年 gwb. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line"></span><br><span class="line">@interface UIImage (Tint)</span><br><span class="line"></span><br><span class="line">- (UIImage *) imageWithTintColor:(UIColor *)tintColor;</span><br><span class="line">- (UIImage *) imageWithGradientTintColor:(UIColor *)tintColor;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//</span><br><span class="line">//  UIImage+Tint.m</span><br><span class="line">//  Ratings</span><br><span class="line">//</span><br><span class="line">//  Created by gwb on 15/10/10.</span><br><span class="line">//  Copyright (c) 2015年 gwb. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &quot;UIImage+Tint.h&quot;</span><br><span class="line"></span><br><span class="line">@implementation UIImage (Tint)</span><br><span class="line"></span><br><span class="line">- (UIImage *) imageWithTintColor:(UIColor *)tintColor</span><br><span class="line">&#123;</span><br><span class="line">    return [self imageWithTintColor:tintColor blendMode:kCGBlendModeDestinationIn];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (UIImage *) imageWithGradientTintColor:(UIColor *)tintColor</span><br><span class="line">&#123;</span><br><span class="line">    return [self imageWithTintColor:tintColor blendMode:kCGBlendModeOverlay];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (UIImage *) imageWithTintColor:(UIColor *)tintColor blendMode:(CGBlendMode)blendMode</span><br><span class="line">&#123;</span><br><span class="line">    //We want to keep alpha, set opaque to NO; Use 0.0f for scale to use the scale factor of the device’s main screen.</span><br><span class="line">    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0f);</span><br><span class="line">    [tintColor setFill];</span><br><span class="line">    CGRect bounds = CGRectMake(0, 0, self.size.width, self.size.height);</span><br><span class="line">    UIRectFill(bounds);</span><br><span class="line">    </span><br><span class="line">    //Draw the tinted image in context</span><br><span class="line">    [self drawInRect:bounds blendMode:blendMode alpha:1.0f];</span><br><span class="line">    </span><br><span class="line">    if (blendMode != kCGBlendModeDestinationIn) &#123;</span><br><span class="line">        [self drawInRect:bounds blendMode:kCGBlendModeDestinationIn alpha:1.0f];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    UIImage *tintedImage = UIGraphicsGetImageFromCurrentImageContext();</span><br><span class="line">    UIGraphicsEndImageContext();</span><br><span class="line">    </span><br><span class="line">    return tintedImage;</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/2016/06/16/iOS/关于CocoaPods的使用总结/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/2016/05/25/iOS/iOS编程常用方法/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2016 John Doe
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

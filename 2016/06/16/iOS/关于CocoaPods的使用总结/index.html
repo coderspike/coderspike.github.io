@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>关于CocoaPods的使用总结 | spike 代码之美</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="CocoaPods是iOS开发中一个管理第三方包的工具，个人感觉像Java中的Maven.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="关于CocoaPods的使用总结"/>
+  <meta property="og:site_name" content="spike 代码之美"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="spike 代码之美" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">spike 代码之美</a><span class="split"></span><span class="title">关于CocoaPods的使用总结</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-06-16</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <blockquote>
+<p>CocoaPods是iOS开发中一个管理第三方包的工具，个人感觉像Java中的Maven.</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>参考这里<a href="http://code4app.com/article/cocoapods-install-usage" target="_blank" rel="external">这里</a></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">进入项目的根目录(有proj文件的目录)，并在根目录下创建一个名叫Podfile的文件（没有任何后缀，编辑时最好用xcode打开）</span><br><span class="line"></span><br><span class="line">示例如下：</span><br><span class="line">Ex1: 添加了多个依赖(可能有更规范的书写方式)</span><br><span class="line">platform :ios, &apos;8.4&apos; #手机的系统</span><br><span class="line">pod &apos;AMap3DMap&apos;  #3D地图SDK</span><br><span class="line">#pod &apos;AMap2DMap&apos; #2D地图SDK (2D和3D不能同时使用)</span><br><span class="line">pod &apos;AMapSearch&apos; #搜索服务SDK</span><br><span class="line">pod &apos;AMapLocation&apos;</span><br><span class="line">pod &apos;CocoaLumberjack&apos;</span><br><span class="line"></span><br><span class="line">Ex2:项目中使用的示例</span><br><span class="line">platform :ios, &apos;7.0&apos; #手机的系统</span><br><span class="line">pod &apos;AMap3DMap&apos; #3D地图SDK</span><br><span class="line">#pod &apos;AMap2DMap&apos; #2D地图SDK (2D和3D不能同时使用)</span><br><span class="line">pod &apos;AMapSearch&apos; #搜索服务SDK</span><br><span class="line">#pod &apos;AMapLocation&apos;, &apos;~&gt; 1.0.0&apos;#定位SDK      // 导入特定版本（这个写法可能无效了）</span><br><span class="line">pod &apos;AMapLocation&apos;, &apos;1.0.0&apos;  // 这个是正确写法</span><br><span class="line">#pod &apos;FMDB&apos;</span><br><span class="line">pod &apos;SVProgressHUD&apos;</span><br><span class="line">pod &apos;Masonry&apos;</span><br><span class="line">pod &apos;SDWebImage&apos;</span><br><span class="line">#pod &apos;AFNetworking&apos;</span><br><span class="line"></span><br><span class="line">很重要：</span><br><span class="line">当用#号注释掉第三方包以后，再次执行 pod install --no-repo-update 会remove掉这个包</span><br><span class="line"></span><br><span class="line">pod install --verbose --no-repo-update</span><br><span class="line"></span><br><span class="line">更换第三方版本时，可以先在配置文件中#号注释掉当前版本，然后用pod install --no-repo-update去除掉相关包，再次执行pod install --no-repo-update导入当前版本的包</span><br></pre></td></tr></table></figure>
+<p>#异常及坑<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">异常：</span><br><span class="line">出现以下异常为没有CD到项目的最终根目录，这个要加以注意</span><br><span class="line"></span><br><span class="line">bogon:Ratings gwb$ pod install --no-repo-update</span><br><span class="line">Analyzing dependencies</span><br><span class="line">[!] Could not automatically select an Xcode project. Specify one in your Podfile like so:</span><br><span class="line">    xcodeproj &apos;path/to/Project.xcodeproj&apos;</span><br></pre></td></tr></table></figure></p>
+<h2 id="更新系统后CocoaPods无法使用的问题"><a href="#更新系统后CocoaPods无法使用的问题" class="headerlink" title="更新系统后CocoaPods无法使用的问题"></a>更新系统后CocoaPods无法使用的问题</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">系统更新到10.11.5，在mac上下载项目，在本地没法跑，显示pod进来的第三方包很多都红了，想从新Pod进来第三方包，遇到如下数个坑。</span><br><span class="line">安装过程如下</span><br><span class="line">$ gem sources --remove https://rubygems.org///等有反应之后再敲入以下命令$ gem sources -a http://ruby.taobao.org/</span><br><span class="line">要想验证是否替换成功了，可以执行：</span><br><span class="line">$ gem sources -l</span><br><span class="line">正常的输出是：</span><br><span class="line">*** CURRENT SOURCES ***</span><br><span class="line">http://ruby.taobao.org/</span><br><span class="line"></span><br><span class="line">这就不用说了，替换为淘宝源</span><br><span class="line"></span><br><span class="line">同上</span><br><span class="line">$ sudo gem sources -a https://ruby.taobao.org/$ sudo gem sources -r https://rubygems.org/$ sudo gem sources -l</span><br><span class="line"></span><br><span class="line">安装 CocoaPods。</span><br><span class="line">$ sudo gem update$ sudo gem install -n /usr/local/bin cocoapods -v 0.39$ pod setup$ pod --version</span><br><span class="line"></span><br><span class="line">在这里碰到的坑，默认安装了1.0.0版本</span><br><span class="line">各种报错不能用，网上提供的解决办法试了很多都不管用</span><br><span class="line">无奈降低版本</span><br><span class="line">重新安装 0.39版本能用了</span><br><span class="line">另外碰到的几个问题都在下边记录了，怎么和git进行连接测试等</span><br><span class="line"></span><br><span class="line">Xocde 导出项目</span><br><span class="line">Authentication failed because no authentication credentials were provided.不知道什么原因，将项目路径的https替换成http就可以了</span><br></pre></td></tr></table></figure>
+<h2 id="git进行连接测"><a href="#git进行连接测" class="headerlink" title="git进行连接测"></a>git进行连接测</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">在cmd或者终端下输入以下命令行：</span><br><span class="line">git config --global user.name trigkit4</span><br><span class="line">git config --global user.email 345823102@qq.com</span><br><span class="line">当然，这是我的账户信息，你需要将他们换成你自己的。</span><br><span class="line">创建本地ssh</span><br><span class="line">这是一种传输代码的方法，速度快又安全。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。</span><br><span class="line">在终端或cmd输入以下命令行：</span><br><span class="line">ssh-keygen -t rsa -C &quot;345823102@qq.com&quot;</span><br><span class="line">当然，邮箱依然换成你注册github时所用的邮箱。如下图所示</span><br><span class="line">路径选择 : 使用该命令之后, 会出现提示选择ssh-key生成路径, 这里直接点回车默认即可, 生成的ssh-key在默认路径中;</span><br><span class="line">密码确认 : 这里我们不使用密码进行登录, 用密码太麻烦;就一路回车下去</span><br><span class="line">将ssh配置到GitHub中</span><br><span class="line">在mac os X 下前往文件夹，/Users/自己电脑用户名/.ssh。</span><br><span class="line">windows应该是（C:\Documents and Settings\Administrator\.ssh （或者 C:\Users\自己电脑用户名\.ssh）中）。</span><br><span class="line">然后用记事本打开id_rsa.pub，将里面的全部代码复制到github的SSH中。</span><br><span class="line">id_rsa.pub 文件内容 :</span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDS0qLtpontavr43AQntX4oBOsg2R3QlWubMYvfgJsIDX6NWd5RaIDLBLEMwIFLDcpvpQKvk5S/bTy4vTuWqeY6fkQ/tZBKksQn1WuYDcSfjLF8BuPMfdkboTh9NaKESKnsiWdranEVbmB5vOAHm8T+HFGdzG7Tz4ygzCnTwvdpBYrd/4jgeazws2d7CuMeuyb+FxdDTQy9YmJJm+82ypfR//bLyzRJo3SYadnPO3VdOAZCO1Isky+p/0nNN/obC4t2y2+oHBAqJV9h37f9S8UShgDmZoVLicRi4poni0i70xj+t/hnOsT8fmEc+vM9USyN+ndawz2oWjikKgln1jOB 345823102@qq.com</span><br><span class="line">登陆github网站，点击Settings——SSH keys——点击右侧的Add SSH key ，接下去你懂得。</span><br><span class="line">验证是否配置成功 :</span><br><span class="line">复制如下代码:</span><br><span class="line">ssh -T git@github.com</span><br><span class="line">然后出现如下信息：</span><br><span class="line">Warning: Permanently added the RSA host key for IP address &apos;192.30.252.131&apos; to the list of known hosts.</span><br><span class="line"></span><br><span class="line">Hi hawx1993! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br><span class="line">验证时可能让你输入YES，当出现以上信息时，说明配置成功，可以连接上GitHub;</span><br></pre></td></tr></table></figure>
+<h2 id="Cocoapods降低版本及卸载"><a href="#Cocoapods降低版本及卸载" class="headerlink" title="Cocoapods降低版本及卸载"></a>Cocoapods降低版本及卸载</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">有的时候我们需要降低Cocoapods的版本来解决第三方库的兼容问题.</span><br><span class="line">一. 移除pod组件</span><br><span class="line">这条指令会告诉你Cocoapods组件装在哪里 :</span><br><span class="line">$ which pod</span><br><span class="line">你可以手动移除这个组件 :</span><br><span class="line">$ sudo rm -rf &lt;path&gt;</span><br><span class="line">二. 移除 RubyGems 中的 Cocoapods程序包</span><br><span class="line">Q: RubyGems是什么?</span><br><span class="line">A: RubyGems（简称 gems）是一个用于对 Ruby组件进行打包的 Ruby 打包系统。 它提供一个分发 Ruby 程序和库的标准格式，还提供一个管理程序包安装的工具。</span><br><span class="line">查看gems中本地程序包</span><br><span class="line">$ gem list</span><br><span class="line">输出</span><br><span class="line">	*** LOCAL GEMS ***</span><br><span class="line">	activesupport (4.1.8, 3.2.21)</span><br><span class="line">	bigdecimal (1.2.0)</span><br><span class="line">	CFPropertyList (2.2.8)</span><br><span class="line">	claide (0.7.0)</span><br><span class="line">	cocoapods (0.35.0, 0.34.1, 0.34.0)</span><br><span class="line">	cocoapods-core (0.35.0, 0.34.1, 0.34.0)</span><br><span class="line">	cocoapods-downloader (0.8.0, 0.7.2)</span><br><span class="line">	cocoapods-plugins (0.3.2)</span><br><span class="line">	cocoapods-trunk (0.4.1, 0.2.0)</span><br><span class="line">	cocoapods-try (0.4.2)</span><br><span class="line">	colored (1.2)</span><br><span class="line">	escape (0.0.4)</span><br><span class="line">	fuzzy_match (2.0.4)</span><br><span class="line">	i18n (0.6.11)</span><br><span class="line">	io-console (0.4.2)</span><br><span class="line">	json (1.7.7)</span><br><span class="line">	json_pure (1.8.1)</span><br><span class="line">	libxml-ruby (2.6.0)</span><br><span class="line">	minitest (5.4.3, 4.3.2)</span><br><span class="line">	molinillo (0.1.2)</span><br><span class="line">	multi_json (1.10.1)</span><br><span class="line">	nap (0.8.0)</span><br><span class="line">	netrc (0.7.8)</span><br><span class="line">	nokogiri (1.5.6)</span><br><span class="line">	open4 (1.3.4)</span><br><span class="line">	psych (2.0.0)</span><br><span class="line">	rake (0.9.6)</span><br><span class="line">	rdoc (4.0.0)</span><br><span class="line">	sqlite3 (1.3.7)</span><br><span class="line">	test-unit (2.0.0.0)</span><br><span class="line">	thread_safe (0.3.4)</span><br><span class="line">	tzinfo (1.2.2)</span><br><span class="line">	xcodeproj (0.20.2, 0.19.4)</span><br><span class="line">发现Cocoapods的程序包</span><br><span class="line">cocoapods (0.35.0, 0.34.1, 0.34.0)</span><br><span class="line">cocoapods-core (0.35.0, 0.34.1, 0.34.0)</span><br><span class="line">cocoapods-downloader (0.8.0, 0.7.2)</span><br><span class="line">cocoapods-plugins (0.3.2)</span><br><span class="line">cocoapods-trunk (0.4.1, 0.2.0)</span><br><span class="line">cocoapods-try (0.4.2)</span><br><span class="line">移除程序包</span><br><span class="line">$ sudo gem uninstall cocoapods -v 0.35.0</span><br><span class="line">输出</span><br><span class="line"></span><br><span class="line">Successfully uninstalled cocoapods-0.35.0</span><br><span class="line">$ sudo gem uninstall cocoapods-core -v 0.35.0</span><br><span class="line">输出</span><br><span class="line">Successfully uninstalled cocoapods-core-0.35.0</span><br><span class="line">然后安装指定版本的Cocoapods</span><br><span class="line">$ sudo gem install cocoapods -v 0.34.4</span><br><span class="line">安装成功后</span><br><span class="line">$ pod --version</span><br><span class="line">输出</span><br><span class="line">0.34.1</span><br></pre></td></tr></table></figure>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/2016/06/27/iOS/第三方框架使用记录/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/2016/06/06/iOS/iOS常用分类/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2016 John Doe
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>
