@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-09T09:00:40.000Z</updated>
+  <updated>2016-08-09T09:07:30.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://yoursite.com/2016/08/09/iOS/iOS%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/"/>
     <id>http://yoursite.com/2016/08/09/iOS/iOS开发流程/</id>
     <published>2016-08-09T07:28:26.000Z</published>
-    <updated>2016-08-09T09:00:40.000Z</updated>
+    <updated>2016-08-09T09:07:30.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;什么是证书&quot;&gt;&lt;a href=&quot;#什么是证书&quot; class=&quot;headerlink&quot; title=&quot;什么是证书&quot;&gt;&lt;/a&gt;什么是证书&lt;/h3&gt;&lt;p&gt;由 apple 官方颁发, 用以证明开发者身份的特殊文件, 在 iOS 开发中主要用于代码签名, 保障 iOS 生态的健康安全, 分为开发者证书和发布者证书&lt;/p&gt;
 &lt;h3 id=&quot;什么时候需要证书&quot;&gt;&lt;a href=&quot;#什么时候需要证书&quot; class=&quot;headerlink&quot; title=&quot;什么时候需要证书&quot;&gt;&lt;/a&gt;什么时候需要证书&lt;/h3&gt;&lt;p&gt;只有在本机模拟器调试时无需代码签名, 当 App 需要在真机运行和发布时需要使用相应证书进行签名&lt;/p&gt;
-&lt;h3 id=&quot;证书如何获得&quot;&gt;&lt;a href=&quot;#证书如何获得&quot; class=&quot;headerlink&quot; title=&quot;证书如何获得&quot;&gt;&lt;/a&gt;证书如何获得&lt;/h3&gt;&lt;p&gt;首先需要拥有相应权限的开发者帐号, 通过在本地生成配对的密钥, 向 provisioning portal 提交公钥后换取, 后续证书在使用时会验证本地私钥&lt;br&gt;[1在Mac系统中进入”钥匙窜访问”,选择“钥匙串访问”-“证书助理”-“从证书颁发机构请求证书”,将相关请求文件保存到桌面。已做后续上传之用。&lt;br&gt;2.在production处点击添加，导入刚才生成的文件，会生成相应的证书，下载到桌面双击安装。重新回到开发者中心Member Center,在“Identifiers”-“App IDs”中创建一个应用对应的App ID，当前使用的是Explicit App ID。&lt;br&gt;3.在Provisioning Profiles中添加一个与刚刚创建的AppID相应的Profile，选择“In House”（此处类型可根据需要选择）创建的Provisioning File选择刚刚创建的App ID:&lt;br&gt;创建并生成Profile后，下载到本地，双击打开，添加到资料库中,然后&lt;br&gt;4.Xcode在Build Phases中找到Code Signing，把Provisioning File设置刚才创建描述文件.在Coding Signing Identity选择Distribution：然后在xcode中选择product –archive进行导出ipa文件，导出以后可进行安装。]&lt;/p&gt;
+&lt;h3 id=&quot;证书如何获得&quot;&gt;&lt;a href=&quot;#证书如何获得&quot; class=&quot;headerlink&quot; title=&quot;证书如何获得&quot;&gt;&lt;/a&gt;证书如何获得&lt;/h3&gt;&lt;p&gt;首先需要拥有相应权限的开发者帐号, 通过在本地生成配对的密钥, 向 provisioning portal 提交公钥后换取, 后续证书在使用时会验证本地私钥&lt;br&gt;1在Mac系统中进入”钥匙窜访问”,选择“钥匙串访问”-“证书助理”-“从证书颁发机构请求证书”,将相关请求文件保存到桌面。已做后续上传之用。&lt;br&gt;2.在production处点击添加，导入刚才生成的文件，会生成相应的证书，下载到桌面双击安装。重新回到开发者中心Member Center,在“Identifiers”-“App IDs”中创建一个应用对应的App ID，当前使用的是Explicit App ID。&lt;br&gt;3.在Provisioning Profiles中添加一个与刚刚创建的AppID相应的Profile，选择“In House”（此处类型可根据需要选择）创建的Provisioning File选择刚刚创建的App ID:&lt;br&gt;创建并生成Profile后，下载到本地，双击打开，添加到资料库中,然后&lt;br&gt;4.Xcode在Build Phases中找到Code Signing，把Provisioning File设置刚才创建描述文件.在Coding Signing Identity选择Distribution：然后在xcode中选择product –archive进行导出ipa文件，导出以后可进行安装。&lt;/p&gt;
 &lt;h3 id=&quot;我生成的私钥如何共享给团队成员&quot;&gt;&lt;a href=&quot;#我生成的私钥如何共享给团队成员&quot; class=&quot;headerlink&quot; title=&quot;我生成的私钥如何共享给团队成员&quot;&gt;&lt;/a&gt;我生成的私钥如何共享给团队成员&lt;/h3&gt;&lt;p&gt;在 Keychain Access 中找到导入的证书, 右击导出为包含私钥的 Personal Information Exchange(.p12)文件(导出时可以创建密码), 团队成员再导入 p12 证书后就完整包含了证书和私钥&lt;/p&gt;
 &lt;h3 id=&quot;各流程中证书的需求情况&quot;&gt;&lt;a href=&quot;#各流程中证书的需求情况&quot; class=&quot;headerlink&quot; title=&quot;各流程中证书的需求情况&quot;&gt;&lt;/a&gt;各流程中证书的需求情况&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;模拟器调试&lt;/li&gt;
@@ -53,7 +53,7 @@
 &lt;p&gt;iOS 8.1.3 开始不能企业证书 Iresign 方式重新签名的应用无法安装 &lt;a href=&quot;https://support.apple.com/en-us/HT204245&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://support.apple.com/en-us/HT204245&lt;/a&gt;&lt;br&gt;TestFlight&lt;br&gt;仅支持 iOS8.0 以上, 不需要对设备 udid 进行授权, 适合个人 / 公司开发者, 在应用发布前可以开启 TestFlight Beta 测试并添加测试者的 iTunes Connect 帐号, 需要待测用户拥有 iTunes Connect 帐号并在设备安装 TestFlight 客户端&lt;/p&gt;
 &lt;p&gt;这种方式非常便于推送应用更新和收集测试信息&lt;/p&gt;
 &lt;p&gt;导出 ipa 包, 越狱安装&lt;br&gt;如果测试设备都越狱了, 这种方式非常灵活简单, 只有能导出 ipa 包就能通过 itools 等第三方工具安装&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/Users/mac/Desktop/img/bluecycle.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/Users/mac/Desktop/Self/myblog/source/_posts/img/bluecycle.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -660,32 +660,6 @@ console.log(prop); // outer
   </entry>
   
   <entry>
-    <title>骑行</title>
-    <link href="http://yoursite.com/2016/06/23/%E8%AF%BB%E4%B9%A6%E7%94%9F%E6%B4%BB/%E9%AA%91%E8%A1%8C/"/>
-    <id>http://yoursite.com/2016/06/23/读书生活/骑行/</id>
-    <published>2016-06-23T02:00:45.000Z</published>
-    <updated>2016-08-04T07:19:33.000Z</updated>
-    
-    <content type="html">&lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw1024/bc254b75jw1f559ehq6z3j21kw23uqut.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/mw1024/bc254b75jw1f559em7dhmj21kw23u7wh.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559end4p3j20qo0zkaph.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559ev3xehj21kw23u4qp.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/mw1024/bc254b75jw1f559evsa81j20qo0zkai1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;
-    
-    </summary>
-    
-      <category term="读书-生活" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6-%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>一些有道理的话</title>
     <link href="http://yoursite.com/2016/06/23/%E8%AF%BB%E4%B9%A6%E7%94%9F%E6%B4%BB/%E6%84%9F%E6%82%9F/"/>
     <id>http://yoursite.com/2016/06/23/读书生活/感悟/</id>
@@ -703,6 +677,32 @@ console.log(prop); // outer
       &lt;blockquote&gt;
 &lt;p&gt;收藏转载的一些个人感觉比较有道理的话&lt;/p&gt;
 &lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="读书-生活" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6-%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>骑行</title>
+    <link href="http://yoursite.com/2016/06/23/%E8%AF%BB%E4%B9%A6%E7%94%9F%E6%B4%BB/%E9%AA%91%E8%A1%8C/"/>
+    <id>http://yoursite.com/2016/06/23/读书生活/骑行/</id>
+    <published>2016-06-23T02:00:45.000Z</published>
+    <updated>2016-08-04T07:19:33.000Z</updated>
+    
+    <content type="html">&lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw1024/bc254b75jw1f559ehq6z3j21kw23uqut.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/mw1024/bc254b75jw1f559em7dhmj21kw23u7wh.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559end4p3j20qo0zkaph.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559ev3xehj21kw23u4qp.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/mw1024/bc254b75jw1f559evsa81j20qo0zkai1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;骑车出去随手拍的一些照片&lt;br&gt;
     
     </summary>
     

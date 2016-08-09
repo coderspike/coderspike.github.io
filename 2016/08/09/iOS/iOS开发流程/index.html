@@ -62,7 +62,7 @@
 	  <!-- content -->
 	  <h3 id="什么是证书"><a href="#什么是证书" class="headerlink" title="什么是证书"></a>什么是证书</h3><p>由 apple 官方颁发, 用以证明开发者身份的特殊文件, 在 iOS 开发中主要用于代码签名, 保障 iOS 生态的健康安全, 分为开发者证书和发布者证书</p>
 <h3 id="什么时候需要证书"><a href="#什么时候需要证书" class="headerlink" title="什么时候需要证书"></a>什么时候需要证书</h3><p>只有在本机模拟器调试时无需代码签名, 当 App 需要在真机运行和发布时需要使用相应证书进行签名</p>
-<h3 id="证书如何获得"><a href="#证书如何获得" class="headerlink" title="证书如何获得"></a>证书如何获得</h3><p>首先需要拥有相应权限的开发者帐号, 通过在本地生成配对的密钥, 向 provisioning portal 提交公钥后换取, 后续证书在使用时会验证本地私钥<br>[1在Mac系统中进入”钥匙窜访问”,选择“钥匙串访问”-“证书助理”-“从证书颁发机构请求证书”,将相关请求文件保存到桌面。已做后续上传之用。<br>2.在production处点击添加，导入刚才生成的文件，会生成相应的证书，下载到桌面双击安装。重新回到开发者中心Member Center,在“Identifiers”-“App IDs”中创建一个应用对应的App ID，当前使用的是Explicit App ID。<br>3.在Provisioning Profiles中添加一个与刚刚创建的AppID相应的Profile，选择“In House”（此处类型可根据需要选择）创建的Provisioning File选择刚刚创建的App ID:<br>创建并生成Profile后，下载到本地，双击打开，添加到资料库中,然后<br>4.Xcode在Build Phases中找到Code Signing，把Provisioning File设置刚才创建描述文件.在Coding Signing Identity选择Distribution：然后在xcode中选择product –archive进行导出ipa文件，导出以后可进行安装。]</p>
+<h3 id="证书如何获得"><a href="#证书如何获得" class="headerlink" title="证书如何获得"></a>证书如何获得</h3><p>首先需要拥有相应权限的开发者帐号, 通过在本地生成配对的密钥, 向 provisioning portal 提交公钥后换取, 后续证书在使用时会验证本地私钥<br>1在Mac系统中进入”钥匙窜访问”,选择“钥匙串访问”-“证书助理”-“从证书颁发机构请求证书”,将相关请求文件保存到桌面。已做后续上传之用。<br>2.在production处点击添加，导入刚才生成的文件，会生成相应的证书，下载到桌面双击安装。重新回到开发者中心Member Center,在“Identifiers”-“App IDs”中创建一个应用对应的App ID，当前使用的是Explicit App ID。<br>3.在Provisioning Profiles中添加一个与刚刚创建的AppID相应的Profile，选择“In House”（此处类型可根据需要选择）创建的Provisioning File选择刚刚创建的App ID:<br>创建并生成Profile后，下载到本地，双击打开，添加到资料库中,然后<br>4.Xcode在Build Phases中找到Code Signing，把Provisioning File设置刚才创建描述文件.在Coding Signing Identity选择Distribution：然后在xcode中选择product –archive进行导出ipa文件，导出以后可进行安装。</p>
 <h3 id="我生成的私钥如何共享给团队成员"><a href="#我生成的私钥如何共享给团队成员" class="headerlink" title="我生成的私钥如何共享给团队成员"></a>我生成的私钥如何共享给团队成员</h3><p>在 Keychain Access 中找到导入的证书, 右击导出为包含私钥的 Personal Information Exchange(.p12)文件(导出时可以创建密码), 团队成员再导入 p12 证书后就完整包含了证书和私钥</p>
 <h3 id="各流程中证书的需求情况"><a href="#各流程中证书的需求情况" class="headerlink" title="各流程中证书的需求情况"></a>各流程中证书的需求情况</h3><ul>
 <li>模拟器调试</li>
@@ -91,7 +91,7 @@
 <p>iOS 8.1.3 开始不能企业证书 Iresign 方式重新签名的应用无法安装 <a href="https://support.apple.com/en-us/HT204245" target="_blank" rel="external">https://support.apple.com/en-us/HT204245</a><br>TestFlight<br>仅支持 iOS8.0 以上, 不需要对设备 udid 进行授权, 适合个人 / 公司开发者, 在应用发布前可以开启 TestFlight Beta 测试并添加测试者的 iTunes Connect 帐号, 需要待测用户拥有 iTunes Connect 帐号并在设备安装 TestFlight 客户端</p>
 <p>这种方式非常便于推送应用更新和收集测试信息</p>
 <p>导出 ipa 包, 越狱安装<br>如果测试设备都越狱了, 这种方式非常灵活简单, 只有能导出 ipa 包就能通过 itools 等第三方工具安装</p>
-<p><img src="/Users/mac/Desktop/img/bluecycle.png" alt="img"></p>
+<p><img src="/Users/mac/Desktop/Self/myblog/source/_posts/img/bluecycle.png" alt="img"></p>
 	  
 
 	  <div>
