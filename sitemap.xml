@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/06/15/iOS/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/</loc>
+    
+    <lastmod>2016-08-10T06:23:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/08/05/JavaScript/JavaScript%E5%9F%BA%E7%A1%80/</loc>
     
     <lastmod>2016-08-10T06:21:22.000Z</lastmod>
@@ -117,13 +124,6 @@
     <loc>http://yoursite.com/JavaScript/index.html</loc>
     
     <lastmod>2016-08-05T13:08:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/06/15/iOS/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/</loc>
-    
-    <lastmod>2016-08-05T13:08:19.000Z</lastmod>
     
   </url>
   
