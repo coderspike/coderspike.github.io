@@ -65,33 +65,28 @@
 <h3 id="证书如何获得"><a href="#证书如何获得" class="headerlink" title="证书如何获得"></a>证书如何获得</h3><p>首先需要拥有相应权限的开发者帐号, 通过在本地生成配对的密钥, 向 provisioning portal 提交公钥后换取, 后续证书在使用时会验证本地私钥<br>1在Mac系统中进入”钥匙窜访问”,选择“钥匙串访问”-“证书助理”-“从证书颁发机构请求证书”,将相关请求文件保存到桌面。已做后续上传之用。<br>2.在production处点击添加，导入刚才生成的文件，会生成相应的证书，下载到桌面双击安装。重新回到开发者中心Member Center,在“Identifiers”-“App IDs”中创建一个应用对应的App ID，当前使用的是Explicit App ID。<br>3.在Provisioning Profiles中添加一个与刚刚创建的AppID相应的Profile，选择“In House”（此处类型可根据需要选择）创建的Provisioning File选择刚刚创建的App ID:<br>创建并生成Profile后，下载到本地，双击打开，添加到资料库中,然后<br>4.Xcode在Build Phases中找到Code Signing，把Provisioning File设置刚才创建描述文件.在Coding Signing Identity选择Distribution：然后在xcode中选择product –archive进行导出ipa文件，导出以后可进行安装。</p>
 <h3 id="我生成的私钥如何共享给团队成员"><a href="#我生成的私钥如何共享给团队成员" class="headerlink" title="我生成的私钥如何共享给团队成员"></a>我生成的私钥如何共享给团队成员</h3><p>在 Keychain Access 中找到导入的证书, 右击导出为包含私钥的 Personal Information Exchange(.p12)文件(导出时可以创建密码), 团队成员再导入 p12 证书后就完整包含了证书和私钥</p>
 <h3 id="各流程中证书的需求情况"><a href="#各流程中证书的需求情况" class="headerlink" title="各流程中证书的需求情况"></a>各流程中证书的需求情况</h3><ul>
-<li>模拟器调试</li>
+<li><p>模拟器调试</p>
+<p> 不需要</p>
+</li>
+<li><p>真机调试</p>
+<p>  描述文件(Provisioning Profiles)</p>
+<p>  开发者证书(ios_development.cer)</p>
+</li>
+<li><p>打包和发布</p>
+<p>  描述文件(Provisioning Profiles)</p>
+<p>  可用于发布的开发者证书(ios_distribution.cer)</p>
+</li>
+<li><p>消息推送后端服务</p>
+<p>  apns 证书</p>
+</li>
 </ul>
-<p>不需要</p>
-<ul>
-<li>真机调试</li>
-</ul>
-<p>描述文件(Provisioning Profiles)</p>
-<p>开发者证书(ios_development.cer)</p>
-<ul>
-<li>打包和发布</li>
-</ul>
-<p>描述文件(Provisioning Profiles)</p>
-<p>可用于发布的开发者证书(ios_distribution.cer)</p>
-<ul>
-<li>消息推送后端服务</li>
-</ul>
-<p>apns 证书</p>
 <h3 id="开发中常见的证书及相关文件介绍"><a href="#开发中常见的证书及相关文件介绍" class="headerlink" title="开发中常见的证书及相关文件介绍"></a>开发中常见的证书及相关文件介绍</h3><p>CSR(certificate request) 文件<br>用于换取证书的公钥文件, 实际是在本地基于 RSA 加密得到配对的密钥, 私钥存于 Keychain Access 用于签名, 公钥作为换取证书的凭证</p>
 <p>开发者证书<br>由 apple 官方颁发, 用来证明开发者资格的证书文件, 分开发(ios_development.cer)和发布(ios_distribution.cer)两种<br>cer 证书跟开发机(私钥)绑定只能在拥有私钥的机器上使用, 如果要迁移机器需要导出为 p12 文件</p>
 <p>生成方法<br>在 开发者中心 “certificates” 面板中添加 certificate 并上传刚刚生成的 CSR 文件, 获取 ios_development.cer</p>
-<h3 id="几种常见的分发途径"><a href="#几种常见的分发途径" class="headerlink" title="几种常见的分发途径"></a>几种常见的分发途径</h3><p>ad-hoc<br>打包时必须在登录企业帐号(或其成员)并已导入证书和描述文件的情况下, 任何用户(未授权)都可以在手机上用浏览器访问一个 url(例: itms-services://?action=download-manifest&amp;url=<a href="https://example.com/manifest.plist" target="_blank" rel="external">https://example.com/manifest.plist</a>) 完成安装</p>
-<p>最大的问题是安装量有 100 的上限, 无法作为一个量很大的分发渠道</p>
-<p>in-house<br>针对企业内部用户进行分发, 相比 ad-hoc 无安装量上限</p>
-<p>iOS 8.1.3 开始不能企业证书 Iresign 方式重新签名的应用无法安装 <a href="https://support.apple.com/en-us/HT204245" target="_blank" rel="external">https://support.apple.com/en-us/HT204245</a><br>TestFlight<br>仅支持 iOS8.0 以上, 不需要对设备 udid 进行授权, 适合个人 / 公司开发者, 在应用发布前可以开启 TestFlight Beta 测试并添加测试者的 iTunes Connect 帐号, 需要待测用户拥有 iTunes Connect 帐号并在设备安装 TestFlight 客户端</p>
-<p>这种方式非常便于推送应用更新和收集测试信息</p>
+<h3 id="几种常见的分发途径"><a href="#几种常见的分发途径" class="headerlink" title="几种常见的分发途径"></a>几种常见的分发途径</h3><p>ad-hoc<br>打包时必须在登录企业帐号(或其成员)并已导入证书和描述文件的情况下, 任何用户(未授权)都可以在手机上用浏览器访问一个 url(例: itms-services://?action=download-manifest&amp;url=<a href="https://example.com/manifest.plist" target="_blank" rel="external">https://example.com/manifest.plist</a>) 完成安装,最大的问题是安装量有 100 的上限, 无法作为一个量很大的分发渠道.</p>
+<p>in-house<br>针对企业内部用户进行分发, 相比 ad-hoc 无安装量上限<br>iOS 8.1.3 开始不能企业证书 Iresign 方式重新签名的应用无法安装 <a href="https://support.apple.com/en-us/HT204245" target="_blank" rel="external">https://support.apple.com/en-us/HT204245</a></p>
+<p>TestFlight<br>仅支持 iOS8.0 以上, 不需要对设备 udid 进行授权, 适合个人 / 公司开发者, 在应用发布前可以开启 TestFlight Beta 测试并添加测试者的 iTunes Connect 帐号, 需要待测用户拥有 iTunes Connect 帐号并在设备安装 TestFlight 客户端<br>这种方式非常便于推送应用更新和收集测试信息</p>
 <p>导出 ipa 包, 越狱安装<br>如果测试设备都越狱了, 这种方式非常灵活简单, 只有能导出 ipa 包就能通过 itools 等第三方工具安装</p>
-<p><img src="https://raw.githubusercontent.com/coderspike/coderspike.github.io/master/img/bluecycle.png" alt="img"></p>
 	  
 
 	  <div>
@@ -106,74 +101,78 @@
 	
 		
 			
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
 		
 	
 		
 			
 			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
 			
 		
 			
@@ -181,7 +180,7 @@
 	
 	
 	
-		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+		<li class="prev"><a href="/2016/08/09/其他/iOS代码风格/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
