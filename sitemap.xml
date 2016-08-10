@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/06/06/iOS/iOS%E9%A1%B5%E9%9D%A2%E6%B5%81/</loc>
+    
+    <lastmod>2016-08-10T07:48:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/06/15/iOS/iOS%E4%B8%AD%E7%9A%84MVC%E6%A6%82%E5%BF%B5/</loc>
     
     <lastmod>2016-08-10T07:36:07.000Z</lastmod>
@@ -159,13 +166,6 @@
     <loc>http://yoursite.com/%E5%85%B6%E4%BB%96/index.html</loc>
     
     <lastmod>2016-08-04T07:55:15.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/06/06/iOS/iOS%E9%A1%B5%E9%9D%A2%E6%B5%81/</loc>
-    
-    <lastmod>2016-08-04T07:54:43.000Z</lastmod>
     
   </url>
   
