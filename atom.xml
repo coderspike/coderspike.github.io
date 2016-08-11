@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-11T05:58:07.000Z</updated>
+  <updated>2016-08-11T06:03:54.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://yoursite.com/2016/08/11/%E8%AF%BB%E4%B9%A6%E7%94%9F%E6%B4%BB/%E5%86%99%E7%BB%99%E5%A4%A7%E5%AE%B6%E7%9C%8B%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B9%A6/"/>
     <id>http://yoursite.com/2016/08/11/读书生活/写给大家看的设计书/</id>
     <published>2016-08-11T02:53:00.000Z</published>
-    <updated>2016-08-11T05:58:07.000Z</updated>
+    <updated>2016-08-11T06:03:54.000Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;四大基本原则-CRAP&quot;&gt;&lt;a href=&quot;#四大基本原则-CRAP&quot; class=&quot;headerlink&quot; title=&quot;四大基本原则-CRAP&quot;&gt;&lt;/a&gt;四大基本原则-CRAP&lt;/h3&gt;&lt;h4 id=&quot;亲密性&quot;&gt;&lt;a href=&quot;#亲密性&quot; class=&quot;headerlink&quot; title=&quot;亲密性&quot;&gt;&lt;/a&gt;亲密性&lt;/h4&gt;&lt;p&gt;彼此相关的项应当靠近，归组在一起。如果多个项相互之间存在很近的亲密性，它们就会成为一个视觉单元，而不是多个孤立的元素。这有助于组织信息，减少混乱，为读者提供清晰的结构。&lt;/p&gt;
+    <content type="html">&lt;h3 id=&quot;四大基本原则-CRAP&quot;&gt;&lt;a href=&quot;#四大基本原则-CRAP&quot; class=&quot;headerlink&quot; title=&quot;四大基本原则-CRAP&quot;&gt;&lt;/a&gt;四大基本原则-CRAP&lt;/h3&gt;&lt;h3 id=&quot;亲密性&quot;&gt;&lt;a href=&quot;#亲密性&quot; class=&quot;headerlink&quot; title=&quot;亲密性&quot;&gt;&lt;/a&gt;亲密性&lt;/h3&gt;&lt;p&gt;彼此相关的项应当靠近，归组在一起。如果多个项相互之间存在很近的亲密性，它们就会成为一个视觉单元，而不是多个孤立的元素。这有助于组织信息，减少混乱，为读者提供清晰的结构。&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;亲密性原则是指： 将相关的项组织在一起，移动这些项，使它们的物理位置相互靠近，这样一来，相关的项将被看做凝聚为一体的一个组，将不再是彼此无关的片段。物理位置的接近就意味存在着关联。亲密性的根本目的是实现组织性。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;要有意识地注意你是怎样阅读的，你的视线怎样移动： 从哪里开始；沿着怎样的路径；到哪里结束；读完之后，接下来看哪里？整个过程应当是一个合理的过程，有确定的开始，而且要有确定的结束。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;如何实现？&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;微微眯起眼睛，统计你的眼睛停顿的次数来数一数页面上有多少个元素。如果页面上的项超过 3~5 个（当然这取决于具体情况），就要看看哪些孤立的元素可以归在一组建立更近的亲密性，使之成为一个视觉单元。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;要避免的问题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;不要仅仅因为有空白就把元素放在角落或者中央；&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;避免一个页面上有太多鼓励的元素；&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;不要在元素之间留出同样大小的空白，除非各组同属于一个子集。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;标题、子标题、图标标题、图片能否归入其相关材料？在这个问题上一定要非常清楚（哪怕有一点含糊都要尽量避免）。在有很近亲密性的元素之间建立关系。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;不同属一组的元素之间不要建立关系！如果元素彼此无关，要把它们分开。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;对齐&quot;&gt;&lt;a href=&quot;#对齐&quot; class=&quot;headerlink&quot; title=&quot;对齐&quot;&gt;&lt;/a&gt;对齐&lt;/h4&gt;&lt;p&gt;任何东西都不能在页面上随意安放。 每个元素都应当与页面上的另一个元素有某种视觉联系。建立一种清晰、精巧而且清爽的外观。&lt;/p&gt;
+&lt;h3 id=&quot;对齐&quot;&gt;&lt;a href=&quot;#对齐&quot; class=&quot;headerlink&quot; title=&quot;对齐&quot;&gt;&lt;/a&gt;对齐&lt;/h3&gt;&lt;p&gt;任何东西都不能在页面上随意安放。 每个元素都应当与页面上的另一个元素有某种视觉联系。建立一种清晰、精巧而且清爽的外观。&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;对齐原则是指：任何元素都不能在页面上随意安放。每一项都应当与页面上的某个内容存在某种视觉联系。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;居中对其会创建一种更正式、更稳重的外观。这种外观显得更为中规中矩，但通常也很乏味。大多数看起来精巧的设计都没有采用居中对齐。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;页面上只使用一种文本对齐，所有文本都左对齐，或右对齐，或者全部居中。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;有时，你可能喜欢在同一个页面上同时使用右对齐或者左对齐文本，不过一定要确保让这些文本以某种方式对齐！&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;*找到一条明确的对齐线，并坚持以它为基准。*&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;如果设计中的对齐很明确，那么可以有意识地打破对齐，而且一定要表现出这是有意的，技巧就在于，打破常规对齐时不要怯弱，一定要干脆一些。要么全部采用一种方式，要么全部不采用这种方式。千万不要保守。在打破规则之前必须清楚规则是什么。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;对齐的根本目的设计使页面统一且有条理。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;重复&quot;&gt;&lt;a href=&quot;#重复&quot; class=&quot;headerlink&quot; title=&quot;重复&quot;&gt;&lt;/a&gt;重复&lt;/h3&gt;&lt;p&gt;让设计中的视觉要去在整个作品中重复出现。可以重复颜色、形状、材质 、空间关系、线宽、字体、大小和图片，等等。 增加条理性，加强统一性。&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;重复原则：设计的某些方面需要在整个作品中重复。读者能看到的任何方面都可以作为重复元素。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;新手要把重复的概念更进一步，把无意的重复变为有意，利用重复将一系列出版物从视觉上系为一体。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;重复不知识自然的一致，这是一种统一设计各个部分的有意识的行为。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;设计中视觉原速度额重复可以将作品中的各部分连在一起，从而统一并增强整个作品,否则这些部分知识彼此孤立的单元。重复不仅对只有一页的作品很有用，对于多页文档的设计更显重要（一致性）。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;重复的目的就是统一，并增强视觉效果。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;如何做呢，需要把现有的一致性更向前推进一步。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;要避免太多地重复一个元素，重复太多会让人讨厌。要注意对比的价值。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -34,7 +34,7 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;四大基本原则-CRAP&quot;&gt;&lt;a href=&quot;#四大基本原则-CRAP&quot; class=&quot;headerlink&quot; title=&quot;四大基本原则-CRAP&quot;&gt;&lt;/a&gt;四大基本原则-CRAP&lt;/h3&gt;&lt;h4 id=&quot;亲密性&quot;&gt;&lt;a href=&quot;#亲密性&quot; class=&quot;he
+      &lt;h3 id=&quot;四大基本原则-CRAP&quot;&gt;&lt;a href=&quot;#四大基本原则-CRAP&quot; class=&quot;headerlink&quot; title=&quot;四大基本原则-CRAP&quot;&gt;&lt;/a&gt;四大基本原则-CRAP&lt;/h3&gt;&lt;h3 id=&quot;亲密性&quot;&gt;&lt;a href=&quot;#亲密性&quot; class=&quot;he
     
     </summary>
     
