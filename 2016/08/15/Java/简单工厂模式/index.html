@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>简单工厂模式 | spike 认真</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="简单工厂模式
+“简单工厂模式” 又叫做 “静态工厂方法”，它是由一个工厂对象决定创建出哪一种产品类的实例。若要进行详细区分的话，可以分为两种：1、只有一个产品对象的简单工厂模式；2、带有一个抽象产品的简单工厂模式。下面给出了这两种具体简单工厂模式的UML类图。
+
+
+// Factory.javapu">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="简单工厂模式"/>
+  <meta property="og:site_name" content="spike 认真"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="spike 认真" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">spike 认真</a><span class="split"></span><span class="title">简单工厂模式</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-08-15</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <h3 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h3><blockquote>
+<p>“简单工厂模式” 又叫做 “静态工厂方法”，它是由一个工厂对象决定创建出哪一种产品类的实例。若要进行详细区分的话，可以分为两种：1、只有一个产品对象的简单工厂模式；2、带有一个抽象产品的简单工厂模式。下面给出了这两种具体简单工厂模式的UML类图。</p>
+</blockquote>
+<p><img src="https://www.yhspy.com/view/blog/images/blog-main-body_578b4b1723735204774993.png" alt="img"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Factory.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Factory</span> </span>&#123;</span><br><span class="line">    <span class="comment">// “工厂”类直接返回一个“产品”的实例</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Product <span class="title">createProduct</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Product();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Client.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="comment">// “客户”类使用“工厂”类来生产“产品”</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">        Factory factory = <span class="keyword">new</span> Factory();</span><br><span class="line">        <span class="comment">// 调用“工厂”的生产方法</span></span><br><span class="line">        Product product = factory.createProduct();</span><br><span class="line">		</span><br><span class="line">        System.out.println(product.getPrice());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Product.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Product</span> </span>&#123;</span><br><span class="line">    <span class="comment">// “产品”类，负责包装产品的所有信息</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Product</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> price = <span class="number">9.9</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getPrice</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.price;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="带有一个抽象产品的简单工厂模式"><a href="#带有一个抽象产品的简单工厂模式" class="headerlink" title="带有一个抽象产品的简单工厂模式"></a>带有一个抽象产品的简单工厂模式</h3><blockquote>
+<p>基于前一种模式，只要我们稍加改进便会变为另一种类型的“简单工厂模式”，这里我们将具体的“产品”变为抽象的“产品”，即所有的具体产品均继承自抽象产品类型。这样在“工厂”内部，我们便可以根据“客户”不同的需求来创建不同的“产品”</p>
+</blockquote>
+<p><img src="https://www.yhspy.com/view/blog/images/blog-main-body_578b5b8aadb3e185248223.png" alt="img1"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Factory.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Factory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AbstractProduct <span class="title">createProduct</span><span class="params">(String key)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 根据客户的选择，生产不同的“产品”</span></span><br><span class="line">        <span class="keyword">if</span> (key == <span class="string">"ConcreteProductA"</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ConcreteProductA();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ConcreteProductB();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Client.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">        Factory factory = <span class="keyword">new</span> Factory();</span><br><span class="line">	<span class="comment">// 客户选择“生产”的产品</span></span><br><span class="line">        ConcreteProductA productA = (ConcreteProductA) factory.createProduct(<span class="string">"ConcreteProductA"</span>);</span><br><span class="line">        AbstractProduct productB = factory.createProduct(<span class="string">"ConcreteProductB"</span>);</span><br><span class="line">		</span><br><span class="line">        System.out.println(productA.getPrice());</span><br><span class="line">        System.out.println(productB.getPrice());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// AbstractProduct.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">AbstractProduct</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 抽象出的产品接口</span></span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">getPrice</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// ConcreteProductA.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteProductA</span> <span class="keyword">implements</span> <span class="title">AbstractProduct</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 具体产品类A</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteProductA</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> price = <span class="number">9.9</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getPrice</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.price;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// ConcreteProductB.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteProductB</span> <span class="keyword">implements</span> <span class="title">AbstractProduct</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 具体产品类B</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteProductB</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> price = <span class="number">10.1</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getPrice</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.price;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/2016/08/15/Java/工厂模式/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/2016/08/13/Java/建造者模式/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2016 John Doe
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>
