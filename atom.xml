@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-15T07:39:07.000Z</updated>
+  <updated>2016-08-25T04:06:17.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>iOS沙盒</title>
+    <link href="http://yoursite.com/2016/08/25/iOS/iOS%E6%B2%99%E7%9B%92/"/>
+    <id>http://yoursite.com/2016/08/25/iOS/iOS沙盒/</id>
+    <published>2016-08-25T03:34:36.000Z</published>
+    <updated>2016-08-25T04:06:17.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/550988-e380ff054e24eb8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/550988-e6d3ef186a8c1d62.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;img2&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;NSString *path = NSHomeDirectory();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;上面的代码得到的是应用程序目录的路径，在该目录下有三个文件夹：Documents、Library、temp以及一个.app包！该目录下就是应用程序的沙盒，应用程序只能访问该目录下的文件夹！！！&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1、Documents 目录：您应该将所有的应用程序数据文件写入到这个目录下。这个目录用于存储用户数据。该路径可通过配置实现iTunes共享文件。可被iTunes备份。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2、AppName.app 目录：这是应用程序的程序包目录，包含应用程序的本身。由于应用程序必须经过签名，所以您在运行时不能对这个目录中的内容进行修改，否则可能会使应用程序无法启动。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3、Library 目录：这个目录下有两个子目录：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Preferences 目录：包含应用程序的偏好设置文件。您不应该直接创建偏好设置文件，而是应该使用NSUserDefaults类来取得和设置应用程序的偏好.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Caches 目录：用于存放应用程序专用的支持文件，保存应用程序再次启动过程中需要的信息。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;可创建子文件夹。可以用来放置您希望被备份但不希望被用户看到的数据。该路径下的文件夹，除Caches以外，都会被iTunes备份。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4、tmp 目录：这个目录用于存放临时文件，保存应用程序再次启动过程中不需要的信息。该路径下的文件不会被iTunes备份。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;获取相关路径&quot;&gt;&lt;a href=&quot;#获取相关路径&quot; class=&quot;headerlink&quot; title=&quot;获取相关路径&quot;&gt;&lt;/a&gt;获取相关路径&lt;/h3&gt;&lt;figure class=&quot;highlight objectivec&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;获取目录路径的方法：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 获取沙盒主目录路径&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *homeDir = &lt;span class=&quot;built_in&quot;&gt;NSHomeDirectory&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 获取Documents目录路径&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *docDir = [&lt;span class=&quot;built_in&quot;&gt;NSSearchPathForDirectoriesInDomains&lt;/span&gt;(&lt;span class=&quot;built_in&quot;&gt;NSDocumentDirectory&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;NSUserDomainMask&lt;/span&gt;, &lt;span class=&quot;literal&quot;&gt;YES&lt;/span&gt;) firstObject];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 获取Library的目录路径&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *libDir = [&lt;span class=&quot;built_in&quot;&gt;NSSearchPathForDirectoriesInDomains&lt;/span&gt;(&lt;span class=&quot;built_in&quot;&gt;NSLibraryDirectory&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;NSUserDomainMask&lt;/span&gt;, &lt;span class=&quot;literal&quot;&gt;YES&lt;/span&gt;) lastObject];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 获取Caches目录路径&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *cachesDir = [&lt;span class=&quot;built_in&quot;&gt;NSSearchPathForDirectoriesInDomains&lt;/span&gt;(&lt;span class=&quot;built_in&quot;&gt;NSCachesDirectory&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;NSUserDomainMask&lt;/span&gt;, &lt;span class=&quot;literal&quot;&gt;YES&lt;/span&gt;) firstObject];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 获取tmp目录路径&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *tmpDir =  &lt;span class=&quot;built_in&quot;&gt;NSTemporaryDirectory&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;获取应用程序程序包中资源文件路径的方法：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSLog&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;@&quot;%@&quot;&lt;/span&gt;,[[&lt;span class=&quot;built_in&quot;&gt;NSBundle&lt;/span&gt; mainBundle] bundlePath]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *imagePath = [[&lt;span class=&quot;built_in&quot;&gt;NSBundle&lt;/span&gt; mainBundle] pathForResource:&lt;span class=&quot;string&quot;&gt;@&quot;apple&quot;&lt;/span&gt; ofType:&lt;span class=&quot;string&quot;&gt;@&quot;png&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;UIImage&lt;/span&gt; *appleImage = [[&lt;span class=&quot;built_in&quot;&gt;UIImage&lt;/span&gt; alloc] initWithContentsOfFile:imagePath];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;实际使用&quot;&gt;&lt;a href=&quot;#实际使用&quot; class=&quot;headerlink&quot; title=&quot;实际使用&quot;&gt;&lt;/a&gt;实际使用&lt;/h3&gt;&lt;figure class=&quot;highlight objectivec&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *path = [&lt;span class=&quot;built_in&quot;&gt;NSSearchPathForDirectoriesInDomains&lt;/span&gt;(&lt;span class=&quot;built_in&quot;&gt;NSDocumentDirectory&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;NSUserDomainMask&lt;/span&gt;, &lt;span class=&quot;literal&quot;&gt;YES&lt;/span&gt;).lastObject stringByAppendingPathComponent:&lt;span class=&quot;string&quot;&gt;@&quot;student.db&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;FMDatabase *db = [[FMDatabase alloc] initWithPath:path];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/550988-e380ff054e24eb8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; a
+    
+    </summary>
+    
+      <category term="概念讲解" scheme="http://yoursite.com/categories/%E6%A6%82%E5%BF%B5%E8%AE%B2%E8%A7%A3/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>工厂模式</title>
     <link href="http://yoursite.com/2016/08/15/Java/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
     <id>http://yoursite.com/2016/08/15/Java/工厂模式/</id>
     <published>2016-08-15T07:31:30.000Z</published>
-    <updated>2016-08-15T07:39:07.000Z</updated>
+    <updated>2016-08-15T10:36:03.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;工厂模式&quot;&gt;&lt;a href=&quot;#工厂模式&quot; class=&quot;headerlink&quot; title=&quot;工厂模式&quot;&gt;&lt;/a&gt;工厂模式&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;在上一篇文章中，我们首先介绍了“创建型”设计模式中的一种 ——“简单工厂模式”，而“简单工厂模式”又具体分为两类，一类是只带有一个产品对象的最简模式，另一类是带有一个抽象产品对象的模式。而今天我们要讲的是一种更加抽象的“创建型”设计模式——“工厂模式”。&lt;br&gt;可以说，“工厂模式”是基于“简单工厂模式”抽象出来的一种更加“抽象化”的设计模式，它把所有“类实例化”（包括“工厂”和“产品”）的过程全部放到了子类当中去实现，而父类则负责定义创建对象的公共接口。“工厂模式”的一部分结构仍与“简单工厂模式”类似，只是相对于“简单工厂模式”而言，“工厂模式”没有了固定的核心工厂类，所有的“工厂”也需要由客户实现并实例化之后才能使用。&lt;br&gt;“工厂类”作为核心类在“工厂模式”中变成了一个抽象的“工厂”角色，这样处于父类的“核心工厂类”便仅仅负责实现具体工厂子类必须实现的接口，而这样进一步进行抽象的好处就是该模式可以在不修改具体工厂角色的情况下“引进”新的“产品”。下面给出了工厂模式的UML类图。&lt;/p&gt;
@@ -719,33 +745,6 @@ _dog = [dog copy];
     </summary>
     
       <category term="读书-生活" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6-%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Git相关操作</title>
-    <link href="http://yoursite.com/2016/06/30/iOS/Git%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/"/>
-    <id>http://yoursite.com/2016/06/30/iOS/Git相关操作/</id>
-    <published>2016-06-30T04:20:39.000Z</published>
-    <updated>2016-08-04T07:49:58.000Z</updated>
-    
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;git使用记录&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;创建新项目&quot;&gt;&lt;a href=&quot;#创建新项目&quot; class=&quot;headerlink&quot; title=&quot;创建新项目&quot;&gt;&lt;/a&gt;创建新项目&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1现在git上新建一个项目&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2记住地址：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; 初始化一个readme&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;（另外在xcode中创建项目的时候，不要勾选在本地创建git库）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3在系统中新建一个文件夹&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4打开xcode中点击导出项目。导出项目到这个空文件夹，导出路径为上边新建项目时的路径&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5将项目中的文件拷贝到此文件夹中，打开项目提交即可。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;异常&quot;&gt;&lt;a href=&quot;#异常&quot; class=&quot;headerlink&quot; title=&quot;异常&quot;&gt;&lt;/a&gt;异常&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;xcode push时时间很久，然后提示错误&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;SecureTransport error: I/O error (bummers) (-1)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 确定用户名账户正确 git config --list&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;更改命令：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name username&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.email email&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2 确定xcode中的remote地址正确&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3 增加提交量&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global http.postBuffer 524288000&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;或者&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global http.postBuffer 1048576000&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;git使用记录&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="iOS开发通用技巧" scheme="http://yoursite.com/categories/iOS%E5%BC%80%E5%8F%91%E9%80%9A%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     
     
   </entry>
