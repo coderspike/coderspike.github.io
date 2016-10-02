@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>UIAlertView | spike</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="常用代码---//如何确定alertView点击的是哪个按钮-针对提示框- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex&amp;#123;    NSString *msg = [[">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="UIAlertView"/>
+  <meta property="og:site_name" content="spike"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="spike" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">spike</a><span class="split"></span><span class="title">UIAlertView</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-10-02</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <h3 id="常用代码"><a href="#常用代码" class="headerlink" title="常用代码"></a>常用代码</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">---<span class="comment">//如何确定alertView点击的是哪个按钮-针对提示框</span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)alertView:(<span class="built_in">UIAlertView</span> *)alertView clickedButtonAtIndex:(<span class="built_in">NSInteger</span>)buttonIndex</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSString</span> *msg = [[<span class="built_in">NSString</span> alloc] initWithFormat:<span class="string">@"您点击的是第%d个按钮!"</span>,buttonIndex];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"msg:%@"</span>,msg);</span><br><span class="line">    <span class="keyword">if</span> (buttonIndex == <span class="number">0</span>) &#123;</span><br><span class="line">       …</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(buttonIndex == <span class="number">1</span>)&#123;</span><br><span class="line">      …</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">---<span class="comment">//更改AlertView背景</span></span><br><span class="line"><span class="built_in">UIAlertView</span> *theAlert = [[[<span class="built_in">UIAlertViewalloc</span>] initWithTitle:<span class="string">@"Atention"</span>  </span><br><span class="line">	                                                     message: <span class="string">@"I'm a Chinese!"</span>  </span><br><span class="line">	                                                    delegate:<span class="literal">nil</span>   </span><br><span class="line">	                                            cancelButtonTitle:<span class="string">@"Cancel"</span>   </span><br><span class="line">	                                            otherButtonTitles:<span class="string">@"Okay"</span>,<span class="literal">nil</span>] autorelease];  </span><br><span class="line">	 [theAlert show];  </span><br><span class="line">	</span><br><span class="line">	  <span class="built_in">UIImage</span> *theImage = [<span class="built_in">UIImageimageNamed</span>:<span class="string">@"loveChina.png"</span>];     </span><br><span class="line">	  theImage = [theImage stretchableImageWithLeftCapWidth:<span class="number">0</span>topCapHeight:<span class="number">0</span>];  </span><br><span class="line">	  <span class="built_in">CGSize</span> theSize = [theAlert frame].size;  </span><br><span class="line">	  <span class="built_in">UIGraphicsBeginImageContext</span>(theSize);      </span><br><span class="line">	 [theImage drawInRect:<span class="built_in">CGRectMake</span>(<span class="number">5</span>, <span class="number">5</span>, theSize.width<span class="number">-10</span>, theSize.height<span class="number">-20</span>)];<span class="comment">// 这个地方的大小要自己调整，以适应 alertview 的背景颜色的大小。  </span></span><br><span class="line">	   theImage = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();     </span><br><span class="line">	<span class="built_in">UIGraphicsEndImageContext</span>();  </span><br><span class="line">   theAlert.layer.contents = (<span class="keyword">id</span>)[theImage <span class="built_in">CGImage</span>];</span><br></pre></td></tr></table></figure>
+<h3 id="iOS-UIAlertController的使用"><a href="#iOS-UIAlertController的使用" class="headerlink" title="iOS UIAlertController的使用"></a>iOS UIAlertController的使用</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">在Xcode的iOS9<span class="number">.0</span> SDK中，<span class="built_in">UIAlertView</span>和<span class="built_in">UIActionSheet</span>都被<span class="built_in">UIAlertController</span>取代。</span><br><span class="line">在iOS <span class="number">9</span>中，<span class="built_in">UIAlertController</span>在功能上是和<span class="built_in">UIAlertView</span>以及<span class="built_in">UIActionSheet</span>相同的，<span class="built_in">UIAlertController</span>以一种模块化替换的方式来代替这两货的功能和作用。是使用对话框(alert)还是使用上拉菜单(action sheet)，就取决于在创建控制器时，您是如何设置首选样式的。</span><br><span class="line"><span class="number">1</span>、对话框</span><br><span class="line">    <span class="built_in">UIAlertController</span> *alertController = [<span class="built_in">UIAlertController</span> alertControllerWithTitle:<span class="string">@"标题"</span>message:<span class="string">@"这个是UIAlertController的默认样式"</span>preferredStyle:<span class="built_in">UIAlertControllerStyleAlert</span>];        [<span class="keyword">self</span> presentViewController:alertController animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br><span class="line">同创建<span class="built_in">UIAlertView</span>相比，我们无需指定代理，也无需在初始化过程中指定按钮。不过要特别注意第三个参数，要确定您选择的是对话框样式还是上拉菜单样式。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"><span class="number">2</span>、将动作按钮添加到控制器</span><br><span class="line">通过创建<span class="built_in">UIAlertAction</span>的实例，您可以将动作按钮添加到控制器上。<span class="built_in">UIAlertAction</span>由标题字符串、样式以及当用户选中该动作时运行的代码块组成。通过<span class="built_in">UIAlertActionStyle</span>，您可以选择如下三种动作样式：常规(<span class="keyword">default</span>)、取消(cancel)以及警示(destruective)。为了实现原来我们在创建<span class="built_in">UIAlertView</span>时创建的按钮效果，我们只需创建这两个动作按钮并将它们添加到控制器上即可。</span><br><span class="line"></span><br><span class="line">   <span class="built_in">UIAlertController</span> *alertController = [<span class="built_in">UIAlertController</span> alertControllerWithTitle:<span class="string">@"标题"</span>message:<span class="string">@"这个是UIAlertController的默认样式"</span>preferredStyle:<span class="built_in">UIAlertControllerStyleAlert</span>];    <span class="built_in">UIAlertAction</span> *cancelAction = [<span class="built_in">UIAlertAction</span> actionWithTitle:<span class="string">@"取消"</span> style:<span class="built_in">UIAlertActionStyleCancel</span> handler:<span class="literal">nil</span>];    <span class="built_in">UIAlertAction</span> *okAction = [<span class="built_in">UIAlertAction</span> actionWithTitle:<span class="string">@"好的"</span> style:<span class="built_in">UIAlertActionStyleDefault</span> handler:<span class="literal">nil</span>];    [alertController addAction:cancelAction];    [alertController addAction:okAction];    [<span class="keyword">self</span> presentViewController:alertController animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>、“警示”样式</span><br><span class="line"></span><br><span class="line">    <span class="built_in">UIAlertController</span> *alertController = [<span class="built_in">UIAlertController</span> alertControllerWithTitle:<span class="string">@"标题"</span>message:<span class="string">@"这个是UIAlertController的默认样式"</span>preferredStyle:<span class="built_in">UIAlertControllerStyleAlert</span>];    <span class="built_in">UIAlertAction</span> *resetAction = [<span class="built_in">UIAlertAction</span> actionWithTitle:<span class="string">@"重置"</span> style:<span class="built_in">UIAlertActionStyleDestructive</span> handler:<span class="literal">nil</span>];    <span class="built_in">UIAlertAction</span> *cancelAction = [<span class="built_in">UIAlertAction</span> actionWithTitle:<span class="string">@"取消"</span> style:<span class="built_in">UIAlertActionStyleCancel</span> handler:<span class="literal">nil</span>];        <span class="comment">//添加顺序和显示顺序相同</span>    [alertController addAction:cancelAction];    [alertController addAction:resetAction];    [<span class="keyword">self</span> presentViewController:alertController animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"><span class="number">4</span>、文本对话框</span><br><span class="line">设置输入框，并且设置通知，检测输入字符长度少于<span class="number">3</span>时，不能点击“好的”。</span><br><span class="line">值得注意的是，不像使用<span class="built_in">UIAlertView</span>的时候可以用<span class="built_in">UIAlertViewDelegate</span>检测文本框输入，<span class="built_in">UIAlertController</span>没有对应的代理，只能自己实现监听。</span><br><span class="line"></span><br><span class="line">    <span class="built_in">UIAlertController</span> *alertController = [<span class="built_in">UIAlertController</span> alertControllerWithTitle:<span class="string">@"文本对话框"</span> message:<span class="string">@"登录和密码对话框示例"</span> preferredStyle:<span class="built_in">UIAlertControllerStyleAlert</span>];    [alertController addTextFieldWithConfigurationHandler:^(<span class="built_in">UITextField</span> *textField)&#123;        [[<span class="built_in">NSNotificationCenter</span> defaultCenter] addObserver:<span class="keyword">self</span> selector:<span class="keyword">@selector</span>(alertTextFieldDidChange:) name:<span class="built_in">UITextFieldTextDidChangeNotification</span> object:textField];        textField.placeholder = <span class="string">@"登录"</span>;    &#125;];        [alertController addTextFieldWithConfigurationHandler:^(<span class="built_in">UITextField</span> *textField) &#123;        [[<span class="built_in">NSNotificationCenter</span> defaultCenter] addObserver:<span class="keyword">self</span> selector:<span class="keyword">@selector</span>(alertTextFieldDidChange:) name:<span class="built_in">UITextFieldTextDidChangeNotification</span> object:textField];        textField.placeholder = <span class="string">@"密码"</span>;        textField.secureTextEntry = <span class="literal">YES</span>;    &#125;];            <span class="built_in">UIAlertAction</span> *okAction = [<span class="built_in">UIAlertAction</span> actionWithTitle:<span class="string">@"好的"</span> style:<span class="built_in">UIAlertActionStyleDefault</span> handler:^(<span class="built_in">UIAlertAction</span> *action) &#123;        <span class="built_in">UITextField</span> *login = alertController.textFields.firstObject;        <span class="built_in">UITextField</span> *password = alertController.textFields.lastObject;        <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,login.text);        <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,password.text);    &#125;];        <span class="built_in">UIAlertAction</span> *cancelAction = [<span class="built_in">UIAlertAction</span> actionWithTitle:<span class="string">@"取消"</span> style:<span class="built_in">UIAlertActionStyleCancel</span> handler:<span class="literal">nil</span>];    [alertController addAction:cancelAction];    [alertController addAction:okAction];            [<span class="keyword">self</span> presentViewController:alertController animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)alertTextFieldDidChange:(<span class="built_in">NSNotification</span> *)notification&#123;    <span class="built_in">UIAlertController</span> *alertController = (<span class="built_in">UIAlertController</span> *)<span class="keyword">self</span>.presentedViewController;    <span class="keyword">if</span> (alertController) &#123;                <span class="built_in">UITextField</span> *login = alertController.textFields.firstObject;        <span class="built_in">UIAlertAction</span> *okAction = alertController.actions.lastObject;        okAction.enabled = login.text.length &gt; <span class="number">2</span>;    &#125;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"><span class="number">5</span>、上拉菜单</span><br><span class="line"></span><br><span class="line">    <span class="built_in">UIAlertController</span> *alertController = [<span class="built_in">UIAlertController</span> alertControllerWithTitle:<span class="string">@"保存或删除数据"</span> message:<span class="string">@"删除数据将不可恢复"</span> preferredStyle: <span class="built_in">UIAlertControllerStyleActionSheet</span>];        <span class="built_in">UIAlertAction</span> *cancelAction = [<span class="built_in">UIAlertAction</span> actionWithTitle:<span class="string">@"取消"</span> style:<span class="built_in">UIAlertActionStyleCancel</span> handler:^(<span class="built_in">UIAlertAction</span> * action) &#123;        <span class="built_in">NSLog</span>(<span class="string">@"点击了取消"</span>);    &#125;];        <span class="built_in">UIAlertAction</span> *deleteAction = [<span class="built_in">UIAlertAction</span> actionWithTitle:<span class="string">@"删除"</span> style:<span class="built_in">UIAlertActionStyleDestructive</span> handler:^(<span class="built_in">UIAlertAction</span> * action) &#123;        <span class="built_in">NSLog</span>(<span class="string">@"点击了删除"</span>);    &#125;];    <span class="built_in">UIAlertAction</span> *archiveAction = [<span class="built_in">UIAlertAction</span> actionWithTitle:<span class="string">@"保存"</span> style:<span class="built_in">UIAlertActionStyleDefault</span> handler:^(<span class="built_in">UIAlertAction</span> * action) &#123;        <span class="built_in">NSLog</span>(<span class="string">@"点击了保存"</span>);    &#125;];            [alertController addAction:cancelAction];    [alertController addAction:deleteAction];    [alertController addAction:archiveAction];        [<span class="keyword">self</span> presentViewController:alertController animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br></pre></td></tr></table></figure>	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/2016/10/02/iOS/UIImageView/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/2016/10/02/iOS/UIlabel/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2016 John Doe
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

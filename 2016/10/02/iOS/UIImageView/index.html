@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>UIImageView | spike</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="常用代码---//图片缩放- (UIImage*)imageCompressWithSimple:(UIImage*)image scale:(float)scale&amp;#123;    CGSize size = image.size;    CGFloat width = size.width; ">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="UIImageView"/>
+  <meta property="og:site_name" content="spike"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="spike" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">spike</a><span class="split"></span><span class="title">UIImageView</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-10-02</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <h3 id="常用代码"><a href="#常用代码" class="headerlink" title="常用代码"></a>常用代码</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">---<span class="comment">//图片缩放</span></span><br><span class="line">- (<span class="built_in">UIImage</span>*)imageCompressWithSimple:(<span class="built_in">UIImage</span>*)image scale:(<span class="keyword">float</span>)scale</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">CGSize</span> size = image.size;</span><br><span class="line">    <span class="built_in">CGFloat</span> width = size.width;</span><br><span class="line">    <span class="built_in">CGFloat</span> height = size.height;</span><br><span class="line">    <span class="built_in">CGFloat</span> scaledWidth = width * scale;</span><br><span class="line">    <span class="built_in">CGFloat</span> scaledHeight = height * scale;</span><br><span class="line">    <span class="built_in">UIGraphicsBeginImageContext</span>(size); <span class="comment">// this will crop</span></span><br><span class="line">    [image drawInRect:<span class="built_in">CGRectMake</span>(<span class="number">0</span>,<span class="number">0</span>,scaledWidth,scaledHeight)];</span><br><span class="line">    <span class="built_in">UIImage</span>* newImage= <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line">    <span class="built_in">UIGraphicsEndImageContext</span>();</span><br><span class="line">    <span class="keyword">return</span> newImage;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">---<span class="comment">//常规用法</span></span><br><span class="line"><span class="built_in">UIImage</span> *img1 = [<span class="built_in">UIImage</span> imageNamed:<span class="string">@"img"</span>];  </span><br><span class="line">    <span class="built_in">UIImage</span> *img2 = [<span class="built_in">UIImage</span> imageNamed:<span class="string">@"img1"</span>];  </span><br><span class="line">    <span class="built_in">UIImage</span> *img3 = [<span class="built_in">UIImage</span> imageNamed:<span class="string">@"img2"</span>];  </span><br><span class="line">    <span class="built_in">UIImageView</span> *imageView = [[<span class="built_in">UIImageView</span> alloc] initWithFrame:[[<span class="built_in">UIScreen</span> mainScreen]  bounds]];  </span><br><span class="line">    imageView.animationImages = [<span class="built_in">NSArray</span> arrayWithObjects:img1,img2,img3, <span class="literal">nil</span>];  </span><br><span class="line">    imageView.animationDuration = <span class="number">5</span>;  </span><br><span class="line">    <span class="built_in">UIImage</span> *addimt=[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"checked-checklist-notepad.png"</span>];</span><br><span class="line">    <span class="built_in">UIImageView</span> *img=[[<span class="built_in">UIImageView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="keyword">self</span>.view.bounds.size.width<span class="number">-50</span>, <span class="number">20</span>, <span class="number">40</span>, <span class="number">40</span>)];</span><br><span class="line">    img.image=addimt;</span><br><span class="line">    </span><br><span class="line">---<span class="comment">//添加圆角</span></span><br><span class="line">请写出有多少有方法给<span class="built_in">UIImageView</span>添加圆角？</span><br><span class="line"><span class="number">1</span>、最直接的方法就是使用如下属性设置：</span><br><span class="line">imgView.layer.cornerRadius = <span class="number">10</span>;<span class="comment">// 这一行代码是很消耗性能的</span>imgView.clipsToBounds = <span class="literal">YES</span>;</span><br><span class="line">好处是使用简单，操作方便。坏处是离屏渲染（off-screen-rendering）需要消耗性能。对于图片比较多的视图上，不建议使用这种方法来设置圆角。通常来说，计算机系统中CPU、GPU、显示器是协同工作的。CPU计算好显示内容提交到GPU，GPU渲染完成后将渲染结果放入帧缓冲区。</span><br><span class="line">简单来说，离屏渲染，导致本该GPU干的活，结果交给了CPU来干，而CPU又不擅长GPU干的活，于是拖慢了UI层的FPS（数据帧率），并且离屏需要创建新的缓冲区和上下文切换，因此消耗较大的性能。</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 给<span class="built_in">UIImage</span>添加生成圆角图片的扩展API：</span><br><span class="line">- (<span class="built_in">UIImage</span> *)hyb_imageWithCornerRadius:(<span class="built_in">CGFloat</span>)radius &#123;  <span class="built_in">CGRect</span> rect = (<span class="built_in">CGRect</span>)&#123;<span class="number">0.</span>f, <span class="number">0.</span>f, <span class="keyword">self</span>.size&#125;;</span><br><span class="line"><span class="built_in">UIGraphicsBeginImageContextWithOptions</span>(<span class="keyword">self</span>.size, <span class="literal">NO</span>, <span class="built_in">UIScreen</span>.mainScreen.scale);  <span class="built_in">CGContextAddPath</span>(<span class="built_in">UIGraphicsGetCurrentContext</span>(),                   [<span class="built_in">UIBezierPath</span> bezierPathWithRoundedRect:rect cornerRadius:radius].CGPath);  <span class="built_in">CGContextClip</span>(<span class="built_in">UIGraphicsGetCurrentContext</span>());</span><br><span class="line">[<span class="keyword">self</span> drawInRect:rect];  <span class="built_in">UIImage</span> *image = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line"><span class="built_in">UIGraphicsEndImageContext</span>();</span><br><span class="line"><span class="keyword">return</span> image;&#125;</span><br><span class="line">然后调用时就直接传一个圆角来处理：</span><br><span class="line">imgView.image = [[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"test"</span>] hyb_imageWithCornerRadius:<span class="number">4</span>];</span><br></pre></td></tr></table></figure>	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev"><a href="/2016/10/02/iOS/UINavigationcontroller/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/2016/10/02/iOS/UIAlertView/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2016 John Doe
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

@@ -3,23 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>100个愿望清单 | spike</title>
+  <title>Storyboard | spike</title>
   <meta name="author" content="John Doe">
   
-  <meta name="description" content="终极目标1. 成为一个健康，强壮,努力且乐观向上的人。
-2. 认真经营婚姻，让家庭幸福美满。
-3. 成为一个优秀的工程师（只限于35岁之前）
-
-财富事业1. 能在北京拥有一套房。
-2. 30岁前月薪到达15k+,32岁到达20k+。
-
-家庭幸福1. 生一个健康的宝宝。
-2. 提高回家的次数，多关心父">
+  <meta name="description" content="介绍    StoryBoard 是苹果在 iOS 5 中引入的新技术方案，目的是给纷繁复杂的 nib、xib 们一个温暖的家，让他们之间的关系更直观地展示出来，并提供了一种新的页面间跳转方式 segue。StoryBoard 的本质是一个 XML 文件，描述了若干窗体、组件、Auto Layou">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="100个愿望清单"/>
+  <meta property="og:title" content="Storyboard"/>
   <meta property="og:site_name" content="spike"/>
 
   
@@ -53,7 +45,7 @@
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">spike</a><span class="split"></span><span class="title">100个愿望清单</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-09-16</span></h1>
+  <h1><a class="brand" href="/">spike</a><span class="split"></span><span class="title">Storyboard</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-10-02</span></h1>
 </div>		
 
 <div class="row page">
@@ -66,32 +58,31 @@
 	  
 
 	  <!-- content -->
-	  <h3 id="终极目标"><a href="#终极目标" class="headerlink" title="终极目标"></a>终极目标</h3><pre><code>1. 成为一个健康，强壮,努力且乐观向上的人。
-2. 认真经营婚姻，让家庭幸福美满。
-3. 成为一个优秀的工程师（只限于35岁之前）
-</code></pre><hr>
-<h3 id="财富事业"><a href="#财富事业" class="headerlink" title="财富事业"></a>财富事业</h3><pre><code>1. 能在北京拥有一套房。
-2. 30岁前月薪到达15k+,32岁到达20k+。
-</code></pre><hr>
-<h3 id="家庭幸福"><a href="#家庭幸福" class="headerlink" title="家庭幸福"></a>家庭幸福</h3><pre><code>1. 生一个健康的宝宝。
-2. 提高回家的次数，多关心父母身体，每月都给父母一些钱。
-3. 能带父母，岳父母出去旅游一次。
-4. 经常给老婆买些好吃的和小礼物。
-5. 希望每几年能和老婆出去旅行一次（10-15个国家，国内多数有特色的城市）
-</code></pre><hr>
-<h3 id="享受生活"><a href="#享受生活" class="headerlink" title="享受生活"></a>享受生活</h3><pre><code>1. 希望能学会100道菜。
-2. 坚持每日健身，在日常生活中利用空闲时间多运动。
-3. 每两周能读一本书。
-4. 每天睡眠7小时。
-</code></pre><hr>
-<h3 id="个人风格"><a href="#个人风格" class="headerlink" title="个人风格"></a>个人风格</h3><pre><code>1.精简信息出入口，谨慎增加，时刻简化，相关物品归集。    
-2.注重积累，相关收集统一整理到博客上，定期总结更新。(笔记要精简，杂乱和没有是一样的)
-3.站直坐稳，挺胸抬头。
-4.多做高收益的事情。
-5.追求质感。
-6.简洁有力。
-</code></pre><hr>
-	  
+	  <pre><code>介绍    StoryBoard 是苹果在 iOS 5 中引入的新技术方案，目的是给纷繁复杂的 nib、xib 们一个温暖的家，让他们之间的关系更直观地展示出来，并提供了一种新的页面间跳转方式 segue。StoryBoard 的本质是一个 XML 文件，描述了若干窗体、组件、Auto Layout 约束等关键信息。Auto Layout 跟 StoryBoard 是天作之合，配合默契，可以大幅提高 UI 开发效率，一次性做出适合所有屏幕尺寸的 UI（这个是很重要的）
+prepareForSegue     - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+         第一个参数是 segue， 第二个参数是 sender
+    这个method 主要解决2个问题：
+    （1） 获取所要跳转到的视图控制器 （ViewController）；
+    （2） 同时，将上一个视图的数据，传递给下一个视图。 （比如： 上一个视图是TableView， 那么，就要将点击cell的行号传递到下一个视图）。
+    UIViewController *destination = segue.destinationViewController;   只要是 prepareForSegue：sender： 总会声明一个目标视图控制器（destination viewcontroller）；
+
+    关于传值：
+    - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UIViewController *destination = segue.destinationViewController;
+    if ([destination respondsToSelector:@selector(setDelegate:)]) {
+    [destination setValue:self forKey:@&quot;delegate&quot;];
+    }
+    if ([destination respondsToSelector:@selector(setSelection:)]) {
+    // prepare selection info
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+
+    id object = self.tasks[indexPath.row];
+    NSDictionary *selection = @{@&quot;indexPath&quot; : indexPath,
+    @&quot;object&quot; : object};
+    [destination setValue:selection forKey:@&quot;selection&quot;];
+    }
+    }
+</code></pre>	  
 
 	  <div>
   		<center>
@@ -104,6 +95,43 @@
 	
 	
 		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	
@@ -129,61 +157,10 @@
 	
 		
 			
-			
 		
 	
 		
 	
-		
-	
-		
-	
-		
-	
-		
-			
-			
-			
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
 		
 	
 		
@@ -228,6 +205,26 @@
 	
 		
 	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
 		
 	
 		
@@ -240,7 +237,7 @@
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/2016/08/13/读书生活/吃很重要/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/2016/10/02/iOS/UISearchBar/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
