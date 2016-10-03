@@ -1,279 +1,0 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>UISearchBar | spike</title>
-  <meta name="author" content="John Doe">
-  
-  <meta name="description" content="常用方法UISearchBar的使用	 UISearchBarDelegate@property (nonatomic, strong) UISearchBar    *searchBar;	 self.searchBar= [[UISearchBar alloc]initWithFrame:CG">
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <meta property="og:title" content="UISearchBar"/>
-  <meta property="og:site_name" content="spike"/>
-
-  
-    <meta property="og:image" content="undefined"/>
-  
-
-  
-    <link rel="alternative" href="/atom.xml" title="spike" type="application/atom+xml">
-  
-  
-    <link href="/favicon.png" rel="icon">
-  
-  
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
-  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-  <script src="/js/jquery-2.0.3.min.js"></script>
-
-  <!-- analytics -->
-  
-
-</head>
-
-<body id="body" data-spy="scroll" data-target=".toc">
-  <div class="container" id="container">
-	<div class="content">
-	  <div class="page-header">		
-  <h1><a class="brand" href="/">spike</a><span class="split"></span><span class="title">UISearchBar</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-10-02</span></h1>
-</div>		
-
-<div class="row page">
-  <!-- cols -->	
-  
-  
-
-  
-	<div class="col-md-12">
-	  
-
-	  <!-- content -->
-	  <h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="built_in">UISearchBar</span>的使用	 <span class="built_in">UISearchBarDelegate</span><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UISearchBar</span>    *searchBar;</span><br><span class="line">	 <span class="keyword">self</span>.searchBar= [[<span class="built_in">UISearchBar</span> alloc]initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, seachBarHeight, SCREENWIDTH, <span class="number">110</span>-seachBarHeight)];</span><br><span class="line">	    [<span class="keyword">self</span>.searchBar setTranslucent:<span class="literal">YES</span>];</span><br><span class="line">	    [<span class="keyword">self</span>.searchBar setBackgroundColor:[<span class="built_in">UIColor</span> whiteColor]];</span><br><span class="line">	    <span class="keyword">self</span>.searchBar.searchBarStyle=<span class="built_in">UISearchBarStyleMinimal</span>;</span><br><span class="line">	    [<span class="keyword">self</span>.searchBar setPlaceholder:<span class="string">@"客户/活动/任务"</span>];</span><br><span class="line">	    <span class="keyword">self</span>.searchBar.delegate=<span class="keyword">self</span>;</span><br><span class="line">	    <span class="comment">//[self.searchBar setInputAccessoryView:self.inputAccessoryView];</span></span><br><span class="line">	    [<span class="keyword">self</span>.view addSubview:<span class="keyword">self</span>.searchBar];</span><br><span class="line">更改cancle按钮	<span class="comment">// 改变cannel按钮的文字,7.0  </span></span><br><span class="line">	 <span class="built_in">UIView</span> *subView0 = searchBar.subviews[<span class="number">0</span>]; <span class="comment">// IOS7.0中searchBar组成复杂点  </span></span><br><span class="line">	 <span class="keyword">if</span> ([[[<span class="built_in">UIDevice</span> currentDevice] systemVersion] floatValue]&gt;=<span class="number">7.0</span>) &#123;  </span><br><span class="line">	     <span class="keyword">for</span> (<span class="built_in">UIView</span> *subView <span class="keyword">in</span> subView0.subviews)  </span><br><span class="line">	     &#123;        </span><br><span class="line">	         <span class="comment">// 获得UINavigationButton按钮，也就是Cancel按钮对象，并修改此按钮的各项属性  </span></span><br><span class="line">	         <span class="keyword">if</span> ([subView isKindOfClass:[<span class="built_in">UIButtonclass</span>]]) &#123;  </span><br><span class="line">	             <span class="built_in">UIButton</span> *cannelButton = (<span class="built_in">UIButton</span>*)subView;  </span><br><span class="line">	             [cannelButton setTitle:<span class="string">@"取消"</span>forState:<span class="built_in">UIControlStateNormal</span>];  </span><br><span class="line">	             [cannelButton setTintColor:[<span class="built_in">UIColorredColor</span>]];  </span><br><span class="line">	             <span class="keyword">break</span>;  </span><br><span class="line">	         &#125;  </span><br><span class="line">	     &#125;  </span><br><span class="line">	 &#125;  </span><br><span class="line">Delegate	<span class="meta">#pragma mark - UISearchBarDelegate 协议</span></span><br><span class="line">	<span class="comment">// UISearchBar得到焦点并开始编辑时，执行该方法</span></span><br><span class="line">	- (<span class="built_in">BOOL</span>)searchBarShouldBeginEditing:(<span class="built_in">UISearchBar</span> *)searchBar&#123;</span><br><span class="line">	    &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 取消按钮被按下时，执行的方法</span></span><br><span class="line">	- (<span class="keyword">void</span>)searchBarCancelButtonClicked:(<span class="built_in">UISearchBar</span> *)searchBar&#123;</span><br><span class="line">	    &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 键盘中，搜索按钮被按下，执行的方法</span></span><br><span class="line">	- (<span class="keyword">void</span>)searchBarSearchButtonClicked:(<span class="built_in">UISearchBar</span> *)searchBar&#123;</span><br><span class="line">	  &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 当搜索内容变化时，执行该方法。很有用，可以实现时实搜索</span></span><br><span class="line">	- (<span class="keyword">void</span>)searchBar:(<span class="built_in">UISearchBar</span> *)searchBar textDidChange:(<span class="built_in">NSString</span> *)searchText;&#123;</span><br><span class="line">	  &#125;</span><br><span class="line">iOS <span class="built_in">UISearchController</span>的使用	在iOS9中，<span class="built_in">UISearchDisplayController</span> 已经被<span class="built_in">UISearchController</span>替代。搜索框是一种常用的控件。</span><br><span class="line">	假设我们要满足下图的需求，产生<span class="number">100</span>个“数字+三个随机字母”，然后搜索包含某个字母的结果。</span><br><span class="line">	那么，该怎么做呢？</span><br><span class="line">	</span><br><span class="line">	 </span><br><span class="line">	</span><br><span class="line">	<span class="meta">#import <span class="meta-string">"ViewController.h"</span></span></span><br><span class="line">	<span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()&lt;<span class="title">UITableViewDelegate</span>,<span class="title">UITableViewDataSource</span>,<span class="title">UISearchControllerDelegate</span>,<span class="title">UISearchResultsUpdating</span>&gt;</span></span><br><span class="line">	<span class="comment">//tableView</span><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>)  <span class="built_in">UITableView</span> *tableView;</span><br><span class="line">	<span class="comment">//searchController</span><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>)  <span class="built_in">UISearchController</span> *searchController;</span><br><span class="line">	<span class="comment">//数据源</span><span class="keyword">@property</span> (<span class="keyword">strong</span>,<span class="keyword">nonatomic</span>) <span class="built_in">NSMutableArray</span>  *dataList;</span><br><span class="line">	<span class="keyword">@property</span> (<span class="keyword">strong</span>,<span class="keyword">nonatomic</span>) <span class="built_in">NSMutableArray</span>  *searchList;</span><br><span class="line">	<span class="keyword">@end</span></span><br><span class="line">	<span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></span><br><span class="line">	- (<span class="keyword">void</span>)viewDidLoad &#123;    [<span class="keyword">super</span> viewDidLoad];        _dataList = [<span class="built_in">NSMutableArray</span> array];    _searchList = [<span class="built_in">NSMutableArray</span> array];        <span class="keyword">self</span>.dataList=[<span class="built_in">NSMutableArray</span> arrayWithCapacity:<span class="number">100</span>];        <span class="comment">//产生100个“数字+三个随机字母”</span>    <span class="keyword">for</span> (<span class="built_in">NSInteger</span> i=<span class="number">0</span>; i&lt;<span class="number">100</span>; i++) &#123;        [<span class="keyword">self</span>.dataList addObject:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%ld%@"</span>,(<span class="keyword">long</span>)i,[<span class="keyword">self</span> shuffledAlphabet]]];    &#125;        _tableView = [[<span class="built_in">UITableView</span> alloc]initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">20</span>,[<span class="built_in">UIScreen</span>  mainScreen].bounds.size.width ,[<span class="built_in">UIScreen</span>  mainScreen].bounds.size.height)];            _tableView.delegate = <span class="keyword">self</span>;    _tableView.dataSource = <span class="keyword">self</span>;    _tableView.separatorStyle = <span class="built_in">UITableViewCellSelectionStyleNone</span>;        <span class="comment">//创建UISearchController</span>    _searchController = [[<span class="built_in">UISearchController</span> alloc]initWithSearchResultsController:<span class="literal">nil</span>];    <span class="comment">//设置代理</span>    _searchController.delegate = <span class="keyword">self</span>;    _searchController.searchResultsUpdater= <span class="keyword">self</span>;        <span class="comment">//设置UISearchController的显示属性，以下3个属性默认为YES</span>    <span class="comment">//搜索时，背景变暗色</span>    _searchController.dimsBackgroundDuringPresentation = <span class="literal">NO</span>;    <span class="comment">//搜索时，背景变模糊</span>    _searchController.obscuresBackgroundDuringPresentation = <span class="literal">NO</span>;    <span class="comment">//隐藏导航栏</span>    _searchController.hidesNavigationBarDuringPresentation = <span class="literal">NO</span>;        _searchController.searchBar.frame = <span class="built_in">CGRectMake</span>(<span class="keyword">self</span>.searchController.searchBar.frame.origin.x, <span class="keyword">self</span>.searchController.searchBar.frame.origin.y, <span class="keyword">self</span>.searchController.searchBar.frame.size.width, <span class="number">44.0</span>);        <span class="comment">// 添加 searchbar 到 headerview</span>    <span class="keyword">self</span>.tableView.tableHeaderView = _searchController.searchBar;        [<span class="keyword">self</span>.view addSubview:_tableView];            <span class="comment">// Do any additional setup after loading the view, typically from a nib.</span>&#125;</span><br><span class="line">	<span class="comment">//产生3个随机字母</span>- (<span class="built_in">NSString</span> *)shuffledAlphabet &#123;        <span class="built_in">NSMutableArray</span> * shuffledAlphabet = [<span class="built_in">NSMutableArray</span> arrayWithArray:@[<span class="string">@"A"</span>,<span class="string">@"B"</span>,<span class="string">@"C"</span>,<span class="string">@"D"</span>,<span class="string">@"E"</span>,<span class="string">@"F"</span>,<span class="string">@"G"</span>,<span class="string">@"H"</span>,<span class="string">@"I"</span>,<span class="string">@"J"</span>,<span class="string">@"K"</span>,<span class="string">@"L"</span>,<span class="string">@"M"</span>,<span class="string">@"N"</span>,<span class="string">@"O"</span>,<span class="string">@"P"</span>,<span class="string">@"Q"</span>,<span class="string">@"R"</span>,<span class="string">@"S"</span>,<span class="string">@"T"</span>,<span class="string">@"U"</span>,<span class="string">@"V"</span>,<span class="string">@"W"</span>,<span class="string">@"X"</span>,<span class="string">@"Y"</span>,<span class="string">@"Z"</span>]];        <span class="built_in">NSString</span> *strTest = [[<span class="built_in">NSString</span> alloc]init];    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++) &#123;        <span class="keyword">int</span> x = arc4random() % <span class="number">25</span>;        strTest = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@%@"</span>,strTest,shuffledAlphabet[x]];    &#125;        <span class="keyword">return</span> strTest;    &#125;</span><br><span class="line">	<span class="comment">//设置区域的行数</span>-(<span class="built_in">NSInteger</span>)tableView:(<span class="built_in">UITableView</span> *)tableView numberOfRowsInSection:(<span class="built_in">NSInteger</span>)section&#123;    <span class="keyword">if</span> (<span class="keyword">self</span>.searchController.active) &#123;        <span class="keyword">return</span> [<span class="keyword">self</span>.searchList count];    &#125;<span class="keyword">else</span>&#123;        <span class="keyword">return</span> [<span class="keyword">self</span>.dataList count];    &#125;&#125;</span><br><span class="line">	<span class="comment">//返回单元格内容</span>-(<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath&#123;    <span class="keyword">static</span> <span class="built_in">NSString</span> *flag=<span class="string">@"cell"</span>;    <span class="built_in">UITableViewCell</span> *cell=[tableView dequeueReusableCellWithIdentifier:flag];    <span class="keyword">if</span> (cell==<span class="literal">nil</span>) &#123;        cell=[[<span class="built_in">UITableViewCell</span> alloc]initWithStyle:<span class="built_in">UITableViewCellStyleDefault</span> reuseIdentifier:flag];    &#125;    <span class="keyword">if</span> (<span class="keyword">self</span>.searchController.active) &#123;        [cell.textLabel setText:<span class="keyword">self</span>.searchList[indexPath.row]];    &#125;    <span class="keyword">else</span>&#123;        [cell.textLabel setText:<span class="keyword">self</span>.dataList[indexPath.row]];    &#125;    <span class="keyword">return</span> cell;&#125;</span><br><span class="line">	<span class="meta">#pragma mark - UISearchControllerDelegate代理</span></span><br><span class="line">	<span class="comment">//测试UISearchController的执行过程</span></span><br><span class="line">	- (<span class="keyword">void</span>)willPresentSearchController:(<span class="built_in">UISearchController</span> *)searchController&#123;    <span class="built_in">NSLog</span>(<span class="string">@"willPresentSearchController"</span>);&#125;</span><br><span class="line">	- (<span class="keyword">void</span>)didPresentSearchController:(<span class="built_in">UISearchController</span> *)searchController&#123;    <span class="built_in">NSLog</span>(<span class="string">@"didPresentSearchController"</span>);&#125;</span><br><span class="line">	- (<span class="keyword">void</span>)willDismissSearchController:(<span class="built_in">UISearchController</span> *)searchController&#123;    <span class="built_in">NSLog</span>(<span class="string">@"willDismissSearchController"</span>);&#125;</span><br><span class="line">	- (<span class="keyword">void</span>)didDismissSearchController:(<span class="built_in">UISearchController</span> *)searchController&#123;    <span class="built_in">NSLog</span>(<span class="string">@"didDismissSearchController"</span>);&#125;</span><br><span class="line">	- (<span class="keyword">void</span>)presentSearchController:(<span class="built_in">UISearchController</span> *)searchController&#123;    <span class="built_in">NSLog</span>(<span class="string">@"presentSearchController"</span>);&#125;</span><br><span class="line">	-(<span class="keyword">void</span>)updateSearchResultsForSearchController:(<span class="built_in">UISearchController</span> *)searchController &#123;        <span class="built_in">NSLog</span>(<span class="string">@"updateSearchResultsForSearchController"</span>);    <span class="built_in">NSString</span> *searchString = [<span class="keyword">self</span>.searchController.searchBar text];    <span class="built_in">NSPredicate</span> *preicate = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF CONTAINS[c] %@"</span>, searchString];    <span class="keyword">if</span> (<span class="keyword">self</span>.searchList!= <span class="literal">nil</span>) &#123;        [<span class="keyword">self</span>.searchList removeAllObjects];    &#125;    <span class="comment">//过滤数据</span>    <span class="keyword">self</span>.searchList= [<span class="built_in">NSMutableArray</span> arrayWithArray:[_dataList filteredArrayUsingPredicate:preicate]];    <span class="comment">//刷新表格</span>    [<span class="keyword">self</span>.tableView reloadData];&#125;</span><br><span class="line">	</span><br><span class="line">	 </span><br><span class="line">	<span class="built_in">UISearchController</span>代理方法的执行过程：</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">UISearchController</span>的使用步骤：</span><br><span class="line">	<span class="number">1</span>、创建</span><br><span class="line">	<span class="comment">//创建UISearchController</span>    _searchController = [[<span class="built_in">UISearchController</span> alloc]initWithSearchResultsController:<span class="literal">nil</span>];</span><br><span class="line">	 </span><br><span class="line">	<span class="number">2</span>、设置代理</span><br><span class="line">	    <span class="comment">//设置代理</span>    _searchController.delegate = <span class="keyword">self</span>;    _searchController.searchResultsUpdater= <span class="keyword">self</span>;</span><br><span class="line">	 </span><br><span class="line">	<span class="number">3</span>、设置属性</span><br><span class="line">	</span><br><span class="line">	    <span class="comment">//设置UISearchController的显示属性，以下3个属性默认为YES</span>    <span class="comment">//搜索时，背景变暗色</span>    _searchController.dimsBackgroundDuringPresentation = <span class="literal">NO</span>;    <span class="comment">//搜索时，背景变模糊</span>    _searchController.obscuresBackgroundDuringPresentation = <span class="literal">NO</span>;    <span class="comment">//隐藏导航栏</span>    _searchController.hidesNavigationBarDuringPresentation = <span class="literal">NO</span>;</span><br><span class="line">	</span><br><span class="line">	 </span><br><span class="line">	<span class="number">4</span>、实现代理</span><br><span class="line">	</span><br><span class="line">	- (<span class="keyword">void</span>)willPresentSearchController:(<span class="built_in">UISearchController</span> *)searchController;- (<span class="keyword">void</span>)didPresentSearchController:(<span class="built_in">UISearchController</span> *)searchController;- (<span class="keyword">void</span>)willDismissSearchController:(<span class="built_in">UISearchController</span> *)searchController;- (<span class="keyword">void</span>)didDismissSearchController:(<span class="built_in">UISearchController</span> *)searchController;- (<span class="keyword">void</span>)presentSearchController:(<span class="built_in">UISearchController</span> *)searchController;</span><br><span class="line">	- (<span class="keyword">void</span>)updateSearchResultsForSearchController:(<span class="built_in">UISearchController</span> *)searchController;</span><br><span class="line">	</span><br><span class="line">	 </span><br><span class="line">	 </span><br><span class="line">	注意点：</span><br><span class="line">	<span class="number">1</span>、如果你希望在同一个视图中显示搜索结果，则通过[[<span class="built_in">UISearchController</span> alloc]initWithSearchResultsController:<span class="literal">nil</span>]。但是这是不支持TVOS，请提供TVOS一定要指定结果控制器。</span><br><span class="line">	[[<span class="built_in">UISearchController</span> alloc]initWithSearchResultsController:VC]，可以实现指定结果控制器。</span><br></pre></td></tr></table></figure>
-	  
-
-	  <div>
-  		<center>
-		  <div class="pagination">
-<ul class="pagination">
-	
-	
-	
-	
-	
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-			
-		
-	
-		
-			
-			
-			
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-	
-	
-		<li class="prev"><a href="/2016/10/02/iOS/Storyboard/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
-	
-	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
-	
-		<li class="next"><a href="/2016/10/02/iOS/UINavigationcontroller/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
-	
-</ul>
-</div>
-
-		</center>
-	  </div>
-	  
-	</div> <!-- col-md-9/col-md-12 -->
-	
-  </div><!-- row -->
-
-	</div>
-  </div>
-  <div class="container-narrow">
-	<footer> <p>
-  &copy; 2016 John Doe
-  
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
-</p> </footer>
-  </div> <!-- container-narrow -->
-  
-<a id="gotop" href="#">   
-  <span>▲</span> 
-</a>
-
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.tableofcontents.min.js"></script>
-<script src="/js/tocgenerator.min.js"></script>
-<script src="/js/main.js"></script>
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
-
-
-</body>
-</html>

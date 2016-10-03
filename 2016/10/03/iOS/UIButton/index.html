@@ -1,279 +1,0 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>UIButton | spike</title>
-  <meta name="author" content="John Doe">
-  
-  <meta name="description" content="UIButton的类是一个UIControl子类，使用目标动作设计模式，target-action模式，3种回调的模式之一 NSObject	UIResponder	UIView	UIControl	UIButton创建按钮	//构造器方法，调用该方法创建某个样式的按钮对象+ (id)button">
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <meta property="og:title" content="UIButton"/>
-  <meta property="og:site_name" content="spike"/>
-
-  
-    <meta property="og:image" content="undefined"/>
-  
-
-  
-    <link rel="alternative" href="/atom.xml" title="spike" type="application/atom+xml">
-  
-  
-    <link href="/favicon.png" rel="icon">
-  
-  
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
-  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-  <script src="/js/jquery-2.0.3.min.js"></script>
-
-  <!-- analytics -->
-  
-
-</head>
-
-<body id="body" data-spy="scroll" data-target=".toc">
-  <div class="container" id="container">
-	<div class="content">
-	  <div class="page-header">		
-  <h1><a class="brand" href="/">spike</a><span class="split"></span><span class="title">UIButton</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-10-03</span></h1>
-</div>		
-
-<div class="row page">
-  <!-- cols -->	
-  
-  
-
-  
-	<div class="col-md-12">
-	  
-
-	  <!-- content -->
-	  <figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">UIButton</span>的类是一个<span class="built_in">UIControl</span>子类，使用目标动作设计模式，target-action模式，<span class="number">3</span>种回调的模式之一</span><br><span class="line"> <span class="built_in">NSObject</span>	<span class="built_in">UIResponder</span>	<span class="built_in">UIView</span>	<span class="built_in">UIControl</span>	<span class="built_in">UIButton</span></span><br><span class="line">创建按钮	<span class="comment">//构造器方法，调用该方法创建某个样式的按钮对象</span>+ (<span class="keyword">id</span>)buttonWithType:(<span class="built_in">UIButtonType</span>)buttonType</span><br><span class="line">	参数：buttonType:按钮样式枚举值：<span class="built_in">UIButtonTypeCustom</span> = <span class="number">0</span>, 自定义风格</span><br><span class="line">	示例：<span class="built_in">UIButton</span> *button = [<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonTypeRoundedRect</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Button set	<span class="comment">//设置按钮在某个状态下的标题文字</span>- (<span class="keyword">void</span>)setTitle:(<span class="built_in">NSString</span> *)title        forState:(<span class="built_in">UIControlState</span>)state</span><br><span class="line">	示例：[button setTitle:<span class="string">@"按钮"</span> forState:<span class="built_in">UIControlStateNormal</span>];    </span><br><span class="line">	<span class="comment">//设置按钮标题的颜色</span>- (<span class="keyword">void</span>)setTitleColor:(<span class="built_in">UIColor</span> *)color             forState:(<span class="built_in">UIControlState</span>)state</span><br><span class="line">	参数：color:颜色描述对象state:状态</span><br><span class="line">	示例：[button setTitleColor:[<span class="built_in">UIColor</span> redColor] forState:<span class="built_in">UIControlStateNormal</span>]; </span><br><span class="line">	<span class="comment">//设置某个状态下按钮标题的阴影颜色</span>- (<span class="keyword">void</span>)setTitleShadowColor:(<span class="built_in">UIColor</span> *)color                   forState:(<span class="built_in">UIControlState</span>)state</span><br><span class="line">	参数：color:颜色描述对象state:状态</span><br><span class="line">	示例：[button setTitleShadowColor:[<span class="built_in">UIColor</span> grayColor] forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">	<span class="comment">//设置按钮的背景图片</span>- (<span class="keyword">void</span>)setBackgroundImage:(<span class="built_in">UIImage</span> *)image                  forState:(<span class="built_in">UIControlState</span>)state</span><br><span class="line">	参数：image:背景图片state：状态</span><br><span class="line">	示例：[button setBackgroundImage:image forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line"> BUTTON基础设置	设置按钮类型，此处为圆角按钮  </span><br><span class="line">	    <span class="built_in">UIButton</span> *writeButton = [<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonTypeRoundedRect</span>];  </span><br><span class="line">	    </span><br><span class="line">	    设置和大小  </span><br><span class="line">	    <span class="built_in">CGRect</span> frame = <span class="built_in">CGRectMake</span>(<span class="number">100.0</span>f, <span class="number">100.0</span>f, <span class="number">140.0</span>f, <span class="number">50.0</span>f);  </span><br><span class="line">	    </span><br><span class="line">	    将frame的位置大小复制给Button  </span><br><span class="line">	    writeButton.frame = frame;        </span><br><span class="line">	    </span><br><span class="line">	    给Button添加标题    </span><br><span class="line">	    [writeButton setTitle:<span class="string">@"代码按钮"</span> forState:<span class="built_in">UIControlStateNormal</span>];  </span><br><span class="line">	    </span><br><span class="line">	    设置按钮背景颜色   </span><br><span class="line">	    writeButton.backgroundColor = [<span class="built_in">UIColor</span> clearColor];  </span><br><span class="line">	    </span><br><span class="line">	   设置按钮标题文字对齐方式，此处为左对齐  </span><br><span class="line">	    writeButton.contentHorizontalAlignment =<span class="built_in">UIControlContentHorizontalAlignmentLeft</span>;  </span><br><span class="line">	    </span><br><span class="line">	    使文字距离做边框保持<span class="number">10</span>个像素的距离。  </span><br><span class="line">	    writeButton.contentEdgeInsets = <span class="built_in">UIEdgeInsetsMake</span>(<span class="number">0</span>,<span class="number">30</span>, <span class="number">0</span>, <span class="number">0</span>);  </span><br><span class="line">	      </span><br><span class="line">	    此处类容目的掩饰代码代码操作按钮一些属性，如果设置按钮背景为图片可以将此处注释取消，注释掉上没横线范围类代码，进行测试 </span><br><span class="line">	    设置按钮背景图片 </span><br><span class="line">	    <span class="built_in">UIImage</span> *image= [<span class="built_in">UIImage</span> imageNamed:<span class="string">@"background.png"</span>]; </span><br><span class="line">	    [writeButton setBackgroundImage:image forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">	 </span><br><span class="line">	    按钮的相应事件    </span><br><span class="line">	    [writeButton addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(buttonClicked:)forControlEvents:<span class="built_in">UIControlEventTouchUpInside</span>];  </span><br><span class="line">	    [<span class="keyword">self</span>.view addSubview:writeButton]; </span><br><span class="line">	 </span><br><span class="line">	     [设置按钮的边框]：</span><br><span class="line">	    [testButton.layer setMasksToBounds:<span class="literal">YES</span>];<span class="comment">//设置按钮的圆角半径不会被遮挡</span></span><br><span class="line">	    [testButton.layer setCornerRadius:<span class="number">10</span>];</span><br><span class="line">	    [testButton.layer setBorderWidth:<span class="number">2</span>];<span class="comment">//设置边界的宽度</span></span><br><span class="line">	</span><br><span class="line">	    设置按钮的边界颜色</span><br><span class="line">	    <span class="built_in">CGColorSpaceRef</span> colorSpaceRef = <span class="built_in">CGColorSpaceCreateDeviceRGB</span>();</span><br><span class="line">	    <span class="built_in">CGColorRef</span> color = <span class="built_in">CGColorCreate</span>(colorSpaceRef, (<span class="built_in">CGFloat</span>[])&#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>&#125;);</span><br><span class="line">	    [testButton.layer setBorderColor:color];</span><br><span class="line">	   </span><br><span class="line">	快速设置按钮格式：</span><br><span class="line">	   <span class="built_in">UIButton</span> *button = [<span class="built_in">UIButton</span> alloc] initWithFrame:<span class="built_in">CGRect</span>(<span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span> , <span class="number">100</span>)];    <span class="comment">//设置边框颜色</span>    button.layer.borderColor = [[<span class="built_in">UIColor</span> redColor] <span class="built_in">CGColor</span>];   <span class="comment">//设置边框宽度</span>    button.layer.borderWidth = <span class="number">1.0</span>f;    <span class="comment">//给按钮设置角的弧度</span>    button.layer.cornerRadius = <span class="number">4.0</span>f;   <span class="comment">//设置背景颜色</span>    button.backgroundColor = [<span class="built_in">UIColor</span> redColor];    button.layer.masksToBounds = <span class="literal">YES</span>;</span><br><span class="line">在xib按钮添加边框	选中xib中的label，在右边栏的第三个标签页中第三项是User Defined Runtime Attributes</span><br><span class="line">	添加一个keyPath，keyPath值为layer.borderWidth，类型为<span class="built_in">NSNumber</span>，值为你想要设置的边框宽度。如图：</span><br><span class="line">	</span><br><span class="line">	第二个是设置边框的颜色，为了兼容<span class="built_in">CALayer</span> 的KVC ，你得给<span class="built_in">CALayer</span>增加一个分类</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">@implementation</span> <span class="title">CALayer</span> (<span class="title">Additions</span>)</span></span><br><span class="line">	- (<span class="keyword">void</span>)setBorderColorFromUIColor:(<span class="built_in">UIColor</span> *)color</span><br><span class="line">	&#123;</span><br><span class="line">	  <span class="keyword">self</span>.borderColor = color.CGColor;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">@end</span></span><br><span class="line">	这种方法只对选中的任意<span class="built_in">UIView</span>有效，不可选中多个同时进行设置，只能一个一个进行添加，但可以选中key  Path列表中的内容进行复制和粘贴。</span><br><span class="line">设置返回按钮只显示箭头	方法<span class="number">1</span>：</span><br><span class="line">	[[<span class="built_in">UIBarButtonItem</span> appearance] setBackButtonTitlePositionAdjustment:<span class="built_in">UIOffsetMake</span>(<span class="number">0</span>, <span class="number">-60</span>) forBarMetrics:<span class="built_in">UIBarMetricsDefault</span>];</span><br><span class="line">	方法<span class="number">2</span>：</span><br><span class="line">	 <span class="built_in">UIBarButtonItem</span> *backItem = [[<span class="built_in">UIBarButtonItem</span> alloc] init];</span><br><span class="line">	        backItem.title = <span class="string">@""</span>;</span><br><span class="line">	        <span class="keyword">self</span>.navigationItem.backBarButtonItem = backItem;     然后push</span><br><span class="line"><span class="built_in">UIButton</span>(左边图片右边文字)	</span><br><span class="line">	normal</span><br><span class="line">	</span><br><span class="line">	Highlighted</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">UIButton</span> *button = [<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonTypeCustom</span>];button.frame = <span class="built_in">CGRectMake</span>(<span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>, <span class="number">50</span>);button.backgroundColor = [<span class="built_in">UIColor</span> clearColor];<span class="comment">//设置button正常状态下的图片</span>[button setImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"_star_normal.png"</span>] forState:<span class="built_in">UIControlStateNormal</span>];<span class="comment">//设置button高亮状态下的图片</span>[button setImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"_star_highlighted.png"</span>] forState:<span class="built_in">UIControlStateHighlighted</span>];<span class="comment">//设置button正常状态下的背景图</span>[button setBackgroundImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"_normal.png"</span>] forState:<span class="built_in">UIControlStateNormal</span>];<span class="comment">//设置button高亮状态下的背景图</span>[button setBackgroundImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"_highlighted.png"</span>] forState:<span class="built_in">UIControlStateHighlighted</span>];<span class="comment">//button图片的偏移量，距上左下右分别(10, 10, 10, 60)像素点</span>button.imageEdgeInsets = <span class="built_in">UIEdgeInsetsMake</span>(<span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">60</span>);[button setTitle:<span class="string">@"南瓜瓜"</span> forState:<span class="built_in">UIControlStateNormal</span>];<span class="comment">//button标题的偏移量，这个偏移量是相对于图片的</span>button.titleEdgeInsets = <span class="built_in">UIEdgeInsetsMake</span>(<span class="number">0</span>, <span class="number">-20</span>, <span class="number">0</span>, <span class="number">0</span>);<span class="comment">//设置button正常状态下的标题颜色</span>[button setTitleColor:[<span class="built_in">UIColor</span> redColor] forState:<span class="built_in">UIControlStateNormal</span>];<span class="comment">//设置button高亮状态下的标题颜色</span>[button setTitleColor:[<span class="built_in">UIColor</span> greenColor] forState:<span class="built_in">UIControlStateHighlighted</span>];button.titleLabel.font = [<span class="built_in">UIFont</span> systemFontOfSize:<span class="number">14</span>];[<span class="keyword">self</span>.view addSubview:button];</span><br><span class="line">获取button 的label长度	button.titleLabel.bounds.size.width</span><br><span class="line">设置按钮的形状	</span><br><span class="line">	</span><br><span class="line">	按钮一：</span><br><span class="line">	对于圆形的头像，要制作正圆，我们需要首先设置<span class="built_in">UIImageView</span>的高宽的一致的，然后我们设置其圆角角度为高度除以<span class="number">2</span>即可，相当于<span class="number">90</span>度，代码如下：</span><br><span class="line">	    <span class="comment">// 圆形头像</span>    <span class="built_in">UIImageView</span> *avatarImgView = [[<span class="built_in">UIImageView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>((SCREENWIDTH - <span class="number">75</span>) / <span class="number">2</span>, <span class="number">150</span>, <span class="number">75</span>, <span class="number">75</span>)];    avatarImgView.image = [<span class="built_in">UIImage</span> imageNamed:<span class="string">@"icon"</span>];    <span class="comment">// 图片做圆形，圆角角度为高度的一半，而高宽一致，因此可以形成正圆</span>    avatarImgView.layer.masksToBounds = <span class="literal">YES</span>;    avatarImgView.layer.cornerRadius = avatarImgView.frame.size.height / <span class="number">2</span> ;    [<span class="keyword">self</span>.view addSubview:avatarImgView];</span><br><span class="line">	按钮二：</span><br><span class="line">	对于第二个完全的半圆圆角，我们同样设置角度为高度的一般，这样可以在两边形声半圆，而由于宽度与高度不同，所以不是正圆：</span><br><span class="line">	    <span class="comment">// 完全半圆圆角的按钮</span>    <span class="built_in">UIButton</span> *btnOne = [[<span class="built_in">UIButton</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>((SCREENWIDTH - <span class="number">200</span>) / <span class="number">2</span>, <span class="number">250</span>, <span class="number">200</span>, <span class="number">40</span>)];    [btnOne setTitle:<span class="string">@"完全圆角"</span> forState:<span class="built_in">UIControlStateNormal</span>];    [btnOne setTitleColor:[<span class="built_in">UIColor</span> whiteColor] forState:<span class="built_in">UIControlStateNormal</span>];    [btnOne setBackgroundColor:[<span class="built_in">UIColor</span> colorWithRed:<span class="number">228.0</span>/<span class="number">255.0</span> green:<span class="number">117.0</span>/<span class="number">255.0</span> blue:<span class="number">97.0</span>/<span class="number">255.0</span> alpha:<span class="number">1.0</span>]];    <span class="comment">// 按钮圆弧，以高度的一半为圆角，两边会形成完整的半圆</span>    btnOne.layer.masksToBounds = <span class="literal">YES</span>;    btnOne.layer.cornerRadius = btnOne.frame.size.height / <span class="number">2</span>;    [<span class="keyword">self</span>.view addSubview:btnOne];</span><br><span class="line">	按钮三：</span><br><span class="line">	对于第三个小圆角的按钮，我们直接设置圆角的圆度为一个数即可，数的大小决定了按钮圆角的样式，这里我们设为<span class="number">4</span>：</span><br><span class="line">	    <span class="comment">// 小圆角的按钮</span>    <span class="built_in">UIButton</span> *btnTwo = [[<span class="built_in">UIButton</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>((SCREENWIDTH - <span class="number">200</span>) / <span class="number">2</span>, <span class="number">315</span>, <span class="number">200</span>, <span class="number">40</span>)];    [btnTwo setTitle:<span class="string">@"小圆角"</span> forState:<span class="built_in">UIControlStateNormal</span>];    [btnTwo setTitleColor:[<span class="built_in">UIColor</span> whiteColor] forState:<span class="built_in">UIControlStateNormal</span>];    [btnTwo setBackgroundColor:[<span class="built_in">UIColor</span> colorWithRed:<span class="number">228.0</span>/<span class="number">255.0</span> green:<span class="number">117.0</span>/<span class="number">255.0</span> blue:<span class="number">97.0</span>/<span class="number">255.0</span> alpha:<span class="number">1.0</span>]];    <span class="comment">// 按钮圆弧，以高度的一半为圆角，两边会形成完整的半圆</span>    btnTwo.layer.masksToBounds = <span class="literal">YES</span>;    btnTwo.layer.cornerRadius = <span class="number">4.0</span>;    [<span class="keyword">self</span>.view addSubview:btnTwo];</span><br><span class="line">	按钮四：</span><br><span class="line">	第四个label，我们先要添加边框，我们设置边框宽度为<span class="number">1</span>，就可以显示边框了，然后同样设置圆角为<span class="number">4</span>：</span><br><span class="line">	    <span class="comment">// 带边框的圆角Label</span>    <span class="built_in">UILabel</span> *label = [[<span class="built_in">UILabel</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>((SCREENWIDTH - <span class="number">200</span>) / <span class="number">2</span>, <span class="number">390</span>, <span class="number">200</span>, <span class="number">40</span>)];    label.text = <span class="string">@"带边框圆角label"</span>;    label.textAlignment = <span class="built_in">NSTextAlignmentCenter</span>;    label.textColor = [<span class="built_in">UIColor</span> colorWithRed:<span class="number">228.0</span>/<span class="number">255.0</span> green:<span class="number">117.0</span>/<span class="number">255.0</span> blue:<span class="number">97.0</span>/<span class="number">255.0</span> alpha:<span class="number">1.0</span>];    <span class="comment">// 设置边框宽度</span>    label.layer.borderWidth = <span class="number">1.0</span>;    <span class="comment">// 设置边框颜色</span>    label.layer.borderColor = [[<span class="built_in">UIColor</span> colorWithRed:<span class="number">228.0</span>/<span class="number">255.0</span> green:<span class="number">117.0</span>/<span class="number">255.0</span> blue:<span class="number">97.0</span>/<span class="number">255.0</span> alpha:<span class="number">1.0</span>] <span class="built_in">CGColor</span>];    <span class="comment">// 设置圆角</span>    [label.layer setCornerRadius:<span class="number">4.0</span>];    [<span class="keyword">self</span>.view addSubview:label];</span><br><span class="line">如何通过代码设置Button  title的字体大小	设置Button.titleLabel.font = [<span class="built_in">UIFont</span> systemFontOfSize:&lt;<span class="meta">#(CGFloat)#&gt;] ；</span></span><br></pre></td></tr></table></figure>
-	  
-
-	  <div>
-  		<center>
-		  <div class="pagination">
-<ul class="pagination">
-	
-	
-	
-	
-	
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-			
-		
-	
-		
-			
-			
-			
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-	
-	
-		<li class="prev"><a href="/2016/10/03/iOS/UITextField/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
-	
-	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
-	
-		<li class="next"><a href="/2016/10/02/iOS/Masonary/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
-	
-</ul>
-</div>
-
-		</center>
-	  </div>
-	  
-	</div> <!-- col-md-9/col-md-12 -->
-	
-  </div><!-- row -->
-
-	</div>
-  </div>
-  <div class="container-narrow">
-	<footer> <p>
-  &copy; 2016 John Doe
-  
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
-</p> </footer>
-  </div> <!-- container-narrow -->
-  
-<a id="gotop" href="#">   
-  <span>▲</span> 
-</a>
-
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.tableofcontents.min.js"></script>
-<script src="/js/tocgenerator.min.js"></script>
-<script src="/js/main.js"></script>
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
-
-
-</body>
-</html>

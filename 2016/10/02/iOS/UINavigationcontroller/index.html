@@ -1,279 +1,0 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>UINavigationcontroller | spike</title>
-  <meta name="author" content="John Doe">
-  
-  <meta name="description" content="常用方法NSObject	UIResponder	UIViewController	UINavigationController---//初始化添加viewcontroller- (BOOL)application:(UIApplication *)application didFinishLaun">
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <meta property="og:title" content="UINavigationcontroller"/>
-  <meta property="og:site_name" content="spike"/>
-
-  
-    <meta property="og:image" content="undefined"/>
-  
-
-  
-    <link rel="alternative" href="/atom.xml" title="spike" type="application/atom+xml">
-  
-  
-    <link href="/favicon.png" rel="icon">
-  
-  
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
-  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-  <script src="/js/jquery-2.0.3.min.js"></script>
-
-  <!-- analytics -->
-  
-
-</head>
-
-<body id="body" data-spy="scroll" data-target=".toc">
-  <div class="container" id="container">
-	<div class="content">
-	  <div class="page-header">		
-  <h1><a class="brand" href="/">spike</a><span class="split"></span><span class="title">UINavigationcontroller</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-10-02</span></h1>
-</div>		
-
-<div class="row page">
-  <!-- cols -->	
-  
-  
-
-  
-	<div class="col-md-12">
-	  
-
-	  <!-- content -->
-	  <h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="built_in">NSObject</span>	<span class="built_in">UIResponder</span>	<span class="built_in">UIViewController</span>	<span class="built_in">UINavigationController</span></span><br><span class="line"></span><br><span class="line">---<span class="comment">//初始化添加viewcontroller</span></span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</span><br><span class="line">    <span class="keyword">self</span>.window = [[<span class="built_in">UIWindow</span> alloc]initWithFrame:[[<span class="built_in">UIScreen</span> mainScreen]bounds]];</span><br><span class="line">    ViewController *mainView = [[ViewController alloc]init];</span><br><span class="line">    <span class="built_in">UINavigationController</span> *navi = [[<span class="built_in">UINavigationController</span> alloc]initWithRootViewController:mainView];</span><br><span class="line">    navi.navigationBar.backgroundColor = [<span class="built_in">UIColor</span> blueColor];</span><br><span class="line">    [<span class="keyword">self</span>.window setRootViewController:navi];</span><br><span class="line">    [<span class="keyword">self</span>.window makeKeyAndVisible];</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">---<span class="comment">//添加左按钮</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">self</span>.navigationItem.leftBarButtonItem = [[<span class="built_in">UIBarButtonItem</span> alloc] initWithTitle:<span class="string">@"可复用"</span> style:<span class="built_in">UIBarButtonItemStyleDone</span>	 target:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(ResView)];</span><br><span class="line"></span><br><span class="line">---<span class="comment">//导航条的字体和颜色的设置</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">self</span>.navigationController.navigationBar.titleTextAttributes =  [<span class="built_in">NSDictionary</span> dictionaryWithObject:[<span class="built_in">UIColor</span> whiteColor] forKey:<span class="built_in">UITextAttributeTextColor</span>]; <span class="comment">// --- 字体颜色</span></span><br><span class="line">[<span class="keyword">self</span>.navigationController.navigationBar setBackgroundImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"BJ.png"</span>] forBarMetrics:<span class="built_in">UIBarMetricsDefault</span>]; <span class="comment">//— 背景色</span></span><br><span class="line">---<span class="comment">//返回按钮颜色：</span></span><br><span class="line">elf.navigationController.navigationBar.tintColor = [<span class="built_in">UIColor</span> whiteColor];</span><br><span class="line"></span><br><span class="line">---<span class="comment">//导航条跳转页面的考虑</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">对于用navigationcontroller来跳转页面的时候，其实是执行堆栈的进栈和出栈的操作，要想释放内存，那么在来回跳转的时候，就要考虑几个问题了</span><br><span class="line"><span class="number">1</span> A =&gt;B=&gt;C=&gt;D,</span><br><span class="line">D=&gt;A 有根视图的话 （HOME）</span><br><span class="line">[<span class="keyword">self</span>.navigationController popToRootViewControllerAnimated:<span class="literal">YES</span>];  </span><br><span class="line">D=&gt;C  （每一个界面返回上一层）</span><br><span class="line">[<span class="keyword">self</span>.navigationController popViewControllerAnimated:<span class="literal">YES</span>];  </span><br><span class="line">返回到上一层，并且传递参数</span><br><span class="line">CViewController *cvc = [CViewController alloc]init];</span><br><span class="line">cvc.str = <span class="keyword">self</span>.str;</span><br><span class="line">[<span class="keyword">self</span>.navigationController popToViewController:cvc animated:<span class="literal">true</span>];</span><br><span class="line">返回到上一层后，上一页面显示后要接收参数，并刷新。注意此时应该在viewDidAppear中进行判断并接收传递的值</span><br><span class="line">-(<span class="keyword">void</span>)viewDidAppear:(<span class="built_in">BOOL</span>)animated</span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">//判断并接收返回的参数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">跨层级跳转：</span><br><span class="line">A =&gt;B=&gt;C=&gt;D=&gt;E,E=&gt;B=&gt;C=&gt;E</span><br><span class="line">因为B在之前已经出现过，不能在E中直接PUSH到B，因为那样已经是两个B了，增加内存，所以在跳转的时候，就要进行判断是否之前已经出现过B了，出现过，则直接push。这样push到的是原有的B，不会在内存中重新生成一个B了。</span><br><span class="line"> <span class="built_in">NSArray</span> *array = <span class="keyword">self</span>.navigationController.viewControllers;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">UIViewController</span> *vc <span class="keyword">in</span> array) &#123;</span><br><span class="line">        <span class="keyword">if</span> ([vc isKindOfClass:[BXXXViewController class]]) &#123;</span><br><span class="line">push VC；</span><br><span class="line">&#125;</span><br><span class="line">或者知道每个界面的指针</span><br><span class="line">[<span class="keyword">self</span>.navigationController </span><br><span class="line">popToViewController: [<span class="keyword">self</span>.navigationController.viewControllers </span><br><span class="line">         objectAtIndex: ([<span class="keyword">self</span>.navigationController.viewControllers count] <span class="number">-4</span>)] </span><br><span class="line">                animated:<span class="literal">YES</span>]; </span><br><span class="line">在使用时，根据自己返回层的需要，只要改变一下“－<span class="number">4</span>”这个数字就可以达到目的了</span><br><span class="line"></span><br><span class="line">---<span class="comment">//多级跳转的解决办法：</span></span><br><span class="line"><span class="number">1</span>  a-b-c 在跳转到B时可以不开启动画，在C时改变又上角按钮执行回退</span><br><span class="line"><span class="number">2</span> 运用上边的跳转方法</span><br><span class="line"></span><br><span class="line">创建一个<span class="built_in">UIBarButton</span>右边按钮</span><br><span class="line"></span><br><span class="line"><span class="built_in">UIBarButtonItem</span>  *rightButton = [[ <span class="built_in">UIBarButtonItem</span>   alloc ]  initWithTitle : <span class="string">@" 右边 "</span>   style : <span class="built_in">UIBarButtonItemStyleDone</span>   target : <span class="keyword">self</span>   action : <span class="keyword">@selector</span> (clickRightButton)];  </span><br><span class="line">	[  <span class="keyword">self</span> . navigationItem   setRightBarButtonItem :rightButton];  </span><br><span class="line"></span><br><span class="line">---<span class="comment">//设置navigationBar隐藏</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">self</span> . navigationController . navigationBarHidden  =  <span class="literal">YES</span> ;</span><br><span class="line"></span><br><span class="line">---<span class="comment">//导航栏添加按钮并设置样式</span></span><br><span class="line"></span><br><span class="line"> .h</span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">strong</span>)<span class="built_in">UIButton</span> *sortButton;</span><br><span class="line">-(<span class="keyword">IBAction</span>)sortByCreTime:(<span class="keyword">id</span>)sender;</span><br><span class="line">.m</span><br><span class="line"> _sortButton= [<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonTypeRoundedRect</span>];</span><br><span class="line"> [_sortButton setTitle: <span class="string">@"排序"</span> forState: <span class="built_in">UIControlStateNormal</span>];</span><br><span class="line"> [_sortButton sizeToFit];</span><br><span class="line">  _sortButton.titleLabel.font=[<span class="built_in">UIFont</span> fontWithName:<span class="string">@"Helvetica-Bold"</span>  size:<span class="number">18</span> ];<span class="comment">//加粗字体     </span></span><br><span class="line"><span class="comment">// _sortButton.titleLabel.font=[UIFont systemFontOfSize: 12];//不加粗</span></span><br><span class="line"> [_sortButton addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(sortByCreTime:)forControlEvents:<span class="built_in">UIControlEventTouchUpInside</span>];</span><br><span class="line"> <span class="keyword">self</span>.navigationItem.titleView = _sortButton;</span><br><span class="line"></span><br><span class="line">---<span class="comment">//重新设置导航栏的左按钮并添加背景图片</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">UIBarButtonItem</span> *backItem=[[<span class="built_in">UIBarButtonItem</span> alloc] initWithTitle:<span class="string">@""</span> style:<span class="built_in">UIBarButtonItemStyleDone</span>	 target:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(ResView)];</span><br><span class="line"><span class="comment">//  backItem.title=@"123";</span></span><br><span class="line"> backItem.image=[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"home-black.png"</span>];</span><br><span class="line"> <span class="keyword">self</span>.navigationItem.leftBarButtonItem=backItem;</span><br><span class="line"></span><br><span class="line">---<span class="comment">//添加UISearchBar</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">UISearchBar</span> *searchBar = [[<span class="built_in">UISearchBar</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="keyword">self</span>.view.frame.size.width, <span class="number">44</span>)];</span><br><span class="line">    searchBar.placeholder = <span class="string">@"搜索"</span>;</span><br><span class="line">    <span class="keyword">self</span>.tableView.tableHeaderView = searchBar;</span><br><span class="line">    mySearchDisplayController = [[<span class="built_in">UISearchDisplayController</span> alloc] initWithSearchBar:searchBar contentsController:<span class="keyword">self</span>];</span><br><span class="line">    mySearchDisplayController.searchResultsDataSource = <span class="keyword">self</span>;</span><br><span class="line">    mySearchDisplayController.searchResultsDelegate = <span class="keyword">self</span>;</span><br><span class="line"></span><br><span class="line">---<span class="comment">//更改导航栏左侧按钮</span></span><br><span class="line"></span><br><span class="line">更改导航栏左侧的按钮，目的是可以单独设置图片，单独添加跳转功能。</span><br><span class="line">方式如下：</span><br><span class="line">（<span class="number">1</span>）：</span><br><span class="line"> <span class="keyword">self</span>.navigationItem.leftBarButtonItem = [[<span class="built_in">UIBarButtonItem</span> alloc] initWithTitle:<span class="string">@"可复用"</span> style:<span class="built_in">UIBarButtonItemStyleDone</span> target:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(ResView)];</span><br><span class="line">这种方式直接设置了导航栏左边的按钮，但是按钮为字符串，现在的设计很少用字符串</span><br><span class="line"></span><br><span class="line">（<span class="number">2</span>）：这种方式可以直接设置图片，也会根据导航栏的颜色而改变。但是很不好调整大小。</span><br><span class="line">    <span class="built_in">UIBarButtonItem</span> *backItem=[[<span class="built_in">UIBarButtonItem</span> alloc] initWithTitle:<span class="string">@""</span> style:<span class="built_in">UIBarButtonItemStyleDone</span>	 target:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(ResView)];</span><br><span class="line">     <span class="built_in">UIImage</span> *backButtonImage = [<span class="built_in">UIImage</span> imageNamed:<span class="string">@"Left 4-50.png"</span>];</span><br><span class="line">    backItem.image=backButtonImage;</span><br><span class="line">    [backItem setImageInsets:<span class="built_in">UIEdgeInsetsMake</span>(<span class="number">0</span>,<span class="number">-5</span>,<span class="number">0</span>,<span class="number">-10</span>)];</span><br><span class="line"><span class="comment">/*  </span><br><span class="line">  UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace</span><br><span class="line">                                                                                                                          target:nil action:nil];</span><br><span class="line">                                           negativeSpacer.width = -5;//这个数值可以根据情况自由变化</span><br><span class="line">                                       </span><br><span class="line">                                           self.navigationItem.leftBarButtonItems = @[negativeSpacer,backItem];</span><br><span class="line">self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:negativeSpacer, btn_right, nil];  </span><br><span class="line">//以上两句代码效果相同</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">这段代码是设置距离左边的宽度的，可以不设置，设置的话要用leftBarButtonItems </span><br><span class="line">*/</span></span><br><span class="line">    <span class="keyword">self</span>.navigationItem.leftBarButtonItem=backItem;</span><br><span class="line"></span><br><span class="line">（<span class="number">3</span>）这种方式是设置了一个按钮再把图片填充到按钮上，将按钮转化为<span class="built_in">UIBarButtonItem</span> 在添加到导航栏的左侧，这种方式是直接将图片显示到导航栏之上，可以方便的设置图片大小。但是，图片颜色不会根据导航栏颜色而改变。此处调用了一个第三方外部类进行图片颜色的改变。</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">UIButton</span> *button = [<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonTypeCustom</span>];</span><br><span class="line">    <span class="built_in">UIImage</span> *image = [[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"back001.png"</span>] imageWithTintColor:[<span class="built_in">UIColor</span> whiteColor]]; <span class="comment">//第三方类的调用</span></span><br><span class="line">    button.frame = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">20</span>, <span class="number">20</span>);</span><br><span class="line">    <span class="comment">//[button setImageEdgeInsets:UIEdgeInsetsMake(-10, -30, -6, -30)];</span></span><br><span class="line">    [button setImage:image forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">    [button addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(ResView) forControlEvents:<span class="built_in">UIControlEventTouchUpInside</span>];</span><br><span class="line">    button.titleLabel.font = [<span class="built_in">UIFont</span> systemFontOfSize:<span class="number">16</span>];</span><br><span class="line">    <span class="built_in">UIBarButtonItem</span> *rightItem = [[<span class="built_in">UIBarButtonItem</span> alloc] initWithCustomView:button];</span><br><span class="line">    <span class="built_in">UIBarButtonItem</span> *negativeSpacer = [[<span class="built_in">UIBarButtonItem</span> alloc]initWithBarButtonSystemItem:<span class="built_in">UIBarButtonSystemItemFixedSpace</span></span><br><span class="line">                                                                                   target:<span class="literal">nil</span> action:<span class="literal">nil</span>];</span><br><span class="line">    negativeSpacer.width = <span class="number">-5</span>;<span class="comment">//这个数值可以根据情况自由变化</span></span><br><span class="line">    <span class="keyword">self</span>.navigationItem.leftBarButtonItems = @[negativeSpacer,rightItem];</span><br><span class="line"></span><br><span class="line">---<span class="comment">//Ios状态栏颜色更改</span></span><br><span class="line"></span><br><span class="line">iOS8下面状态栏文字颜色变白：首先，设置Info.plist中的View controller-based status bar appearance为<span class="literal">YES</span>。其次 在appdelegate 中的didfinishlaunching中  加入  OC: [[<span class="built_in">UINavigationBar</span> appearance] setBarStyle:<span class="built_in">UIBarStyleBlack</span>];  swift: <span class="built_in">UINavigationBar</span>.appearance().barStyle = <span class="built_in">UIBarStyle</span>.Black</span><br><span class="line"><span class="number">2.</span>导航栏标题文字变白：可以在<span class="keyword">self</span>.navigationItem.titleview上可以加入label, 把label字体颜色设为白色好即可</span><br><span class="line"><span class="number">3.</span>IOS8隐藏状态栏方法</span><br><span class="line">-(<span class="built_in">UIStatusBarStyle</span>) preferredStatusBarStyle&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">UIStatusBarStyleDefault</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">-(<span class="built_in">BOOL</span>)prefersStatusBarHidden&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">---<span class="comment">//全局隐藏状态栏</span></span><br><span class="line"></span><br><span class="line">（在plist里设置）：</span><br><span class="line">首先设置key：Status bar is initially hidden    为<span class="literal">YES</span></span><br><span class="line">然后设置key：View controller-based status bar appearance  为<span class="literal">NO</span></span><br><span class="line">即可实现全局隐藏状态栏了</span><br><span class="line"></span><br><span class="line">---<span class="comment">//ios 隐藏导航栏</span></span><br><span class="line"></span><br><span class="line"> [<span class="built_in">UIApplication</span> sharedApplication].statusBarHidden = <span class="literal">YES</span>;</span><br><span class="line"> [<span class="keyword">self</span>.navigationController setNavigationBarHidden:<span class="literal">YES</span>];</span><br><span class="line"></span><br><span class="line">---<span class="comment">//导航栏常用设置：</span></span><br><span class="line"></span><br><span class="line">自从IOS7后<span class="built_in">UINavigationBar</span>的一些属性的行为发生了变化.你可以在下图看到:</span><br><span class="line"></span><br><span class="line">现在,如果你要修改它们的颜色,用下面的代码:</span><br><span class="line">	<span class="keyword">self</span>.navigationController.navigationBar.barTintColor = [<span class="built_in">UIColor</span> blackCor];</span><br><span class="line">	<span class="keyword">self</span>.navigationController.navigationBar.tintColor = [<span class="built_in">UIColor</span> whiteColor];</span><br><span class="line">	[<span class="keyword">self</span>.navigationController.navigationBar setTitleTextAttributes:@&#123;<span class="built_in">NSForegroundColorAttributeName</span> : [<span class="built_in">UIColor</span> whiteColor]&#125;];</span><br><span class="line">	<span class="keyword">self</span>.navigationController.navigationBar.translucent = <span class="literal">NO</span>;</span><br><span class="line">	</span><br><span class="line">	        </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">代码手动创建导航栏</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidLoad];</span><br><span class="line">    </span><br><span class="line">    [<span class="keyword">self</span> setupChildControllers];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setupChildControllers</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">self</span> setupChildNavigationControllerWithClass:[SDBasicNavigationController class] tabBarImageName:<span class="string">@"TabBar_HomeBar"</span> rootViewControllerClass:[SDHomeViewController class] rootViewControllerTitle:<span class="string">@"支付宝"</span>];</span><br><span class="line">    </span><br><span class="line">    [<span class="keyword">self</span> setupChildNavigationControllerWithClass:[SDBasicNavigationController class] tabBarImageName:<span class="string">@"TabBar_PublicService"</span> rootViewControllerClass:[SDServiceTableViewController class] rootViewControllerTitle:<span class="string">@"服务窗"</span>];</span><br><span class="line">    </span><br><span class="line">    [<span class="keyword">self</span> setupChildNavigationControllerWithClass:[SDBasicNavigationController class] tabBarImageName:<span class="string">@"TabBar_Discovery"</span> rootViewControllerClass:[SDDiscoverTableViewController class] rootViewControllerTitle:<span class="string">@"发现"</span>];</span><br><span class="line">    </span><br><span class="line">    [<span class="keyword">self</span> setupChildNavigationControllerWithClass:[SDBasicNavigationController class] tabBarImageName:<span class="string">@"TabBar_Assets"</span> rootViewControllerClass:[SDAssetsTableViewController class] rootViewControllerTitle:<span class="string">@"财富"</span>];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setupChildNavigationControllerWithClass:(Class)class tabBarImageName:(<span class="built_in">NSString</span> *)name rootViewControllerClass:(Class)rootViewControllerClass rootViewControllerTitle:(<span class="built_in">NSString</span> *)title</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">UIViewController</span> *rootVC = [[rootViewControllerClass alloc] init];</span><br><span class="line">    rootVC.title = title;</span><br><span class="line">    <span class="built_in">UINavigationController</span> *navVc = [[class  alloc] initWithRootViewController:rootVC];</span><br><span class="line">    navVc.tabBarItem.image = [<span class="built_in">UIImage</span> imageNamed:name];</span><br><span class="line">    navVc.tabBarItem.selectedImage = [<span class="built_in">UIImage</span> imageNamed:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@_Sel"</span>, name]];</span><br><span class="line">    [<span class="keyword">self</span> addChildViewController:navVc];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">---<span class="comment">//重写pushViewController方法</span></span><br><span class="line"></span><br><span class="line">当我们的一个类继承自<span class="built_in">UInavigationController</span>时，我们可以重写pushViewController方法进行一些自定义的设定。</span><br><span class="line"></span><br><span class="line"><span class="comment">//这样写的好处是：从这个controller跳转出去的页面都自动隐藏底部tabbar不用再分开单独写了。</span></span><br><span class="line">- (<span class="keyword">void</span>)pushViewController:(<span class="built_in">UIViewController</span> *)viewController animated:(<span class="built_in">BOOL</span>)animated</span><br><span class="line">&#123;</span><br><span class="line">    [viewController.navigationItem.backBarButtonItem setTitleTextAttributes:@&#123;<span class="built_in">NSFontAttributeName</span> : [<span class="built_in">UIFont</span> systemFontOfSize:<span class="number">10</span>]&#125; forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span>.childViewControllers.count &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        viewController.hidesBottomBarWhenPushed = <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    [<span class="keyword">super</span> pushViewController:viewController animated:<span class="literal">YES</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//以下很重要</span></span><br><span class="line">在tabbar中定义了四个导航模块，其中SDBasicNavigationController 是定义了整个框架的NavigationController这样的话重写这个类中的方法，整个项目就都能适用了。这种写法是很方便的。注意加以应用。</span><br><span class="line"> [<span class="keyword">self</span> setupChildNavigationControllerWithClass:[SDBasicNavigationController class] tabBarImageName:<span class="string">@"TabBar_HomeBar"</span> rootViewControllerClass:[SDHomeViewController class] rootViewControllerTitle:<span class="string">@"支付宝"</span>];</span><br><span class="line"></span><br><span class="line">类中的常用方法</span><br><span class="line"></span><br><span class="line"><span class="comment">/************************ UINavigationController : UIViewController ********************/</span></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *  设置导航栏的背景图片</span><br><span class="line"> */</span></span><br><span class="line">- (<span class="keyword">void</span>)setBackgroundImage:(<span class="built_in">UIImage</span> *)backgroundImage forBarMetrics:(<span class="built_in">UIBarMetrics</span>)barMetrics;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *  标题样式 字典中能用到的key在UIKit框架的NSAttributedString.h中</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>) <span class="built_in">NSDictionary</span> *titleTextAttributes;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *  导航栏中文字渲染颜色</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,retain) <span class="built_in">UIColor</span> *tintColor;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *  文字属性</span><br><span class="line"> */</span></span><br><span class="line">- (<span class="keyword">void</span>)setTitleTextAttributes:(<span class="built_in">NSDictionary</span> *)attributes forState:(<span class="built_in">UIControlState</span>)state;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *  导航栏返回按钮背景</span><br><span class="line"> */</span></span><br><span class="line">- (<span class="keyword">void</span>)setBackButtonBackgroundImage:(<span class="built_in">UIImage</span> *)backgroundImage forState:(<span class="built_in">UIControlState</span>)state barMetrics:(<span class="built_in">UIBarMetrics</span>)barMetrics;</span><br><span class="line"></span><br><span class="line">获取导航栏的高度</span><br><span class="line"></span><br><span class="line"><span class="built_in">CGFloat</span> height=<span class="keyword">self</span>.navigationController.navigationBar.frame.size.height+[[<span class="built_in">UIApplication</span> sharedApplication] statusBarFrame].size.height;</span><br><span class="line"></span><br><span class="line">隐藏某一个view的导航栏</span><br><span class="line"></span><br><span class="line">-(<span class="keyword">void</span>)viewWillAppear:(<span class="built_in">BOOL</span>)animated&#123;</span><br><span class="line"><span class="keyword">self</span>.navigationController.navigationBarHidden = <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="UINavigationBar-amp-UINavigationItem"><a href="#UINavigationBar-amp-UINavigationItem" class="headerlink" title="UINavigationBar &amp; UINavigationItem"></a>UINavigationBar &amp; UINavigationItem</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">UINavigationBar</span>类提供一种对导航层级内容的控制。它是一个栏，最典型的用法就是放在屏幕顶端，包含着各级视图的导航按钮。它最首要的属性是左按钮（返回按钮）、中心标题，还有可选的右按钮。你可以单独用导航栏，或者和导航控制器一起使用</span><br><span class="line"><span class="built_in">UINavigationItem</span></span><br><span class="line"></span><br><span class="line">一个<span class="built_in">UINavigationItem</span>对象管理展示在导航栏上的按钮和视图。当创建一个导航界面的时候，每个压入导航栈中的视图控制器都需要一个navigation item,它包含了展示在导航栏上的按钮和视图。导航控制器利用最顶层的两个视图控制器的navigation item来提供导航栏的内容。</span><br><span class="line"></span><br><span class="line">一些疑惑</span><br><span class="line"></span><br><span class="line">事实上，<span class="built_in">UINavigationController</span>并没有navigationItem这样一个直接的属性，由于<span class="built_in">UINavigationController</span>继承于<span class="built_in">UIViewController</span>,而<span class="built_in">UIViewController</span>是有navigationItem这个属性的，所以才会出现如图所示的情况，如果你这样用： </span><br><span class="line"><span class="keyword">self</span>.navigationController.navigationItem.title = <span class="string">@"刘大帅"</span>;</span><br><span class="line">是没有任何效果的。这当然是由于<span class="built_in">UINavigationController</span>是个特殊的视图控制器，它是视图控制器的容器（另外两个容器是<span class="built_in">UITabBarController</span>和<span class="built_in">UISplitViewController</span>）,你不应该把它当一般的<span class="built_in">UIViewController</span>来使用. </span><br><span class="line">另外，让人觉得不爽的地方如下： </span><br><span class="line"><span class="keyword">self</span>.navigationItem.title = <span class="string">@"刘大帅"</span>;  </span><br><span class="line"><span class="keyword">self</span>.navigationController.navigationBar.barTintColor = [<span class="built_in">UIColor</span> purpleColor];</span><br><span class="line">效果如下： </span><br><span class="line"></span><br><span class="line">效果</span><br><span class="line">这里让人迷惑的地方在于，同样是对导航栏的操作，怎么一个在第一层级（<span class="built_in">UIViewController</span>），另外一个在其属性navigationController的层级。</span><br><span class="line">虽然导航栏和导航项都在做与导航相关的事情，但是它们的从属是不同的。（没搞懂 ，反正就是从属不同的意思）</span><br><span class="line">关于<span class="built_in">UINavigationItem</span>一些测试</span><br><span class="line">我们知道navigation item 有leftBarButtonItems和rightBarButtonItems两个属性，每个属性都可以赋值一个装有<span class="built_in">UIBarButtonItem</span>对象的数组，有没有想过，如果数组装有很多<span class="built_in">UIBarButtonItem</span>对象，超过了导航栏展现的极限，会怎样？如下图：</span><br><span class="line"></span><br><span class="line">导航栏被撑爆...代码： </span><br><span class="line"><span class="built_in">NSMutableArray</span>* array = [<span class="built_in">NSMutableArray</span> array];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i =<span class="number">0</span>; i&lt;<span class="number">7</span>; i++) &#123;        <span class="built_in">UIBarButtonItem</span>* item = [[<span class="built_in">UIBarButtonItem</span> alloc]initWithTitle:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"item%d"</span>,i+<span class="number">1</span>] style:<span class="built_in">UIBarButtonItemStylePlain</span> target:<span class="literal">nil</span> action:<span class="literal">nil</span>];        [array addObject:item];    &#125;</span><br><span class="line"><span class="keyword">self</span>.navigationItem.leftBarButtonItems = array;</span><br><span class="line"><span class="keyword">self</span>.navigationItem.rightBarButtonItems = array;</span><br><span class="line"></span><br><span class="line">前面说过，用代码的时候，当你首次访问视图控制器中的navigation item的时候，它会自动创建，</span><br><span class="line">在storyboard中是怎样的呢？ 答案是，你需要给导航栏中的scene添加navigation item，如图： </span><br><span class="line"></span><br><span class="line">没有添加navigation item 之前</span><br><span class="line"></span><br><span class="line">添加navigation item 之后</span><br><span class="line">storyboard中怎样配置leftBarButtonItems和rightBarButtonItems两个属性？ 我发现storyboard只支持左右各一个bar button item，当你拖拽一个新的bar button item到导航栏视图给它增加一个时，它只会替换，可能，如果想多个，还得用代码来实现。如图：</span><br><span class="line"></span><br><span class="line">storyboard只支持左右各一个</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">一些导航栏的用法</span><br><span class="line">- (<span class="keyword">void</span>)viewDidLoad&#123;    <span class="comment">//默认背景色上传到简书不理想，所以换一种背景色</span>    <span class="keyword">self</span>.view.backgroundColor = [<span class="built_in">UIColor</span> orangeColor];</span><br><span class="line"><span class="comment">//*****************navigationItem*********************************</span>    <span class="comment">//navigationItem控制导航栏标题(title)、promt、标题视图(titleView)、以及按钮（barButtonItem）的添加和数量</span></span><br><span class="line"><span class="keyword">self</span>.navigationItem.title = <span class="string">@"刘大帅"</span>;</span><br><span class="line"><span class="comment">//我表示我不喜欢promt...</span><span class="comment">//    self.navigationItem.prompt = @"promt";</span><span class="comment">//修改导航栏标题为图片</span>    <span class="keyword">self</span>.navigationItem.titleView = [[<span class="built_in">UIImageView</span> alloc]initWithImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"m_hot60"</span>]];</span><br><span class="line"><span class="comment">//添加多个按钮</span>    <span class="built_in">UIBarButtonItem</span>* item1 = [[<span class="built_in">UIBarButtonItem</span> alloc]initWithTitle:<span class="string">@"item1"</span> style:<span class="built_in">UIBarButtonItemStylePlain</span> target:<span class="literal">nil</span> action:<span class="literal">nil</span>];    <span class="built_in">UIBarButtonItem</span>* item2 = [[<span class="built_in">UIBarButtonItem</span> alloc]initWithTitle:<span class="string">@"item2"</span> style:<span class="built_in">UIBarButtonItemStylePlain</span> target:<span class="literal">nil</span> action:<span class="literal">nil</span>];    <span class="built_in">NSArray</span>* array = @[item1,item2];</span><br><span class="line"><span class="keyword">self</span>.navigationItem.leftBarButtonItems = array;</span><br><span class="line"><span class="keyword">self</span>.navigationItem.rightBarButtonItems = array;</span><br><span class="line"><span class="comment">//*****************navigationBar**********************************</span>    <span class="comment">//navigationBar控制导航栏背景色（barTintColor）、背景图片（backgroundImage）、按钮字体颜色（tintColor），标题文本属性(titleTextAttributes)</span></span><br><span class="line"><span class="comment">//调整导航栏背景色</span>    <span class="keyword">self</span>.navigationController.navigationBar.barTintColor = [<span class="built_in">UIColor</span> orangeColor];</span><br><span class="line"><span class="comment">//半透明开关</span>    <span class="keyword">self</span>.navigationController.navigationBar.translucent = <span class="literal">NO</span>;</span><br><span class="line"><span class="comment">//为导航栏添加背景图片，图片如果是44高，那么不覆盖状态栏，如果是64高就会覆盖状态栏</span>    <span class="comment">//UIBarMetricsDefault 缺省值 UIBarMetricsCompact 横屏样式  UIBarMetricsDefaultPrompt和UIBarMetricsCompactPrompt是有promt的两种样式</span>    [<span class="keyword">self</span>.navigationController.navigationBar setBackgroundImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"m_nav64"</span>] forBarMetrics:<span class="built_in">UIBarMetricsDefault</span>];</span><br><span class="line"><span class="comment">//</span>    <span class="keyword">self</span>.navigationController.navigationBar.tintColor = [<span class="built_in">UIColor</span> purpleColor];</span><br><span class="line"><span class="comment">//定制返回按钮,这两个要一起用,为啥这么用，苹果言语不详</span>    <span class="keyword">self</span>.navigationController.navigationBar.backIndicatorImage = [<span class="built_in">UIImage</span> imageNamed:<span class="string">@"m_ios"</span>];    <span class="keyword">self</span>.navigationController.navigationBar.backIndicatorTransitionMaskImage = [<span class="built_in">UIImage</span> imageNamed:<span class="string">@"m_ios"</span>];</span><br><span class="line"><span class="comment">//修改导航栏标题的字体</span>    <span class="built_in">NSShadow</span> *shadow = [[<span class="built_in">NSShadow</span> alloc] init];    shadow.shadowColor = [<span class="built_in">UIColor</span> colorWithRed:<span class="number">0.0</span> green:<span class="number">0.0</span> blue:<span class="number">0.0</span> alpha:<span class="number">0.8</span>];    shadow.shadowOffset = <span class="built_in">CGSizeMake</span>(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line"><span class="comment">//字典中放入你想修改的键值对,原来的UITextAttributeFont、UITextAttributeTextColor、UITextAttributeTextShadowColor、UITextAttributeTextShadowOffset已弃用</span>    <span class="keyword">self</span>.navigationController.navigationBar.titleTextAttributes = @&#123;<span class="built_in">NSForegroundColorAttributeName</span>:[<span class="built_in">UIColor</span> colorWithRed:<span class="number">245.0</span>/<span class="number">255.0</span> green:<span class="number">245.0</span>/<span class="number">255.0</span> blue:<span class="number">245.0</span>/<span class="number">255.0</span> alpha:<span class="number">1.0</span>],                                                                             <span class="built_in">NSShadowAttributeName</span>:shadow,                                                                               <span class="built_in">NSFontAttributeName</span>:[<span class="built_in">UIFont</span> fontWithName:<span class="string">@"HelveticaNeue-CondensedBlack"</span> size:<span class="number">21.0</span>]                                                                    &#125;;</span><br><span class="line"><span class="comment">//导航栏toolBar隐藏开关</span>    <span class="keyword">self</span>.navigationController.toolbarHidden = <span class="literal">NO</span>;</span><br><span class="line">&#125;</span><br><span class="line">获取高度：</span><br><span class="line">iPhone开发当中，有时需要获取状态栏和导航栏高度、宽度信息，方便布局其他控件。下面介绍一下如何获取这些信息：</span><br><span class="line">    <span class="comment">// 状态栏(statusbar)  </span>    <span class="built_in">CGRect</span> rectStatus = [[<span class="built_in">UIApplication</span> sharedApplication] statusBarFrame];      <span class="built_in">NSLog</span>(<span class="string">@"status width - %f"</span>, rectStatus.size.width); <span class="comment">// 宽度  </span>    <span class="built_in">NSLog</span>(<span class="string">@"status height - %f"</span>, rectStatus.size.height);   <span class="comment">// 高度  </span>          <span class="comment">// 导航栏（navigationbar）  </span>    <span class="built_in">CGRect</span> rectNav = <span class="keyword">self</span>.navigationController.navigationBar.frame;      <span class="built_in">NSLog</span>(<span class="string">@"nav width - %f"</span>, rectNav.size.width); <span class="comment">// 宽度  </span>    <span class="built_in">NSLog</span>(<span class="string">@"nav height - %f"</span>, rectNav.size.height);   <span class="comment">// 高度  </span></span><br><span class="line">打印结果如下：</span><br><span class="line">    <span class="number">2015</span><span class="number">-01</span><span class="number">-14</span> <span class="number">13</span>:<span class="number">22</span>:<span class="number">22.206</span> app_name[<span class="number">226</span>:<span class="number">60</span>b] status width - <span class="number">320.000000</span>      <span class="number">2015</span><span class="number">-01</span><span class="number">-14</span> <span class="number">13</span>:<span class="number">22</span>:<span class="number">22.209</span> app_name[<span class="number">226</span>:<span class="number">60</span>b] status height - <span class="number">20.000000</span>      <span class="number">2015</span><span class="number">-01</span><span class="number">-14</span> <span class="number">13</span>:<span class="number">22</span>:<span class="number">22.210</span> app_name[<span class="number">226</span>:<span class="number">60</span>b] nav width - <span class="number">320.000000</span>      <span class="number">2015</span><span class="number">-01</span><span class="number">-14</span> <span class="number">13</span>:<span class="number">22</span>:<span class="number">22.211</span> app_name[<span class="number">226</span>:<span class="number">60</span>b] nav height - <span class="number">44.000000</span>  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">设置rightBarButtonItems leftBarButtonItems </span><br><span class="line">   </span><br><span class="line">第一种：</span><br><span class="line"><span class="built_in">UIImage</span> *searchimage=[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"search.png"</span>];</span><br><span class="line">    <span class="built_in">UIBarButtonItem</span> *barbtn=[[<span class="built_in">UIBarButtonItem</span> alloc] initWithImage:<span class="literal">nil</span> style:<span class="built_in">UIBarButtonItemStyleDone</span> target:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(searchprogram)];    </span><br><span class="line">    barbtn.image=searchimage;</span><br><span class="line">    <span class="keyword">self</span>.navigationItem.rightBarButtonItem=barbtn;</span><br><span class="line">这种设置出来的外观不好控制</span><br><span class="line"></span><br><span class="line">第二种：</span><br><span class="line"><span class="built_in">UIButton</span>*rightButton = [[<span class="built_in">UIButtonalloc</span>]initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">30</span>,<span class="number">30</span>)];</span><br><span class="line">    [rightButtonsetImage:[<span class="built_in">UIImageimageNamed</span>:<span class="string">@"search.png"</span>]forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">	    [rightButtonaddTarget:selfaction:<span class="keyword">@selector</span>(searchprogram)forControlEvents:<span class="built_in">UIControlEventTouchUpInside</span>];</span><br><span class="line">   <span class="built_in">UIBarButtonItem</span>*rightItem = [[<span class="built_in">UIBarButtonItemalloc</span>]initWithCustomView:rightButton];</span><br><span class="line">    [rightButton release];</span><br><span class="line">   <span class="keyword">self</span>.navigationItem.rightBarButtonItem= rightItem;</span><br><span class="line">    [rightItem release];</span><br><span class="line">这种图片将填满button，大小可控(这个很重要)</span><br><span class="line"></span><br><span class="line">第三种：</span><br><span class="line"><span class="built_in">UIBarButtonItem</span> *anotherButton = [[<span class="built_in">UIBarButtonItem</span> alloc] initWithBarButtonSystemItem:<span class="built_in">UIBarButtonSystemItemBookmarks</span> target:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(methodtocall:) ]; </span><br><span class="line">如何让navigationItem.rightBarButtonItem隐藏消失？</span><br><span class="line"><span class="keyword">self</span>.navigationItem.rightBarButtonItem=<span class="literal">nil</span>；</span><br><span class="line">即可实现</span><br><span class="line"></span><br><span class="line">目前推荐第二种方式。</span><br><span class="line"></span><br><span class="line"> 这种情况适用于两个按钮之间间隔比较大的情况，在中间添加一个空白按钮占位</span><br><span class="line">   <span class="built_in">UIButton</span> *rightButton = [[<span class="built_in">UIButton</span> alloc]initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">20</span>,<span class="number">20</span>)];</span><br><span class="line">    [rightButton setImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"daiban.png"</span>]forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">    [rightButton addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(searchprogram)forControlEvents:<span class="built_in">UIControlEventTouchUpInside</span>];</span><br><span class="line">    <span class="built_in">UIBarButtonItem</span> *rightItem = [[<span class="built_in">UIBarButtonItem</span> alloc]initWithCustomView:rightButton];</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">UIButton</span> *rightButton3 = [[<span class="built_in">UIButton</span> alloc]initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="number">5</span>)];</span><br><span class="line">    <span class="built_in">UIBarButtonItem</span> *rightItem3 = [[<span class="built_in">UIBarButtonItem</span> alloc]initWithCustomView:rightButton3];</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="built_in">UIButton</span> *rightButton2 = [[<span class="built_in">UIButton</span> alloc]initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">20</span>)];</span><br><span class="line">    [rightButton2 setImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"xiaoxi.png"</span>]forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">    [rightButton2 addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(searchprogram)forControlEvents:<span class="built_in">UIControlEventTouchUpInside</span>];</span><br><span class="line">    <span class="built_in">UIBarButtonItem</span> *rightItem2 = [[<span class="built_in">UIBarButtonItem</span> alloc]initWithCustomView:rightButton2];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSArray</span>* array = @[rightItem,rightItem3,rightItem2];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">self</span>.navigationItem.rightBarButtonItems= array;</span><br><span class="line">    </span><br><span class="line">设置navigationBar为透明</span><br><span class="line"><span class="comment">//进入视图的时候设置alpha为0</span>- (<span class="keyword">void</span>)viewWillAppear:(<span class="built_in">BOOL</span>)animated&#123;    [<span class="keyword">super</span> viewWillAppear:animated];<span class="comment">//设置背景颜色，不设置就是默认白色毛玻璃，和下面的方法结合可以设置半透明带色彩的navigationBar</span><span class="keyword">self</span>.navigationController.navigationBar.barTintColor = BACKGROUND_COLOR          [[[<span class="keyword">self</span>.navigationController.navigationBar subviews]objectAtIndex:<span class="number">0</span>] setAlpha:<span class="number">0.0</span>];     &#125;</span><br><span class="line"><span class="comment">//视图消失的时候还原alpha为1</span>- (<span class="keyword">void</span>)viewWillDisappear:(<span class="built_in">BOOL</span>)animated&#123;    [<span class="keyword">super</span> viewWillDisappear:animated];    [[[<span class="keyword">self</span>.navigationController.navigationBar subviews]objectAtIndex:<span class="number">0</span>] setAlpha:<span class="number">1.0</span>];&#125;</span><br><span class="line">上面的方法其实是取出了navigationBar的背景view然后设置透明度，如下图红框所示：</span><br><span class="line"></span><br><span class="line">这个背景UiView在公开navigationBar的API没有提供访问属性，我们需要自己取出来。我们在做navigationBar背景透明和背景透明度渐变，还有设置背景图片，都可以通过这个<span class="built_in">UIView</span>来实现。 也可以通过下面的代码取出这个View</span><br><span class="line"><span class="built_in">UIView</span> *backgroundView =  [<span class="keyword">self</span>.navigationController valueForKeyPath:<span class="string">@"navigationBar.backgroundView"</span>]</span><br></pre></td></tr></table></figure>	  
-
-	  <div>
-  		<center>
-		  <div class="pagination">
-<ul class="pagination">
-	
-	
-	
-	
-	
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-			
-		
-	
-		
-			
-			
-			
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-	
-	
-		<li class="prev"><a href="/2016/10/02/iOS/UISearchBar/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
-	
-	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
-	
-		<li class="next"><a href="/2016/10/02/iOS/UIImageView/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
-	
-</ul>
-</div>
-
-		</center>
-	  </div>
-	  
-	</div> <!-- col-md-9/col-md-12 -->
-	
-  </div><!-- row -->
-
-	</div>
-  </div>
-  <div class="container-narrow">
-	<footer> <p>
-  &copy; 2016 John Doe
-  
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
-</p> </footer>
-  </div> <!-- container-narrow -->
-  
-<a id="gotop" href="#">   
-  <span>▲</span> 
-</a>
-
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.tableofcontents.min.js"></script>
-<script src="/js/tocgenerator.min.js"></script>
-<script src="/js/main.js"></script>
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
-
-
-</body>
-</html>
