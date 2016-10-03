@@ -3,15 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Git相关操作 | spike</title>
+  <title>UITextField | spike</title>
   <meta name="author" content="John Doe">
   
-  <meta name="description" content="git使用记录">
+  <meta name="description" content="NSObject    UIResponder    UIView    UIControl    UITextField
+
+实现对输入内容的限制    - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Git相关操作"/>
+  <meta property="og:title" content="UITextField"/>
   <meta property="og:site_name" content="spike"/>
 
   
@@ -45,7 +47,7 @@
   <div class="container" id="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/">spike</a><span class="split"></span><span class="title">Git相关操作</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-06-30</span></h1>
+  <h1><a class="brand" href="/">spike</a><span class="split"></span><span class="title">UITextField</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-10-03</span></h1>
 </div>		
 
 <div class="row page">
@@ -58,12 +60,27 @@
 	  
 
 	  <!-- content -->
-	  <blockquote>
-<p>git使用记录</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="创建新项目"><a href="#创建新项目" class="headerlink" title="创建新项目"></a>创建新项目</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1现在git上新建一个项目</span><br><span class="line"></span><br><span class="line">2记住地址：</span><br><span class="line"> 初始化一个readme</span><br><span class="line">（另外在xcode中创建项目的时候，不要勾选在本地创建git库）</span><br><span class="line"></span><br><span class="line">3在系统中新建一个文件夹</span><br><span class="line"></span><br><span class="line">4打开xcode中点击导出项目。导出项目到这个空文件夹，导出路径为上边新建项目时的路径</span><br><span class="line"></span><br><span class="line">5将项目中的文件拷贝到此文件夹中，打开项目提交即可。</span><br></pre></td></tr></table></figure>
-<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xcode push时时间很久，然后提示错误</span><br><span class="line">SecureTransport error: I/O error (bummers) (-1)</span><br><span class="line"></span><br><span class="line">1 确定用户名账户正确 git config --list</span><br><span class="line">更改命令：</span><br><span class="line">git config --global user.name username</span><br><span class="line">git config --global user.email email</span><br><span class="line"></span><br><span class="line">2 确定xcode中的remote地址正确</span><br><span class="line"></span><br><span class="line">3 增加提交量</span><br><span class="line">git config --global http.postBuffer 524288000</span><br><span class="line">或者</span><br><span class="line">git config --global http.postBuffer 1048576000</span><br></pre></td></tr></table></figure>	  
+	  <pre><code class="objectivec"><span class="built_in">NSObject</span>    <span class="built_in">UIResponder</span>    <span class="built_in">UIView</span>    <span class="built_in">UIControl</span>    <span class="built_in">UITextField</span>
+
+实现对输入内容的限制    - (<span class="built_in">BOOL</span>)textField:(<span class="built_in">UITextField</span> *)textField shouldChangeCharactersInRange:(<span class="built_in">NSRange</span>)range replacementString:(<span class="built_in">NSString</span> *)string
+    {
+        <span class="built_in">BOOL</span> result = <span class="literal">YES</span>;
+            <span class="comment">// restrict the maximum number of characters to 5</span>
+            <span class="keyword">if</span> (textField.text.length == <span class="number">5</span> &amp;&amp; string.length &gt; <span class="number">0</span>)
+                    result = <span class="literal">NO</span>;
+            <span class="keyword">return</span> result;
+    }
+
+
+设置<span class="built_in">UITextField</span>的placeholder(包括字体和颜色)     <span class="keyword">self</span>.memoDate.placeholder = <span class="string">@"请填入备忘事项?"</span>;
+亲测可用    <span class="comment">//    self.memoDate.placeholderColor = [UIColor lightGrayColor];</span>
+        <span class="built_in">NSMutableDictionary</span> *dict = [<span class="built_in">NSMutableDictionary</span> dictionary];
+        dict[<span class="built_in">NSForegroundColorAttributeName</span>] = [<span class="built_in">UIColor</span> lightGrayColor];
+        dict[<span class="built_in">NSFontAttributeName</span>] = [<span class="built_in">UIFont</span> fontWithName:<span class="string">@"Menlo"</span> size:<span class="number">12.0</span>];
+        <span class="built_in">NSAttributedString</span> *attribute = [[<span class="built_in">NSAttributedString</span> alloc] initWithString:<span class="keyword">self</span>.memoDate.placeholder attributes:dict];
+        [<span class="keyword">self</span>.memoDate setAttributedPlaceholder:attribute];
+</code></pre>
+	  
 
 	  <div>
   		<center>
@@ -76,39 +93,50 @@
 	
 	
 		
+			
+		
 	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
 		
 	
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
+			
 		
 	
 		
@@ -152,20 +180,13 @@
 		
 	
 		
-			
-			
-		
 	
 		
 	
 		
-			
-			
-			
-		
 	
 		
-	
+			
 		
 	
 		
@@ -185,7 +206,9 @@
 		
 	
 		
-			
+	
+		
+	
 		
 	
 		
@@ -206,13 +229,29 @@
 	
 		
 	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
 	
 	
-		<li class="prev"><a href="/2016/07/07/iOS/获取iOS设备唯一标识/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+		<li class="prev"><a href="/2016/10/03/iOS/UISegmentedControl/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
 	
 	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/2016/06/27/iOS/第三方框架使用记录/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/2016/10/03/iOS/UIButton/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

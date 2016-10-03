@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>UISegmentedControl | spike</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="NSObject	UIResponder	UIView	UIControl	UISegmentedControladdTarge	[segmentedControl addTarget:self 	action:@selector(action:) 	forControlEvents:UIContr">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="UISegmentedControl"/>
+  <meta property="og:site_name" content="spike"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="spike" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">spike</a><span class="split"></span><span class="title">UISegmentedControl</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-10-03</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="built_in">NSObject</span>	<span class="built_in">UIResponder</span>	<span class="built_in">UIView</span>	<span class="built_in">UIControl</span>	<span class="built_in">UISegmentedControl</span></span><br><span class="line"></span><br><span class="line">addTarge	[segmentedControl addTarget:<span class="keyword">self</span> </span><br><span class="line">	action:<span class="keyword">@selector</span>(action:) </span><br><span class="line">	forControlEvents:<span class="built_in">UIControlEventValueChanged</span>];</span><br><span class="line">Declaration	- (instancetype)initWithItems:(<span class="built_in">NSArray</span> *)items</span><br><span class="line">code	<span class="built_in">UISegmentedControl</span> *segmentedControl=[[<span class="built_in">UISegmentedControl</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">80.0</span>f, <span class="number">8.0</span>f, <span class="number">300.0</span>f, <span class="number">30.0</span>f) ]; </span><br><span class="line">	[segmentedControl insertSegmentWithTitle:<span class="string">@"最新上架"</span> atIndex:<span class="number">0</span> animated:<span class="literal">YES</span>]; </span><br><span class="line">	[segmentedControl insertSegmentWithTitle:<span class="string">@"热销商品"</span> atIndex:<span class="number">1</span> animated:<span class="literal">YES</span>];</span><br><span class="line">	[segmentedControl insertSegmentWithTitle:<span class="string">@"促销商品"</span> atIndex:<span class="number">2</span> animated:<span class="literal">YES</span>];</span><br><span class="line">	<span class="comment">//[segmentedControl insertSegmentWithImage:[UIImageimageNamed:@"style12"] atIndex:0animated:YES];</span></span><br><span class="line">	segmentedControl.segmentedControlStyle = <span class="built_in">UISegmentedControlStyleBar</span>; </span><br><span class="line">	<span class="comment">//segmentedControl.segmentedControlStyle = UISegmentedControlStyleBezeled;</span></span><br><span class="line">	segmentedControl.momentary = <span class="literal">YES</span>; </span><br><span class="line">	segmentedControl.multipleTouchEnabled=<span class="literal">NO</span>; </span><br><span class="line">	<span class="comment">//segmentedControl.userInteractionEnabled=YES;</span></span><br><span class="line">	[segmentedControl addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(segmentAction:) forControlEvents:<span class="built_in">UIControlEventValueChanged</span>]; </span><br><span class="line">	<span class="comment">//segmentedControl.tintColor=[UIColor clearColor];</span></span><br><span class="line">	<span class="built_in">UIBarButtonItem</span> *homeBarItem = [[<span class="built_in">UIBarButtonItem</span> alloc] initWithCustomView:segmentedControl];</span><br><span class="line">	<span class="keyword">self</span>.navigationItem.rightBarButtonItem = homeBarItem;</span><br><span class="line">	<span class="comment">//如果将按钮添加在中间位置，可直接添加</span></span><br><span class="line">	<span class="keyword">self</span>.navigationItem.rightBarButtonItem = segmentedControl;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">选择选项对应的方法	-(<span class="keyword">void</span>)segmentAction:(<span class="built_in">UISegmentedControl</span> *)Segment&#123;</span><br><span class="line">	<span class="built_in">NSInteger</span> index = Segment.selectedSegmentIndex;</span><br><span class="line">	<span class="keyword">if</span> (index == <span class="number">0</span>) &#123;</span><br><span class="line">	<span class="comment">//最新上架</span></span><br><span class="line">	NewestGoods *newestGoods = [[NewestGoods alloc] initWithNibName:<span class="string">@"NewestGoods"</span> bundle:<span class="literal">nil</span>];</span><br><span class="line">	newestGoods.navigationItem.title = <span class="string">@"最新上架"</span>;</span><br><span class="line">	[<span class="keyword">self</span>.navigationController pushViewController:newestGoods animated:<span class="literal">YES</span>];</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span> (index == <span class="number">1</span>) &#123;</span><br><span class="line">	<span class="comment">//热销商品 </span></span><br><span class="line">	HotItems *hotItems = [[HotItems alloc] initWithNibName:<span class="string">@"HotItems"</span> bundle:<span class="literal">nil</span>];</span><br><span class="line">	hotItems.navigationItem.title = <span class="string">@"热销商品"</span>;</span><br><span class="line">	[<span class="keyword">self</span>.navigationController pushViewController:hotItems animated:<span class="literal">YES</span>];</span><br><span class="line">	&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="comment">//促销商品</span></span><br><span class="line">	PromotionsGoods *promotionsGoods = [[PromotionsGoods alloc] initWithNibName:<span class="string">@"PromotionsGoods"</span> bundle:<span class="literal">nil</span>];</span><br><span class="line">	promotionsGoods.navigationItem.title = <span class="string">@"促销商品"</span>;</span><br><span class="line">	[<span class="keyword">self</span>.navigationController pushViewController:promo tionsGoods animated:<span class="literal">YES</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	- (<span class="keyword">void</span>)viewDidLoad&#123;    [<span class="keyword">super</span> viewDidLoad];</span><br><span class="line">	<span class="built_in">NSArray</span> *segmentArray = @[                              <span class="string">@"1"</span>,                              <span class="string">@"2"</span>,                              <span class="string">@"3"</span>,                              <span class="string">@"4"</span>                              ];</span><br><span class="line">	<span class="comment">// 初始化UISegmentedControl</span>    <span class="built_in">UISegmentedControl</span> *segmentControl = [[<span class="built_in">UISegmentedControl</span> alloc] initWithItems:segmentArray];    segmentControl.frame = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="keyword">self</span>.view.frame.size.width - <span class="number">20</span>, <span class="number">30</span>);    segmentControl.center = <span class="keyword">self</span>.view.center;</span><br><span class="line">	<span class="comment">// 设置默认选择项索引</span>    segmentControl.selectedSegmentIndex = <span class="number">2</span>;    segmentControl.tintColor = [<span class="built_in">UIColor</span> redColor];</span><br><span class="line">	<span class="comment">// 设置在点击后是否恢复原样</span>    segmentControl.momentary = <span class="literal">YES</span>;</span><br><span class="line">	<span class="comment">// 设置指定索引的题目</span>    [segmentControl setTitle:<span class="string">@"two"</span> forSegmentAtIndex:<span class="number">1</span>];</span><br><span class="line">	<span class="comment">// 设置指定索引的图片</span>    [segmentControl setImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"little_animal_02"</span>] forSegmentAtIndex:<span class="number">3</span>];</span><br><span class="line">	<span class="comment">// 在指定索引插入一个选项并设置图片</span>    [segmentControl insertSegmentWithImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"little_animal_03"</span>] atIndex:<span class="number">2</span> animated:<span class="literal">NO</span>];</span><br><span class="line">	<span class="comment">// 在指定索引插入一个选项并设置题目</span>    [segmentControl insertSegmentWithTitle:<span class="string">@"insert"</span> atIndex:<span class="number">3</span> animated:<span class="literal">NO</span>];</span><br><span class="line">	<span class="comment">// 移除指定索引的选项</span>    [segmentControl removeSegmentAtIndex:<span class="number">0</span> animated:<span class="literal">YES</span>];</span><br><span class="line">	<span class="comment">// 设置指定索引选项的宽度</span>    [segmentControl setWidth:<span class="number">70.0</span> forSegmentAtIndex:<span class="number">2</span>];</span><br><span class="line">	<span class="comment">// 设置选项中图片等的左上角的位置</span>    [segmentControl setContentOffset:<span class="built_in">CGSizeMake</span>(<span class="number">10.0</span>, <span class="number">10.0</span>) forSegmentAtIndex:<span class="number">4</span>];</span><br><span class="line">	<span class="comment">// 获取指定索引选项的图片imageForSegmentAtIndex</span>    <span class="built_in">UIImageView</span> *imageForSegmentAtIndex = [[<span class="built_in">UIImageView</span> alloc] initWithImage:[segmentControl imageForSegmentAtIndex:<span class="number">1</span>]];    imageForSegmentAtIndex.frame = <span class="built_in">CGRectMake</span>(<span class="number">60.0</span>, <span class="number">120.0</span>, <span class="number">30.0</span>, <span class="number">30.0</span>);  ;</span><br><span class="line">	<span class="comment">// 获取指定索引选项的标题titleForSegmentAtIndex</span>    <span class="built_in">UILabel</span> *titleForSegmentAtIndex = [[<span class="built_in">UILabel</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">100.0</span>, <span class="number">160.0</span>, <span class="number">30.0</span>, <span class="number">30.0</span>)];    titleForSegmentAtIndex.text = [segmentControl titleForSegmentAtIndex:<span class="number">0</span>];</span><br><span class="line">	<span class="comment">// 获取总选项数segmentedControl.numberOfSegments</span>    <span class="built_in">UILabel</span> *numberOfSegments = [[<span class="built_in">UILabel</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">140.0</span>, <span class="number">170.0</span>, <span class="number">30.0</span>, <span class="number">30.0</span>)];    numberOfSegments.text = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%ld"</span>, segmentControl.numberOfSegments];</span><br><span class="line">	<span class="comment">// 获取指定索引选项的宽度widthForSegmentAtIndex</span>    <span class="built_in">UILabel</span> *widthForSegmentAtIndex = [[<span class="built_in">UILabel</span> alloc]initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">180.0</span>, <span class="number">210.0</span>, <span class="number">70.0</span>, <span class="number">30.0</span>)];    widthForSegmentAtIndex.text = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%f"</span>, [segmentControl widthForSegmentAtIndex:<span class="number">2</span>]];</span><br><span class="line">	<span class="comment">// 设置指定索引选项不可选</span>    [segmentControl setEnabled:<span class="literal">NO</span> forSegmentAtIndex:<span class="number">4</span>];</span><br><span class="line">	<span class="comment">// 判断指定索引选项是否可选</span>     <span class="built_in">BOOL</span> enableFlag = [segmentControl isEnabledForSegmentAtIndex:<span class="number">4</span>];    <span class="built_in">NSLog</span>(<span class="string">@"%d"</span>, enableFlag);</span><br><span class="line">	<span class="comment">// 添加监听</span>    [segmentControl addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(didClickSegmentedControlAction:)forControlEvents:<span class="built_in">UIControlEventValueChanged</span>];</span><br><span class="line">	[<span class="keyword">self</span>.view addSubview:segmentControl];&#125;</span><br><span class="line">	<span class="comment">/** *  监听点击了哪项 */</span>- (<span class="keyword">void</span>)didClickSegmentedControlAction:(<span class="built_in">UISegmentedControl</span> *)segmentControl&#123;    <span class="built_in">NSInteger</span> idx = segmentControl.selectedSegmentIndex;</span><br><span class="line">	<span class="built_in">NSLog</span>(<span class="string">@"%ld"</span>, idx);&#125;</span><br></pre></td></tr></table></figure>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/2016/10/03/iOS/UITextField/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2016 John Doe
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>
