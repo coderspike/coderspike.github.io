@@ -1,237 +1,0 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>iOS常用分类 | 欧维</title>
-  <meta name="author" content="John Doe">
-  
-  <meta name="description" content="UIView建立类别建立一个名为Layout的UIView类别，类别的代码如下：1. UIView+Layout.h.h 文件定义了 x, y, width, height 等方便读写的属性，代码如下：#import &amp;lt;UIKit/UIKit.h&amp;gt;@interface UIView (L">
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <meta property="og:title" content="iOS常用分类"/>
-  <meta property="og:site_name" content="欧维"/>
-
-  
-    <meta property="og:image" content="undefined"/>
-  
-
-  
-    <link rel="alternative" href="/atom.xml" title="欧维" type="application/atom+xml">
-  
-  
-    <link href="/favicon.png" rel="icon">
-  
-  
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
-  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-  <script src="/js/jquery-2.0.3.min.js"></script>
-
-  <!-- analytics -->
-  
-
-</head>
-
-<body id="body" data-spy="scroll" data-target=".toc">
-  <div class="container" id="container">
-	<div class="content">
-	  <div class="page-header">		
-  <h1><a class="brand" href="/">欧维</a><span class="split"></span><span class="title">iOS常用分类</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-06-06</span></h1>
-</div>		
-
-<div class="row page">
-  <!-- cols -->	
-  
-  
-
-  
-	<div class="col-md-12">
-	  
-
-	  <!-- content -->
-	  <h3 id="UIView"><a href="#UIView" class="headerlink" title="UIView"></a>UIView</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">建立类别</span><br><span class="line">建立一个名为Layout的<span class="built_in">UIView</span>类别，类别的代码如下：</span><br><span class="line"><span class="number">1.</span> <span class="built_in">UIView</span>+Layout.h</span><br><span class="line">.h 文件定义了 x, y, width, height 等方便读写的属性，代码如下：</span><br><span class="line"><span class="meta">#import <span class="meta-string">&lt;UIKit/UIKit.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">UIView</span> (<span class="title">Layout</span>)</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">assign</span>, <span class="keyword">nonatomic</span>) <span class="built_in">CGFloat</span>    top;<span class="keyword">@property</span> (<span class="keyword">assign</span>, <span class="keyword">nonatomic</span>) <span class="built_in">CGFloat</span>    bottom;<span class="keyword">@property</span> (<span class="keyword">assign</span>, <span class="keyword">nonatomic</span>) <span class="built_in">CGFloat</span>    left;<span class="keyword">@property</span> (<span class="keyword">assign</span>, <span class="keyword">nonatomic</span>) <span class="built_in">CGFloat</span>    right;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">assign</span>, <span class="keyword">nonatomic</span>) <span class="built_in">CGFloat</span>    x;<span class="keyword">@property</span> (<span class="keyword">assign</span>, <span class="keyword">nonatomic</span>) <span class="built_in">CGFloat</span>    y;<span class="keyword">@property</span> (<span class="keyword">assign</span>, <span class="keyword">nonatomic</span>) <span class="built_in">CGPoint</span>    origin;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">assign</span>, <span class="keyword">nonatomic</span>) <span class="built_in">CGFloat</span>    centerX;<span class="keyword">@property</span> (<span class="keyword">assign</span>, <span class="keyword">nonatomic</span>) <span class="built_in">CGFloat</span>    centerY;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">assign</span>, <span class="keyword">nonatomic</span>) <span class="built_in">CGFloat</span>    width;<span class="keyword">@property</span> (<span class="keyword">assign</span>, <span class="keyword">nonatomic</span>) <span class="built_in">CGFloat</span>    height;<span class="keyword">@property</span> (<span class="keyword">assign</span>, <span class="keyword">nonatomic</span>) <span class="built_in">CGSize</span>    size;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"><span class="number">2.</span> <span class="built_in">UIView</span>+Layout.m</span><br><span class="line">.m 文件实现各个属性的setter和getter方法，代码如下：</span><br><span class="line"><span class="meta">#import <span class="meta-string">"UIView+Layout.h"</span></span></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">UIView</span> (<span class="title">Layout</span>)</span></span><br><span class="line"><span class="keyword">@dynamic</span> top;<span class="keyword">@dynamic</span> bottom;<span class="keyword">@dynamic</span> left;<span class="keyword">@dynamic</span> right;</span><br><span class="line"><span class="keyword">@dynamic</span> width;<span class="keyword">@dynamic</span> height;</span><br><span class="line"><span class="keyword">@dynamic</span> size;</span><br><span class="line"><span class="keyword">@dynamic</span> x;<span class="keyword">@dynamic</span> y;</span><br><span class="line">- (<span class="built_in">CGFloat</span>)top&#123;    <span class="keyword">return</span> <span class="keyword">self</span>.frame.origin.y;&#125;</span><br><span class="line">- (<span class="keyword">void</span>)setTop:(<span class="built_in">CGFloat</span>)top&#123;    <span class="built_in">CGRect</span> frame = <span class="keyword">self</span>.frame;    frame.origin.y = top;    <span class="keyword">self</span>.frame = frame;&#125;</span><br><span class="line">- (<span class="built_in">CGFloat</span>)left&#123;    <span class="keyword">return</span> <span class="keyword">self</span>.frame.origin.x;&#125;</span><br><span class="line">- (<span class="keyword">void</span>)setLeft:(<span class="built_in">CGFloat</span>)left&#123;    <span class="built_in">CGRect</span> frame = <span class="keyword">self</span>.frame;    frame.origin.x = left;    <span class="keyword">self</span>.frame = frame;&#125;</span><br><span class="line">- (<span class="built_in">CGFloat</span>)bottom&#123;    <span class="keyword">return</span> <span class="keyword">self</span>.frame.size.height + <span class="keyword">self</span>.frame.origin.y;&#125;</span><br><span class="line">- (<span class="keyword">void</span>)setBottom:(<span class="built_in">CGFloat</span>)bottom&#123;    <span class="built_in">CGRect</span> frame = <span class="keyword">self</span>.frame;    frame.origin.y = bottom - frame.size.height;    <span class="keyword">self</span>.frame = frame;&#125;</span><br><span class="line">- (<span class="built_in">CGFloat</span>)right&#123;    <span class="keyword">return</span> <span class="keyword">self</span>.frame.size.width + <span class="keyword">self</span>.frame.origin.x;&#125;</span><br><span class="line">- (<span class="keyword">void</span>)setRight:(<span class="built_in">CGFloat</span>)right&#123;    <span class="built_in">CGRect</span> frame = <span class="keyword">self</span>.frame;    frame.origin.x = right - frame.size.width;    <span class="keyword">self</span>.frame = frame;&#125;</span><br><span class="line">- (<span class="built_in">CGFloat</span>)x&#123;    <span class="keyword">return</span> <span class="keyword">self</span>.frame.origin.x;&#125;</span><br><span class="line">- (<span class="keyword">void</span>)setX:(<span class="built_in">CGFloat</span>)value&#123;    <span class="built_in">CGRect</span> frame = <span class="keyword">self</span>.frame;    frame.origin.x = value;    <span class="keyword">self</span>.frame = frame;&#125;</span><br><span class="line">- (<span class="built_in">CGFloat</span>)y&#123;    <span class="keyword">return</span> <span class="keyword">self</span>.frame.origin.y;&#125;</span><br><span class="line">- (<span class="keyword">void</span>)setY:(<span class="built_in">CGFloat</span>)value&#123;    <span class="built_in">CGRect</span> frame = <span class="keyword">self</span>.frame;    frame.origin.y = value;    <span class="keyword">self</span>.frame = frame;&#125;</span><br><span class="line">- (<span class="built_in">CGPoint</span>)origin&#123;    <span class="keyword">return</span> <span class="keyword">self</span>.frame.origin;&#125;</span><br><span class="line">- (<span class="keyword">void</span>)setOrigin:(<span class="built_in">CGPoint</span>)origin&#123;    <span class="built_in">CGRect</span> frame = <span class="keyword">self</span>.frame;    frame.origin = origin;    <span class="keyword">self</span>.frame = frame;&#125;</span><br><span class="line">- (<span class="built_in">CGFloat</span>)centerX&#123;    <span class="keyword">return</span> <span class="keyword">self</span>.center.x;&#125;</span><br><span class="line">- (<span class="keyword">void</span>)setCenterX:(<span class="built_in">CGFloat</span>)centerX&#123;    <span class="built_in">CGPoint</span> center = <span class="keyword">self</span>.center;    center.x = centerX;    <span class="keyword">self</span>.center = center;&#125;</span><br><span class="line">- (<span class="built_in">CGFloat</span>)centerY&#123;    <span class="keyword">return</span> <span class="keyword">self</span>.center.y;&#125;</span><br><span class="line">- (<span class="keyword">void</span>)setCenterY:(<span class="built_in">CGFloat</span>)centerY&#123;    <span class="built_in">CGPoint</span> center = <span class="keyword">self</span>.center;    center.y = centerY;    <span class="keyword">self</span>.center = center;&#125;</span><br><span class="line">- (<span class="built_in">CGFloat</span>)width&#123;    <span class="keyword">return</span> <span class="keyword">self</span>.frame.size.width;&#125;</span><br><span class="line">- (<span class="keyword">void</span>)setWidth:(<span class="built_in">CGFloat</span>)width&#123;    <span class="built_in">CGRect</span> frame = <span class="keyword">self</span>.frame;    frame.size.width = width;    <span class="keyword">self</span>.frame = frame;&#125;</span><br><span class="line">- (<span class="built_in">CGFloat</span>)height&#123;    <span class="keyword">return</span> <span class="keyword">self</span>.frame.size.height;&#125;</span><br><span class="line">- (<span class="keyword">void</span>)setHeight:(<span class="built_in">CGFloat</span>)height&#123;    <span class="built_in">CGRect</span> frame = <span class="keyword">self</span>.frame;    frame.size.height = height;    <span class="keyword">self</span>.frame = frame;&#125;</span><br><span class="line">- (<span class="built_in">CGSize</span>)size&#123;    <span class="keyword">return</span> <span class="keyword">self</span>.frame.size;&#125;</span><br><span class="line">- (<span class="keyword">void</span>)setSize:(<span class="built_in">CGSize</span>)size&#123;    <span class="built_in">CGRect</span> frame = <span class="keyword">self</span>.frame;    frame.size = size;    <span class="keyword">self</span>.frame = frame;&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line">二、使用</span><br><span class="line">类别创建完成以后，view的布局就显得轻松很多了</span><br><span class="line">例如原来你要修改y坐标时要这样写：</span><br><span class="line">view.frame = <span class="built_in">CGRectMake</span>(view.frame.origin.x, <span class="number">100</span>, view.frame.size.width, view.frame.size.height);</span><br><span class="line">而现在只需要这样写：</span><br><span class="line">view.y = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="十六进制的颜色值转换为UIColor"><a href="#十六进制的颜色值转换为UIColor" class="headerlink" title="十六进制的颜色值转换为UIColor"></a>十六进制的颜色值转换为UIColor</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="built_in">UIColor</span>+Hex.h里面中</span><br><span class="line"><span class="meta">#import <span class="meta-string">&lt;UIKit/UIKit.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">UIColor</span> (<span class="title">Hex</span>)</span>+ (<span class="built_in">UIColor</span> *) colorWithHexString: (<span class="built_in">NSString</span> *)color;<span class="keyword">@end</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">UIColor</span>+Hex.m里面中</span><br><span class="line"></span><br><span class="line"><span class="meta">#import <span class="meta-string">"UIColor+Hex.h"</span></span></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">UIColor</span> (<span class="title">Hex</span>)</span></span><br><span class="line"><span class="meta">#pragma mark - 颜色转换 iOS中十六进制的颜色转换为UIColor</span></span><br><span class="line">+ (<span class="built_in">UIColor</span> *) colorWithHexString: (<span class="built_in">NSString</span> *)hexString&#123;    <span class="built_in">NSString</span> *cString = [[hexString stringByTrimmingCharactersInSet:[<span class="built_in">NSCharacterSet</span> whitespaceAndNewlineCharacterSet]] uppercaseString];        <span class="comment">//hexString应该6到8个字符</span>    <span class="keyword">if</span> ([cString length] &lt; <span class="number">6</span>) &#123;        <span class="keyword">return</span> [<span class="built_in">UIColor</span> clearColor];    &#125;        <span class="comment">//如果hexString 有@"0X"前缀</span>    <span class="keyword">if</span> ([cString hasPrefix:<span class="string">@"0X"</span>])        cString = [cString substringFromIndex:<span class="number">2</span>];        <span class="comment">//如果hexString 有@"#""前缀</span>    <span class="keyword">if</span> ([cString hasPrefix:<span class="string">@"#"</span>])        cString = [cString substringFromIndex:<span class="number">1</span>];    <span class="keyword">if</span> ([cString length] != <span class="number">6</span>)        <span class="keyword">return</span> [<span class="built_in">UIColor</span> clearColor];        <span class="comment">//RGB转换</span>    <span class="built_in">NSRange</span> range;    range.location = <span class="number">0</span>;    range.length = <span class="number">2</span>;        <span class="comment">//R</span>    <span class="built_in">NSString</span> *rString = [cString substringWithRange:range];        <span class="comment">//G</span>    range.location = <span class="number">2</span>;    <span class="built_in">NSString</span> *gString = [cString substringWithRange:range];        <span class="comment">//B</span>    range.location = <span class="number">4</span>;    <span class="built_in">NSString</span> *bString = [cString substringWithRange:range];        <span class="comment">//</span>    <span class="keyword">unsigned</span> <span class="keyword">int</span> r, g, b;    [[<span class="built_in">NSScanner</span> scannerWithString:rString] scanHexInt:&amp;r];    [[<span class="built_in">NSScanner</span> scannerWithString:gString] scanHexInt:&amp;g];    [[<span class="built_in">NSScanner</span> scannerWithString:bString] scanHexInt:&amp;b];        <span class="keyword">return</span> [<span class="built_in">UIColor</span> colorWithRed:((<span class="keyword">float</span>) r / <span class="number">255.0</span>f) green:((<span class="keyword">float</span>) g / <span class="number">255.0</span>f) blue:((<span class="keyword">float</span>) b / <span class="number">255.0</span>f) alpha:<span class="number">1.0</span>f];&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line">使用方法：</span><br><span class="line"><span class="comment">//1、添加头文件</span><span class="meta">#import <span class="meta-string">"UIColor+Hex.h"</span></span></span><br><span class="line"><span class="comment">//2、在需要的地方 [UIColor colorWithHexString:@"十六进制"]</span><span class="comment">//eg:</span>[<span class="keyword">self</span>.view setBackgroundColor:[<span class="built_in">UIColor</span> colorWithHexString:<span class="string">@"#11489B"</span>]];</span><br></pre></td></tr></table></figure>
-<h3 id="更改图片颜色"><a href="#更改图片颜色" class="headerlink" title="更改图片颜色"></a>更改图片颜色</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  UIImage+Tint.h</span></span><br><span class="line"><span class="comment">//  Ratings</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  Created by gwb on 15/10/10.</span></span><br><span class="line"><span class="comment">//  Copyright (c) 2015年 gwb. All rights reserved.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#import <span class="meta-string">&lt;UIKit/UIKit.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">UIImage</span> (<span class="title">Tint</span>)</span></span><br><span class="line"></span><br><span class="line">- (<span class="built_in">UIImage</span> *) imageWithTintColor:(<span class="built_in">UIColor</span> *)tintColor;</span><br><span class="line">- (<span class="built_in">UIImage</span> *) imageWithGradientTintColor:(<span class="built_in">UIColor</span> *)tintColor;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  UIImage+Tint.m</span></span><br><span class="line"><span class="comment">//  Ratings</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  Created by gwb on 15/10/10.</span></span><br><span class="line"><span class="comment">//  Copyright (c) 2015年 gwb. All rights reserved.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#import <span class="meta-string">"UIImage+Tint.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">UIImage</span> (<span class="title">Tint</span>)</span></span><br><span class="line"></span><br><span class="line">- (<span class="built_in">UIImage</span> *) imageWithTintColor:(<span class="built_in">UIColor</span> *)tintColor</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> [<span class="keyword">self</span> imageWithTintColor:tintColor blendMode:kCGBlendModeDestinationIn];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">UIImage</span> *) imageWithGradientTintColor:(<span class="built_in">UIColor</span> *)tintColor</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> [<span class="keyword">self</span> imageWithTintColor:tintColor blendMode:kCGBlendModeOverlay];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">UIImage</span> *) imageWithTintColor:(<span class="built_in">UIColor</span> *)tintColor blendMode:(<span class="built_in">CGBlendMode</span>)blendMode</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//We want to keep alpha, set opaque to NO; Use 0.0f for scale to use the scale factor of the device’s main screen.</span></span><br><span class="line">    <span class="built_in">UIGraphicsBeginImageContextWithOptions</span>(<span class="keyword">self</span>.size, <span class="literal">NO</span>, <span class="number">0.0</span>f);</span><br><span class="line">    [tintColor setFill];</span><br><span class="line">    <span class="built_in">CGRect</span> bounds = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="keyword">self</span>.size.width, <span class="keyword">self</span>.size.height);</span><br><span class="line">    <span class="built_in">UIRectFill</span>(bounds);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//Draw the tinted image in context</span></span><br><span class="line">    [<span class="keyword">self</span> drawInRect:bounds blendMode:blendMode alpha:<span class="number">1.0</span>f];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (blendMode != kCGBlendModeDestinationIn) &#123;</span><br><span class="line">        [<span class="keyword">self</span> drawInRect:bounds blendMode:kCGBlendModeDestinationIn alpha:<span class="number">1.0</span>f];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">UIImage</span> *tintedImage = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line">    <span class="built_in">UIGraphicsEndImageContext</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> tintedImage;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
-	  
-
-	  <div>
-  		<center>
-		  <div class="pagination">
-<ul class="pagination">
-	
-	
-	
-	
-	
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-			
-			
-		
-	
-		
-	
-		
-	
-	
-	
-		<li class="prev"><a href="/2016/06/16/iOS/关于CocoaPods的使用总结/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
-	
-	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
-	
-		<li class="next"><a href="/2016/05/25/iOS/iOS编程常用方法/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
-	
-</ul>
-</div>
-
-		</center>
-	  </div>
-	  
-	</div> <!-- col-md-9/col-md-12 -->
-	
-  </div><!-- row -->
-
-	</div>
-  </div>
-  <div class="container-narrow">
-	<footer> <p>
-  &copy; 2016 John Doe
-  
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
-</p> </footer>
-  </div> <!-- container-narrow -->
-  
-<a id="gotop" href="#">   
-  <span>▲</span> 
-</a>
-
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.tableofcontents.min.js"></script>
-<script src="/js/tocgenerator.min.js"></script>
-<script src="/js/main.js"></script>
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
-
-
-</body>
-</html>
