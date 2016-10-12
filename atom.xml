@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>spike</title>
   
-  <link href="/atom.xml" rel="self"/>
+  <link href="http://coderspike.github.io/atom.xml" rel="self"/>
   
   <link href="http://coderspike.github.io/"/>
   <updated>2016-10-10T11:13:29.000Z</updated>
