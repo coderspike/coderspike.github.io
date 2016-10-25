@@ -1,230 +1,333 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+<!doctype html>
+
+
+
   
-  <title>spike</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="http:/coderspike.github.io/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="http:/coderspike.github.io/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="http:/coderspike.github.io/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="http:/coderspike.github.io/atom.xml" title="spike" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http:/coderspike.github.io/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="spike">
 <meta property="og:url" content="/index.html">
 <meta property="og:site_name" content="spike">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spike">
-  
-    <link rel="alternative" href="/atom.xml" title="spike" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="http://coderspike.github.io/img/favicon.png">
-  
-  
-      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
-  
-  <link rel="stylesheet" href="http:/coderspike.github.io/css/style.css">
-  <link rel="stylesheet" href="http://coderspike.github.io/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="http://coderspike.github.io/apple-touch-icon.png">
-  
-    
-    
-  
-  
-      <link rel="stylesheet" href="http://coderspike.github.io/fancybox/jquery.fancybox.css">
-  
-  <!-- 加载特效 -->
-    <script src="http://coderspike.github.io/js/pace.js"></script>
-    <link href="http://coderspike.github.io/css/pace/pace-theme-flash.css" rel="stylesheet" />
-  <script>
-      var yiliaConfig = {
-          rootUrl: 'http://coderspike.github.io/',
-          fancybox: true,
-          animate: true,
-          isHome: true,
-          isPost: false,
-          isArchive: false,
-          isTag: false,
-          isCategory: false,
-          open_in_new: false
-      }
-  </script>
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="/"/>
+
+  <title> spike </title>
 </head>
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="http://coderspike.github.io/" class="profilepic">
-            
-            <img lazy-src="http://coderspike.github.io/img/head.jpg" class="js-avatar">
-            
-        </a>
 
-        <hgroup>
-          <h1 class="header-author"><a href="http://coderspike.github.io/" title="Hi Mate">John Doe</a></h1>
-        </hgroup>
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
 
-        
-        
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
+  
 
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="http:/coderspike.github.io/Home">博客首页</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
-                            
-                                <a class="fl github" target="_blank" href="https://github.com/coderspike" title="github">github</a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
-                    
-                    </div>
-                </section>
-                
 
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>                
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?e46a6e51942322a686b07c098b48d4e4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="http://coderspike.github.io/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">spike</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
 </div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="http://coderspike.github.io/" title="Me">John Doe</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="http://coderspike.github.io/" class="profilepic">
-                
-                    <img lazy-src="http://coderspike.github.io/img/head.jpg" class="js-avatar">
-                
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="http://coderspike.github.io/" title="Me">John Doe</a></h1>
-            </hgroup>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="http:/coderspike.github.io/Home">博客首页</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
-                    
-                        <a class="github" target="_blank" href="https://github.com/coderspike" title="github">github</a>
-                    
-                </div>
-            </nav>
-        </header>                
-    </div>
-</nav>
-      <div class="body-wrap">
-  
-    <article id="post-读书生活/如何成为一个高手" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="http:/coderspike.github.io/2016/10/25/读书生活/如何成为一个高手/" class="article-date">
-      <time datetime="2016-10-25T13:04:32.000Z" itemprop="datePublished">2016-10-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="http:/coderspike.github.io/2016/10/25/读书生活/如何成为一个高手/">如何成为一个高手</a>
-    </h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
   
 
-      </header>
+  
+    <ul id="menu" class="menu">
       
+        
+        <li class="menu-item menu-item-home">
+          <a href="http:/coderspike.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-code">
+          <a href="http:/coderspike.github.io/categories/编程" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            编程
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="http:/coderspike.github.io/categories/生活" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-book">
+          <a href="http:/coderspike.github.io/categories/读书" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
     
-    <div class="article-entry" itemprop="articleBody">
       
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="http:/coderspike.github.io/2016/10/25/读书生活/如何成为一个高手/" itemprop="url">
+                  如何成为一个高手
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-10-25T21:04:32+08:00" content="2016-10-25">
+              2016-10-25
+            </time>
+          </span>
+
           
-        <p>&gt;<br>今天下班的路上，听了一集罗辑思维，有些感受整理一下。<br>本集的主题是如何成为一个高手，讲到了如下一些点，凭记忆总结一下。</p>
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="http:/coderspike.github.io/categories/读书-生活/" itemprop="url" rel="index">
+                    <span itemprop="name">读书-生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="http:/coderspike.github.io/2016/10/25/读书生活/如何成为一个高手/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/25/读书生活/如何成为一个高手/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&gt;<br>今天下班的路上，听了一集罗辑思维，有些感受整理一下。<br>本集的主题是如何成为一个高手，讲到了如下一些点，凭记忆总结一下。</p>
 <h3 id="知识罐头"><a href="#知识罐头" class="headerlink" title="知识罐头"></a>知识罐头</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">所谓套路，所谓老司机的经验之谈，所谓某些精辟的言论总结，知识概念，都可以称之为知识罐头，用我们程序员的话来讲就是封装吧，封装成一个个可复用的模块，应对各种各样的状况，知识罐头的重要程度是很高的，一个个谚语也就是浓缩着生活智慧的罐头，孔子言不学诗，何以言。浓缩的诗句和概念的背后包含的东西是非常广阔的。理解核心，封装起来存在脑子里才实在。</div></pre></td></tr></table></figure>
 <h3 id="天才的一万小时"><a href="#天才的一万小时" class="headerlink" title="天才的一万小时"></a>天才的一万小时</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">几年前一个概念风靡起来，讲的是专家是由一万个小时的练习积累起来的，可是在如何成为一个高手这集里讲到了一个非常重要的概念“刻意练习”，简单说来就是摆脱心里舒适区，不断分解刻意练习在非舒适区的知识，技法等等。如果你踢球就一味的踢球，你是无法成为高手的，如同玩游戏一样，这个说来我感受很深，几年前我疯狂迷恋魔兽争霸这款即时战略游戏，一张地图不同人不同种族之间的不断对抗常常让我热血沸腾，玩的时间不短却也只是个高级菜鸟，揪其原因大概是一直排斥逃离舒适区的感觉，应该在越不会的地方越去抠细节刻意练习，这大概才是学习的正确打开方式，也是提高之路吧。</div></pre></td></tr></table></figure>
 <h3 id="反馈"><a href="#反馈" class="headerlink" title="反馈"></a>反馈</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">互联网教育在这个时代已经成了很常见的一种学习方式，可是效果呢，也不一定会有多么好，知识点及结构当然是一样的，重要的可能是在反馈上，知识是通过不断反馈调整刺激才能让大脑结成一张网的，这点上也感触颇深，在之前的很长时间经常在公交车上听一些课程，听完就忘掉了八成，更是没能很好的形成一个知识罐头，或笔记留存下来（你的个人笔记就是你的外挂），这样的教育就差在没反馈，没有一个师傅在你旁边告诉你哪里是不对不好的。学习也是一样，在做实际工作时通常能给你很多反馈，这样你就知道自己需要去刻意练习的地方在哪里了。这点在项目开发上感触颇深。树立目标也是一个很好的方式，在达到目标的过程中，反馈和练习将会是个很好的学习过程。</div></pre></td></tr></table></figure>
@@ -232,693 +335,1372 @@
 <hr>
 <p>ps:今年还剩一百天左右了，给自己一个小目标希望自己能完成50篇左右的博文。</p>
 
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="http:/coderspike.github.io/categories/读书-生活/">读书-生活</a>
-    </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-好文收录/逻辑常识" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="http:/coderspike.github.io/2016/09/20/好文收录/逻辑常识/" class="article-date">
-      <time datetime="2016-09-20T00:57:09.000Z" itemprop="datePublished">2016-09-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+          
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="http:/coderspike.github.io/2016/09/20/好文收录/逻辑常识/">逻辑常识</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong> </strong><Excerpt in index | 首页摘要> </p>
-          
       
     </div>
-    
-    <div class="article-info article-info-index">
+
+    <div>
       
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="http:/coderspike.github.io/categories/好文收录/">好文收录</a>
     </div>
 
-
+    <div>
       
-      
-        <p class="article-more-link">
-          <a  href="http:/coderspike.github.io/2016/09/20/好文收录/逻辑常识/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
     </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
+      
 
   
-    <article id="post-好文收录/媚俗" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="http:/coderspike.github.io/2016/09/19/好文收录/媚俗/" class="article-date">
-      <time datetime="2016-09-19T11:40:20.000Z" itemprop="datePublished">2016-09-19</time>
-</a>
-    </div>
+
   
-  <div class="article-inner">
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="http:/coderspike.github.io/2016/09/19/好文收录/媚俗/">媚俗</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong> 这就是媚俗 </strong><Excerpt in index | 首页摘要> </p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="http:/coderspike.github.io/categories/好文收录/">好文收录</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a  href="http:/coderspike.github.io/2016/09/19/好文收录/媚俗/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-好文收录/程序员的思维修炼" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="http:/coderspike.github.io/2016/09/19/好文收录/程序员的思维修炼/" class="article-date">
-      <time datetime="2016-09-19T11:35:29.000Z" itemprop="datePublished">2016-09-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="http:/coderspike.github.io/2016/09/19/好文收录/程序员的思维修炼/">程序员的思维修炼</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong> </strong><Excerpt in index | 首页摘要> </p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="http:/coderspike.github.io/categories/好文收录/">好文收录</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a  href="http:/coderspike.github.io/2016/09/19/好文收录/程序员的思维修炼/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-好文收录/八个小故事外带感悟" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="http:/coderspike.github.io/2016/09/19/好文收录/八个小故事外带感悟/" class="article-date">
-      <time datetime="2016-09-19T00:50:05.000Z" itemprop="datePublished">2016-09-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="http:/coderspike.github.io/2016/09/20/好文收录/逻辑常识/" itemprop="url">
+                  逻辑常识
+                </a>
+              
+            
+          </h1>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="http:/coderspike.github.io/2016/09/19/好文收录/八个小故事外带感悟/">八个小故事外带感悟</a>
-    </h1>
-  
 
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-09-20T08:57:09+08:00" content="2016-09-20">
+              2016-09-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="http:/coderspike.github.io/categories/好文收录/" itemprop="url" rel="index">
+                    <span itemprop="name">好文收录</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="http:/coderspike.github.io/2016/09/20/好文收录/逻辑常识/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/20/好文收录/逻辑常识/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
       </header>
-      
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong> </strong><Excerpt in index | 首页摘要><br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="http:/coderspike.github.io/categories/好文收录/">好文收录</a>
-    </div>
 
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-        <p class="article-more-link">
-          <a  href="http:/coderspike.github.io/2016/09/19/好文收录/八个小故事外带感悟/#more">阅读全文 >></a>
-        </p>
+
       
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-好文收录/理财，是这个时代最大的鸡汤" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="http:/coderspike.github.io/2016/09/18/好文收录/理财，是这个时代最大的鸡汤/" class="article-date">
-      <time datetime="2016-09-18T00:48:52.000Z" itemprop="datePublished">2016-09-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="http:/coderspike.github.io/2016/09/18/好文收录/理财，是这个时代最大的鸡汤/">理财，是这个时代最大的鸡汤</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong> 理财 </strong><Excerpt in index | 首页摘要> </p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="http:/coderspike.github.io/categories/好文收录/">好文收录</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a  href="http:/coderspike.github.io/2016/09/18/好文收录/理财，是这个时代最大的鸡汤/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-读书生活/100个愿望清单" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="http:/coderspike.github.io/2016/09/16/读书生活/100个愿望清单/" class="article-date">
-      <time datetime="2016-09-16T08:46:49.000Z" itemprop="datePublished">2016-09-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+          <p><strong> </strong><Excerpt in index | 首页摘要> </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="http:/coderspike.github.io/2016/09/20/好文收录/逻辑常识/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="http:/coderspike.github.io/2016/09/16/读书生活/100个愿望清单/">100个愿望清单</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong> </strong><Excerpt in index | 首页摘要> </p>
-          
       
     </div>
-    
-    <div class="article-info article-info-index">
+
+    <div>
       
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="http:/coderspike.github.io/categories/读书-生活/">读书-生活</a>
     </div>
 
-
+    <div>
       
-      
-        <p class="article-more-link">
-          <a  href="http:/coderspike.github.io/2016/09/16/读书生活/100个愿望清单/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
     </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
+      
 
   
-    <article id="post-读书生活/吃很重要" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="http:/coderspike.github.io/2016/08/13/读书生活/吃很重要/" class="article-date">
-      <time datetime="2016-08-13T04:26:57.000Z" itemprop="datePublished">2016-08-13</time>
-</a>
-    </div>
+
   
-  <div class="article-inner">
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="http:/coderspike.github.io/2016/08/13/读书生活/吃很重要/">吃很重要</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong> </strong><Excerpt in index | 首页摘要> </p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="http:/coderspike.github.io/categories/读书-生活/">读书-生活</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a  href="http:/coderspike.github.io/2016/08/13/读书生活/吃很重要/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-读书生活/断舍离" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="http:/coderspike.github.io/2016/08/12/读书生活/断舍离/" class="article-date">
-      <time datetime="2016-08-12T01:08:01.000Z" itemprop="datePublished">2016-08-12</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="http:/coderspike.github.io/2016/08/12/读书生活/断舍离/">断舍离</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong> </strong><Excerpt in index | 首页摘要> </p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="http:/coderspike.github.io/categories/读书-生活/">读书-生活</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a  href="http:/coderspike.github.io/2016/08/12/读书生活/断舍离/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-读书生活/写给大家看的设计书" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="http:/coderspike.github.io/2016/08/11/读书生活/写给大家看的设计书/" class="article-date">
-      <time datetime="2016-08-11T02:53:00.000Z" itemprop="datePublished">2016-08-11</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="http:/coderspike.github.io/2016/09/19/好文收录/媚俗/" itemprop="url">
+                  媚俗
+                </a>
+              
+            
+          </h1>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="http:/coderspike.github.io/2016/08/11/读书生活/写给大家看的设计书/">写给大家看的设计书</a>
-    </h1>
-  
 
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-09-19T19:40:20+08:00" content="2016-09-19">
+              2016-09-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="http:/coderspike.github.io/categories/好文收录/" itemprop="url" rel="index">
+                    <span itemprop="name">好文收录</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="http:/coderspike.github.io/2016/09/19/好文收录/媚俗/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/19/好文收录/媚俗/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
       </header>
-      
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
+      
+
+      
+        
+          <p><strong> 这就是媚俗 </strong><Excerpt in index | 首页摘要> </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="http:/coderspike.github.io/2016/09/19/好文收录/媚俗/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="http:/coderspike.github.io/2016/09/19/好文收录/程序员的思维修炼/" itemprop="url">
+                  程序员的思维修炼
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-09-19T19:35:29+08:00" content="2016-09-19">
+              2016-09-19
+            </time>
+          </span>
+
           
-              <p><strong> </strong><Excerpt in index | 首页摘要> </p>
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="http:/coderspike.github.io/categories/好文收录/" itemprop="url" rel="index">
+                    <span itemprop="name">好文收录</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
-      
-    </div>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="http:/coderspike.github.io/2016/09/19/好文收录/程序员的思维修炼/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/19/好文收录/程序员的思维修炼/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
     
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="http:/coderspike.github.io/categories/读书-生活/">读书-生活</a>
-    </div>
 
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-        <p class="article-more-link">
-          <a  href="http:/coderspike.github.io/2016/08/11/读书生活/写给大家看的设计书/#more">阅读全文 >></a>
-        </p>
+
       
-      <div class="clearfix"></div>
+        
+          <p><strong> </strong><Excerpt in index | 首页摘要> </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="http:/coderspike.github.io/2016/09/19/好文收录/程序员的思维修炼/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
     </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
+      
 
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="http:/coderspike.github.io/page/2/">2</a><a class="extend next" rel="next" href="http:/coderspike.github.io/page/2/">Next &raquo;</a>
-    </nav>
+
   
-</div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2016 John Doe
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
-            </div>
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="http:/coderspike.github.io/2016/09/19/好文收录/八个小故事外带感悟/" itemprop="url">
+                  八个小故事外带感悟
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-09-19T08:50:05+08:00" content="2016-09-19">
+              2016-09-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="http:/coderspike.github.io/categories/好文收录/" itemprop="url" rel="index">
+                    <span itemprop="name">好文收录</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="http:/coderspike.github.io/2016/09/19/好文收录/八个小故事外带感悟/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/19/好文收录/八个小故事外带感悟/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong> </strong><Excerpt in index | 首页摘要><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="http:/coderspike.github.io/2016/09/19/好文收录/八个小故事外带感悟/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="http:/coderspike.github.io/2016/09/18/好文收录/理财，是这个时代最大的鸡汤/" itemprop="url">
+                  理财，是这个时代最大的鸡汤
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-09-18T08:48:52+08:00" content="2016-09-18">
+              2016-09-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="http:/coderspike.github.io/categories/好文收录/" itemprop="url" rel="index">
+                    <span itemprop="name">好文收录</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="http:/coderspike.github.io/2016/09/18/好文收录/理财，是这个时代最大的鸡汤/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/18/好文收录/理财，是这个时代最大的鸡汤/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong> 理财 </strong><Excerpt in index | 首页摘要> </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="http:/coderspike.github.io/2016/09/18/好文收录/理财，是这个时代最大的鸡汤/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="http:/coderspike.github.io/2016/09/16/读书生活/100个愿望清单/" itemprop="url">
+                  100个愿望清单
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-09-16T16:46:49+08:00" content="2016-09-16">
+              2016-09-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="http:/coderspike.github.io/categories/读书-生活/" itemprop="url" rel="index">
+                    <span itemprop="name">读书-生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="http:/coderspike.github.io/2016/09/16/读书生活/100个愿望清单/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/16/读书生活/100个愿望清单/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong> </strong><Excerpt in index | 首页摘要> </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="http:/coderspike.github.io/2016/09/16/读书生活/100个愿望清单/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="http:/coderspike.github.io/2016/08/13/读书生活/吃很重要/" itemprop="url">
+                  吃很重要
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-08-13T12:26:57+08:00" content="2016-08-13">
+              2016-08-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="http:/coderspike.github.io/categories/读书-生活/" itemprop="url" rel="index">
+                    <span itemprop="name">读书-生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="http:/coderspike.github.io/2016/08/13/读书生活/吃很重要/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/13/读书生活/吃很重要/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong> </strong><Excerpt in index | 首页摘要> </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="http:/coderspike.github.io/2016/08/13/读书生活/吃很重要/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="http:/coderspike.github.io/2016/08/12/读书生活/断舍离/" itemprop="url">
+                  断舍离
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-08-12T09:08:01+08:00" content="2016-08-12">
+              2016-08-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="http:/coderspike.github.io/categories/读书-生活/" itemprop="url" rel="index">
+                    <span itemprop="name">读书-生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="http:/coderspike.github.io/2016/08/12/读书生活/断舍离/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/12/读书生活/断舍离/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong> </strong><Excerpt in index | 首页摘要> </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="http:/coderspike.github.io/2016/08/12/读书生活/断舍离/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="http:/coderspike.github.io/2016/08/11/读书生活/写给大家看的设计书/" itemprop="url">
+                  写给大家看的设计书
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-08-11T10:53:00+08:00" content="2016-08-11">
+              2016-08-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="http:/coderspike.github.io/categories/读书-生活/" itemprop="url" rel="index">
+                    <span itemprop="name">读书-生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="http:/coderspike.github.io/2016/08/11/读书生活/写给大家看的设计书/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/11/读书生活/写给大家看的设计书/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong> </strong><Excerpt in index | 首页摘要> </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="http:/coderspike.github.io/2016/08/11/读书生活/写给大家看的设计书/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="http:/coderspike.github.io/page/2/">2</a><a class="extend next" rel="next" href="http:/coderspike.github.io/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
         </div>
         
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >到访数: 
-                            <span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>, </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-</footer>
-
-    </div>
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script src="http:/coderspike.github.io/js/main.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var backgroundnum = 24;
-            var backgroundimg = "url(http://coderspike.github.io/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-        })
-    </script>
-
-
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
-</div>
-<script>
-    $(document).ready(function() {
-        if ($("#comments").length < 1) {
-            $("#scroll > a:nth-child(2)").hide();
-        };
-    })
-</script>
-
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-  <script language="javascript">
-    $(function() {
-        $("a[title]").each(function() {
-            var a = $(this);
-            var title = a.attr('title');
-            if (title == undefined || title == "") return;
-            a.data('title', title).removeAttr('title').hover(
-
-            function() {
-                var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
-                    left: offset.left + a.outerWidth()/2 + 1
-                }).fadeIn(function() {
-                    var pop = $(this);
-                    setTimeout(function() {
-                        pop.remove();
-                    }, pop.text().length * 800);
-                });
-            }, function() {
-                $("#anchortitlecontainer").remove();
-            });
-        });
-    });
-</script>
-
-
   </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http:/coderspike.github.io/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="http:/coderspike.github.io/">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分類</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="http:/coderspike.github.io/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/coderspike" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="http:/coderspike.github.io/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="http:/coderspike.github.io/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="http:/coderspike.github.io/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="http:/coderspike.github.io/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="http:/coderspike.github.io/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="http:/coderspike.github.io/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="http:/coderspike.github.io/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="http:/coderspike.github.io/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="http:/coderspike.github.io/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="http:/coderspike.github.io/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="http:/coderspike.github.io/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"coderspike"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
 </body>
 </html>
