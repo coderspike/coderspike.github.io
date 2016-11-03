@@ -5,7 +5,7 @@
   <link href="http://coderspike.github.io/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2016-10-26T15:37:57.000Z</updated>
+  <updated>2016-11-03T02:58:34.000Z</updated>
   <id>/</id>
   
   <author>
@@ -16,11 +16,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>项目后的小小感悟</title>
+    <link href="/2016/11/03/%E8%AF%BB%E4%B9%A6%E7%94%9F%E6%B4%BB/%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E5%B0%8F%E5%B0%8F%E6%84%9F%E6%82%9F/"/>
+    <id>/2016/11/03/读书生活/项目后的小小感悟/</id>
+    <published>2016-11-03T02:56:46.000Z</published>
+    <updated>2016-11-03T02:58:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>
+<h3 id="整洁有序的目录结构及清晰的代码调用逻辑"><a href="#整洁有序的目录结构及清晰的代码调用逻辑" class="headerlink" title="整洁有序的目录结构及清晰的代码调用逻辑"></a>整洁有序的目录结构及清晰的代码调用逻辑</h3><p>时间很紧，熬夜加班赶进度，牺牲了质量，表面看来缩短了开发时间，实则不然，后期的维护修改，需求变更会直接让人想死，虽然不建议掉到强迫症的陷阱里，但是如同杂乱的电线，如果能在电线头标上标签并进行大致分组，对后期的维护修改意义都是巨大的。</p>
+<h3 id="找好轮子"><a href="#找好轮子" class="headerlink" title="找好轮子"></a>找好轮子</h3><p>好轮子让你跑的欢畅，破轮子半路漏气，如需要，在找第三方库的时候，找侵入小功能全可定制化程度高的。自己造轮子也行,注意风险即可。</p>
+<h3 id="28原则"><a href="#28原则" class="headerlink" title="28原则"></a>28原则</h3><p>28原则在生活各处都有体现，在软件领域里需求分析制定的时间要占到80%，个人觉得在编码事也应该遵从同样的原则，思考的时间应该占到8成。</p>
+<h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h3><p>笔记是一个人的外挂，有自己的东西才叫笔记，否则无意义。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;整洁有序的目录结构及清晰的代码调用逻辑&quot;&gt;&lt;a href=&quot;#整洁有序的目录结构及清晰的代码调用逻辑&quot; class=&quot;headerlink&quot; title=&quot;整洁有序的目录结构及清晰的代码调用逻辑&quot;&gt;&lt;/a&gt;整洁有序的目录结构及清
+    
+    </summary>
+    
+      <category term="读书生活" scheme="/categories/%E8%AF%BB%E4%B9%A6%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>生日会感悟</title>
     <link href="/2016/10/26/%E8%AF%BB%E4%B9%A6%E7%94%9F%E6%B4%BB/%E7%94%9F%E6%97%A5%E4%BC%9A%E6%84%9F%E6%82%9F/"/>
     <id>/2016/10/26/读书生活/生日会感悟/</id>
     <published>2016-10-26T14:33:05.000Z</published>
-    <updated>2016-10-26T15:37:57.000Z</updated>
+    <updated>2016-10-27T00:20:17.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>一些小感悟</p>
