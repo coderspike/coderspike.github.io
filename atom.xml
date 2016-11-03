@@ -5,7 +5,7 @@
   <link href="http://coderspike.github.io/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2016-11-03T02:58:34.000Z</updated>
+  <updated>2016-11-03T06:14:21.000Z</updated>
   <id>/</id>
   
   <author>
@@ -16,13 +16,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>About me</title>
+    <link href="/2016/11/03/%E8%AF%BB%E4%B9%A6%E7%94%9F%E6%B4%BB/About-me/"/>
+    <id>/2016/11/03/读书生活/About-me/</id>
+    <published>2016-11-03T06:06:01.000Z</published>
+    <updated>2016-11-03T06:14:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>如何描述你自己</p>
+</blockquote>
+<a id="more"></a>
+<p>当想到自己时，你会想到什么，我想到了这些词，这些词有些存在于现在，有些存在于我对未来的期许。</p>
+<p><a href="https://coderspike.github.io/NoteBook/" target="_blank" rel="external">AboutMe</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;如何描述你自己&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="读书-生活" scheme="/categories/%E8%AF%BB%E4%B9%A6-%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>项目后的小小感悟</title>
     <link href="/2016/11/03/%E8%AF%BB%E4%B9%A6%E7%94%9F%E6%B4%BB/%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E5%B0%8F%E5%B0%8F%E6%84%9F%E6%82%9F/"/>
     <id>/2016/11/03/读书生活/项目后的小小感悟/</id>
     <published>2016-11-03T02:56:46.000Z</published>
-    <updated>2016-11-03T02:58:34.000Z</updated>
+    <updated>2016-11-03T03:41:45.000Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a>
+    <content type="html"><![CDATA[<blockquote>
+<p>小小感悟。</p>
+</blockquote>
+<a id="more"></a>
 <h3 id="整洁有序的目录结构及清晰的代码调用逻辑"><a href="#整洁有序的目录结构及清晰的代码调用逻辑" class="headerlink" title="整洁有序的目录结构及清晰的代码调用逻辑"></a>整洁有序的目录结构及清晰的代码调用逻辑</h3><p>时间很紧，熬夜加班赶进度，牺牲了质量，表面看来缩短了开发时间，实则不然，后期的维护修改，需求变更会直接让人想死，虽然不建议掉到强迫症的陷阱里，但是如同杂乱的电线，如果能在电线头标上标签并进行大致分组，对后期的维护修改意义都是巨大的。</p>
 <h3 id="找好轮子"><a href="#找好轮子" class="headerlink" title="找好轮子"></a>找好轮子</h3><p>好轮子让你跑的欢畅，破轮子半路漏气，如需要，在找第三方库的时候，找侵入小功能全可定制化程度高的。自己造轮子也行,注意风险即可。</p>
 <h3 id="28原则"><a href="#28原则" class="headerlink" title="28原则"></a>28原则</h3><p>28原则在生活各处都有体现，在软件领域里需求分析制定的时间要占到80%，个人觉得在编码事也应该遵从同样的原则，思考的时间应该占到8成。</p>
@@ -31,8 +62,9 @@
     
     <summary type="html">
     
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;整洁有序的目录结构及清晰的代码调用逻辑&quot;&gt;&lt;a href=&quot;#整洁有序的目录结构及清晰的代码调用逻辑&quot; class=&quot;headerlink&quot; title=&quot;整洁有序的目录结构及清晰的代码调用逻辑&quot;&gt;&lt;/a&gt;整洁有序的目录结构及清
+      &lt;blockquote&gt;
+&lt;p&gt;小小感悟。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -776,6 +808,36 @@
   </entry>
   
   <entry>
+    <title>骑行</title>
+    <link href="/2016/06/23/%E8%AF%BB%E4%B9%A6%E7%94%9F%E6%B4%BB/%E9%AA%91%E8%A1%8C/"/>
+    <id>/2016/06/23/读书生活/骑行/</id>
+    <published>2016-06-23T02:00:45.000Z</published>
+    <updated>2016-10-12T03:22:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> </strong><excerpt in="" index="" |="" 首页摘要=""> </excerpt></p>
+<a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<p>骑车出去随手拍的一些照片</p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/bc254b75jw1f559ehq6z3j21kw23uqut.jpg" alt=""></p>
+<p><img src="http://ww4.sinaimg.cn/mw1024/bc254b75jw1f559em7dhmj21kw23u7wh.jpg" alt=""></p>
+<p><img src="http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559end4p3j20qo0zkaph.jpg" alt=""></p>
+<p><img src="http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559ev3xehj21kw23u4qp.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/mw1024/bc254b75jw1f559evsa81j20qo0zkai1.jpg" alt=""></p>
+</the>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; &lt;/strong&gt;&lt;Excerpt in index | 首页摘要&gt; &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="读书-生活" scheme="/categories/%E8%AF%BB%E4%B9%A6-%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>一些有道理的话</title>
     <link href="/2016/06/23/%E8%AF%BB%E4%B9%A6%E7%94%9F%E6%B4%BB/%E6%84%9F%E6%82%9F/"/>
     <id>/2016/06/23/读书生活/感悟/</id>
@@ -866,36 +928,6 @@
   </entry>
   
   <entry>
-    <title>骑行</title>
-    <link href="/2016/06/23/%E8%AF%BB%E4%B9%A6%E7%94%9F%E6%B4%BB/%E9%AA%91%E8%A1%8C/"/>
-    <id>/2016/06/23/读书生活/骑行/</id>
-    <published>2016-06-23T02:00:45.000Z</published>
-    <updated>2016-10-12T03:22:13.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong> </strong><excerpt in="" index="" |="" 首页摘要=""> </excerpt></p>
-<a id="more"></a>
-<the rest="" of="" contents="" |="" 余下全文="">
-
-<p>骑车出去随手拍的一些照片</p>
-<p><img src="http://ww3.sinaimg.cn/mw1024/bc254b75jw1f559ehq6z3j21kw23uqut.jpg" alt=""></p>
-<p><img src="http://ww4.sinaimg.cn/mw1024/bc254b75jw1f559em7dhmj21kw23u7wh.jpg" alt=""></p>
-<p><img src="http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559end4p3j20qo0zkaph.jpg" alt=""></p>
-<p><img src="http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559ev3xehj21kw23u4qp.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/mw1024/bc254b75jw1f559evsa81j20qo0zkai1.jpg" alt=""></p>
-</the>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt; &lt;/strong&gt;&lt;Excerpt in index | 首页摘要&gt; &lt;/p&gt;
-    
-    </summary>
-    
-      <category term="读书-生活" scheme="/categories/%E8%AF%BB%E4%B9%A6-%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Mac系统下hexo3.x&amp;github搭建博客</title>
     <link href="/2016/05/24/%E5%85%B6%E4%BB%96/Mac%E4%B8%8B%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"/>
     <id>/2016/05/24/其他/Mac下搭建hexo博客/</id>
@@ -930,48 +962,6 @@
 </ul>
 <hr>
 <h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><p>Segmentation fault: 11<br>如有如上异常，cd到项目目录下重新执行npm rebuild。再次执行命令，可能还会报错，但不影响使用。如果还不能使用则再次执行npm install hexo-deployer-git –save，重新cd到项目目录下执行上边的部署命令即可(也可尝试多次执行部署命令)。</p>
-</the>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt; &lt;/strong&gt;&lt;Excerpt in index | 首页摘要&gt; &lt;/p&gt;
-    
-    </summary>
-    
-      <category term="读书-生活" scheme="/categories/%E8%AF%BB%E4%B9%A6-%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>windows下用hexo3.x&amp;GitHub创建个人博客</title>
-    <link href="/2016/05/19/%E5%85%B6%E4%BB%96/windows%E4%B8%8Bhexo-github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>/2016/05/19/其他/windows下hexo-github搭建博客/</id>
-    <published>2016-05-19T10:10:50.000Z</published>
-    <updated>2016-10-12T03:21:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong> </strong><excerpt in="" index="" |="" 首页摘要=""> </excerpt></p>
-<a id="more"></a>
-<the rest="" of="" contents="" |="" 余下全文="">
-
-<blockquote>
-<p>昨天用hexo&amp;GitHub创建了个人博客，网上很多教程是针对的hexo2.x的，有些小坑，在这记录一下，供需要的人参考。</p>
-</blockquote>
-<!-- more -->
-<hr>
-<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ul>
-<li>安装node.js<a href="http://jingyan.baidu.com/article/b0b63dbfca599a4a483070a5.html" target="_blank" rel="external">这里</a>  </li>
-<li>创建git<a href="http://jingyan.baidu.com/article/455a9950abe0ada167277864.html" target="_blank" rel="external">这里</a></li>
-<li>Git Bash<a href="http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html" target="_blank" rel="external">这里</a> (用windows的命令行执行hexo deploy时可能出现Error: spawn ENOENT)</li>
-<li>安装hexo (安装好了msysGit和Node.js软件后，打开Git Bash，执行以下命令开始安装：npm install -g hexo)</li>
-</ul>
-<hr>
-<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><p>1.登录git创建个人项目，项目名：username.github.io（这个是固定的）<br>2.我们可以新建一个目录，然后在cd到该目录下执行以下命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">hexo init //初始化</div><div class="line">hexo g    //生成静态页</div><div class="line">hexo s    //启动本地服务 在浏览器中打开 http://localhost:4000/可访问</div></pre></td></tr></table></figure></p>
-<p>3.配置.yml文件<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">在当前项目目录下找到_config.yml在最底部编辑如下内容</div><div class="line"></div><div class="line"># Deployment</div><div class="line">## Docs: http://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: https://github.com/username/username.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
-<p>4.部署到GitHub<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">继续执行如下命令</div><div class="line">npm install hexo-deployer-git --save</div><div class="line">hexo g</div><div class="line">hexo d</div><div class="line">如果无异常，则部署成功，等待几分钟，访问username.github.io就可以访问到主页</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>别的使用心得，后续介绍;-)</p>
-</blockquote>
 </the>]]></content>
     
     <summary type="html">
