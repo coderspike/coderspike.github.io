@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>lip</title>
+  <title>极简主义</title>
   
   <link href="http://coderspike.github.io/atom.xml" rel="self"/>
   
@@ -9,7 +9,7 @@
   <id>/</id>
   
   <author>
-    <name>lip</name>
+    <name>极简主义</name>
     
   </author>
   
