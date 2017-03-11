@@ -10,42 +10,18 @@
     <meta name="author" content="Think,Simplify,Accumulate">
   
   
-    <meta name="description" content="最近搞了一下drools,没有太深入的使用。记录一下。
-String rule =”package Test “
-+ &amp;quot;import Test.Message;&amp;quot;
-+ &amp;quot;rule &amp;apos;rule1&amp;apos; &amp;quot;
-+ &amp;quot;salience 100 &amp;quot;
-+ &amp;quot;lock-on-active true&amp;quot;
-+ &amp;quot;">
+    <meta name="description" content="drools，动态更改规则。">
   
-  <meta name="description" content="最近搞了一下drools,没有太深入的使用。记录一下。
-String rule =”package Test “
-+ &amp;quot;import Test.Message;&amp;quot;
-+ &amp;quot;rule &amp;apos;rule1&amp;apos; &amp;quot;
-+ &amp;quot;salience 100 &amp;quot;
-+ &amp;quot;lock-on-active true&amp;quot;
-+ &amp;quot;">
+  <meta name="description" content="drools，动态更改规则。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="drools的使用">
 <meta property="og:url" content="/2017/03/11/drools的使用/index.html">
 <meta property="og:site_name" content="I Will">
-<meta property="og:description" content="最近搞了一下drools,没有太深入的使用。记录一下。
-String rule =”package Test “
-+ &amp;quot;import Test.Message;&amp;quot;
-+ &amp;quot;rule &amp;apos;rule1&amp;apos; &amp;quot;
-+ &amp;quot;salience 100 &amp;quot;
-+ &amp;quot;lock-on-active true&amp;quot;
-+ &amp;quot;">
-<meta property="og:updated_time" content="2017-03-11T07:04:42.000Z">
+<meta property="og:description" content="drools，动态更改规则。">
+<meta property="og:updated_time" content="2017-03-11T07:06:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="drools的使用">
-<meta name="twitter:description" content="最近搞了一下drools,没有太深入的使用。记录一下。
-String rule =”package Test “
-+ &amp;quot;import Test.Message;&amp;quot;
-+ &amp;quot;rule &amp;apos;rule1&amp;apos; &amp;quot;
-+ &amp;quot;salience 100 &amp;quot;
-+ &amp;quot;lock-on-active true&amp;quot;
-+ &amp;quot;">
+<meta name="twitter:description" content="drools，动态更改规则。">
   
     <link rel="alternate" href="/atom.xml" title="I Will" type="application/atom+xml">
   
@@ -98,22 +74,9 @@ String rule =”package Test “
   
   <div class="entry">
     
-      <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">最近搞了一下drools,没有太深入的使用。记录一下。</div></pre></td></tr></table></figure>
-<p>String rule =”package Test “</p>
-<pre><code>+ &quot;import Test.Message;&quot;
-+ &quot;rule &apos;rule1&apos; &quot;
-+ &quot;salience 100 &quot;
-+ &quot;lock-on-active true&quot;
-+ &quot; when &quot;//when 之前留一个空格
-+ &quot;m : Message( time matches &apos;[0-9]{4}-[0-9]{2}-[0-9]{2}&apos;);&quot;
-+ &quot;then &quot;
-+ &quot;m.setTime(&apos;20120203&apos;);&quot;
-+ &quot;m.setStatus(2);&quot;
-</code></pre><p>//                + “modify ( m ){ setTime(‘20120203’)};”<br>//                + “modify ( m ){ setStatus(2)};”</p>
-<pre><code>+ &quot;System.out.println(&apos;---rule1&apos;); &quot;
-+ &quot;update(m)&quot;
-+ &quot;end &quot;
-</code></pre>
+      <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">drools，动态更改规则。</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">String rule =&quot;package Test &quot;</div><div class="line">                + &quot;import Test.Message;&quot;</div><div class="line">                + &quot;rule &apos;rule1&apos; &quot;</div><div class="line">                + &quot;salience 100 &quot;</div><div class="line">                + &quot;lock-on-active true&quot;</div><div class="line">                + &quot; when &quot;//when 之前留一个空格</div><div class="line">                + &quot;m : Message( time matches &apos;[0-9]&#123;4&#125;-[0-9]&#123;2&#125;-[0-9]&#123;2&#125;&apos;);&quot;</div><div class="line">                + &quot;then &quot;</div><div class="line">                + &quot;m.setTime(&apos;20120203&apos;);&quot;</div><div class="line">                + &quot;m.setStatus(2);&quot;</div><div class="line">//                + &quot;modify ( m )&#123; setTime(&apos;20120203&apos;)&#125;;&quot;</div><div class="line">//                + &quot;modify ( m )&#123; setStatus(2)&#125;;&quot;</div><div class="line">                + &quot;System.out.println(&apos;---rule1&apos;); &quot;</div><div class="line">                + &quot;update(m)&quot;</div><div class="line">                + &quot;end &quot;</div></pre></td></tr></table></figure>
     
   </div>
   <footer>
