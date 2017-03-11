@@ -5,7 +5,7 @@
   <link href="http://coderspike.github.io/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2017-03-11T07:10:46.000Z</updated>
+  <updated>2017-03-11T07:15:01.000Z</updated>
   <id>/</id>
   
   <author>
@@ -20,27 +20,11 @@
     <link href="/2017/03/11/drools%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>/2017/03/11/drools的使用/</id>
     <published>2017-03-11T05:52:55.000Z</published>
-    <updated>2017-03-11T07:10:46.000Z</updated>
+    <updated>2017-03-11T07:15:01.000Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">drools，动态更改规则。</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>String rule =”package Test “</p>
-<ul>
-<li>“import Test.Message;”</li>
-<li>“rule ‘rule1’ “</li>
-<li>“salience 100 “</li>
-<li>“lock-on-active true”</li>
-<li>“ when “//when 之前留一个空格</li>
-<li>“m : Message( time matches ‘[0-9]{4}-[0-9]{2}-[0-9]{2}’);”</li>
-<li>“then “</li>
-<li>“m.setTime(‘20120203’);”</li>
-<li>“m.setStatus(2);”</li>
-<li>“modify ( m ){ setTime(‘20120203’)};”</li>
-<li>“modify ( m ){ setStatus(2)};”</li>
-<li>“System.out.println(‘—rule1’); “</li>
-<li>“update(m)”//modify和update方法不同效果相同</li>
-<li>“end “</li>
-</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">package Test </div><div class="line">import Test.Message;</div><div class="line">rule &quot;rule1&quot; </div><div class="line">salience 100 </div><div class="line">lock-on-active true&quot;</div><div class="line">when</div><div class="line">m : Message( time matches &apos;[0-9]&#123;4&#125;-[0-9]&#123;2&#125;-[0-9]&#123;2&#125;&apos;);</div><div class="line">then </div><div class="line">m.setTime(&apos;20120203&apos;);</div><div class="line">m.setStatus(2);</div><div class="line">modify ( m )&#123; setTime(&apos;20120203&apos;)&#125;;</div><div class="line">modify ( m )&#123; setStatus(2)&#125;;</div><div class="line">System.out.println(&apos;---rule1&apos;); </div><div class="line">update(m)//modify和update方法不同效果相同</div><div class="line">end ;</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
