@@ -137,33 +137,34 @@
     <link href="/2017/03/15/%E7%88%B1%E7%94%B5%E5%BD%B1/"/>
     <id>/2017/03/15/爱电影/</id>
     <published>2017-03-15T13:50:36.000Z</published>
-    <updated>2017-03-20T13:34:40.000Z</updated>
+    <updated>2017-03-20T13:44:40.000Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">自己的观影清单，只列出自己认为好的电影。</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <script>
-alert(1)
+var a =document.getElementById(ourMovie).getElementsByTagName('div').length;
+alert(a)
 </script>
 
 
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">和老婆一起看的好电影 --- 9</div></pre></td></tr></table></figure>
-<div style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2397337958.jpg" style="display: block;"><br><div style="text-align:center"><br><span>血战钢锯岭</span><br></div><br></div>
+<div id="ourMovie" style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2397337958.jpg" style="display: block;"><br><div style="text-align:center"><br><span>血战钢锯岭</span><br></div><br></div>
 
-<div style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2373887821.jpg" style="display: block;"><br><div style="text-align:center"><br><span>喊山</span><br></div><br></div>
+<div id="ourMovie" style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2373887821.jpg" style="display: block;"><br><div style="text-align:center"><br><span>喊山</span><br></div><br></div>
 
-<div style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2316504999.jpg" style="display: block;"><br><div style="text-align:center"><br><span>我不是王毛</span><br></div><br></div>
+<div id="ourMovie" style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2316504999.jpg" style="display: block;"><br><div style="text-align:center"><br><span>我不是王毛</span><br></div><br></div>
 
-<div style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2393044761.jpg" style="display: block;"><br><div style="text-align:center"><br><span>驴得水</span><br></div><br></div>
+<div id="ourMovie" style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2393044761.jpg" style="display: block;"><br><div style="text-align:center"><br><span>驴得水</span><br></div><br></div>
 
-<div style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img5.doubanio.com/view/movie_poster_cover/lpst/public/p2215164906.jpg" style="display: block;"><br><div style="text-align:center"><br><span>智取威虎山</span><br></div><br></div>
+<div id="ourMovie" style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img5.doubanio.com/view/movie_poster_cover/lpst/public/p2215164906.jpg" style="display: block;"><br><div style="text-align:center"><br><span>智取威虎山</span><br></div><br></div>
 
-<div style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p1480998631.jpg" style="display: block;"><br><div style="text-align:center"><br><span>杀生</span><br></div><br></div>
+<div id="ourMovie" style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p1480998631.jpg" style="display: block;"><br><div style="text-align:center"><br><span>杀生</span><br></div><br></div>
 
-<div style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img5.doubanio.com/view/movie_poster_cover/lpst/public/p2231932406.jpg" style="display: block;"><br><div style="text-align:center"><br><span>王牌特工</span><br></div><br></div>
+<div id="ourMovie" style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img5.doubanio.com/view/movie_poster_cover/lpst/public/p2231932406.jpg" style="display: block;"><br><div style="text-align:center"><br><span>王牌特工</span><br></div><br></div>
 
-<div style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2379032162.jpg" style="display: block;"><br><div style="text-align:center"><br><span>谍影重重5</span><br></div><br></div>
+<div id="ourMovie" style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2379032162.jpg" style="display: block;"><br><div style="text-align:center"><br><span>谍影重重5</span><br></div><br></div>
 
-<div style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2373594741.jpg" style="display: block;"><br><div style="text-align:center"><br><span>月光男孩</span><br></div><br></div><br><hr><br><br><div style="background:#fefefe;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p1597183981.jpg" style="display: block;"><br><div style="text-align:center"><br><span>谍影重重1</span><br></div><br></div>
+<div id="ourMovie" style="background:#007fff;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2373594741.jpg" style="display: block;"><br><div style="text-align:center"><br><span>月光男孩</span><br></div><br></div><br><hr><br><br><div style="background:#fefefe;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p1597183981.jpg" style="display: block;"><br><div style="text-align:center"><br><span>谍影重重1</span><br></div><br></div>
 
 <div style="background:#fefefe;box-shadow:0 1px 2px rgba(34,25,25,0.4);margin:0 0.05% 3%;padding:3%;padding-bottom:10px;display:inline-block;max-width:24%"><br><img class="hexo-img-stream-lazy" src="https://img5.doubanio.com/view/movie_poster_cover/lpst/public/p667644866.jpg" style="display: block;"><br><div style="text-align:center"><br><span>谍影重重2</span><br></div><br></div>
 
@@ -1013,36 +1014,6 @@ alert(1)
   </entry>
   
   <entry>
-    <title>骑行</title>
-    <link href="/2016/06/23/%E9%AA%91%E8%A1%8C/"/>
-    <id>/2016/06/23/骑行/</id>
-    <published>2016-06-23T02:00:45.000Z</published>
-    <updated>2017-03-19T08:58:13.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong> </strong><excerpt in="" index="" |="" 首页摘要=""> </excerpt></p>
-<a id="more"></a>
-<the rest="" of="" contents="" |="" 余下全文="">
-
-<p>骑车出去随手拍的一些照片</p>
-<p><img src="http://ww3.sinaimg.cn/mw1024/bc254b75jw1f559ehq6z3j21kw23uqut.jpg" alt=""></p>
-<p><img src="http://ww4.sinaimg.cn/mw1024/bc254b75jw1f559em7dhmj21kw23u7wh.jpg" alt=""></p>
-<p><img src="http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559end4p3j20qo0zkaph.jpg" alt=""></p>
-<p><img src="http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559ev3xehj21kw23u4qp.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/mw1024/bc254b75jw1f559evsa81j20qo0zkai1.jpg" alt=""></p>
-</the>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt; &lt;/strong&gt;&lt;Excerpt in index | 首页摘要&gt; &lt;/p&gt;
-    
-    </summary>
-    
-      <category term="生活" scheme="/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>一些有道理的话</title>
     <link href="/2016/06/23/%E6%84%9F%E6%82%9F/"/>
     <id>/2016/06/23/感悟/</id>
@@ -1128,6 +1099,36 @@ alert(1)
     </summary>
     
       <category term="思考" scheme="/categories/%E6%80%9D%E8%80%83/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>骑行</title>
+    <link href="/2016/06/23/%E9%AA%91%E8%A1%8C/"/>
+    <id>/2016/06/23/骑行/</id>
+    <published>2016-06-23T02:00:45.000Z</published>
+    <updated>2017-03-19T08:58:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> </strong><excerpt in="" index="" |="" 首页摘要=""> </excerpt></p>
+<a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<p>骑车出去随手拍的一些照片</p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/bc254b75jw1f559ehq6z3j21kw23uqut.jpg" alt=""></p>
+<p><img src="http://ww4.sinaimg.cn/mw1024/bc254b75jw1f559em7dhmj21kw23u7wh.jpg" alt=""></p>
+<p><img src="http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559end4p3j20qo0zkaph.jpg" alt=""></p>
+<p><img src="http://ww2.sinaimg.cn/mw1024/bc254b75jw1f559ev3xehj21kw23u4qp.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/mw1024/bc254b75jw1f559evsa81j20qo0zkai1.jpg" alt=""></p>
+</the>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; &lt;/strong&gt;&lt;Excerpt in index | 首页摘要&gt; &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="生活" scheme="/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
   </entry>
