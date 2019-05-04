@@ -15,17 +15,17 @@
     <meta name="keywords" content="Java,Life">
   
 
-  <meta name="description" content="The article has been encrypted, please enter your password to view.">
+  <meta name="description" content="Welcome to my blog, enter password to read.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2019书单">
 <meta property="og:url" content="http://coderspike.gihub.io/2019/05/04/hello-world/index.html">
 <meta property="og:site_name" content="Gustavo">
-<meta property="og:description" content="The article has been encrypted, please enter your password to view.">
+<meta property="og:description" content="Welcome to my blog, enter password to read.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-04T08:37:04.957Z">
+<meta property="og:updated_time" content="2019-05-04T08:48:27.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019书单">
-<meta name="twitter:description" content="The article has been encrypted, please enter your password to view.">
+<meta name="twitter:description" content="Welcome to my blog, enter password to read.">
 
   
 
@@ -89,7 +89,16 @@ ga('send', 'pageview');
     <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
   
-
+<script>
+    (function(){
+        if('{{ page.password }}'){
+            if (prompt('请输入文章密码') !== '{{ page.password }}'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
 </head>
 </html>
 <body>
@@ -102,11 +111,6 @@ ga('send', 'pageview');
 
 </div>
 
-
-  <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#encrypt-message"><span class="toc-text">Please enter the password to read the blog.</span></a></li></ol>
-  </div>
 
 
 
@@ -146,7 +150,20 @@ ga('send', 'pageview');
 
   <div class="article-content">
     
-      <script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX19fEZV0r1iw9ECjeA1iP4wsRy2hxbWuWzgFjSHGH6C75GNKQCX7Ar/Jn1L1wDy6VvVPvn/TjACr1wyiiutDpKmtD+IAxe/+saVEFDCDpdyWK5Y+bL18Aoi9vTkBK3QLc9PfCmmzBFP9/SILf+1dGAuJLk1gCK+Vd51Aiym+HIZS+wmV4Sl6WE2+pG5WJebTe66PW6Sg9YHcKMTDChaYCPH6BHTlp9Ji3A8jydo7VHotGrlkwJMOlo8kKXE3dn5nU1c/sFd9dQBnn36jbZn6tfun+TE0WqLacEqYBtYwW69HcZzglnu8puba0YXmp0OjoLMadxVkh3TkwzS4+H7wrYuGBqkKYCrkbJDzeIiCl3aUdva53XOrEk77Xu+RhwPlSWTWvGw0FqXHWA== </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="Welcome to my blog, enter password to read.">
+    <label for="pass">Welcome to my blog, enter password to read.</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+U2FsdGVkX19al5BskyZ/9iaFGcaKQVjZBoB3a6jsED9JGorO6iBOqtOuMgonMmWgOiFVeov+az3M1IgSeCecv31r4GRyr4otrRWTJJYwaj49YmppClcYs7ApK6fU/1z90POFR+6X/s7vUXRVV7wCCM2Mgn0ZDFOUzyK4QdEDYNSNBZVkHg/wzcPgT/zbXspQYxXvpCvuOZWt4cpmhorOTdJwbFUn68VWxsT7UTafto+IFM6zmofhpcj7q+kPLB5qmKqmi13iS/RTh3Xn4LVl7sfRlZ5jsaOGM+JY7qHhCoEP8xp3dAT/et4RGYvSWYGMFAI0nrvlw/gF/mzYincWtHWE/sJollnFtVYWfGkxVGTYfV4CKpOwy+EbsSFQpq8ZL54dRqc/7oIiVTF3Sbq0ew==
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
     
   </div>
 
